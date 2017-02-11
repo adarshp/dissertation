@@ -1,82 +1,220 @@
-\RequirePackage{fix-cm}
-\documentclass[ %twoside,
-                openright,
-                titlepage,numbers=noenddot,headinclude,%1headlines,
-                footinclude=true,cleardoublepage=empty,abstractoff, 
-                BCOR=0mm,paper=a4,fontsize=10pt,
-                ngerman,american,
-                ]{scrreprt}
+\documentclass[final,oneside,10pt]{memoir}
 
-\input{classicthesis-config}
-\linespread{1.2}
-%********************************************************************
+% Packages
+\usepackage[T1]{fontenc}
+\usepackage{slashed}
+\usepackage{fullwidth}
+\usepackage{microtype}
+\usepackage{amsthm}
+\usepackage[scaled=0.84]{beramono}
+\usepackage[swash, minionint, loosequotes, footnotefigures]{MinionPro}
+\renewcommand{\scdefault}{ssc}
+\usepackage[toc]{tabfigures}
+% \PassOptionsToPackage{utf8}{inputenc}
+	% \usepackage{inputenc}
+
+\PassOptionsToPackage{fleqn}{amsmath}       % math environments and more by the AMS 
+    \usepackage{amsmath}
+
+\PassOptionsToPackage{%
+    backend=biber,
+	language=auto,%
+	style=numeric-comp,%
+    sorting=none,
+    maxbibnames=10,
+    arxiv=pdf,
+	url=false,
+    natbib=true
+}{biblatex}
+    \usepackage{biblatex}
+
+% ********************************************************************
+% Using PDFLaTeX
+% ********************************************************************
+\PassOptionsToPackage{pdftex,hyperfootnotes=false,pagebackref=true,pdfpagelabels=true}{hyperref}
+    \usepackage{hyperref}  % backref linktocpage pagebackref
+\pdfcompresslevel=9
+\pdfadjustspacing=1 
+\PassOptionsToPackage{pdftex}{graphicx}
+    \usepackage{graphicx} 
+
+% ********************************************************************                
+% Colors
+% ********************************************************************
+\PassOptionsToPackage{dvipsnames}{xcolor}
+    \RequirePackage{xcolor} % [dvipsnames] 
+\definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\definecolor{Black}{cmyk}{0, 0, 0, 0}
+\definecolor{shadecolor}{gray}{0.9}
+
+% ********************************************************************
+% Hyperreferences
+% ********************************************************************
+\hypersetup{%
+    colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
+    pdftitle={Dissertation},%
+    pdfauthor={Adarsh Pyarelal},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX}%
+}   
+\DefineBibliographyStrings{english}{%
+    backrefpage = {page},% originally "cited on page"
+      backrefpages = {pages},% originally "cited on pages"
+}
+\def\equationautorefname{equation}
+\renewcommand{\bar}{\overline}
+
 % Bibliographies
-%*******************************************************
 \addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
+\addbibresource{dissertation_biblio.bib}
+
+% ********************************
+% Math stuff
+% ********************************
+
+% Here we define custom style for definitions.
+\newtheoremstyle{definition}
+    {3pt} % Space above
+    {3pt} % Space below
+    {\upshape} % Body font
+    {} % Indent amount
+    {\bfseries} % Theorem head font
+    { } % Punctuation after theorem head
+    {.5em} % Space after theorem head
+    {\thmname{#1} \thmnumber{#2} (\thmnote{#3})} % Theorem head spec
+\theoremstyle{definition}
+\newtheorem{definition}{Def}[chapter]
+
+% ********************************************************************
+% Memoir package - layout and styling
+% ********************************************************************
+
+% Here we set typeblock widths for the main body and the footnotes
+\setlxvchars[\normalfont\normalsize]
+\setxlvchars[\normalfont\footnotesize]
+\settypeblocksize{46\onelineskip}{\lxvchars}{*}
+
+% Set a spine margin of 1 inch, with the edge margin calculated automatically
+\setlrmargins{1in}{*}{*}
+% Set margin notes separation from typeblock, their width, and their vertical separation
+\setmarginnotes{7mm}{\xlvchars}{2\onelineskip}
+
+% Set footnotes in the margin rather than at the foot of the page
+\footnotesinmargin
+
+% Style the chapter entries in the Table of Contents
+\renewcommand*{\cftchapterfont}{\sscshape\MakeTextLowercase}
+
+% Set parameters for side footnotes
+\setsidefeet{\marginparsep}{\xlvchars}%
+{\onelineskip}{10pt}{\normalfont\footnotesize}{\textheight}
+
+% Set section, subsection, and subsubsection heading styles
+\setsecheadstyle{\sscshape\MakeTextLowercase}
+\setsubsecheadstyle{\bfseries\sffamily}
+\setsubsubsecheadstyle{\sffamily}
+
+% Set parameters for side-captioned floats
+\setsidecaps{17pt}{14pc}
+\sidecapmargin{'left'}
+\setsidecappos{t}
+
+% Reduce spacing between list items
+\tightlists
+\setfloatadjustment{marginfigure}{\centering}
+% Headers and footers
+\makepagestyle{tufte}
+\createmark{section}{left}{nonumber}{}{}
+\makeoddhead{tufte}{\thepage~~~~\scshape\MakeTextLowercase{\leftmark}}{}{}
+\nouppercaseheads
+\pagestyle{tufte}
+
+% \makerunningwidth{mysimple}{50pc}{50pc}
+% \captionnamefont{\raggedright\sffamily\small}
+% \captiontitlefont{\raggedright\sffamily\small}
+
+% Creating a modified version of the Pedersen chapter headings
+  \makechapterstyle{tufte-inspired}{%
+    \setlength{\beforechapskip}{-20pt}
+      \setlength{\afterchapskip}{20pt}
+      \renewcommand*{\chapnamefont}{\normalfont\Huge\itshape}
+      \renewcommand*{\chapnumfont}{\normalfont\HUGE\itshape\colorchapnum}
+      \renewcommand*{\chaptitlefont}{\normalfont\Huge\itshape\colorchaptitle}
+      \renewcommand*{\afterchapternum}{}
+      \renewcommand*{\printchaptername}{}
+      \setlength{\midchapskip}{15mm}
+      \renewcommand*{\chapternamenum}{}
+      \renewcommand*{\printchapternum}{%
+        \begin{marginfigure}[-20pt]
+          \resizebox{!}{\midchapskip}{\emph{\thechapter}}
+        \end{marginfigure}
+      }
+      \renewcommand*{\printchaptertitle}[1]{
+			\chaptitlefont ##1
+            \bigskip
+            % \textcolor{gray}{\hrule width 26pc depth 0.05pt}
+    }
+}
+
+\chapterstyle{tufte-inspired}
+\hangsecnum
+
+\checkandfixthelayout
+
+% ***********************************************
+
+% Shortcuts
+\renewcommand{\L}{\mathcal{L}}
+
+% Misc layout commands
+\linespread{1.1}
+
 \begin{document}
-\frenchspacing
-\raggedbottom
-%\renewcommand*{\bibname}{new name}
-%\setbibpreamble{}
+
+\include{FrontBackMatter/Titlepage}
 \pagenumbering{roman}
-\pagestyle{plain}
-%********************************************************************
-% Frontmatter
-%*******************************************************
-\include{FrontBackmatter/Titlepage}
-\include{FrontBackmatter/Titleback}
-\include{FrontBackmatter/CommitteeApproval}
-\include{FrontBackmatter/StatementByAuthor}
-\cleardoublepage\include{FrontBackmatter/Abstract}
-% \cleardoublepage\include{FrontBackmatter/Acknowledgments}
-% \cleardoublepage\include{FrontBackmatter/Dedication}
-\pagestyle{scrheadings}
-\cleardoublepage\include{FrontBackmatter/Contents}
-%********************************************************************
-% Mainmatter
-%*******************************************************
-\cleardoublepage\pagenumbering{arabic}
-%\setcounter{page}{90}
-% \cleardoublepage
-\part{Theory}
-\include{Chapters/Chapter01}
-\include{Chapters/Chapter02}
-\chapter{Extending the Standard model}
-\section{The Two-Higgs Doublet Model}\label{the-two-higgs-doublet-model}
-- Citations - (Review paper, Felix papers)
-- Motivation(s) \\
-- Constraints \\  
-\section{The Minimal Supersymmetric Standard Model}\label{the-minimal-supersymmetric-standard-model}
-- Motivations \\
-\indent 
-\include{Chapters/DarkMatter}
-\part{Phenomenology}
-\chapter{Bridging the gap between theory and experiment}
+\include{FrontBackMatter/CommitteeApproval}
+\include{FrontBackMatter/StatementByAuthor}
+\include{FrontBackMatter/Abstract}
+\tableofcontents*
+\newpage
+\listoffigures*
+\newpage
+\listoftables*
+\newpage
+\pagenumbering{arabic}
+% L65 = \the\lxvchars
+\include{Chapters/Introduction}
+\include{Chapters/SM}
+\include{Chapters/BSM}
+\include{Chapters/ColliderPheno}
+\include{Chapters/MachineLearning}
 \chapter{Light Charged Higgs bosons at the LHC}
 \chapter{A Razor Search for Dark Matter at 100 TeV}
 \chapter{Exotic 2HDM Higgs searches at 14 and 100 TeV}
-\part{Machine Learning} \chapter{The problem of classification}
-\chapter{Machine learning and particle physics}
-\chapter{Gradient boosted decision trees}
-
 % ********************************************************************
 % Backmatter
 %*******************************************************
 \appendix
-\renewcommand{\thechapter}{\alph{chapter}}
-\cleardoublepage
-% \part{Appendix}
-% \include{Chapters/Chapter0A}
-% \includepdf[pages=-]{Chapters/LightChargedHiggs.pdf}
-% \chapter{A Razor Search for Dark Matter at 100 TeV}
-% \includepdf[pages=-]{Chapters/draft.pdf}
-%********************************************************************
-% Other Stuff in the Back
-%*******************************************************
-\cleardoublepage\include{FrontBackmatter/Bibliography}
-\cleardoublepage\include{FrontBackmatter/Colophon}
-% ********************************************************************
-% Game Over: Restore, Restart, or Quit?
-%*******************************************************
+\appendixpage
+\include{Chapters/Appendix_Group_Theory}
+\include{Chapters/Appendix_Statistics}
+\printbibliography
+\newpage
+\pagestyle{empty}
+\hfill
+\vfill
+\section*{Colophon}
+This thesis was typeset using \LaTeX\ and the \texttt{memoir} package. The inspiration for the layout and style has come from multiple sources, including the \texttt{classicthesis} template by Andre Miede, and the \texttt{tufte-latex} package. 
+\bigskip
 \end{document}
-% ********************************************************************
