@@ -1,0 +1,126 @@
+\chapter{Mathematical Concepts}\label{ch:qft}
+
+Group theory is immensely important to the study of particle physics. 
+The definitions in this section are a blend of the definitions found in \citep{Georgi1999, Maggiore2005, Kreher2012, Weisstein}.
+Groups of interest to us include the Poincar\'e group, the Abelian group $U(1)$, and the special unitary groups $SU(2)$ and $SU(3)$. Indeed, the very notion of a particle can be defined using the Poincar\'e group, which is the group that incorporates translates and Lorentz transformations. 
+
+\section{Group Theory Basics}
+
+\definition[Binary operation]{A \emph{binary operation} $\mu$ on a set $G$ is a function $\mu:G\times G\rightarrow G.$ That is, it associates every ordered pair $(p,q)\in G$ with another element $r\in G$.}
+
+\definition[Group]{A \emph{group} $G$ is a set along with a binary operator $\ast$ that satisfies the following conditions:
+  \begin{itemize}
+    \item $\ast$ is \emph{associative}, that is, $(a\ast b)\ast c = a\ast (b\ast c)$ $\forall a,b,c\in G$ 
+    \item There exists in \emph{identity} element $e\in G$ such that $e\ast a = a$ $\forall a\in G.$
+    \item For each $a\in G$, there exists an \emph{inverse} $b\in G$ such that $b\ast a = e.$
+  \end{itemize}
+}
+
+\definition[Representation]{A \emph{representation} of a group $G$ is a mapping\footnote{The terms mapping, map, and function will be used interchangeably in this section.}, $D$ of the elements of $G$ onto a set of linear operators that act on a vector space, that satisfies the following properties:
+  \begin{itemize}
+    \item $D(e) = 1$, where $1$ is the identity operator in the space on which the linear operators act.
+    \item $D(g_1)D(g_2) = D(g_1\ast g_2)$.
+  \end{itemize}
+}
+
+\definition[Reducible representation]{A representation is \emph{reducible} if it has an \emph{invariant subspace}.}
+
+That is, the vectors that the elements of the representation act on will have a subset of components that mix only among themselves under group transformations. 
+
+\definition[Unitary representations]{A representation $D$ is \emph{unitary} if the elements of its image are unitary. That is, $U^\dagger U = UU^\dagger = 1$ $\forall U\in D(G)$.}
+
+Having defined what groups and representations are, let us define a few groups of interest to us.
+
+\definition[Metric]{A \emph{metric} is a function that maps pairs of elements of a given set to non-negative real numbers. For a given set $X$ and a metric 
+  $$g:X\times X\rightarrow [0,\infty),$$
+  the following properties are satisfied for $x,y\in X.$
+  \begin{itemize}
+    \item $g(x,y) \geq 0$.
+    \item $g(x,x) = 0$
+    \item $g(x,y) = g(y,x)$
+    \item $g(x,y) + g(y,z) \geq g(x,z)$
+  \end{itemize}
+
+  These conditions follow intuitively from identifying the metric as a generalized \emph{distance}. A set that possesses a metric is known as a \emph{metric space}. 
+}
+
+Quantum Field Theory can be thought of as a union of Quantum Mechanics and Special Relativity. In the framework of special relativity\footnote{Special relativity is an approximation to the \emph{general} theory of relativity, that describes the curvature and dynamic nature of spacetime. On small scales (such as the scales associated with particle physics), one can ignore the curvature of spacetime, much as we ignore the curvature of the Earth in our daily lives and proceed as if the ground we walk on is, indeed, flat.}, objects such as coordinates and momenta are identified with vectors in \emph{Minkowski spaces}, which are vector spaces that have the metric represented by the tensor
+\[\eta_{\mu\nu} = \begin{pmatrix}1 & 0 & 0 & 0\\
+                                   0 & -1 & 0 & 0\\
+                                   0 & 0 & -1 & 0\\
+                                   0 & 0 & 0 & -1.\end{pmatrix}\]
+
+The elements of such vector spaces are known as 4-vectors, and are represented by symbols such as $x^\mu$, where $\mu = 0,1,2,3$. For example $$x^\mu = (t, x, y, z)$$ represents a \emph{position} 4-vector, where $t$ represents the time coordinate, and $x,y,z$ represent spatial coordinates. Similarly, the 4-vector
+$$p^\mu = (E, p_x, p_y, p_z)$$ combines the energy $E$ with the momentum components $p_x,p_y,p_z$. The components of these 4-vectors can mix with each other through Lorentz transformations. Lorentz transformations are elements of the Lorentz group, defined below.
+
+\definition[Lorentz group]{The \emph{Lorentz group} is the group of linear coordinate transformations of the form
+$$x^\mu\rightarrow x'^\mu = \Lambda^\mu{  }_{\nu}x^\nu$$
+where $x^\mu$ is a vector in a Minkowski space, that preserve the inner product $\eta_{\mu\nu}x^\mu x^\nu$.\footnote{Here we use the Einstein summation convention, where repeated indices are summed over.}}
+
+The Lorentz group is a subgroup of the \emph{Poincar\'e} group, defined below.
+
+\definition[Poincar\'e group]{The \emph{Poincar\'e group} is the group of translations and Lorentz transformations.}
+Particles can be defined as objects that transform under irreducible unitary representations of the Poincar\'e group. This paves the road for classifying particles based on which representation they transform under.
+
+The Lorentz group is an example of a \emph{Lie group}.
+
+\section{Topology}
+
+\definition[Topological space, Topology]{A \emph{topological space} $X$ is a set along with a collection $T$ of open subsets of $X$ that satisfies the following conditions:
+\begin{itemize}
+  \item The null set is a member of $T$, as is the set $X$ itself.
+  \item The union of a finite number of members of $T$ is also a member of $T$.
+  \item The intersection of any number of members of $T$ is also a member of $T$.
+\end{itemize}
+The collection $T$ is known as a \emph{topology} on $X$.}
+
+\definition[Topological basis]{A \emph{topological basis} $B$ of a set $X$ is a collection of subsets of $X$ that satisfy the following properties:
+\begin{itemize}
+  \item For every element $x\in X$, there is a member of $B$ that contains $x$. 
+  \item If $x\in B_1\cap B_2$ for $B_1,B_2\in B$, there exists an element $B_3\in B$ such that $x\in B_3$ and $B_3$ is a proper subset of $B_1\cap B_2$\footnote{Munkres, J. R. Topology: A First Course, 2nd ed. Upper Saddle River, NJ: Prentice-Hall, 2000.}. 
+\end{itemize}
+}
+
+\definition[Hausdorff space]{A \emph{Hausdorff} topological space is one whose distinct elements have non-intersecting neighborhoods.\footnote{\url{http://www.maths.qmul.ac.uk/~bill/topchapter3.pdf}}
+
+\definition[Second countable topological space]{A topological space is said to be \emph{second countable} if its basis is countable.}
+
+Specifying the basis specifies the structure of the topological space, with minimal information. Thus, we say that the basis \emph{generates} the structure of the topological space\footnote{Matsumura, T., \href{http://www.math.cornell.edu/~matsumura/math4530/Intro\%20to\%20Topology\%20week\%202.pdf}{Introduction to Topology}}
+
+\definition[Homeomorphism]{A \emph{homeomorphism} is a one-to-one continuous invertible mapping between elements of two topological spaces whose inverse is itself continuous.}
+
+\definition[Diffeomorphism]{A \emph{diffeomorphism} is a smooth homeomorphism. By smoothness, we mean that the mapping is infinitely differentiable.}
+
+\definition[Coordinate system, Chart, Atlas]{A \emph{coordinate system} $\phi$ on a subset $U$ of a topological space $M$ is a homeomorphism $\phi$ that maps elements of $U$ to a an open subset of $\mathbb{R}^n$. The pair $(U,\phi)$ is called a \emph{chart}. }
+
+\definition[Atlas]{An \emph{atlas} $\mathcal{A}$ on $M$ is a collection of charts $\{U_\alpha,\phi_\alpha\}$ that covers $M$. That is, $M$ is a subset of the union of the members of $\{U_\alpha\}$. \footnote{\raggedright Wilson, J., Review of Manifolds, \url{https://web.stanford.edu/~jchw/WOMPtalk-Manifolds.pdf}}
+The \emph{transition maps} associated with this atlas are the homeomorphisms $\phi_\beta\phi_\alpha^{-1}: \phi_\beta(U_\alpha\cap U_\beta)\rightarrow(U_\alpha\cap U_\beta)$.
+}
+
+Transition maps are also known as \emph{coordinate transformations}, a term familiar to all physicists.
+
+\definition[Topological manifold]{A \emph{topological manifold} is a second countable Hausdorff space with an associated atlas.}
+
+\definition[Smooth manifold]{A \emph{smooth manifold} is a topological manifold whose transition maps are diffeomorphisms. }
+
+\section{Lie groups and algebras}
+
+\definition[Lie group]{A \emph{Lie group} is a group that is also a smooth manifold and whose group operations are smooth.\footnote{http://www.math.ucla.edu/~petersen/manifolds.pdf}}
+
+\definition[Algebra]{An algebra is ...}
+\definition[Lie algebra]{A Lie algebra is a }
+\definition[Generator]{Exponentiating generators gives us members of the group ...}
+\section{Representations of the Poincar\'e group}
+
+Wigner's theorem associates unitary irreducible representations of the Poincar\'e group with two indices $m\in[0,\infty)$ and $J\in\{(n-1)/2\}$ where $n$ is an integer greater than zero, corresponding to mass and spin respectively. As it turns out
+so(1,3) -> su2 + su2 -> representations of so(3)\\
+classifying particles by spin/poincare transformations.\\
+\section{Quantum Fields}
+Map components of spinors, vectors, etc to field operators \\
+Map field operators to kets in Hilbert (Fock?) space \\
+\section{Connecting fields and physical systems}
+Map kets to physical systems\\
+scalars - higgs boson, vectors - gauge bosons, spinors - fermions\\
+
+Gauge symmetries and invariance\\
+The first term is the \emph{kinetic} term of the Lagrangian, and the second is the \emph{mass} term, with the coefficient $m_\psi$ representing the mass of the fermion. Here we employ the Feynman slash notation: $\gamma^\mu p_\mu = \slashed{p}$. 

@@ -1,0 +1,224 @@
+\chapter{The Standard Model}\label{ch:sm}
+In this chapter we will describe the components of the Standard Model of particle physics. We assume familiarity with the basic concepts of quantum field theory, including what a particle is, the connection between particles and fields, and basic group theory concepts. For a refresher, one may turn to \autoref{ch:qft}. We will first talk about the matter content, followed by a discussion of gauge invariance and how it leads to gauge fields that both interact with themselves and mediate the interactions between the matter fields. We will then briefly comment on the concept of renormalization in the context of the Standard Model, and finally conclude with highlighting the limits of the Standard Model and the need for new physics extensions to it.
+
+\section{Particle content}
+The fundamental constituents of matter are fermions. They come in two varieties - quarks and leptons. Quarks are found in places such as atomic nuclei and in cosmic ray mesons. The most well-known example of leptons are electrons, that orbit atomic nuclei, but there are many other flavors of leptons as well. The full lists of quarks and leptons in the SM can be found in tables \ref{tab:quarks} and \ref{tab:leptons}. The particles that mediate the interactions between these are called \emph{gauge bosons}, and are listed in table \ref{tab:gaugebosons}. The photon is the mediator of the electromagnetic force, the $W$ and $Z$ bosons mediate the weak force, which is responsible for radioactive decay, and gluons mediate the strong force between quarks, which is responsible for the formation of protons, neutrons and other heavy particles.
+
+\begin{margintable}[-10cm]
+  \centering
+  \begin{tabular}{c|l}
+    Symbol & Name \\
+  \hline
+    $u$ & up\\
+    $d$ & down \\
+    $c$ & charm \\
+    $s$ & strange \\
+    $t$ & top \\
+    $b$ & bottom \\
+  \end{tabular}
+  \caption{List of quarks in the SM.}
+  \label{tab:quarks}
+\end{margintable}
+
+\begin{margintable}[-3cm]
+  \centering
+\begin{tabular}{c|l}
+    Symbol & Name \\
+  \hline
+    $e$ & electron\\
+    $\mu$ & muon \\
+    $\tau$ & tau \\
+    $\nu_e$ & top \\
+    $\nu_\mu$ & bottom \\
+    $\nu_\tau$ & bottom \\
+  \end{tabular}
+  \caption{List of leptons in the SM.}
+  \label{tab:leptons}
+\end{margintable}
+
+\begin{margintable}
+  \centering
+\begin{tabular}{c|l}
+    Symbol & Name \\
+  \hline
+    $\gamma$ & photon\\
+    $W$ & $W$ boson \\
+    $Z$ & $Z$ boson \\
+    $g$ & gluon \\
+  \end{tabular}
+  \caption{List of gauge bosons in the SM.}
+  \label{tab:gaugebosons}
+\end{margintable}
+
+The standard model Lagrangian can be split up as follows:
+
+$$\L_{SM} = \L_{fermion}+\L_{gauge}+\L_{Higgs}.$$
+In the absence of interactions, the Lagrangian for a free Dirac fermion field $\psi$ would read as follows\footnote{Here we emply the Feynman slash notation, with $\gamma^\mu p_\mu = \slashed{p}$}.
+\begin{align}
+\L_{fermion} = i\overline{\psi}\slashed{\partial}_\mu\psi-m_{\psi}\overline{\psi}\psi.
+\label{eq:fermion_lagrangian}
+\end{align}
+
+Interactions and the corresponding gauge bosons arise organically when we impose gauge invariance upon this Lagrangian.
+
+\section{Gauge invariance}
+
+The concept of gauge invariance arose in the context of electrodynamics, with the realization that there was an intrinsic degree of freedom for the electromagnetic vector potential $A_\mu$. Basically, under the transformation 
+\begin{align}
+  A_\mu\rightarrow A_\mu + \partial_\mu \lambda(x),
+  \label{eq:gauge_transformation}
+\end{align}
+where $\lambda(x)$ is an arbitrary scalar function, the electromagnetic Lagrangian (and by extension, the Maxwell equations) remain invariant. In quantum mechanics (with an electromagnetic potential), the requirement that physical observables are not to change under gauge transformations is ensured by the simultaneous transformation of the state ket $|\psi\rangle\rightarrow e^{i\theta(x)}|\psi\rangle$ \citep{Sakurai2010}. The modern interpretation of gauge invariance %
+%
+\footnote{The origin of the term `gauge invariance' lies in Hermann Weyl's attempt to describe electromagnetism as a geometric theory, similar to gravity, in 1916. He hoped to recover electromagnetism by imposing an invariance, termed \emph{eichinvarianz} (which translates to gauge invariance in English)  under local scale transformations, and identifying the scale factor with the electromagnetic vector potential $A_\mu$. Although this attempt was unsuccessful, the term was retained when it was discovered the correct way forward was to impose invariance under \emph{phase} transformations instead of scale transformations. For a history of the origins of gauge invariance, see \citep{Jackson2001}.}%
+%
+is a geometric one, usually discussed among mathematicians in terms of fiber bundles and connections \citep{Cheng1985}. Although a full geometric treatment of this topic is beyond the scope of this work, a small digression into it is worthwhile.
+
+In this section, we will attempt to heuristically construct the Lagrangian for quantum electrodynamics, using gauge invariance. Consider the Lagrangian for the free fermion field in \autoref{eq:fermion_lagrangian}. This remains invariant under the transformation 
+\begin{equation}\label{eq:fermion_field_transformation}
+  \psi(x)\rightarrow e^{i\theta(x)}\psi(x).
+\end{equation}
+Thus, the phase of a quantum field is an unobservable quantity. However, we often have to compare the values of fields at different points in spacetime - for example when we take the partial derivative $\partial_\mu$ in \autoref{eq:fermion_lagrangian}. At a very basic level, a derivative of a function $f(x)$ depends on the difference of the values of the function $f$ at the points $x$ and $x + dx$. However, the phase of the field is a matter of arbitrary convention, and our physical observables should not depend on them. To be able to compare fields at $x$ and $dx$, we need to promote our ordinary derivative $\partial_\mu$ to a \emph{gauge-covariant} or simply \emph{covariant} derivative,
+$$\partial_\mu \rightarrow D_\mu = \partial_\mu - igA_\mu$$
+Here, $A_\mu$ is a vector field that transforms as%
+%
+$$A_\mu\rightarrow A_\mu + \frac{1}{g}\partial_\mu\theta(x)$$
+%
+where $\lambda(x)$ is a scalar function and $g$ is a dimensionless constant, whose physical interpretation will soon become apparent. The covariant derivative is a mathematical concept that arises in the theory of general relativity as well, and the field $A_\mu$ can be identified with a \emph{connection}, which gives us a way to compare the fields at the points $x$ and $x + dx$.
+
+Inserting the covariant derivative in the place of the normal partial derivative in equation in the kinetic term of \autoref{eq:fermion_lagrangian} gives us the following:
+\begin{equation}\label{eq:fermion_kinetic}
+    \begin{split}
+  \mathcal{L}_\text{fermion, kinetic} &= i\overline{\psi}\slashed{D}_\mu\psi\\
+&= i\overline{\psi}\gamma^\mu(\partial_\mu-igA_\mu)\psi\\
+&= i\overline{\psi}\slashed{\partial}_\mu\psi + g\overline{\psi}A_\mu\psi
+\end{split}
+\end{equation}
+The second term on the right hand side of \autoref{eq:fermion_kinetic} is the interaction term describing the interaction between the electromagnetic field and a fermion field. We can now identify $g$ with the coupling of $A_\mu$ to fermions, that is, the strength of the interaction.  However, we are not done yet. We know that for $A_\mu$ to mediate interactions, it must be a dynamical, or propagating field. This means that the Lagrangian must have a term involving its derivatives - this will serve as the kinetic term for $A_\mu$. The simplest such gauge-invariant term with dimension four or less is %
+%
+\begin{equation}\label{eq:L_gauge_kin}
+\mathcal{L}_\text{gauge, kinetic} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+\end{equation}
+%
+where $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$, and the factor $\slantfrac{1}{4}$ is just a convenient normalization convention. The astute reader will notice that this has begun to look suspiciously like the Lagrangian density for the classical electromagnetic field. In fact, the function $\frac{1}{g} \theta(x)$ can be identified with the function $\lambda(x)$ in \autoref{eq:gauge_transformation}, and the constant $g$ can be identified with the electric charge of the fermion $\psi$. Combining the terms from equations \ref{eq:fermion_lagrangian}, \ref{eq:fermion_kinetic}, and \ref{eq:L_gauge_kin}, and replacing $g$ by $e$ to represent electric charge, we recover the QED Lagrangian,
+\begin{equation}
+  \mathcal{L}_\text{QED} = i\overline{\psi}\slashed{\partial}_\mu\psi - m\overline{\psi}\psi + e\overline{\psi}A_\mu\psi -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+Note that a mass term for the field $A_\mu$, of the form $mA_\mu A^\mu$ is not gauge-invariant is thus forbidden, thus ensuring that the photon remains massless.
+The coefficient that is acquired by the field in \autoref{eq:fermion_field_transformation}, $e^{i\theta(x)}$, is a unitary operator. In fact, transformations of this sort form a group known as the \emph{unitary group of degree 1}, denoted $U(1)$, which is the group of $1\times 1$ matrices with determinant 1\footnote{This follows from the general definition of a unitary group $U(n)$, the group of $n\times n$ matrices with unit determinant.}. we say that the Lagrangian possesses a $U(1)_\text{em}$ gauge symmetry, where the subscript `em' stands for electromagnetism. Equivalently, we might say that the Lagrangian is invariant under the $U(1)_\text{em}$ gauge group. 
+
+\section{Pre-Yang-Mills Era}
+
+The group $U(1)$ is known as an \emph{Abelian} group. That is, the group operations commute with each other. It turns out that a consistent perturbative theory of weak and strong interactions requires invariance under \emph{non-Abelian} gauge groups. Prior to the formulation of electroweak theory, the weak interactions were first described by a phenomenological model proposed by Enrico Fermi in 1934 \citep{Fermi:1934sk,Fermi:1934hr} to describe the phenomenon of the $\beta$-decay of neutrons: $n\rightarrow p e \bar{\nu_e}$, with a four-fermion interaction vertex described by the term
+\begin{equation}
+\mathcal{L}_F = -\frac{G_F}{\sqrt{2}}\left[\bar{p}\gamma_\mu n\right]\left[\bar{e}\gamma^\mu\nu\right] + h.c.
+\end{equation}
+Further experiments \citep{Wu:1957my} revealed that parity is not conserved in weak interactions, which eventualy led to the formulation of the $V-A$ (pronounced `vector minus axial') theory. In this theory, the weak interaction is described by an effective interaction vertex of the form
+\begin{equation}
+-\frac{G_F}{\sqrt{2}}\bar{\psi'}\gamma^\mu(1-\gamma_5)\psi
+\end{equation}
+where the pair of fields $(\psi', \psi)$ can be $(\nu_e, e)$, $(\nu_\mu,\mu)$, or $(u, d_\theta)$\footnote{This theory was formulated before all three generations of quarks and leptons were discovered, so there is no mention of the $\tau$ lepton (and its corresponding neutrino), or the top and bottom quarks. The angle $\theta$ in this equation parameterizes the mixing between the down and strange quarks. We will comment on this type of mixing later in this chapter.}.
+
+% In 1954, Yang and Mills explored the implications of invariance under the group $SU(2)$\citep{Yang1954}. The resulting field of \emph{non-Abelian} gauge theories
+
+
+We say that the fermion fields are `charged' under different symmetry groups. For example, All fermions possess an `isospin', corresponding to the $SU(2)$ group, and a `hypercharge' corresponding to the $U(1)$ group.  
+Invariance under $SU(3)$ gives rise to gluons, while the $SU(2)$ and $U(1)$ gauge invariance gives rise to three gauge bosons $W_\mu^i$ and a single gauge boson $B_\mu$ respectively. 
+The corresponding terms for a gauge boson field $A_\mu$ look like
+$$\mathcal{L}_{gauge} = -\frac{1}{4}F^{\mu\nu}F_{\mu\nu},$$
+where $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$.
+
+However, the only massless gauge bosons we observe in nature are gluons and photons. In addition, it was experimentally found that the weak force had a short range, implying that its mediators, the $W$ and $Z$ bosons were massive. This turned out to be a problem because there was no way to insert mass terms for them without violating gauge invariance. Remarkably, these problems turned out to be solutions to each other, through the mechanism of electroweak symmetry breaking.
+
+\section{Electroweak Symmetry Breaking}
+
+Electroweak symmetry breaking is the cornerstone of the Standard Model. 
+
+It is achieved by adding a single, complex doublet field to the previously discussed fermions and gauge bosons:
+
+$$H = \begin{pmatrix}H^{+}H^0\\\end{pmatrix}$$
+
+The terms of the Lagrangian that involve this field can be written as follows:
+
+\begin{align*}
+  \mathcal{L}_{\text{Higgs}} &= \frac{1}{2}(D_\mu H)^\dag(D_\mu H)-V(H)\\
+  V(H) &= \left(H^\dag H-\frac{v^2}{2}\right)
+\end{align*}
+
+This Lagrangian is invariant under $U(1)$ transformations. It is also invariant under $SU(2)$ transformations of the form $H\rightarrow e^{i\epsilon_a(x)T^a}H$. Here, $\epsilon_a (x)$ is a space-time dependent parameter and $T_a = \frac{\tau_a}{2}$, where $\tau_a$ are the familiar Pauli matrices.
+
+Since we have three generators $(T_a)$ for the $SU(2)$ symmetries, and one (Y) for the $U(1)$ symmetry, we will introduce four gauge fields to construct the covariant derivative $D_\mu$.
+
+\begin{align*}
+  SU(2)\rightarrow W_\mu^1,W_\mu^2, W_\mu^3\\
+  U(1)\rightarrow B_\mu
+\end{align*}
+
+The gauge covariant derivative takes the form
+$$D_\mu = \partial_\mu + igW_\mu^a\frac{\tau^a}{2}+ig'YB_\mu.$$
+The potential $V(H)$ reaches its minimum when $H^\dag H = v^2 / 2$. We can pick a vacuum expectation value for $H$ that breaks the neutral sector symmetry (corresponding to $H^0$) but not the charged symmetry (corresponding to $H^{+}$), since we know that electromagnetic gauge invariance is a good symmetry to keep, because photons are massless. Thus, we can write the doublet field as
+$$H = \left(\begin{array}{c}0\\\frac{v}{\sqrt{2}}\end{array}\right).$$
+We combine $W_\mu^1$ and $W_\mu^2$ to form two composite fields, $W^\pm$, as follows.
+$$W_\mu^\pm = \frac{W_\mu^1\pm iW_\mu^2}{\sqrt{2}}$$
+We use this redefinition and plug in our value for the vacuum expectation value into the kinetic term of the Lagrangian.
+
+\begin{align*}
+  (D_\mu H)^\dag(D_\mu H) &= (\begin{array}{cc} 0 & \frac{v}{\sqrt{2}}\end{array})
+  \left(\partial_\mu - igW_\mu^a\frac{\tau^a}{2}
+  -\frac{ig'}{2}B_\mu\right)
+  \left(\partial_\mu+igW_\mu^a\frac{\tau^a}{2}+\frac{ig'}{2}B_\mu\right)
+  \left(\begin{array}{c}0\\\frac{v}{\sqrt{2}}\end{array}\right)\\
+  W_\mu^a\frac{\tau^a}{2} &= 
+  \frac{1}{\sqrt{2}}
+  \left(\begin{array}{cc}
+    \frac{W_\mu^3}{\sqrt{2}} & W_\mu^+\\
+    W_\mu^- & -\frac{W_\mu^3}{\sqrt{2}}
+  \end{array}\right).
+\end{align*}
+
+If we simplify the above expression and isolate the mass terms, we get
+\[\frac{g^2v^2}{4}W_\mu^-W_\mu^++\frac{1}{2}\frac{v^2}{4}(g^2+g'^2)
+\left(\frac{gW_\mu^3}{\sqrt{g^2+g'^2}}-\frac{g'B_\mu}{\sqrt{g^2+g'^2}}\right)^2\]
+
+We can make the following definitions:
+
+\begin{align*}
+  \frac{g}{\sqrt{g^2+g'^2}} = \cos\theta\\
+  \frac{g'}{\sqrt{g^2+g'^2}} = \sin\theta
+\end{align*}
+We also make composite fields out of $W_\mu^3$ and $B_\mu$, namely the Z boson ($Z_\mu$) and the photon ($A_\mu$), with $Z_\mu$ defined as follows.
+
+\[Z_\mu = \frac{gW_\mu^3}{\sqrt{g^2+g'^2}}-\frac{g'B_\mu^3}{\sqrt{g^2+g'^2}}\]
+
+The product $W_\mu^+W_\mu^-$ can be written as a mass term for a generic $W_\mu$ boson that comes in two charges. Rewriting our mass terms for the vector boson fields with the above redefinitions, we get
+
+\[\mathcal{L}_{\text{mass term}}=\frac{e^2v^2}{4\sin^2\theta}W_\mu W^\mu+
+\frac{e^2v^2}{8\sin^2\theta\cos^2\theta}Z_\mu Z^\mu\]
+After accounting for symmetry factors, we get the masses of the W and Z bosons as:
+
+\begin{align*}
+  m_W &=\frac{ev}{2\sin\theta}\\
+  m_Z &=\frac{ev}{\sin2\theta}
+\end{align*}
+We see that there is no mass term for $A_\mu$, which means that this gauge field remains massless. Thus we see that the W and Z bosons gain mass, limiting their range, while the photon remains massless, corresponding to what is experimentally observed.
+
+
+\section{Interactions}
+
+Leptons
+Charged interactions
+We have already constructed a gauge-covariant derivative 
+
+$$D_\mu = \partial_\mu + igW_\mu^a T^a + ig'YB_\mu$$
+We can write our Lagrangian as
+$$i\overline{\psi}_L\gamma^\mu D_\mu\psi_L + i\overline{e_R}\gamma^\mu D_\mu e_R$$
+Here, $\psi_L$ is the lepton doublet
+$$\begin{pmatrix}\nu_L\\e_L\end{pmatrix}$$
+while $eR$ is a lepton singlet. We do not include $\nu_R$ because there has been no evidence of right-handed neutrinos. The left- and right- handed fields are obtained by having the projection operators $P_L$ and $P_R$ on the lepton field. The $SU(2)$ transformation only acts on the left-handed field, while the $U(1)$ transformation acts on both the left- and right-handed fields. We will first derive the interactions for the left-handed field, and then consider the right-handed field. 
+
+\section{Limits of the Standard Model}
+We still don't know what dark matter is
+
+Why does the Higgs have the mass it does? (Hierarchy problem)
+
+Neutrino masses?

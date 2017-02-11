@@ -1,0 +1,46 @@
+\chapter{Statistics Primer}
+\section{Probability basics}
+In this section, we will address how we answer the question "Does this experimental data imply the existence of new physics (or conversely, rule it out) ?". This discussion will closely follow chapter 39 of \citep{Olive2016}, as well as the lecture notes in \citep{Cranmer2015}. 
+
+Consider a repeatable experiment that has a range of possible outcomes $x_1,x_2,x_3,...,x_n$, represented by the vector $\mathbf{x}$. As this experiment is repeated multiple times, we will start to get an idea of which outcomes occur more frequently than others, and by what amount. Intuitively, one can imagine that the more repetitions of the experiment we consider, the better our understanding of the frequency distribution of the outcomes will be. With this in mind, if one is asked to come up with a definition of probability, it might not be far off from the \emph{frequentist} definition of probability.
+\begin{definition}{Probability (Frequentist interpretation).}
+For a repeatable experiment with possible discrete outcomes $x_i$, The probability of obtaining the outcome $x_i$ is defined as
+\[P(x_i) = \lim_{n\rightarrow\infty}\frac{n_i}{n}\]
+where $n_i$ is the number of times the outcome $x_i$ is seen in $n$ repetitions of the experiment.
+\end{definition}
+$P(x_i)$ is also known as the \emph{probability mass function}, and its normalization is set by the condition 
+\[\sum_i P(x_i) = 1.\]
+We can generalize this discussion to experiments that have a continuous, rather than discrete, set of outcomes, by defining the \emph{probability density function} $f(x)$, as follows.
+
+\begin{definition}{Probability density function.}
+The probability of obtaining an outcome between the values $x$ and $x+dx$ is given by
+\[P(x\in[x,x+dx]) = f(x)dx.\]
+The function $f(x)$ is called the \emph{probability density function} (pdf), and is normalized by the condition 
+\[\int_{-\infty}^{\infty}f(x)dx = 1\]
+\end{definition}
+
+In typical particle physics experiments, each 'repetition' is a particle collision event, and each 'outcome' will not be a single value, but a collection of values such as missing transverse energy, number of leptons, invariant mass, etc., which we will label with the vector $\mathbb{x}$. The pdf $f(\mathbb{x})$ will depend on a number of parameters, represented by the vector $\mathbb{\theta}$. These parameters represent the parameters of the underlying physical theory as well as the properties of the detector's response. The dependence of $f(\mathbb{x})$ on $\mathbb{\theta}$ is represented by $f(\mathbb{x|\theta})$. This function is known as the \emph{probability model}, and is read "$f$ of $\mathbb{x}$ given $\mathbb{\theta}$".
+
+Keep in mind that so far, we have only described the probability density for one repetition of the experiment. To describe the probability density for an entire dataset consisting of $n$ outcomes (henceforth referred to as \emph{events}), $\mathcal{D} = \{x_1,x_2,\dots,x_n\}$, We will have to take the product of the individual pdfs for each event and multiply it by the Poisson probability of observing $n$ events given $\nu$ expected: 
+\[\mathbf{f}(\mathcal{D}|\mathbb{\theta}) = \text{Pois}(n|\nu)\prod_{e=1}^{n}f(x_e|\mathbb{\theta}).\]
+This is known as a \emph{marked Poisson model}.
+% If $\mathbf{f}(\mathcal{D}|\mathbb{\theta})$ is considered a function of $\mathbb{\theta}$ alone, that is, we keep $\mathcal{D}$ fixed, then we obtain what we called the \emph{likelihood function} $L(\mathbb{\theta})$. 
+The method by which discovery or exclusion of new physics is \emph{hypothesis testing}. 
+\section{Statistical tests}
+
+A hypothesis is a claim about what the experimental data will look like. In particle physics, hypotheses will usually depend on several parameters. In fact, one can take our aforementioned collection of parameters $\mathbb{\theta}$ (or a subset of them) to represent a hypothesis $H$.
+
+Let us consider hypothesis testing in the context of a simple counting experiment. In this experiment, we examine the subset of the dataset $\mathcal{D}$ that resides in a region of phase space labeled the \emph{signal region} (SR), and contains $n_{SR}$ events. Our competing hypotheses are the 'background-only' and 'signal plus background' hypotheses. Their properties are listed in \autoref{tab:hypotheses}. The probability models associated with these hypotheses are Poisson models. The model for the 'background-only' hypothesis is Pois($n_{SR}|\nu_B$), that is, the probability of obtaining $n_{SR}$ events in the signal region when $\nu_B$ events are expected from the background process. The competing hypothesis, 'signal plus background', on the other hand, predicts $\nu_S+\nu_B$ events in the signal region, with $\nu_S$ events from the signal process and $\nu_B$ events from the background process. The probability that background-only hypothesis will produce at least  
+
+\begin{table}
+  \begin{tabular}{llll}
+    Symbol & Statistical name & Physics name & Probability model\\
+    \hline\\
+    $H_0$ & Null & Background-only & Pois($n_{SR}|\nu_B$)\\
+    $H_1$ & Alternate & Signal+Background & Pois($n_{SR}|\nu_S+\nu_B$)
+  \end{tabular}
+  \caption{The two competing hypotheses for our simple number counting example.}
+  \label{tab:hypotheses}
+\end{table}
+
+In this section we will describe Poisson frequency function that is commonly used for counting experiments such as in particle physics. We will first start with the Bernoulli or Binomial frequency function, and then build upon that to arrive at the Poisson frequency function. The discussion roughly follows that in \citep{Melissinos}.
