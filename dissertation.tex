@@ -1,14 +1,23 @@
-\documentclass[final,oneside,10pt]{memoir}
+\documentclass[final,twoside,10pt]{memoir}
 
 % Packages
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
 \usepackage{slashed}
-\usepackage{fullwidth}
-\usepackage{microtype}
+\usepackage{tikz-feynman}
+\usepackage[final]{microtype}
 \usepackage{amsthm}
 \usepackage[scaled=0.84]{beramono}
-\usepackage[swash, minionint, loosequotes, footnotefigures]{MinionPro}
-\renewcommand{\scdefault}{ssc}
+\usepackage[onlymath, minionint, swash]{MinionPro}
+\usepackage{fontspec}
+% \newfontfeature{Microtype}{protrusion=default;expansion=default;}
+\setmainfont[%
+  Microtype,
+Ligatures = {Common, TeX},
+Numbers = {OldStyle, Proportional},
+ItalicFeatures={Style=Swash},
+SmallCapsFeatures={Letters=SmallCaps,LetterSpace=6},
+]{Minion Pro}
+\setsansfont{Myriad Pro}[BoldFont={* Semibold},Numbers=OldStyle]
 \usepackage[toc]{tabfigures}
 % \PassOptionsToPackage{utf8}{inputenc}
 	% \usepackage{inputenc}
@@ -18,6 +27,7 @@
 
 \PassOptionsToPackage{%
     backend=biber,
+    backref,
 	language=auto,%
 	style=numeric-comp,%
     sorting=none,
@@ -29,9 +39,9 @@
     \usepackage{biblatex}
 
 % ********************************************************************
-% Using PDFLaTeX
+% Using LuaLaTeX
 % ********************************************************************
-\PassOptionsToPackage{pdftex,hyperfootnotes=false,pagebackref=true,pdfpagelabels=true}{hyperref}
+\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels=true}{hyperref}
     \usepackage{hyperref}  % backref linktocpage pagebackref
 \pdfcompresslevel=9
 \pdfadjustspacing=1 
@@ -51,6 +61,11 @@
 \definecolor{Black}{cmyk}{0, 0, 0, 0}
 \definecolor{shadecolor}{gray}{0.9}
 
+% Plots
+\usepackage{pgfplots}
+\pgfplotsset{every axis plot post/.append style={Maroon, line width=0.2pt}}
+			
+
 % ********************************************************************
 % Hyperreferences
 % ********************************************************************
@@ -68,10 +83,11 @@
     pdfproducer={LaTeX}%
 }   
 \DefineBibliographyStrings{english}{%
-    backrefpage = {page},% originally "cited on page"
-      backrefpages = {pages},% originally "cited on pages"
+    backrefpage = {cited on page},% originally "cited on page"
+      backrefpages = {cited on pages},% originally "cited on pages"
 }
 \def\equationautorefname{equation}
+\def\figureautorefname{figure}
 \renewcommand{\bar}{\overline}
 
 % Bibliographies
@@ -95,6 +111,9 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Def}[chapter]
 
+\newcommand{\vdoublet}[2]{\begin{pmatrix} #1 \\  #2\end{pmatrix}}
+\newcommand{\fourmatrix}[4]{\begin{pmatrix} #1 &  #2 \\ #3 & #4\end{pmatrix}}
+
 % ********************************************************************
 % Memoir package - layout and styling
 % ********************************************************************
@@ -102,50 +121,54 @@
 % Here we set typeblock widths for the main body and the footnotes
 \setlxvchars[\normalfont\normalsize]
 \setxlvchars[\normalfont\footnotesize]
-\settypeblocksize{46\onelineskip}{\lxvchars}{*}
+% \settypeblocksize{46\onelineskip}{\lxvchars}{*}
 
-% Set a spine margin of 1 inch, with the edge margin calculated automatically
-\setlrmargins{1in}{*}{*}
-% Set margin notes separation from typeblock, their width, and their vertical separation
-\setmarginnotes{7mm}{\xlvchars}{2\onelineskip}
-
-% Set footnotes in the margin rather than at the foot of the page
-\footnotesinmargin
-
-% Style the chapter entries in the Table of Contents
-\renewcommand*{\cftchapterfont}{\sscshape\MakeTextLowercase}
-
-% Set parameters for side footnotes
-\setsidefeet{\marginparsep}{\xlvchars}%
-{\onelineskip}{10pt}{\normalfont\footnotesize}{\textheight}
-
-% Set section, subsection, and subsubsection heading styles
-\setsecheadstyle{\sscshape\MakeTextLowercase}
-\setsubsecheadstyle{\bfseries\sffamily}
-\setsubsubsecheadstyle{\sffamily}
+% Special options for printing/binding
+\setulmarginsandblock{1in}{1in}{*}
+\setlrmarginsandblock{1.5in}{3.1in}{}
+\setmarginnotes{0.2in}{1.9in}{2\onelineskip}
 
 % Set parameters for side-captioned floats
-\setsidecaps{17pt}{14pc}
-\sidecapmargin{'left'}
+\setsidecaps{0.2in}{1.9in}
+\sidecapmargin{outer}
+\renewcommand*{\sidecapstyle}{\normalfont\footnotesize}
 \setsidecappos{t}
+% Set footnotes in the margin rather than at the foot of the page
+\footnotesinmargin
+\sideparmargin{outer}
+
+\renewcommand*{\sideparfont}{\normalfont\footnotesize}
+\marginparmargin{outer}
+% Style the chapter entries in the Table of Contents
+\renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
+\captionstyle[\centering]{\footnotesize}
+\captionnamefont{\footnotesize}
+
+% Set section, subsection, and subsubsection heading styles
+\setsecheadstyle{\bfseries\sffamily}
+% \setsecheadstyle{\sscshape\MakeTextLowercase}
+\setsubsecheadstyle{\itshape}
+\setsubsubsecheadstyle{\sffamily}
+
 
 % Reduce spacing between list items
 \tightlists
 \setfloatadjustment{marginfigure}{\centering}
+
 % Headers and footers
 \makepagestyle{tufte}
-\createmark{section}{left}{nonumber}{}{}
-\makeoddhead{tufte}{\thepage~~~~\scshape\MakeTextLowercase{\leftmark}}{}{}
+\createmark{chapter}{left}{nonumber}{}{}
+\createmark{section}{right}{nonumber}{}{}
+\makeoddhead{tufte}{}{}{\scshape\MakeTextLowercase{\leftmark}~~|~~\thepage}
+\makeevenhead{tufte}{\thepage~~|~~\scshape\MakeTextLowercase{\rightmark}}{}{}
+\makerunningwidth{tufte}[8in]{8in}
+\aliaspagestyle{chapter}{empty}
 \nouppercaseheads
 \pagestyle{tufte}
 
-% \makerunningwidth{mysimple}{50pc}{50pc}
-% \captionnamefont{\raggedright\sffamily\small}
-% \captiontitlefont{\raggedright\sffamily\small}
-
 % Creating a modified version of the Pedersen chapter headings
   \makechapterstyle{tufte-inspired}{%
-    \setlength{\beforechapskip}{-20pt}
+    \setlength{\beforechapskip}{-30pt}
       \setlength{\afterchapskip}{20pt}
       \renewcommand*{\chapnamefont}{\normalfont\Huge\itshape}
       \renewcommand*{\chapnumfont}{\normalfont\HUGE\itshape\colorchapnum}
@@ -166,10 +189,11 @@
     }
 }
 
-\chapterstyle{tufte-inspired}
+\chapterstyle{bringhurst}
 \hangsecnum
 
 \checkandfixthelayout
+
 
 % ***********************************************
 
@@ -179,29 +203,36 @@
 % Misc layout commands
 \linespread{1.1}
 
-\begin{document}
+% Creating the title page
+\pretitle{\vskip 3cm\LARGE\noindent}
+\title{\scshape\color{Maroon}{\MakeTextLowercase{Searches for New Physics at Colliders}}}
+\posttitle{\vskip 0.3em}
+\preauthor{\lineskip 0.5em\Large\itshape\noindent}
+\author{Adarsh Pyarelal}
+\postauthor{\vskip 9cm}
+\date{}
 
-\include{FrontBackMatter/Titlepage}
-\pagenumbering{roman}
+\begin{document}
+\pagenumbering{arabic}
+\include{FrontBackMatter/TitlePage}
 \include{FrontBackMatter/CommitteeApproval}
 \include{FrontBackMatter/StatementByAuthor}
 \include{FrontBackMatter/Abstract}
+\cleardoublepage
 \tableofcontents*
-\newpage
+\cleardoublepage
 \listoffigures*
-\newpage
+\cleardoublepage
 \listoftables*
-\newpage
-\pagenumbering{arabic}
-% L65 = \the\lxvchars
+\cleardoublepage
 \include{Chapters/Introduction}
 \include{Chapters/SM}
 \include{Chapters/BSM}
 \include{Chapters/ColliderPheno}
 \include{Chapters/MachineLearning}
-\chapter{Light Charged Higgs bosons at the LHC}
-\chapter{A Razor Search for Dark Matter at 100 TeV}
-\chapter{Exotic 2HDM Higgs searches at 14 and 100 TeV}
+% \chapter{Light Charged Higgs bosons at the LHC}
+% \chapter{A Razor Search for Dark Matter at 100 TeV}
+% \chapter{Exotic 2HDM Higgs searches at 14 and 100 TeV}
 % ********************************************************************
 % Backmatter
 %*******************************************************
@@ -215,6 +246,6 @@
 \hfill
 \vfill
 \section*{Colophon}
-This thesis was typeset using \LaTeX\ and the \texttt{memoir} package. The inspiration for the layout and style has come from multiple sources, including the \texttt{classicthesis} template by Andre Miede, and the \texttt{tufte-latex} package. 
+This thesis was designed using \LaTeX\ and the \texttt{memoir} package. The inspiration for the layout comes from the works of Edward Tufte. Minion Pro is used for serif test, Myriad Pro for sans-serif, and Bitstream Vera Mono for monospaced text
 \bigskip
 \end{document}
