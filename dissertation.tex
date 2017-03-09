@@ -58,19 +58,14 @@
 
 % Plots
 \usepackage{pgfplots}
-\pgfplotsset{every axis plot post/.append style={
-                                      Maroon,
-                                      line width=0.2pt
-                                    }
-             }
+\pgfplotsset{every axis plot post/.append style={Maroon, line width=0.2pt}}
+             
 %% Externalize PGF plots and TikZ diagrams
 \usepgfplotslibrary{external}
 \immediate\write18{mkdir -p pgf-img}  %% Create `pgf-img` directory
 \tikzexternalize[                     %% Activate externalization
   prefix=pgf-img/,                    %% Avoid cluttering the directory
-  system call={                       %% Use lualatex in system call
-    lualatex -shell-escape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"
-  },
+  system call={lualatex -shell-escape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"},
 ]
 
 % ********************************************************************
@@ -89,10 +84,12 @@
     pdfcreator={pdfLaTeX},%
     pdfproducer={LaTeX}%
 }   
+
 \DefineBibliographyStrings{english}{%
     backrefpage = {cited on page},% originally "cited on page"
       backrefpages = {cited on pages},% originally "cited on pages"
 }
+
 \def\equationautorefname{equation}
 \def\figureautorefname{figure}
 \def\tableautorefname{table}
@@ -119,8 +116,22 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Def}[chapter]
 
+\newtheoremstyle{theorem}
+    {3pt} % Space above
+    {3pt} % Space below
+    {\upshape} % Body font
+    {} % Indent amount
+    {\bfseries} % Theorem head font
+    { } % Punctuation after theorem head
+    {.5em} % Space after theorem head
+    {\thmname{#1} \thmnumber{#2} (\thmnote{#3})} % Theorem head spec
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[chapter]
+
+% Shortcuts
 \newcommand{\vdoublet}[2]{\begin{pmatrix} #1 \\  #2\end{pmatrix}}
 \newcommand{\fourmatrix}[4]{\begin{pmatrix} #1 &  #2 \\ #3 & #4\end{pmatrix}}
+\renewcommand{\L}{\mathcal{L}}
 
 % ********************************************************************
 % Memoir package - layout and styling
@@ -132,8 +143,10 @@
 % \settypeblocksize{46\onelineskip}{\lxvchars}{*}
 
 % Special options for printing/binding
-\setulmarginsandblock{1in}{1in}{*}
+\setulmarginsandblock{1.22in}{1.22in}{*}
+
 \setlrmarginsandblock{1.5in}{3.1in}{}
+% The above sets \textwidth to 281.0 pt
 \setmarginnotes{0.2in}{1.9in}{2\onelineskip}
 
 % Set parameters for side-captioned floats
@@ -146,7 +159,7 @@
 \sideparmargin{outer}
 
 \renewcommand*{\sideparfont}{\normalfont\footnotesize}
-\marginparmargin{outer}
+\marginparmargin{right}
 % Style the chapter entries in the Table of Contents
 \renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
 \captionstyle[\centering]{\footnotesize}
@@ -158,7 +171,6 @@
 \setsubsecheadstyle{\itshape}
 \setsubsubsecheadstyle{\sffamily}
 
-
 % Reduce spacing between list items
 \tightlists
 \setfloatadjustment{marginfigure}{\centering}
@@ -169,7 +181,7 @@
 \createmark{section}{right}{nonumber}{}{}
 \makeoddhead{tufte}{}{}{\scshape\MakeTextLowercase{\leftmark}~~|~~\thepage}
 \makeevenhead{tufte}{\thepage~~|~~\scshape\MakeTextLowercase{\rightmark}}{}{}
-\makerunningwidth{tufte}[8in]{8in}
+% \makerunningwidth{tufte}[8in]{8in}
 \aliaspagestyle{chapter}{empty}
 \nouppercaseheads
 \pagestyle{tufte}
@@ -196,17 +208,29 @@
             % \textcolor{gray}{\hrule width 26pc depth 0.05pt}
     }
 }
-
+%% Bringhurst chapter style 
+\makechapterstyle{bringhurst}{%
+	\renewcommand{\chapterheadstart}{} 
+	\renewcommand{\printchaptername}{} 
+	\renewcommand{\chapternamenum}{} 
+	\setlength{\midchapskip}{15mm}
+	\renewcommand*{\printchapternum}{%
+        \begin{marginfigure}[0pt]
+          \resizebox{!}{\midchapskip}{\emph{\thechapter}}
+        \end{marginfigure}
+      }
+	\renewcommand{\afterchapternum}{} 
+	\renewcommand{\printchaptertitle}[1]{%
+	  \raggedright\Large\scshape\MakeLowercase{##1}}
+	\renewcommand{\afterchaptertitle}{%
+	  \vskip\onelineskip \hrule\vskip\onelineskip}
+}
 \chapterstyle{bringhurst}
 \hangsecnum
-
 \checkandfixthelayout
 
 
 % ***********************************************
-
-% Shortcuts
-\renewcommand{\L}{\mathcal{L}}
 
 % Misc layout commands
 \linespread{1.1}
@@ -239,7 +263,7 @@
 \include{Chapters/ColliderPheno}
 \include{Chapters/MachineLearning}
 % \chapter{Light Charged Higgs bosons at the LHC}
-% \chapter{A Razor Search for Dark Matter at 100 TeV}
+\include{Chapters/DM100TeV}
 % \chapter{Exotic 2HDM Higgs searches at 14 and 100 TeV}
 % ********************************************************************
 % Backmatter
@@ -247,13 +271,8 @@
 \appendix
 \appendixpage
 \include{Chapters/Appendix_Group_Theory}
+\include{Chapters/Appendix_Misc}
 \include{Chapters/Appendix_Statistics}
 \printbibliography
-\newpage
-\pagestyle{empty}
-\hfill
-\vfill
-\section*{Colophon}
-This thesis was designed using \LaTeX\ and the \texttt{memoir} package. The inspiration for the layout comes from the works of Edward Tufte. Minion Pro is used for serif test, Myriad Pro for sans-serif, and Bitstream Vera Mono for monospaced text
-\bigskip
+\include{FrontBackMatter/Colophon}
 \end{document}

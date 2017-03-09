@@ -44,11 +44,11 @@ Having defined what groups and representations are, let us define a few groups o
   These conditions follow intuitively from identifying the metric as a generalized \emph{distance}. A set that possesses a metric is known as a \emph{metric space}. 
 }
 
-Quantum Field Theory can be thought of as a union of Quantum Mechanics and Special Relativity. In the framework of special relativity\footnote{Special relativity is an approximation to the \emph{general} theory of relativity, that describes the curvature and dynamic nature of spacetime. On small scales (such as the scales associated with particle physics), one can ignore the curvature of spacetime, much as we ignore the curvature of the Earth in our daily lives and proceed as if the ground we walk on is, indeed, flat.}, objects such as coordinates and momenta are identified with vectors in \emph{Minkowski spaces}, which are vector spaces that have the metric represented by the tensor
+Quantum Field Theory can be thought of as a union of Quantum Mechanics and Special Relativity. In the framework of special relativity, objects such as coordinates and momenta are identified with vectors in \emph{Minkowski spaces}\footnote{Special relaivity is an approximation to the \emph{general} theory of relativity, that describes the curvature and dynamic nature of spacetime. On small scales (such as the scales associated with particle physics), one can ignore the curvature of spacetime, much as we ignore the curvature of the Earth in our daily lives and proceed as if the ground we walk on is, indeed, flat.}, which are vector spaces that have the metric represented by the tensor
 \[\eta_{\mu\nu} = \begin{pmatrix}1 & 0 & 0 & 0\\
                                    0 & -1 & 0 & 0\\
                                    0 & 0 & -1 & 0\\
-                                   0 & 0 & 0 & -1.\end{pmatrix}\]
+                                   0 & 0 & 0 & -1\end{pmatrix}.\]
 
 The elements of such vector spaces are known as 4-vectors, and are represented by symbols such as $x^\mu$, where $\mu = 0,1,2,3$. For example $$x^\mu = (t, x, y, z)$$ represents a \emph{position} 4-vector, where $t$ represents the time coordinate, and $x,y,z$ represent spatial coordinates. Similarly, the 4-vector
 $$p^\mu = (E, p_x, p_y, p_z)$$ combines the energy $E$ with the momentum components $p_x,p_y,p_z$. The components of these 4-vectors can mix with each other through Lorentz transformations. Lorentz transformations are elements of the Lorentz group, defined below.
@@ -81,7 +81,7 @@ The collection $T$ is known as a \emph{topology} on $X$.}
 \end{itemize}
 }
 
-\definition[Hausdorff space]{A \emph{Hausdorff} topological space is one whose distinct elements have non-intersecting neighborhoods.\footnote{\url{http://www.maths.qmul.ac.uk/~bill/topchapter3.pdf}}
+\definition[Hausdorff space]{A \emph{Hausdorff} topological space is one whose distinct elements have non-intersecting neighborhoods.\footnote{\url{http://www.maths.qmul.ac.uk/\~bill/topchapter3.pdf}}}
 
 \definition[Second countable topological space]{A topological space is said to be \emph{second countable} if its basis is countable.}
 
@@ -110,6 +110,23 @@ Transition maps are also known as \emph{coordinate transformations}, a term fami
 \definition[Algebra]{An algebra is ...}
 \definition[Lie algebra]{A Lie algebra is a }
 \definition[Generator]{Exponentiating generators gives us members of the group ...}
+For a given group \emph{G}, let us denote the generators $T^a$ in the representation \emph{R} as the linear operators $T_R^a$. Then we can make the following definitions.
+\definition[Index]{
+  The index $T(R)$ of the representation \emph{R} is given by
+  \[\text{tr}[T_R^aT_R^b] = T(R)\delta^{ab}\]
+}
+\definition[Quadratic Casimir Operator]{
+  Then the quadratic Casimir $C_2(R)$ is defined by
+  \[T_R^aT_R^a = C_2(R)\cdot\mathbf{1}\]
+}
+For the special case of $SU(N)$, we can evaluate $T_R$ and $C_2(R)$ for the fundamental and adjoint representations as follows:
+\begin{align}
+  T_F &= T(\text{fundamental}) &=& \frac{1}{2}\\
+  T_A &= T(\text{adjoint}) &=& N\\
+  C_F &= C_2(\text{fundamental}) &=& \frac{N^2-1}{2N}\\
+  C_A &= C_2(\text{adjoint}) &=& N
+\end{align}
+
 \section{Representations of the Poincar\'e group}
 
 Wigner's theorem associates unitary irreducible representations of the Poincar\'e group with two indices $m\in[0,\infty)$ and $J\in\{(n-1)/2\}$ where $n$ is an integer greater than zero, corresponding to mass and spin respectively. As it turns out
@@ -124,3 +141,4 @@ scalars - higgs boson, vectors - gauge bosons, spinors - fermions\\
 
 Gauge symmetries and invariance\\
 The first term is the \emph{kinetic} term of the Lagrangian, and the second is the \emph{mass} term, with the coefficient $m_\psi$ representing the mass of the fermion. Here we employ the Feynman slash notation: $\gamma^\mu p_\mu = \slashed{p}$. 
+% Different types of Dirac bilinears?
