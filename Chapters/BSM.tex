@@ -1,12 +1,17 @@
 \chapter{Beyond the Standard model}\label{ch:bsm}
 
-BSM physics
+In the previous chapter, we covered the Standard Model of particle physics and came up against its limits. In this chapter, we will cover some possible extensions to the Standard Model that can help us overcome those limits.
 
-\section{Extending the scalar sector: The Two-Higgs Doublet Model}
+\section{Two-Higgs Doublet Models}
 
-- Citations - (Felix papers)\\
+Intuitively, it is not too hard to imagine, based on the complex structure of the fermion and gauge sectors, that the scalar sector might well contain members other than a single $SU(2)$ doublet. The types of extensions of the scalar sector are constrained by the value of the parameter $\rho$. For a $SU(2)\times U(1)$ gauge theory, this takes the form (at tree level):
 
-Two-Higgs Doublet Models (2HDMs)\footnote{For a detailed review, see\citep{Branco2012}} are a class of theories that implement a simple, yet theoreticaly well-motivated extension to the SM - they expand the scalar sector of the SM by introducing an additional $SU(2)$ Higgs doublet field. In fact, the MSSM and related theories (such as the NMSSM and split SUSY), are types of 2HDMs.
+\begin{equation}
+\rho = \frac{\sum_\text{i=1}^n\left[I_i(I_i+1)-\frac{1}{4}Y_i^2Y_i^2\right]v_i}{\sum_\text{i=1}^n\frac{1}{2}Y_i^2v_i}
+\end{equation}
+where $n$ is the number of scalar multiplets with isospin\footnote{Short for \emph{isotopic spin}} $I_i$, hypercharge $Y_i$, and vacuum expectation values of the neutral components $v_i$. This parameter has been experimentally measured to be almost exactly one. The simplest extensions to the scalar sector that satisfy this constraint involve adding additional scalar singlets and doublets. The extensions that add a single additional $SU(2)$ scalar doublet field are collectively known as \emph{Two-Higgs Doublet Models}, or 2HDMs. For a detailed review of 2HDMs, see \citep{Branco2012}, whose treatment we follow closely here.
+
+Adding an additional scalar doublet alleviates some of the problems with the Standard Model that we mentioned at the end of the previous chapter. For example, adding an additional scalar doublet allows us to impose a global $U(1)$ symmetry on the Lagrangian, which in turn allows us to rotate away the CP-violating term in the QCD Lagrangian. 2HDMs can also account for the observed baryon asymmetry of the universe, since they can provide additional sources of CP violation. The strongest motivation for 2HDMs is, however, the hierarchy problem, as will be discussed in \autoref{sec:supersymmetry}. More specifically, supersymmetric theories provide a way to resolve the hierarchy problem. And in these theories, an additional scalar doublet (or simply an additional Higgs doublet) is required to give mass to both up- and down-type fermions, and for the cancellation of anomalies.
 
 \subsection{The 2HDM Lagrangian}
 The most general scalar potential for two doublets $\Phi_1$ and $\Phi_2$ with hypercharge $+1$ is:
@@ -14,6 +19,15 @@ The most general scalar potential for two doublets $\Phi_1$ and $\Phi_2$ with hy
   V &= m_{11}^2\Phi_1^\dagger\Phi_1 + m_{22}^2\Phi_2^\dagger\Phi_2 - m_{12}^2\left(\Phi_1^\dagger\Phi_2 + \Phi_2^\dagger\Phi_1 \right) + \frac{\lambda_1}{2}\left(\Phi_1^\dagger\Phi_1 \right)^2 + \frac{\lambda_2}{2}\left(\Phi_2^\dagger\Phi_2 \right)^2\\
 &  +\lambda_3\Phi_1^\dagger\Phi_1 \Phi_2^\dagger\Phi_2 + \lambda_4\Phi_1^\dagger\Phi_2 \Phi_2^\dagger\Phi_1 + \frac{\lambda_5}{2}\left[\left(\Phi_1^\dagger\Phi_2 \right)^2+\left(\Phi_2^\dagger\Phi_1\right)^2 \right]
 \end{align*}
+All the parameters $\lambda_i, m_{ij}$ are real. This potential is minimized for non-zero vacuum expectation values of $\Phi_i$:
+\begin{align}
+\langle\Phi_i\rangle_0=\vdoublet{0}{\frac{v_i}{\sqrt{2}}}
+\end{align}
+The complex scalar $SU(2)$ doublets $\Phi_i$ can be expressed in terms of eight real fields as follows:
+\begin{equation}
+\Phi_i = \vdoublet{\phi_i^+}{\frac{1}{\sqrt{2}}(v_i+\rho_i+i\eta_i)}
+\end{equation}
+The process of electroweak symmetry breaking causes three of these fields to be 'eaten' by the \emph{W} and \emph{Z} bosons, and the remaining five are manifested as physical scalar fields. These consist of a pair of CP-even neutral scalars \emph{h} and \emph{H}, a CP-odd pseudoscalar \emph{A}, and a charged scalar $H^\pm$.
 
 \subsection{The Type-II 2HDM}
 
@@ -31,14 +45,42 @@ The interactions of these additional scalar particles are given by the Yukawa te
 \left(\xi_h^f \overline{f}fh+\xi_H^f \overline{f}fH-i\xi_A^f \overline{f}\gamma_5fA \right)\\
 &-\left\{\frac{\sqrt{2}V_{ud}}{v}\overline{u}\left(m_u\xi_A^uP_l+m_d\xi_A^dP_R\right)dH^+ + \frac{\sqrt{2}m_l\xi^l_A}{v}\overline{\nu}_Ll_RH^+ + h.c.\right\}
 \end{align*}
-\section{Supersymmetry and the MSSM}
+\section{Supersymmetry and the MSSM}\label{sec:supersymmetry}
 \subsection{Motivations}
 \subsubsection{The hierarchy problem}
-The mass of the Higgs boson is not protected by any symmetry, and so is highly susceptible to quantum corrections. However, we see that the mass is 126 GeV. Thus, quantum corrections much larger than its mass have to be canceled out somehow. An elegant mechanism for doing this is \emph{supersymmetry}.
+
+For example, if the Higgs couples to a heavy fermion \emph{f} with a coupling strength $\lambda_f$, the one-loop correction to the higgs mass takes the form
+\[\Delta m_H^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda_\text{UV}^2 + ...\]
+while the one-loop correction from a heavy scalar \emph{S} with a coupling strength $\lambda_S$ takes the form
+\[\Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda_\text{UV}^2 + ...\right]\]
+
+These contributions will cancel out if there exists a symmetry that relates bosons and fermions. This symmetry is known as \emph{supersymmetry}
 \subsubsection{Stable dark matter candidate}
 The MSSM has a new kind of symmetry known as \emph{R-parity}. The consequence of this is that the lightest supersymmetric particle (LSP) must be absolutely stable, that is, it cannot decay further into other particles.
 \subsubsection{Gauge coupling unification}
 The MSSM leads to the unification of the strong and electroweak forces at high energies, similar to how the electromagnetic and weak forces unify at high energies.
+
+\begin{marginfigure}
+\feynmandiagram [layered layout, horizontal=b to c] { 
+	a -- [scalar] b -- [fermion, half left] c -- [fermion, half left] b, c -- [scalar] d,
+ };
+\begin{tikzpicture}
+\begin{feynman}
+	\vertex (a);
+	\vertex [right=2.3cm of a] (b);
+	\vertex [right=2.3cm of b] (c);
+	\vertex [above=1cm of b] (d);
+\diagram*{
+	{[edges = scalar]
+	(a) -- (b) -- (c),
+	(b) -- [half left] (d) -- [half left] (b),
+},
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{One-loop corrections from fermions and scalars to the Higgs mass.}
+\end{marginfigure}
+
 \subsection{Supersymmetry basics}
 \subsubsection{Chiral and gauge supermultiplets}
 \subsubsection{Interactions}
@@ -73,8 +115,8 @@ The factors $f^{abc}$ represent the structure constants of the gauge group. Thus
 \[ig\lambda^{a\dagger}\overline{\sigma}^\mu f^{abc}A_\mu^b\lambda^c\]
 The bino $(\widetilde{B}^0)$ is the superpartner of the SM gauge boson associated with the $U(1)_Y$ (hypercharge) gauge symmetry. Thus, it will transform in the adjoint representation of $U(1)_Y$ as well. However, this implies that there can never be a interaction vertex containing a bino and a gauge boson, since the structure constants for $U(1)_Y$ are all simply 0. In addition, we have previously seen that examining the chiral supermultiplet conaining the higgsino does not yield a neutral higgsino-bino-$Z$ vertex either. The reason that we can consider such a vertex in our signal process is due to the fact that electroweak symmetry breaking induces mixing among neutral higgsinos, binos, and the neutral wino $(\widetilde{W}^0)$, the superpartner of the $W_\mu^3$ gauge field associated with the SM $SU(2)_L$ gauge symmetry that mixes with $B_\mu$ to form the $Z$ boson and photon.
 
-\section{Dark Matter}
-\subsection{History of Dark Matter}\label{history-of-dark-matter}
+\section{Dark Matter}\label{sec:dark_matter}
+\subsection{History of Dark Matter}\label{subsec:history-of-dark-matter}
 
 In 1933, the Swiss astronomer Fritz Zwicky turned his telescope to the night sky to measure the velocities of galaxies in a particular galaxy cluster known as the Coma cluster. He discovered that the visible matter in this cluster could not account for the speeds at which the galaxies were moving. He postulated that there must be some matter that does not emit light, but has mass and interacts only gravitationally with known matter. He termed this `Dunkle materie', or \emph{dark matter}. The evidence for dark matter has only continued to grow since then, and we now know that there is far more of it in the universe than there is regular, or \emph{baryonic} matter. The nature of dark matter is one of the most compelling mysteries in physics today.
 
@@ -234,8 +276,7 @@ In this non-relativistic limit, this simplifies to
 \[\langle\sigma v\rangle \approx b_0 + \frac{3}{2}b_1x^{-1} + ...\]
 The coefficients $b_0, b_1, ...$ correspond to \emph{s}-wave, \emph{p}-wave annihilation, and so on.
 \begin{figure}
-  \begin{sidecaption}{Illustration of the freeze-out mechanism}
   % \includegraphics[width=\textwidth]{images/relic_density.pdf}
     \input{code/relic_density.pgf}
-\end{sidecaption}
+  \caption{Illustration of the freeze-out mechanism}
 \end{figure}
