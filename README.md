@@ -1,3 +1,4 @@
 The repo for my dissertation.
 
-To build, just type 'make'.
+To build, just do
+```make```
