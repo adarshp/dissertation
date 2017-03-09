@@ -9,7 +9,7 @@ In this chapter we will describe the components of the Standard Model (SM) of pa
 
 The fundamental constituents of matter are fermions. They come in two varieties - quarks and leptons. Quarks are found in places such as atomic nuclei and in cosmic rays mesons that bombard the Earth on a regular basis. The most well-known example of leptons are electrons, that orbit atomic nuclei, but there are many other flavors of leptons as well. The full lists of quarks and leptons in the SM can be found in tables \ref{tab:quarks} and \ref{tab:leptons}. The particles that mediate the interactions between these are called \emph{gauge bosons}, and are listed in table \ref{tab:gaugebosons}. The photon is the mediator of the electromagnetic force, the $W$ and $Z$ bosons mediate the weak force, which is responsible for radioactive decay, and gluons mediate the strong force between quarks, which is responsible for the formation of protons, neutrons and other heavy particles.
 
-\begin{margintable}[-10cm]
+\begin{margintable}[-15cm]
   \centering
   \begin{tabular}{c|l}
     Symbol & Name \\
@@ -25,7 +25,7 @@ The fundamental constituents of matter are fermions. They come in two varieties 
   \label{tab:quarks}
 \end{margintable}
 
-\begin{margintable}[-3cm]
+\begin{margintable}[-8cm]
   \centering
 \begin{tabular}{c|c}
     Symbol & Name \\
@@ -41,7 +41,7 @@ The fundamental constituents of matter are fermions. They come in two varieties 
   \label{tab:leptons}
 \end{margintable}
 
-\begin{margintable}
+\begin{margintable}[-1cm]
   \centering
 \begin{tabular}{c|l}
     Symbol & Name \\
@@ -524,16 +524,33 @@ When we discussed fermion masses, we glossed over an interesting feature of the 
   \end{pmatrix}
 \end{equation}
 
-This matrix is nearly diagonal, with the terms getting increasingly smaller as we go off the diagonal. 
+This matrix has been experimentally determined to be nearly diagonal, with the elements getting smaller as they are further off-diagonal.
 
-\section{Asymptotic freedom}
+\section{Asymptotic freedom and QCD}
+In the 50s and 60s, experiments were devised to unravel the structure of the proton. They found two seemingly incompatible results: on the one hand, colliding protons resulted in the production of a large number of pions collinear with the beam axis, implying that the protons could not absorb a large momentum transfer. However, deep inelastic scattering experiments showed that it was possible for an energetic electron to undergo hard electrmagnetic scattering off a proton. These disparate phenomena were reconciled by the introduction of the \emph{parton model} by Bjorken and Feynman. In this model, hadrons were comprised of a collection of loosely bound pieces, known as partons. To an energetic incoming electron, these partons would appear approximately free, allowing it to scatter with a large momentum transfer off of one of them. The struck parton will then exchange momentum softly via the strong interaction among the other partons, which results in the production of a \emph{jet} of hadrons, collinear with the direction of the original struck parton. The deeper reason for this behavior is that these partons are charged under a non-Abelian gauge group, $SU(3)$. The phenomenon of the weakening of the strong interaction at large momentum transfers is known as \emph{asymptotic freedom}, and it is a property of non-Abelian gauge theories.
+
+The $\beta$-function of a gauge theory describes the evolution of the coupling constant with energy. For non-Abelian gauge theories, it takes the following form (up to leading order):
+\begin{equation}
+  \beta(g_R) = \mu\frac{d}{d\mu}g_R = -\frac{g_R^3}{(4\pi)^2}\left[\frac{11}{3}C_A -\frac{4}{3}n_fT_F\right]
+\end{equation}
+where $\mu$ is the renormalization scale, $C_A$ is the quadratic Casimir operator for the adjoint representation, and $T_F$ is the \emph{index} of the fundamental representation.
+In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus $C_A = 3$ and $T_F = \slantfrac{1}{2}$. If $n_f$, the number of quark flavors is less than 17 \footnote{Which it is, since the number of quark flavors is six, as can be seen in \autoref{tab:quarks}.}, the $\beta$ function has a \emph{negative} sign, which means that the coupling \emph{decreases} at higher energies. This is the underlying basis of asymptotic freedom. The theory of the strong interaction is known as \emph{quantum chromodynamics}, or QCD for short. The analogue of electric charge for this theory is a quantity referred to as \emph{color} (hence the name of the theory). The gauge fields that mediate this interaction, that correspond to the generators of $SU(3)$, are known as \emph{gluons}. 
+\begin{marginfigure}[-15cm]
+  \includegraphics[width=0.8\textwidth]{images/proton_innards}
+\caption{A representation of the innards of a proton, showing the dynamic structure. Image source:\citep{proton_structure}}
+\end{marginfigure}
 
 \section{Limits of the Standard Model}
-By now we have reached the frontier of particle physics. The community is 
+The Standard Model of particle physics has been remarkably successful, and over the decades has yielded some of the most precise measurements in all of physics. However, as mentioned in \autoref{ch:introduction}, there still remain unresolved issues with the SM. Some of the more pressing ones include the following.
 
-We still don't know what dark matter is
+\paragraph{Quantum Gravity} So far we have seen that the SM explains the electromagnetic, weak, and strong interactions. As it turns out, gravity can be cast as a quantum field theory, with the gravitational force mediated by spin-2 particles known as \emph{gravitons}. The trouble is that, like Fermi's theory of weak interactions, it is a non-renormalizable theory, valid only much below the Planck scale. Just as Fermi's theory was shown to be a low-energy effective approximation for the Glashow-Weinberg-Salam theory of weak interactions, it is believed that quantized general relativity is similarly a low-energy approximation to some underlying theory that is perturbative at the Planck scale as well. The pre-eminent contender for a perturbative theory of quantum gravity is \emph{string theory}, which describes particles as strings of finite size that propagate through space-time and interact with each other. Another approach is based upon discretizing space-time itself, and is known as \emph{loop quantum gravity}.
 
-test l
+\paragraph{Neutrino masses} Experiments have shown that neutrinos have a small mass, in conflict with the Standard Model, which predicts massless neutrinos. 
+\paragraph{Hierarchy problem}
+The hierarchy problem refers to the unusual sensitivity of the Higgs potential to any new physics at higher energy scales. While the masses of fermions and gauge bosons are protected by symmetries, no such symmetry protects the mass of the Higgs boson. 
+\paragraph{Baryon asymmetry} The SM by itself does not explain the magnitude of the imbalance between matter and antimatter in the universe. We need some additional mechanism to do so.
+\paragraph{The strong CP problem} While the weak interactions violate parity, we observe that the strong interactions do not. However, it is possible to write a term in the Lagrangian that is CP-violating, but this term is vanishingly small. There is no a priori reason that this term must be so small, and thus it is an example of a \emph{fine-tuning} problem, similar to the hierarchy problem discussed previously, and is known as the \emph{strong CP problem}.
+\paragraph{Dark Matter}
+Experiments have shown that visible matter accounts for only a small fraction of the universe. The majority consists of \emph{dark energy} and \emph{dark matter}. The SM has no viable dark matter candidate, and clearly needs to be augmented to satisfactorily incorporate dark matter.
 
-Why does the Higgs have the mass it does? (Hierarchy problem)
-Neutrino masses?
+Clearly there is much motivation to come up with extensions to the Standard Model. In the next chapter, we will discuss a few of them.
