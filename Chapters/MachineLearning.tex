@@ -10,4 +10,19 @@ In the context of particle physics, a \emph{binary classifier} is a function tha
 
 
 \section{Boosted Decision Trees}
+
+\begin{algorithm}
+\caption{The AdaBoost.M1 Algorithm}\label{adaboost}
+\begin{algorithmic}[0]
+\For{m = 1 to \emph{M}}
+\State Fit a classifier
+\State Compute error 
+\[\text{err}_m = \frac{\sum_{i = 1}^N w_i I(y_i\neq G_m(x_i))}{\sum_{i=1}^N w_i}\]
+\State Compute $\alpha_m = \log[(1-\text{err}_m/\text{err}_m)]$
+\State Set $w_i\gets w_i\cdot \exp[\alpha_m\cdot I(y_i\neq G_m(x_i))], i = 1,2,...N$
+\EndFor
+\State Output $G(x) = \text{sign}\left[\sum_{m=1}^M\alpha_mG_m(x)\right]$
+\end{algorithmic}
+\end{algorithm}
+
 \section{Implementation details}

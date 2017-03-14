@@ -5,6 +5,7 @@
 \usepackage{shellesc}
 \usepackage{luaotfload}
 \usepackage{slashed}
+\usepackage{algpseudocode, algorithm}
 \usepackage{silence}% http://ctan.org/pkg/silence
 \WarningFilter{fontaxes}{I don't know how to decode}
 \usepackage{tikz-feynman}
@@ -158,17 +159,17 @@
 \sideparmargin{outer}
 
 \renewcommand*{\sideparfont}{\normalfont\footnotesize}
-\marginparmargin{right}
+\marginparmargin{outer}
 % Style the chapter entries in the Table of Contents
 \renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
 \captionstyle[\centering]{\footnotesize}
 \captionnamefont{\footnotesize}
 
 % Set section, subsection, and subsubsection heading styles
-\setsecheadstyle{\bfseries\sffamily}
+%\setsecheadstyle{\bfseries\sffamily}
 % \setsecheadstyle{\sscshape\MakeTextLowercase}
-\setsubsecheadstyle{\itshape}
-\setsubsubsecheadstyle{\sffamily}
+%\setsubsecheadstyle{\itshape}
+%\setsubsubsecheadstyle{\sffamily}
 
 % Reduce spacing between list items
 \tightlists
@@ -180,7 +181,7 @@
 \createmark{section}{right}{nonumber}{}{}
 \makeoddhead{tufte}{}{}{\scshape\MakeTextLowercase{\leftmark}~~|~~\thepage}
 \makeevenhead{tufte}{\thepage~~|~~\scshape\MakeTextLowercase{\rightmark}}{}{}
-% \makerunningwidth{tufte}[8in]{8in}
+ \makerunningwidth{tufte}[8in]{8in}
 \aliaspagestyle{chapter}{empty}
 \nouppercaseheads
 \pagestyle{tufte}
@@ -215,7 +216,7 @@
 	\setlength{\midchapskip}{15mm}
 	\renewcommand*{\printchapternum}{%
         \begin{marginfigure}[0pt]
-          \resizebox{!}{\midchapskip}{\emph{\thechapter}}
+          \resizebox{!}{\midchapskip}{\color{Maroon}\emph{\thechapter}}
         \end{marginfigure}
       }
 	\renewcommand{\afterchapternum}{} 
@@ -225,6 +226,7 @@
 	  \vskip\onelineskip \hrule\vskip\onelineskip}
 }
 \chapterstyle{bringhurst}
+\headstyles{bringhurst}
 \hangsecnum
 \checkandfixthelayout
 

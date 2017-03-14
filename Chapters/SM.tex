@@ -56,7 +56,7 @@ The fundamental constituents of matter are fermions. They come in two varieties 
 \end{margintable}
 
 \subsection{Free fermions}
-In the absence of interactions, the dynamics of a free fermion field \psi are described by the Lagrangian
+In the absence of interactions, the dynamics of a free fermion field $\psi$ are described by the Lagrangian
 \begin{align}
   \L_\text{fermion} = i\overline{\psi}\slashed{\partial}_\mu\psi-m_{\psi}\overline{\psi}\psi.
 \label{eq:fermion_lagrangian}
@@ -70,8 +70,8 @@ The concept of gauge invariance arose in the context of electrodynamics, with th
   A_\mu\rightarrow A_\mu + \partial_\mu \lambda(x),
   \label{eq:gauge_transformation}
 \end{align}
-where $\lambda(x)$ is an arbitrary scalar function, the electromagnetic Lagrangian remains invariant. In a quantum mechanical system, the requirement that physical observables are not to change under gauge transformations is ensured by the simultaneous transformation of the state kets as $|\psi\rangle\rightarrow e^{i\lambda(x)}|\psi\rangle$ \citep{Sakurai2010}. The modern interpretation of gauge invariance%
-\footnote{The origin of the term `gauge invariance' lies in Hermann Weyl's attempt to describe electromagnetism as a geometric theory, similar to gravity, in 1916. He hoped to recover electromagnetism by imposing an invariance, termed \emph{eichinvarianz} (which translates to gauge invariance in English)  under local scale transformations, and identifying the scale factor with the electromagnetic vector potential $A_\mu$. Although this attempt was unsuccessful, the term was retained when it was discovered the correct way forward was to impose invariance under \emph{phase} transformations instead of scale transformations. For a history of the origins of gauge invariance, see \citep{Jackson2001}.}%
+where $\lambda(x)$ is an arbitrary scalar function, the electromagnetic Lagrangian remains invariant. In a quantum mechanical system, the requirement that physical observables are not to change under gauge transformations is ensured by the simultaneous transformation of the state kets as $|\psi\rangle\rightarrow e^{i\lambda(x)}|\psi\rangle$ \citep{Sakurai2010}. The modern interpretation of gauge invariance
+\footnote{The origin of the term `gauge invariance' lies in Hermann Weyl's attempt to describe electromagnetism as a geometric theory, similar to gravity, in 1916. He hoped to recover electromagnetism by imposing an invariance, termed \emph{eichinvarianz} (which translates to gauge invariance in English)  under local scale transformations, and identifying the scale factor with the electromagnetic vector potential $A_\mu$. Although this attempt was unsuccessful, the term was retained when it was discovered the correct way forward was to impose invariance under \emph{phase} transformations instead of scale transformations. For a history of the origins of gauge invariance, see \citep{Jackson2001}.}
  is a geometric one, usually discussed among mathematicians in terms of fiber bundles and connections \citep{Cheng1985}. A full geometric treatment of this topic is however beyond the scope of this work.
 
  In this section, we will show an example of the remarkable consequences of gauge symmetry. Consider the free fermion Lagrangian in \autoref{eq:fermion_lagrangian}. If we require that it is invariant under the transformation
@@ -100,7 +100,7 @@ The second term on the right hand side of \autoref{eq:fermion_kinetic} is the in
 \mathcal{L}_\text{gauge, kinetic} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
 \end{equation}
 %
-where $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$, and the factor $\slantfrac{1}{4}$ is just a convenient normalization convention. The astute reader will notice that this has begun to look suspiciously like the Lagrangian density for the classical electromagnetic field. Indeed, if we identify the coupling constant $g$ with the electric charge of the fermion $\psi$, that is exactly what it is! The function $\frac{1}{g} \theta(x)$ can be identified with the function $\lambda(x)$ in \autoref{eq:gauge_transformation}. Combining the terms from equations \ref{eq:fermion_lagrangian}, \ref{eq:fermion_kinetic}, and \ref{eq:L_gauge_kin}, and replacing $g$ by $e$ to represent electric charge, we are led uniquely to the \textsc{qed} Lagrangian,
+where $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$, and the factor $\frac{1}{4}$ is just a convenient normalization convention. The astute reader will notice that this has begun to look suspiciously like the Lagrangian density for the classical electromagnetic field. Indeed, if we identify the coupling constant $g$ with the electric charge of the fermion $\psi$, that is exactly what it is! The function $\frac{1}{g} \theta(x)$ can be identified with the function $\lambda(x)$ in \autoref{eq:gauge_transformation}. Combining the terms from equations \ref{eq:fermion_lagrangian}, \ref{eq:fermion_kinetic}, and \ref{eq:L_gauge_kin}, and replacing $g$ by $e$ to represent electric charge, we are led uniquely to the \textsc{qed} Lagrangian,
 \begin{equation}
   \mathcal{L}_\text{QED} = i\overline{\psi}\slashed{\partial}_\mu\psi - m\overline{\psi}\psi + e\overline{\psi}A_\mu\psi -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
 \end{equation}
@@ -141,7 +141,7 @@ where the pair of fields $(\psi', \psi)$ can be $(\nu_e, e)$, $(\nu_\mu,\mu)$, $
 \begin{equation}
   \psi_\text{Dirac} = \begin{pmatrix}\psi_L\\\psi_R\end{pmatrix} 
 \end{equation}
-Where $\psi_L$ and $\psi_R$ are called a \emph{left-handed} and \emph{right-handed} Weyl spinor respectively. These can be obtained by applying the projection operators $P_L = \slantfrac{1}{2}(1-\gamma^5)$ and $P_R = \slantfrac{1}{2}(1+\gamma^5)$  
+Where $\psi_L$ and $\psi_R$ are called a \emph{left-handed} and \emph{right-handed} Weyl spinor respectively. These can be obtained by applying the projection operators $P_L = \frac{1}{2}(1-\gamma^5)$ and $P_R = \frac{1}{2}(1+\gamma^5)$  
 to the Dirac field as follows:
 \begin{align}
   P_L\psi_\text{Dirac} =
@@ -232,10 +232,10 @@ V(\phi) = \frac{\lambda}{4}\left(\phi^2 - \frac{m^2}{\lambda}\right)^2
 \begin{marginfigure}
 \begin{tikzpicture}
 \begin{axis}[width=1.9in,axis x line=middle, axis y line=center, 
-			ticks=none, xlabel= $\phi$, ylabel = $V(\phi)$,
-			xlabel near ticks,
-			]
-\addplot+[mark=none,smooth] (\x,{(\x^2 - 10)^2});
+            ticks=none, xlabel= $\phi$, ylabel = $V(\phi)$,
+            xlabel near ticks,
+            ]
+\addplot+[mark=none,smooth](\x,{(\x^2 - 10)^2});
 \end{axis}
 \end{tikzpicture}
 \caption{The potential described in \autoref{eq:single_real_field_potential}, as a function of a spatially constant field $\phi$.}
@@ -245,7 +245,7 @@ This Lagrangian is invariant under the reflection of the field, $\phi\rightarrow
 \begin{align}
 \mathcal{H} = \frac{\partial\mathcal{L}}{\partial\dot{\phi}}\dot{\phi} - \mathcal{L} = \frac{1}{2}(\partial_0\phi)^2+ \frac{1}{2}(\nabla\phi)^2+ V(\phi).
 \end{align}
-The quantity $\mathcal{H}$ corresponds to an energy density, with kinetic energy $\slantfrac{1}{2}(\partial_0\phi)^2$ and potential energy $\slantfrac{1}{2}(\nabla\phi)^2 + V(\phi)$. Since $(\nabla\phi)^2 \geq 0$, the minimum of this potential energy is achieved when $\nabla\phi = 0$, that is, the field must be a constant in space - let us denote this minimum constant value by $\phi_0$. The two possibilities for $\phi_0$ that minimize the potential in \autoref{fig:single_real_field} are $\phi_0 = \pm\sqrt{m^2/\lambda}$. The ground state of the theory must correspond to one of these.
+The quantity $\mathcal{H}$ corresponds to an energy density, with kinetic energy $\frac{1}{2}(\partial_0\phi)^2$ and potential energy $\frac{1}{2}(\nabla\phi)^2 + V(\phi)$. Since $(\nabla\phi)^2 \geq 0$, the minimum of this potential energy is achieved when $\nabla\phi = 0$, that is, the field must be a constant in space - let us denote this minimum constant value by $\phi_0$. The two possibilities for $\phi_0$ that minimize the potential in \autoref{fig:single_real_field} are $\phi_0 = \pm\sqrt{m^2/\lambda}$. The ground state of the theory must correspond to one of these.
 
 Since it does not matter which minimum we choose, we can arbitrarily choose the positive value. This is known as the the \emph{vacuum expectation value} (\textsc{vev}). Having chosen this minimum, we can rewrite our Lagrangian in terms of the field $\phi' = \phi - \sqrt{m^2/\lambda}$ (note that we can do this because the physics remains the same under this translational redefinition of the field):
 
@@ -254,18 +254,18 @@ Since it does not matter which minimum we choose, we can arbitrarily choose the 
 V_\text{eff}(\phi') = \frac{\lambda}{4} + \sqrt{\frac{m^2}{\lambda}}\phi'^3 + m^2\phi'^2
 \label{eq:potential_hidden_symmetry}
 \end{align}
-\begin{marginfigure}
-\begin{tikzpicture}
-\begin{axis}[width=1.9in,axis x line=middle, axis y line=center, 
-			ticks=none, xlabel= $\phi'$, ylabel = $V_\text{eff}(\phi')$,
-			xlabel near ticks,
-			]
-\addplot+[mark=none,smooth] (\x,{10*\x^3 + 40*\x^2});
-\end{axis}
-\end{tikzpicture}
-\caption{The potential (\autoref{eq:potential_hidden_symmetry}) `seen' by the ground state, as a function of a spatially constant field $\phi'$.}
-\label{fig:hidden_symmetry}
-\end{marginfigure}
+%\begin{marginfigure}
+%\begin{tikzpicture}
+%\begin{axis}[width=1.9in,axis x line=middle, axis y line=center, 
+			%ticks=none, xlabel= $\phi'$, ylabel = $V_\text{eff}(\phi')$,
+			%xlabel near ticks,
+			%]
+%\addplot+[mark=none,smooth] {10*x^3 + 40*x^2};
+%\end{axis}
+%\end{tikzpicture}
+%\caption{The potential (\autoref{eq:potential_hidden_symmetry}) `seen' by the ground state, as a function of a spatially constant field $\phi'$.}
+%\label{fig:hidden_symmetry}
+%\end{marginfigure}
 
 This Lagrangian is no longer symmetric under reflection, i.e. it is not invariant under the transformation $\phi'\rightarrow -\phi'$. This potential is minimized at $\phi' = 0$, which is convenient for performing perturbation theory. The mass of physical particles corresponding to quantum fluctuations of this vacuum is given by $V''_\text{eff}~|_{\phi' = 0} = \sqrt{2}m$. Note that we have not done anything to the system to break this symmetry. The symmetry of the original Lagrangian is contained in the relationships between the coefficients of the terms of the new Lagrangian. Keeping the above in mind, it might be more helpful to think about the symmetry as being \emph{hidden} by choosing a particular \textsc{vev}.
 
@@ -447,13 +447,13 @@ The different charges of the SM fermions under the operators $T_3, Y$, and $Q$ a
   \begin{tabular}{lrrr}
     Field & $T_3$ & $Y$ & $Q$ \\
   \hline
-  $\nu_L$   & $\slantfrac{1}{2}$    & -$\slantfrac{1}{2}$   & 0\\
-  $l_L$     & -$\slantfrac{1}{2}$   & -$\slantfrac{1}{2}$   & -1\\
+  $\nu_L$   & $\frac{1}{2}$    & -$\frac{1}{2}$   & 0\\
+  $l_L$     & -$\frac{1}{2}$   & -$\frac{1}{2}$   & -1\\
   $l_R$     &        0              &                  -1   & -1\\
-  $u_L$     &  $\slantfrac{1}{2}$   &   $\slantfrac{1}{6}$  & $\slantfrac{2}{3}$\\
-  $u_R$     &        0              &   $\slantfrac{2}{3}$  & $\slantfrac{2}{3}$\\
-  $d_L$     &        0              &                  -1   & -$\slantfrac{1}{3}$\\
-  $d_R$     &  -$\slantfrac{1}{2}$  &   $\slantfrac{1}{6}$  & -$\slantfrac{1}{3}$\\
+  $u_L$     &  $\frac{1}{2}$   &   $\frac{1}{6}$  & $\frac{2}{3}$\\
+  $u_R$     &        0              &   $\frac{2}{3}$  & $\frac{2}{3}$\\
+  $d_L$     &        0              &                  -1   & -$\frac{1}{3}$\\
+  $d_R$     &  -$\frac{1}{2}$  &   $\frac{1}{6}$  & -$\frac{1}{3}$\\
   \end{tabular}
   \caption{Charges of the various fields. Here, we have grouped the fields as follows:
       $l \in \{e, \mu, \tau\}$,
@@ -534,7 +534,7 @@ The $\beta$-function of a gauge theory describes the evolution of the coupling c
   \beta(g_R) = \mu\frac{d}{d\mu}g_R = -\frac{g_R^3}{(4\pi)^2}\left[\frac{11}{3}C_A -\frac{4}{3}n_fT_F\right]
 \end{equation}
 where $\mu$ is the renormalization scale, $C_A$ is the quadratic Casimir operator for the adjoint representation, and $T_F$ is the \emph{index} of the fundamental representation.
-In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus $C_A = 3$ and $T_F = \slantfrac{1}{2}$. If $n_f$, the number of quark flavors is less than 17 \footnote{Which it is, since the number of quark flavors is six, as can be seen in \autoref{tab:quarks}.}, the $\beta$ function has a \emph{negative} sign, which means that the coupling \emph{decreases} at higher energies. This is the underlying basis of asymptotic freedom. The theory of the strong interaction is known as \emph{quantum chromodynamics}, or QCD for short. The analogue of electric charge for this theory is a quantity referred to as \emph{color} (hence the name of the theory). The gauge fields that mediate this interaction, that correspond to the generators of $SU(3)$, are known as \emph{gluons}. 
+In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus $C_A = 3$ and $T_F = \frac{1}{2}$. If $n_f$, the number of quark flavors is less than 17 \footnote{Which it is, since the number of quark flavors is six, as can be seen in \autoref{tab:quarks}.}, the $\beta$ function has a \emph{negative} sign, which means that the coupling \emph{decreases} at higher energies. This is the underlying basis of asymptotic freedom. The theory of the strong interaction is known as \emph{quantum chromodynamics}, or QCD for short. The analogue of electric charge for this theory is a quantity referred to as \emph{color} (hence the name of the theory). The gauge fields that mediate this interaction, that correspond to the generators of $SU(3)$, are known as \emph{gluons}. 
 \begin{marginfigure}[-15cm]
   \includegraphics[width=0.8\textwidth]{images/proton_innards}
 \caption{A representation of the innards of a proton, showing the dynamic structure. Image source:\citep{proton_structure}}

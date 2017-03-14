@@ -4,60 +4,190 @@ In the previous chapter, we covered the Standard Model of particle physics and c
 
 \section{Two-Higgs Doublet Models}
 
-Intuitively, it is not too hard to imagine, based on the complex structure of the fermion and gauge sectors, that the scalar sector might well contain members other than a single $SU(2)$ doublet. The types of extensions of the scalar sector are constrained by the value of the parameter $\rho$. For a $SU(2)\times U(1)$ gauge theory, this takes the form (at tree level):
+Intuitively, it is not too hard to imagine, based on the complex structure of the fermion and gauge sectors, that the scalar sector of the Standard Model might well contain members other than a single $SU(2)$ doublet. The possible extensions to the scalar sector are constrained by the value of the parameter $\rho$. For a $SU(2)\times U(1)$ gauge theory, this takes the form (at tree level):
 
 \begin{equation}
 \rho = \frac{\sum_\text{i=1}^n\left[I_i(I_i+1)-\frac{1}{4}Y_i^2Y_i^2\right]v_i}{\sum_\text{i=1}^n\frac{1}{2}Y_i^2v_i}
 \end{equation}
-where $n$ is the number of scalar multiplets with isospin\footnote{Short for \emph{isotopic spin}} $I_i$, hypercharge $Y_i$, and vacuum expectation values of the neutral components $v_i$. This parameter has been experimentally measured to be almost exactly one. The simplest extensions to the scalar sector that satisfy this constraint involve adding additional scalar singlets and doublets. The extensions that add a single additional $SU(2)$ scalar doublet field are collectively known as \emph{Two-Higgs Doublet Models}, or 2HDMs. For a detailed review of 2HDMs, see \citep{Branco2012}, whose treatment we follow closely here.
+%
+where $n$ is the number of scalar multiplets with isospin\footnote{Short for \emph{isotopic spin}} $I_i$, hypercharge $Y_i$, and vacuum expectation values of the neutral components $v_i$. This parameter has been experimentally measured to be almost exactly one. The simplest extensions to the scalar sector that satisfy this constraint involve adding additional scalar singlets and doublets. The ones that add a single additional $SU(2)$ scalar doublet field are collectively known as \emph{Two-Higgs Doublet Models}, or 2HDMs. For a detailed review of 2HDMs, see \citep{Branco2012}, whose treatment we follow closely here.
 
-Adding an additional scalar doublet alleviates some of the problems with the Standard Model that we mentioned at the end of the previous chapter. For example, adding an additional scalar doublet allows us to impose a global $U(1)$ symmetry on the Lagrangian, which in turn allows us to rotate away the CP-violating term in the QCD Lagrangian. 2HDMs can also account for the observed baryon asymmetry of the universe, since they can provide additional sources of CP violation. The strongest motivation for 2HDMs is, however, the hierarchy problem, as will be discussed in \autoref{sec:supersymmetry}. More specifically, supersymmetric theories provide a way to resolve the hierarchy problem. And in these theories, an additional scalar doublet (or simply an additional Higgs doublet) is required to give mass to both up- and down-type fermions, and for the cancellation of anomalies.
+Adding an additional scalar doublet alleviates some of the problems with the Standard Model that we mentioned at the end of the previous chapter. 
+% Strong CP problem
+Lagrangians for Yang-Mills theories can have a renormalizable term that is gauge-invariant but but violates CP, of the form
+\[\mathcal{L}_{\theta} = \theta\epsilon^{\mu\nu\alpha\beta}F_{\mu\nu}^aF_{\alpha\beta}^a\]
+where $\theta$ is some angle, $F_{\mu\nu}$ is the field strength tensor, and $\epsilon^{\mu\nu\alpha\beta}$ is an antisymmetric tensor\footnote{Levi-Civita?}. This term is a total derivative, since it can be written as $2\theta\partial_\mu(\epsilon^{\mu\nu\alpha\beta}A_\nu^aF_{\alpha\beta}^a)$. Thus, it should not contribute to perturbative effects. However, this term can potentially contribute to non-perturbative effects. Additionally, this term can be modified by chiral rotations of the form $\psi\rightarrow \exp(i\gamma_5\theta_F)\psi$. Since physical observables should be independent of the choice of the basis, i.e. $\theta_F$, we should absorb it into $\theta$ by defining a basis-independent phase: $\bar{\theta} = \theta-\theta_F$. For $SU(2)$ and $U(1)$ gauge symmetries, this phase can be set to zero by performing appropriate chiral rotations of the fermion fields. However, no such choice exists for the term corresponding to the the $SU(3)$ group, and thus the CP-violating term in the QCD Lagrangian could in principle by non-zero. A non-zero value of $\bar{\theta}$ would be manifested as non-perturbative effects. For example, the neutron would then have a non-zero electric dipole moment. However, experiments have shown that $\bar{\theta}$ must be vanishingly small, with a stringent upper bound: $\bar{\theta}<10^{-10}$.
+
+Adding an additional scalar doublet allows us to impose a global $U(1)$ symmetry on the Lagrangian, known as \emph{Peccei-Quinn} symmetry. If this symmetry is spontaneously broken, a Goldstone boson arises, which can then be chirally rotated such that $\bar{\theta}$ becomes effectively zero for the ground state.
+% Baryon asymmetry
+Another motivation for 2HDMs is their ability to explain the observed baryon asymmetry of the universe. That is, the amount of matter in the universe is much larger than the amount of antimatter in it. The CP violation in the weak sector the Standard Model cannot account for this imbalance, but 2HDMs, with their complex scalar sector and possible new sources of CP violation, can.
+%
+The strongest motivation for 2HDMs is, however, the potential to resolve the hierarchy problem. More specifically, supersymmetric theories provide a way to resolve the hierarchy problem, as discussed in \autoref{sec:supersymmetry}. These theories require an additional scalar doublet to give mass to both up- and down-type fermions, and for the cancellation of anomalies.
 
 \subsection{The 2HDM Lagrangian}
-The most general scalar potential for two doublets $\Phi_1$ and $\Phi_2$ with hypercharge $+1$ is:
+The most general renormalizable scalar potential for two doublets $\Phi_1$ and $\Phi_2$ with hypercharge $+1$ is:
+
 \begin{align*}
-  V &= m_{11}^2\Phi_1^\dagger\Phi_1 + m_{22}^2\Phi_2^\dagger\Phi_2 - m_{12}^2\left(\Phi_1^\dagger\Phi_2 + \Phi_2^\dagger\Phi_1 \right) + \frac{\lambda_1}{2}\left(\Phi_1^\dagger\Phi_1 \right)^2 + \frac{\lambda_2}{2}\left(\Phi_2^\dagger\Phi_2 \right)^2\\
-&  +\lambda_3\Phi_1^\dagger\Phi_1 \Phi_2^\dagger\Phi_2 + \lambda_4\Phi_1^\dagger\Phi_2 \Phi_2^\dagger\Phi_1 + \frac{\lambda_5}{2}\left[\left(\Phi_1^\dagger\Phi_2 \right)^2+\left(\Phi_2^\dagger\Phi_1\right)^2 \right]
+  V(\Phi_1,\Phi_2) &= m_{11}^2|\Phi_1|^2 + m_{22}^2|\Phi_2|^2 - m_{12}^2\left(\Phi_1^\dagger\Phi_2 + h.c.\right)\\
+&+\frac{\lambda_1}{2}|\Phi_1|^4 + \frac{\lambda_2}{2}|\Phi_2|^4+\lambda_3|\Phi_1|^2|\Phi_2|^2 + \lambda_4|\Phi_1^\dagger\Phi_2|^2\\
+&+\frac{\lambda_5}{2}\left[\left(\Phi_1^\dagger\Phi_2 \right)^2+\lambda_6|\Phi_1|^2(\Phi_1^\dagger\Phi_2)+\lambda_7|\Phi_2|^2(\Phi_1^\dagger\Phi_2) + h.c.\right]
+\label{eq:2HDM_scalar_potential}
 \end{align*}
-All the parameters $\lambda_i, m_{ij}$ are real. This potential is minimized for non-zero vacuum expectation values of $\Phi_i$:
+where $h.c.$ stands for the hermitian conjugate. The parameters $m_{11}, m_{22}$, and $\lambda_{1,2,3,4}$ are real while $m_{12}$ and $\lambda_{5,6,7}$ can be complex. Naively, it would seem that this potential has 14 degrees of freedom - six from the real parameters, and eight from the complex parameters. However, it should be noted that we have the freedom to perform basis transformations, that is, we can write the potential in terms of new doublets $\Phi_a' = \sum_{b=1}^2U_{ab}\Phi_b$. where $U_{ab}$ is a $2\times 2$ unitary matrix. The condition of unitarity implies that $U$ has three degrees of freedom, which can absorb three out of the 14 degrees of freedom listed earlier. Thus, only 11 out of the original 14 degrees of freedom are physical.
+
+In principle, we could proceed with these 11 parameters, however, there are a couple of reasons to attempt to reduce this number. The first is that a large number of free parameters makes a theory less falsifiable, thus reducing its predictive power. The second is that in order to distinguish between pseudoscalars and scalars, CP must be conserved in the Higgs sector. Finally, the potential in \autoref{eq:2HDM_scalar_potential} allows for tree-level flavor-changing neutral currents (FCNC), which are experimentally measured to be highly suppressed. These can be eliminated by introducing discrete or continuous symmetries. Imposing a discrete symmetry such as $\mathcal{Z}_2$, that is, the Lagrangian is invariant under the reflection of one of the doublets: $\Phi_i\rightarrow-\Phi_i$, removes the terms that are odd in $\Phi_i$. This effectively sets $\lambda_6=\lambda_7 = 0$. In principle, this should set $m_{12} = 0$ as well, but we retain this term since it breaks the $\mathcal{Z}_2$ symmetry softly, which relaxes the experimental bounds on the mass spectrum.
+After imposing these constraints, all the remaining parameters $\lambda_{1,2,3,4,5}, m_{11,12,22}$ are real. From here on, we will only consider 2HDMs with these constraints. 
+
+There are four such models, classified based on the coupling patterns of the fermions to the two Higgs doublets. In type-I 2HDMs, all the quarks couple to only one of the Higgs doublets (chosen by convention to be $\Phi_2$. In type-II 2HDMs, the up-type right-handed quarks (\emph{u,c,t}) couple to $\Phi_2$, and the down-type right-handed quarks (\emph{d,s,b}) couple to $\Phi_1$. In both of these models, the right-handed leptons couple to the same doublet as the down-type quarks. There are two other models that do not have tree-level FCNCs. The lepton-specific model is similar to the type-I model, except in this case, the right-handed leptons couple to $\Phi_1$. Similarly, the `flipped' model is similar to the type-II 2HDM, except that the leptons couple to $\Phi_2$. The coupling patterns for these models are collected in \autoref{tab:no_FCNC_2HDMs}.
+
+\begin{margintable}
+\small{
+  \begin{tabular}{lccc}
+	\toprule
+    Model & $u_R^i$ & $d_R^i$  & $e_R^i$\\
+    \midrule
+    Type I          & $\Phi_2$ & $\Phi_2$ & $\Phi_2$\\
+    Type II         & $\Phi_2$ & $\Phi_1$ & $\Phi_1$\\
+    Lepton-specific & $\Phi_2$ & $\Phi_2$ & $\Phi_1$\\
+    Flipped         & $\Phi_2$ & $\Phi_1$ & $\Phi_2$\\
+    \bottomrule
+  \end{tabular}}
+  \caption{2HDMs with flavor conservation.}
+  \label{tab:no_FCNC_2HDMs}
+\end{margintable}
+
+This potential is minimized for non-zero vacuum expectation values of $\Phi_i$:
 \begin{align}
 \langle\Phi_i\rangle_0=\vdoublet{0}{\frac{v_i}{\sqrt{2}}}
 \end{align}
 The complex scalar $SU(2)$ doublets $\Phi_i$ can be expressed in terms of eight real fields as follows:
-\begin{equation}
+\begin{equation}\label{eq:2HDM_doublet_components}
 \Phi_i = \vdoublet{\phi_i^+}{\frac{1}{\sqrt{2}}(v_i+\rho_i+i\eta_i)}
 \end{equation}
-The process of electroweak symmetry breaking causes three of these fields to be 'eaten' by the \emph{W} and \emph{Z} bosons, and the remaining five are manifested as physical scalar fields. These consist of a pair of CP-even neutral scalars \emph{h} and \emph{H}, a CP-odd pseudoscalar \emph{A}, and a charged scalar $H^\pm$.
-
-\subsection{The Type-II 2HDM}
-
-In the type-II 2HDM, $\Phi_2$ couples to right-handed up-type quarks, while $\Phi_1$ couples to right-handed down-type quarks and right-handed leptons. The MSSM, which we will discuss later, is an example of a type-II 2HDM.
+The process of electroweak symmetry breaking causes three of these fields to be `eaten' by the \emph{W} and \emph{Z} bosons, and the remaining five are manifested as physical scalar fields. These consist of a pair of CP-even neutral scalars \emph{h} and \emph{H}, a CP-odd pseudoscalar \emph{A}, and a charged scalar $H^\pm$.
 
 \subsection{The 2HDM mass spectrum}
 
-After electroweak symmetry breaking, there are five mass eigenstates: the CP-even higgses $h$ and $H$, the CP-odd pseudoscalar Higgs $A$, and a pair of charged Higgses $H^\pm$.
+In this section, we will analyze the mass spectrum of flavor-conserving 2HDMs. To do so, we construct the mass matrices by taking derivatives of the scalar potential:
+\[M_{ij} = \frac{\partial V(\Phi_1,\Phi_2)}{\partial\phi_i\partial\phi_j}\]
+where $\phi_{i}$ can be any of the fields $\phi_i^+,\rho_i,\eta_i$ in \autoref{eq:2HDM_doublet_components}. We will also adopt the notation: 
+Applying this procedure to the charged scalar components $\phi_i^\pm$, we obtain their mass matrix $M_{\phi^{\pm}}$:
+\[M_{\phi^\pm} = \left[m_{12}^2-(\lambda_4+\lambda_5)v_1v_2\right]\fourmatrix{v_2/v_1}{-1}{-1}{v_1/v_2}\]
+Diagonalizing this matrix gives us the mass of the charged Higgses:
+\[m_{H^\pm}^2 = (v_1^2+v_2^2)[m_{12}^2/v_1v_2-(\lambda_4+\lambda_5)]\]
+Similarly, the mass matrix for the pseudoscalars is given by
+\[M_{\eta} = \frac{m_A^2}{v_1^2+v_2^2}\fourmatrix{v_2^2}{-v_1v_2}{-v_1v_2}{v_1^2}\]
+Diagonalizing this matrix gives us a massless Goldstone boson $G^0$, corresponding to a zero eigenvalue, and a pseudoscalar Higgs boson $A$, with mass given by:
+\[m_A^2 = (v_1^2+v_2^2)[m_{12}^2/v_1v_2-2\lambda_5]\]
+The diagonalization process amounts to a rotation of the basis vectors by some angle.For the CP-odd and the charged scalars, this angle is the same, and is denoted as $\beta$. Let us now adopt the notation 
+\[s_\theta,c_\theta,t_\theta = \sin\theta,\cos\theta,\tan\theta\]
+for conciseness. In this notation, the mass eigenstates are given by
+\begin{align}
+\vdoublet{A}{G^0} = \fourmatrix{s_\beta}{-c_\beta}{c_\beta}{s_\beta}\vdoublet{\eta_1}{\eta_2}&&\text{and}&&
+\vdoublet{H^\pm}{G^\pm} = \fourmatrix{s_\beta}{-c_\beta}{c_\beta}{s_\beta}\vdoublet{\phi_1^+}{\phi_2^+}.
+\end{align}
+The angle $\beta$ turns out to be a very important one for studying 2HDMs. It also represents the ratio of the vacuum expectation values of the neutral components of the two Higgs doublets: $t_\beta = v_2/v_1$.
+Finally, the mass matrix for the CP-even scalars is given by:
+\[M_{\rho} = -\fourmatrix{m_{12}^2\frac{v_2}{v_1}+\lambda_1v_1^2}{-m_{12}^2+\lambda_{345}v_1v_2}{-m_{12}^2+\lambda_{345}v_1v_2}{m_{12}^2\frac{v_2}{v_1}+\lambda_1v_2^2}\]
+where $\lambda_{345} = \lambda_3+\lambda_4+\lambda_5$. This matrix is diagonalized by rotation of the basis vectors by the angle $\alpha$:
+\[\vdoublet{h}{H} = \fourmatrix{s_\alpha}{-c_\alpha}{-c_\alpha}{-s_\alpha}\vdoublet{\rho_1}{\rho_2}\]
+with the mass eigenstates denoted $h,H$. Traditionally, $h$ is taken to be the ligher of the two particles. 
+
+%\begin{align}
+%v &= v_1^2 + v_2^2
+%\end{align}
+Thus we see that the physical spectrum of 2HDMs contains five mass eigenstates: the CP-even higgses $h$ and $H$, the CP-odd pseudoscalar Higgs $A$, and a pair of charged Higgses $H^\pm$. Incidentally, the standard model Higgs is a combination of the CP-even scalars:
+\begin{equation}
+h_\text{SM} = \rho_1\cos\beta + \rho_2\sin\beta = h\sin(\alpha-\beta)-H\cos(\alpha-\beta)
+\label{eq:h_SM}
+\end{equation}
+
 
 \subsection{Interactions}
 
-The interactions of these additional scalar particles are given by the Yukawa terms of of the Lagrangian:
+\newcommand{\sbma}{s_{\beta-\alpha}}
+\newcommand{\cbma}{c_{\beta-\alpha}}
+\newcommand{\casb}{c_\alpha/s_\beta}
+\newcommand{\sacb}{s_\alpha/c_\beta}
+\newcommand{\sasb}{s_\alpha/s_\beta}
+\begin{table}
+  \[
+    \begin{array}{lrrrr}
+      \toprule
+         & \text{Type I} & \text{Type II} & \text{Lepton-specific} & \text{Flipped}\\
+         \midrule
+      \xi_{hVV} & \sbma & \sbma & \sbma & \sbma \\
+      \xi_{h}^u & \casb & \casb & \casb & \casb \\
+      \xi_{h}^d & \casb & -\sacb & \casb & -\sasb \\
+      \xi_{h}^l & \casb & -\sacb & -\sasb & -\casb \\
+      \xi_{HVV} & \cbma & \cbma  & \cbma & \cbma \\
+      \xi_{H}^u & \sasb & \sasb & \sasb & \sasb \\
+      \xi_{H}^d & \sasb & \casb & \sasb & \casb \\
+      \xi_{H}^l & \sasb & \casb & \casb & \sasb \\
+      \xi_{AVV} & 0     & 0     & 0     & 0 \\
+      \xi_{A}^u & 1/t_\beta & 1/t_\beta & 1/t_\beta & 1/t_\beta \\
+      \xi_{A}^d & -1/t_\beta & t_\beta & -1/t_\beta & t_\beta \\
+      \xi_{A}^l & -1/t_\beta & t_\beta & t_\beta & -1/t_\beta \\
+      \bottomrule
+\end{array}\]
+\caption{List of the factors $\xi$ that determine the Yukawa couplings of the 2HDM Higgs bosons.}
+\label{tab:xi_factors}
+\end{table}
+
+We will first consider the Yukawa interactions of the mass eigenstates with fermions, which are given by:
 \begin{align*}
 \mathcal{L}^{\mathrm{2HDM}}_{\text{Yukawa}} =& - \sum_{f = u, d, l} \frac{m_f}{v}
 \left(\xi_h^f \overline{f}fh+\xi_H^f \overline{f}fH-i\xi_A^f \overline{f}\gamma_5fA \right)\\
 &-\left\{\frac{\sqrt{2}V_{ud}}{v}\overline{u}\left(m_u\xi_A^uP_l+m_d\xi_A^dP_R\right)dH^+ + \frac{\sqrt{2}m_l\xi^l_A}{v}\overline{\nu}_Ll_RH^+ + h.c.\right\}
 \end{align*}
-\section{Supersymmetry and the MSSM}\label{sec:supersymmetry}
-\subsection{Motivations}
-\subsubsection{The hierarchy problem}
+where $f$ is a fermion with mass $m_f$, $u,d$ refer to up- and down-type quarks with masses $m_u,m_d$ and CKM mixing $V_{ud}$, $l$ is a lepton with mass $m_l$, and $\nu_L$ is a neutrino. 
+As for the Yukawa couplings to the vector bosons, we can recover them by recalling that the standard model Higgs is given by
+\begin{equation}
+h_\text{SM} = hs_{\alpha-\beta}-Hc_{\alpha-\beta}.
+\end{equation}
+Thus the couplings of \emph{h} and \emph{H} become rescaled versions of standard model Higgs couplings to the vector bosons. If we represent these couplings by $g_{h_\text{SM}VV}$, where $VV$ can be $ZZ$ or $W^+W^-$, then the Yukawa couplings of the 2HDM Higgses are given by
+\begin{align}
+g_{\phi VV} = \xi_{\phi VV}g_{h_\text{SM}VV},
+\end{align}
+where $\phi = h/H/A$. The factors $\xi$ in the above expressions depend on the specific model being considered, and are listed in \autoref{tab:xi_factors}.
 
-For example, if the Higgs couples to a heavy fermion \emph{f} with a coupling strength $\lambda_f$, the one-loop correction to the higgs mass takes the form
+With a little bit of work (we omit the details for brevity), we can extract the following couplings (see \citep{Kling2016a} for details):
+\begin{align*}
+g_{\gamma H^+H^-} &= -ie(p_{H^+}-p_{H^-})^\mu\\
+g_{ZH^+H^-} &= -i\frac{gc_{2\theta_w}}{2c_{\theta_w}}(p_{H^+}-p_{H^-})^\mu\\
+g_{AH^\pm W^\mp} &= \frac{g}{2}(p_{H^+}-p_{A})^\mu\\
+g_{hAZ} &= is_{\beta-\alpha}\frac{g}{2c_{\theta_w}}(p_A-p_h)^\mu\\
+g_{hH^\pm W^\mp} &= -is_{\beta-\alpha}\frac{g}{2}(p_{H^\pm}-p_h)^\mu\\
+g_{HAZ} &= ic_{\beta-\alpha}\frac{g}{2c_{\theta_w}}(p_A-p_H)^\mu\\
+g_{HH^\pm W^\mp} &= -ic_{\beta-\alpha}\frac{g}{2}(p_{H^\pm}-p_H)^\mu\\
+\end{align*}
+
+The cubic and quartic Higgs couplings can also be worked out explicitly, but we will decline to do so and instead refer the reader to the general expressions in Appendix C of  \citep{Branco2012} and the specific expressions in section 2.3.3 of \citep{Kling2016a}. 
+
+\subsection{The Type-II 2HDM}
+
+As mentioned at the beginning of this chapter, The type-II 2HDM is of special interest since it has the same fermion-Higgs doublet coupling pattern as the MSSM. In fact, the MSSM can be viewed as a special case of a type-II 2HDM, one that incorporates supersymmetry. We will examine the MSSM in more detail in the next section, but will note that if we can recover the tree-level MSSM scalar potential from a type-II 2HDM by setting the parameters $\lambda_i$ to the following values:
+\begin{align}
+\lambda_{1,2} = \frac{g^2+g'^2}{2} &,& \lambda_3 = \frac{g^2-g'^2}{4} &,& \lambda_4 = -\frac{g^2}{2}&,&\lambda_{5,6,7} = 0.
+\end{align}
+It should be noted, however, that these relations do not hold beyond the tree-level for a generic non-supersymmetrized 2HDM.
+
+\section{Supersymmetry and the MSSM}\label{sec:supersymmetry}
+
+\subsection{The hierarchy problem}
+
+If the Higgs couples to a heavy fermion \emph{f} with a coupling strength $\lambda_f$, the one-loop correction to the higgs mass takes the form
 \[\Delta m_H^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda_\text{UV}^2 + ...\]
 while the one-loop correction from a heavy scalar \emph{S} with a coupling strength $\lambda_S$ takes the form
 \[\Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda_\text{UV}^2 + ...\right]\]
 
 These contributions will cancel out if there exists a symmetry that relates bosons and fermions. This symmetry is known as \emph{supersymmetry}
-\subsubsection{Stable dark matter candidate}
-The MSSM has a new kind of symmetry known as \emph{R-parity}. The consequence of this is that the lightest supersymmetric particle (LSP) must be absolutely stable, that is, it cannot decay further into other particles.
-\subsubsection{Gauge coupling unification}
+
+\subsection{Stable dark matter candidate}
+The MSSM has a new kind of symmetry known as \emph{R-parity}. It is an analogue of baryon and lepton number conservation. The Lagrangian of the MSSM is defined to be invariant under the action of the operator $P_R$ on the fields. The eigenvalues of this operator are $(-1)^{3(B-L)+2s}$, where \emph{B, L}, and \emph{s} represent the baryon number, lepton number, and spin of the particle, respectively. The  
+
+The consequence of this is that the lightest supersymmetric particle (LSP) must be absolutely stable, that is, it cannot decay further into other particles.
+\subsection{Gauge coupling unification}
 The MSSM leads to the unification of the strong and electroweak forces at high energies, similar to how the electromagnetic and weak forces unify at high energies.
 
 \begin{marginfigure}
@@ -82,13 +212,7 @@ The MSSM leads to the unification of the strong and electroweak forces at high e
 \end{marginfigure}
 
 \subsection{Supersymmetry basics}
-\subsubsection{Chiral and gauge supermultiplets}
-\subsubsection{Interactions}
-\subsubsection{The superpotential}
-\subsection{The MSSM superpotential}
-\section{Split Supersymmetry}
-
-The non-SM interactions in our signal process are the higgsino-bino-$Z$ and the higgsino-bino-$h$ interactions. To determine their coupling, we can inspect the structure of the MSSM. We will first examine the gauge interactions of higgsino and bino gauge eigenstates. Upon doing this, it will be apparent that there are no interaction terms containing both pure higgsinos and pure binos. The reason is that electroweak symmetry breaking induces mixing among the neutralinos. After this, we will move on to the coupling involving the SM Higgs boson, and see how it is obtained. 
+\subsection{Chiral and gauge supermultiplets}
 All the particles in the MSSM are grouped into structures known as supermultiplets. They come in two varieties: \emph{chiral} and \emph{gauge} supermultiplets. The SM fermions and the components of the SM Higgs doublet reside inchiral supermultiplets, and the SM gauge bosons reside in gauge supermultiplets. Let us first look at what the gauge interactions of a generic chiral and gauge supermultiplet look like.
 For a generic chiral supermultiplet consisting of a complex scalar $\phi$ and its superpartner, a two-component Weyl fermion $\psi$, the kinetic terms are 
 \[\mathcal{L}_{\text{chiral,kinetic,fermion}} = -\partial^\mu\phi^*\partial_\mu\phi + i\psi^{\dagger}\overline{\sigma}^\mu\partial_\mu\psi.\]
@@ -98,6 +222,15 @@ If the Lagrangian density is invariant under gauge transformations of the chiral
   \nabla_\mu\phi^{*i} &= \partial_\mu\phi^{*i} + igA_\mu^a(\phi^*T^a)^{i}\label{eq:phi2}\\
   \nabla_\mu\psi_i &= \partial_\mu\psi_i - igA_\mu^a(T^a\psi)_i\label{eq:psi}
 \end{align}
+
+\subsubsection{Interactions}
+\subsubsection{The superpotential}
+The MSSM superpotential takes the form
+\[W_\text{MSSM} = \bar{u}\mathbf{y_u}QH_u-\bar{d}\mathbf{y_d}Q H_d-\bar{e}\mathbf{y_e}L H_d+\mu H_u H_d \]
+\subsection{The MSSM superpotential}
+\section{Split Supersymmetry}
+
+The non-SM interactions in our signal process are the higgsino-bino-$Z$ and the higgsino-bino-$h$ interactions. To determine their coupling, we can inspect the structure of the MSSM. We will first examine the gauge interactions of higgsino and bino gauge eigenstates. Upon doing this, it will be apparent that there are no interaction terms containing both pure higgsinos and pure binos. The reason is that electroweak symmetry breaking induces mixing among the neutralinos. After this, we will move on to the coupling involving the SM Higgs boson, and see how it is obtained. 
 In the MSSM, there are two $SU(2)_L\times U(1)_Y$ Higgs doublets instead of the one that we encounter in the standard model.
 \[H_u = \begin{pmatrix}H_u^+\\H_u^0\end{pmatrix};
 H_d = \begin{pmatrix}H_d^0\\H_d^-\end{pmatrix}\]
@@ -122,9 +255,10 @@ In 1933, the Swiss astronomer Fritz Zwicky turned his telescope to the night sky
 
 Over the years, there have been many dark matter candidates\footnote{For a while, it was debated whether the effects of dark matter could instead be explained by a deviation of the gravitational force from the usual inverse square law at large length scales. This theory was termed Modified Newtonian Dynamics, or MOND \citep{Milgrom1983}. However, it was shown in 2006 \citep{Clowe2006} that MOND was fundamentally incompatible with the data from the bullet cluster.}, but the most widely accepted view today is that dark matter is comprised of a completely new kind of particle \footnote{Of course, this is not the only possibility. Instead of a single dark matter candidate particle, there could be a 'dark sector' comprised of multiple particles and interactions between them. See (DDM papers) for developments along this line.} that interacts only weakly with the particles of the Standard Model and moves at at non-relativistic speeds.
 
+\strictpagecheck
 \begin{figure}
   \begin{sidecaption}
-    {Rotation curves for a number of spiral galaxies. (Rubin et al.) \url{http://www.annualreviews.org/doi/full/10.1146/annurev.astro.39.1.137\#f4}}
+    {Rotation curves for a number of spiral galaxies. \citep{Sofue2001}}
   \includegraphics[width=\textwidth]{images/rotation_curves}
 \end{sidecaption}
 \end{figure}
@@ -275,6 +409,7 @@ Similarly, the denominator simplifies to $[4\pi m^2TK_2(m/T)]^2$. The functions 
 In this non-relativistic limit, this simplifies to
 \[\langle\sigma v\rangle \approx b_0 + \frac{3}{2}b_1x^{-1} + ...\]
 The coefficients $b_0, b_1, ...$ correspond to \emph{s}-wave, \emph{p}-wave annihilation, and so on.
+
 \begin{figure}
   % \includegraphics[width=\textwidth]{images/relic_density.pdf}
     \input{code/relic_density.pgf}
