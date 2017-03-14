@@ -254,18 +254,18 @@ Since it does not matter which minimum we choose, we can arbitrarily choose the 
 V_\text{eff}(\phi') = \frac{\lambda}{4} + \sqrt{\frac{m^2}{\lambda}}\phi'^3 + m^2\phi'^2
 \label{eq:potential_hidden_symmetry}
 \end{align}
-%\begin{marginfigure}
-%\begin{tikzpicture}
-%\begin{axis}[width=1.9in,axis x line=middle, axis y line=center, 
-			%ticks=none, xlabel= $\phi'$, ylabel = $V_\text{eff}(\phi')$,
-			%xlabel near ticks,
-			%]
-%\addplot+[mark=none,smooth] {10*x^3 + 40*x^2};
-%\end{axis}
-%\end{tikzpicture}
-%\caption{The potential (\autoref{eq:potential_hidden_symmetry}) `seen' by the ground state, as a function of a spatially constant field $\phi'$.}
-%\label{fig:hidden_symmetry}
-%\end{marginfigure}
+\begin{marginfigure}
+\begin{tikzpicture}
+\begin{axis}[width=1.9in,axis x line=middle, axis y line=center, 
+            ticks=none, xlabel= $\phi'$, ylabel = $V_\text{eff}(\phi')$,
+            xlabel near ticks,
+            ]
+\addplot+[mark=none,smooth] {10*x^3 + 40*x^2};
+\end{axis}
+\end{tikzpicture}
+\caption{The potential (\autoref{eq:potential_hidden_symmetry}) `seen' by the ground state, as a function of a spatially constant field $\phi'$.}
+\label{fig:hidden_symmetry}
+\end{marginfigure}
 
 This Lagrangian is no longer symmetric under reflection, i.e. it is not invariant under the transformation $\phi'\rightarrow -\phi'$. This potential is minimized at $\phi' = 0$, which is convenient for performing perturbation theory. The mass of physical particles corresponding to quantum fluctuations of this vacuum is given by $V''_\text{eff}~|_{\phi' = 0} = \sqrt{2}m$. Note that we have not done anything to the system to break this symmetry. The symmetry of the original Lagrangian is contained in the relationships between the coefficients of the terms of the new Lagrangian. Keeping the above in mind, it might be more helpful to think about the symmetry as being \emph{hidden} by choosing a particular \textsc{vev}.
 

@@ -6,8 +6,10 @@
 \usepackage{luaotfload}
 \usepackage{slashed}
 \usepackage{algpseudocode, algorithm}
+\usepackage{pdfpages}
 \usepackage{silence}% http://ctan.org/pkg/silence
 \WarningFilter{fontaxes}{I don't know how to decode}
+\WarningFilter{latex}{Marginpar}
 \usepackage{tikz-feynman}
 \usepackage[tracking]{microtype}
 \usepackage{amsthm}
@@ -66,7 +68,7 @@
 \immediate\write18{mkdir -p pgf-img}  %% Create `pgf-img` directory
 \tikzexternalize[                     %% Activate externalization
   prefix=pgf-img/,                    %% Avoid cluttering the directory
-  system call={lualatex -shell-escape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"},
+  %system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"},
 ]
 
 % ********************************************************************
@@ -274,6 +276,10 @@
 \include{Chapters/Appendix_Group_Theory}
 \include{Chapters/Appendix_Misc}
 \include{Chapters/Appendix_Statistics}
+\chapter{Light Charged Higgs Bosons to AW/HW via top decay}
+%\includepdf[pages=-]{Chapters/LightChargedHiggs}
+\chapter{A Razor search for Bino Dark Matter at 100 TeV}
+%\includepdf[pages=-]{Chapters/dm100TeV}
 \printbibliography
 \include{FrontBackMatter/Colophon}
 \end{document}

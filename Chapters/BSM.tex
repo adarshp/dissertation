@@ -197,14 +197,15 @@ The MSSM leads to the unification of the strong and electroweak forces at high e
 \begin{tikzpicture}
 \begin{feynman}
 	\vertex (a);
-	\vertex [right=2.3cm of a] (b);
-	\vertex [right=2.3cm of b] (c);
-	\vertex [above=1cm of b] (d);
+	\vertex [right=of a] (b);
+	\vertex [right=of b] (c);
+	\vertex [above=of b] (d);
 \diagram*{
-	{[edges = scalar]
-	(a) -- (b) -- (c),
-	(b) -- [half left] (d) -- [half left] (b),
-},
+	{
+      [edges = scalar]
+      (a) -- (b) -- (c),
+      (b) -- [half left] (d) -- [half left] (b),
+    },
 };
 \end{feynman}
 \end{tikzpicture}
