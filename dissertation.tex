@@ -158,6 +158,11 @@
 \setsidecappos{t}
 % Set footnotes in the margin rather than at the foot of the page
 \footnotesinmargin
+\setsidefeet{\marginparsep}{1.9in}{0.2in}{0pt}{\flushleftright\footnotesize}{*}
+\letcountercounter{sidefootnote}{footnote}
+\setlength{\footmarkwidth}{0em}
+\setlength{\footmarksep}{-\footmarkwidth}
+\setlength{\footparindent}{1em}
 \sideparmargin{outer}
 
 \renewcommand*{\sideparfont}{\normalfont\footnotesize}
@@ -262,7 +267,9 @@
 \cleardoublepage
 \include{Chapters/Introduction}
 \include{Chapters/SM}
-\include{Chapters/BSM}
+\include{Chapters/2HDM}
+\include{Chapters/SUSY}
+\include{Chapters/DarkMatter}
 \include{Chapters/ColliderPheno}
 \include{Chapters/MachineLearning}
 % \chapter{Light Charged Higgs bosons at the LHC}
