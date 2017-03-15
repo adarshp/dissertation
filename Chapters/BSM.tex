@@ -175,13 +175,26 @@ It should be noted, however, that these relations do not hold beyond the tree-le
 \section{Supersymmetry and the MSSM}\label{sec:supersymmetry}
 
 \subsection{The hierarchy problem}
+Historically, examining nature at increasing energy scales (and correspondingly decreasing length scales ) has consistently yielded new physics. For example, higher-energy experiments were able to probe the structure of the weak interactions, precisely at the energy scale that the 4-Fermi theory started to fail. Similarly, the challenges listed at the end of \autoref{ch:sm} most likely point to new physics at higher energy scales, between the currently explored weak scale to the reduced Planck scale:
+\begin{equation*}
+M_P = 1/\sqrt{8\pi G} \approx 2.4\times 10^{18} \text{ GeV}
+\end{equation*}
+However, the SM Higgs potential is extremely sensitive to new physics at high energies. The mass of the SM Higgs boson receives large quantum corrections from any new physics at high energies that couples to the Higgs sector. For example, if the Higgs couples to a heavy fermion \emph{f} through a term of the form $-\lambda_fH\bar{f}f$, the one-loop correction to the higgs mass takes the form
+\begin{equation}
+\Delta m_H^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda_\text{UV}^2 + ...
+\label{eq:one_loop_fermion}
+\end{equation}
+where $\Lambda_{UV}$ is some cutoff momentum where the effects of the new physics are expected to manifest themselves. Similarly, the one-loop correction from a heavy scalar \emph{S} through the term $-\lambda_S|H|^2|S|^2$ takes the form
+\begin{equation}
+  \Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda_\text{UV}^2 + ...\right]
+\label{eq:one_loop_scalar}
+\end{equation}
+In both these cases, the size of the correction scales quadratically with the momentum cutoff $\Lambda_{UV}$. Higher-order loop corrections can be shown to be similarly large as well. Thus the `natural' mass of the Higgs would seem to be on the the order of $\Lambda_{UV}$, which could even be as high as the Planck scale. In contrast, the actual mass that we measure is only about 126 GeV. Thus there is a \emph{hierarchy} between the observed and the `natural' mass of the SM Higgs, one of many orders of magnitude. \footnote{Note that even though only the mass of the SM Higgs is directly sensitive to $\Lambda_{UV}$, this sensitivity is propagated to all the other SM particles through their couplings to the SM Higgs.}
+Thus it would seem that any UV completion of the SM would have to come with a host of parameters to tune the counterterms enough to cancel out the quadratic divergences and result in the physical mass we observe experimentally. If the new physics is at the Planck scale, the divergences must cancel to less than one part in $10^{-16}$ to give us a SM Higgs at the weak scale.
+It is obviously undesirable to have to manually tune a large number of parameters to be able to come up with UV completions of the Standard Model - it would be analogous to the geocentric Ptolemaians adding an ever-increasing number of epicycles to explain what would ultimately be more simply and accurately described by Copernicus's heliocentric theory. 
+Looking at the forms of the one-loop corrections in \autoref{eq:one_loop_fermion} and \autoref{eq:one_loop_scalar}, we can see that if $\lambda_f = 2\lambda_S$, the corrections from the scalar and the fermion will cancel out exactly. This suggests that the simplest way to ensure that all quadratic divergences from new physics at high energy scales cancel out is to require some kind of symmetry between fermions and scalars, ensuring that there is a scalar partner for each fermion, or vice versa.
 
-If the Higgs couples to a heavy fermion \emph{f} with a coupling strength $\lambda_f$, the one-loop correction to the higgs mass takes the form
-\[\Delta m_H^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda_\text{UV}^2 + ...\]
-while the one-loop correction from a heavy scalar \emph{S} with a coupling strength $\lambda_S$ takes the form
-\[\Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda_\text{UV}^2 + ...\right]\]
-
-These contributions will cancel out if there exists a symmetry that relates bosons and fermions. This symmetry is known as \emph{supersymmetry}
+This symmetry is known as \emph{supersymmetry}. It is a rich mathematical structure with far-reaching consequences, a lot of which are beyond the scope of this work. For a pedagogical review of supersymmetry, we refer the reader to \citep{Martin1997}. This section provides a necessarily condensed version of the treatment there.
 
 \subsection{Stable dark matter candidate}
 The MSSM has a new kind of symmetry known as \emph{R-parity}. It is an analogue of baryon and lepton number conservation. The Lagrangian of the MSSM is defined to be invariant under the action of the operator $P_R$ on the fields. The eigenvalues of this operator are $(-1)^{3(B-L)+2s}$, where \emph{B, L}, and \emph{s} represent the baryon number, lepton number, and spin of the particle, respectively. The  
@@ -192,19 +205,19 @@ The MSSM leads to the unification of the strong and electroweak forces at high e
 
 \begin{marginfigure}
 \feynmandiagram [layered layout, horizontal=b to c] { 
-	a -- [scalar] b -- [fermion, half left] c -- [fermion, half left] b, c -- [scalar] d,
- };
+  a [particle=\(h\)] -- [scalar] b -- [fermion, half left, edge label=\(f\)] c -- [fermion, half left] b, c -- [scalar] d,
+};
 \begin{tikzpicture}
 \begin{feynman}
-	\vertex (a);
+  \vertex (a){\(h\)};
 	\vertex [right=of a] (b);
 	\vertex [right=of b] (c);
-	\vertex [above=of b] (d);
+    \vertex [above=of b] (d);
 \diagram*{
 	{
       [edges = scalar]
       (a) -- (b) -- (c),
-      (b) -- [half left] (d) -- [half left] (b),
+      (b) -- [half left, edge label=\(S\)] (d) -- [half left] (b),
     },
 };
 \end{feynman}
@@ -412,7 +425,8 @@ In this non-relativistic limit, this simplifies to
 The coefficients $b_0, b_1, ...$ correspond to \emph{s}-wave, \emph{p}-wave annihilation, and so on.
 
 \begin{figure}
+  \begin{sidecaption}{Illustration of the freeze-out mechanism}
   % \includegraphics[width=\textwidth]{images/relic_density.pdf}
     \input{code/relic_density.pgf}
-  \caption{Illustration of the freeze-out mechanism}
+  \end{sidecaption}
 \end{figure}
