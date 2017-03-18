@@ -4,16 +4,43 @@ Historically, examining nature at increasing energy scales (and correspondingly 
 \begin{equation*}
 M_P = 1/\sqrt{8\pi G} \approx 2.4\times 10^{18} \text{ GeV}
 \end{equation*}
-However, the SM Higgs potential is extremely sensitive to new physics at high energies. The mass of the SM Higgs boson receives large quantum corrections from any new physics at high energies that couples to the Higgs sector. For example, if the Higgs couples to a heavy fermion \emph{f} through a term of the form $-\lambda_fH\bar{f}f$, the one-loop correction to the higgs mass takes the form
+However, the SM Higgs potential is extremely sensitive to new physics at high energies. The mass of the SM Higgs boson receives large quantum corrections from any new physics at high energies that couples to the Higgs sector. For example, if the Higgs couples to a heavy fermion \emph{f} through a term of the form $-\lambda_fH\bar{f}f$, the one-loop correction to the higgs mass (\autoref{fig:one_loop_fermion}) takes the form
 \begin{equation}
 \Delta m_H^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda_\text{UV}^2 + ...
 \label{eq:one_loop_fermion}
 \end{equation}
-where $\Lambda_{UV}$ is some cutoff momentum where the effects of the new physics are expected to manifest themselves. Similarly, the one-loop correction from a heavy scalar \emph{S} through the term $-\lambda_S|H|^2|S|^2$ takes the form
+\begin{marginfigure}
+\feynmandiagram [layered layout, horizontal=b to c] { 
+  a [particle=\(h\)] -- [scalar] b -- [fermion, half left, edge label=\(f\)] c -- [fermion, half left] b, c -- [scalar] d,
+};
+\caption{Feynman diagram for the one-loop fermionic correction to the SM Higgs mass}
+\label{fig:one_loop_fermion}
+\end{marginfigure}
+where $\Lambda_{UV}$ is some cutoff momentum where the effects of the new physics are expected to manifest themselves. Similarly, the one-loop correction from a heavy scalar \emph{S} through the term $-\lambda_S|H|^2|S|^2$ (\autoref{fig:one_loop_scalar}) takes the form
 \begin{equation}
   \Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda_\text{UV}^2 + ...\right]
 \label{eq:one_loop_scalar}
 \end{equation}
+\begin{marginfigure}
+\begin{tikzpicture}
+\begin{feynman}
+  \vertex (a){\(h\)};
+	\vertex [right=of a] (b);
+	\vertex [right=of b] (c);
+    \vertex [above=of b] (d);
+\diagram*{
+	{
+      [edges = scalar]
+      (a) -- (b) -- (c),
+      (b) -- [half left, edge label=\(S\)] (d) -- [half left] (b),
+    },
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{Feynman diagram for the one-loop scalar correction to the SM Higgs mass}
+\label{fig:one_loop_scalar}
+\end{marginfigure}
+\strictpagecheck
 In both these cases, the size of the correction scales quadratically with the momentum cutoff $\Lambda_{UV}$. Higher-order loop corrections can be shown to be similarly large as well. Thus the `natural' mass of the Higgs would seem to be on the the order of $\Lambda_{UV}$, which could even be as high as the Planck scale. In contrast, the actual mass that we measure is only about 126 GeV. Thus there is a \emph{hierarchy} between the observed and the `natural' mass of the SM Higgs, one of many orders of magnitude. \footnote{Note that even though only the mass of the SM Higgs is directly sensitive to $\Lambda_{UV}$, this sensitivity is propagated to all the other SM particles through their couplings to the SM Higgs.}
 Thus it would seem that any UV completion of the SM would have to come with a host of parameters to tune the counterterms enough to cancel out the quadratic divergences and result in the physical mass we observe experimentally. If the new physics is at the Planck scale, the divergences must cancel to less than one part in $10^{-16}$ to give us a SM Higgs at the weak scale.
 It is obviously undesirable to have to manually tune a large number of parameters to be able to come up with UV completions of the Standard Model - it would be analogous to the geocentric Ptolemaians adding an ever-increasing number of epicycles to explain what would ultimately be more simply and accurately described by Copernicus's heliocentric theory. 
@@ -37,35 +64,70 @@ The consequence of this is that the lightest supersymmetric particle (LSP) must 
 \section{Gauge coupling unification}
 Another motivation for the MSSM is that it has the right particle content to unify the strong and electroweak couplings at a high energy scale, as seen in \autoref{fig:gauge_coupling_unification}.
 
-\begin{marginfigure}
+\begin{marginfigure}[-4cm]
     \includegraphics[width=\textwidth]{images/gauge_coupling_unification}
   \caption{2-loop RG evolution of inverse gauge couplings in the SM (dashed lines) and the MSSM (solid lines). The sparticle masses are varied between 0.5-1.5 TeV, and $\alpha_3(m_Z)$ is varied between 0.117 and 0.121. Source: \citep{Martin1997}.}
   \label{fig:gauge_coupling_unification}
 \end{marginfigure}
 
-\begin{marginfigure}
-\feynmandiagram [layered layout, horizontal=b to c] { 
-  a [particle=\(h\)] -- [scalar] b -- [fermion, half left, edge label=\(f\)] c -- [fermion, half left] b, c -- [scalar] d,
-};
-\begin{tikzpicture}
-\begin{feynman}
-  \vertex (a){\(h\)};
-	\vertex [right=of a] (b);
-	\vertex [right=of b] (c);
-    \vertex [above=of b] (d);
-\diagram*{
-	{
-      [edges = scalar]
-      (a) -- (b) -- (c),
-      (b) -- [half left, edge label=\(S\)] (d) -- [half left] (b),
-    },
-};
-\end{feynman}
-\end{tikzpicture}
-\caption{One-loop corrections from fermions and scalars to the Higgs mass.}
-\end{marginfigure}
+\section{Van der Waerden notation}
+In the following sections, we will introduce the algebra of the supersymmetry transformation operators $Q$. To do so, we will use the two-component Weyl spinor notation, also known as the Van der Waerden notation. We have already encountered Weyl spinors in \autoref{sec:pre_yang_mills}. In that section, we denoted a Dirac spinor by
+\begin{equation*}
+\Psi = \vdoublet{\psi_L}{\psi_R}.
+\end{equation*}
+Now we will use the notation
+\begin{equation*}
+  \Psi = \vdoublet{\xi_\alpha}{\bar{\chi}^{\dot{\alpha}}}
+\end{equation*}
+Thus, $\xi_\alpha$ and $\bar{\chi}^{\dot{\alpha}}$ denote left- and right-handed Weyl spinors respectively. The indices $\alpha$ and $\dot{\alpha}$ are known as `dotted' and `undotted' indices. Even though they look similar, they are in fact independent of each other.
 
+In the Weyl basis, the gamma matrices $\gamma^\mu$ take the form
+\begin{equation}
+  \gamma^\mu = \fourmatrix{0}{\sigma^\mu}{\bar{\sigma}^\mu}{0}
+\end{equation}
+where $\sigma^\mu$ are the matrices:
+\begin{align*}
+\sigma^0 = \fourmatrix{1}{0}{0}{1}, && \sigma^1 = \fourmatrix{0}{1}{1}{0}, && \sigma^2 = \fourmatrix{0}{-i}{i}{0}, && \sigma^3 = \fourmatrix{1}{0}{0}{-1}.
+\end{align*}
+They carry dotted and undotted indices as well: $(\sigma^\mu)_{\alpha\dot{\alpha}}$ and $(\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}$. Under complex conjugation, the spinors transform as
+$(\xi_\alpha)^* = \bar{\xi}_{\dot{\alpha}}$ and $(\bar{\chi}^{\dot{\alpha}})^* = \chi^{\alpha}$. The indices can be raised and lowered as follows: $\xi_\alpha = \epsilon_{\alpha\beta}\xi^\beta$ and $\xi^\beta = \epsilon^{\beta\gamma}\xi_\gamma$.
+The indices can be contracted, similar to the Greek indices in Einstein notation. For compactness, we often write the product $\xi^\alpha\chi_\alpha = \xi\chi$.
 \section{Supersymmetry basics}
+%Symmetries of the S-matrix
+In 1967, Coleman and Mandula \citep{Coleman1967} showed that, given certain assumptions, the only possible Lie group symmetries allowed for relativistic interacting field theories in four dimensions are direct products of the Poincar\'e group and an internal symmetry group (i.e. a gauge symmetry) \citep{Mandula2015}.
+A Lie algebra is defined by the commutation relations of its generators. If we extend the notion of a Lie algebra to include \emph{anticommutation} relations \citep{Wess1992}, the theorem no longer applies. These kinds of algebras are known as \emph{graded Lie algebras}, or \emph{superalgebras}. The trio of Haag, Łopuszanski, and Sohnius \citep{Haag1975} applied a similar treatment as Coleman and Mandula to determine the most general superalgebra consistent with relativistic quantum field theory. The generators $Q_\alpha$ of this algebra are known as fermionic operators, and must transform as Weyl spinors. The anticommutation (and commutation) relations take the form
+\begin{align*}
+  \{Q_\alpha, \bar{Q}_{\dot{\beta}}\} &= 2(\sigma^\mu)_{\alpha\dot{\beta}}P^\mu\\
+  \{Q_\alpha, Q_\beta\} &= \{\bar{Q}_{\dot{\alpha}}, \bar{Q}_{\dot{\beta}}\} = 0\\
+  [P^\mu,Q_\alpha] &= [P^\mu,\bar{Q}_{\dot{\alpha}}] = 0
+\end{align*}
+where $P_\mu = i\partial_\mu$ is the generator of translations, and $\sigma^\mu$ are the matrices
+Supersymmetric transformations can be viewed as translations in a manifold known as \emph{superspace}, which is obtained by adding the `fermionic' coordinates $\theta^\alpha, \theta^\dagger_{\dot{\beta}}$. Thus the generators of these translations are represented by:
+\begin{align*}
+  Q_\alpha &= \frac{\partial}{\partial\theta^\alpha}-i(\sigma^\mu\bar{\theta})_\alpha\partial_\mu\\
+  \bar{Q}_{\dot{\beta}} &= \frac{\partial}{\partial\bar{\theta}^{\dot{\beta}}}-i(\sigma^\mu\bar{\theta})_\beta\partial_\mu\\
+\end{align*}
+We define chiral covariant derivatives that are needed to construct superspace Lagrangians:
+\begin{align*}
+  D_\alpha &= \frac{\partial}{\partial\theta^\alpha}+i(\sigma^\mu\theta^{\dagger\dot{\alpha}})_\alpha\partial_\mu\\
+  \bar{D}_{\dot{\beta}} &= -\left[\frac{\partial}{\partial\bar{\theta}^{\dot{\beta}}}+i(\theta\sigma^\mu)_{\dot{\beta}}\partial_\mu\right]
+\end{align*}
+A chiral superfield satisfies the constraint $\bar{D}_{\dot{\beta}}\Phi = 0$. One way to implement this constraint is to define a new variable $y^\mu=(x^\mu+i\theta^\alpha(\sigma^\mu)_{\alpha\dot{\alpha}}\bar{\theta}^{\dot{\alpha}})$. Any superfield $\Phi(y,\theta)$ that is a function of only $y$ and $\theta$ will satisfy this constraint, since $\bar{D}_{\dot{\beta}}y^\mu = 0$. To make the connection between superfields and the regular scalar and fermion fields we deal with in QFT, we perform a Taylor expansion in powers of the variable $\theta$. Now, $\theta$ is a fermionic coordinate, and has two components: $\theta^\alpha = (\theta^1,\theta^2)$. Each of the two components is a \emph{Grassmannian} variable, satisfying the anticommutation relation $\{\theta^i,\theta^i\} = 0$. This implies that $(\theta^i)^2 = 0$. Thus, the Taylor expansion will be finite, taking the form
+\[\Phi(y,\theta) = \phi(y) + \sqrt{2}\theta\psi(y)+\theta\theta F(y)\]
+The fields $\phi(y),\psi(y)$, and $F(y)$ are coefficients of the Taylor expansion, and the factor of $\sqrt{2}$ is chosen by convention. We can Taylor expand once more around $x$ to get
+\begin{align*}
+  \Phi(y,\theta) &= \phi(x) + \sqrt{2}\theta\psi(x)+\theta\theta F(x)\\
+  &+i\theta\sigma^\mu\bar{\theta}\partial_\mu\psi(x)-\frac{1}{2}\theta\sigma^\mu\bar{\theta}\theta\sigma^\nu\bar{\theta}\partial_\mu\partial_\nu\phi(x) + \sqrt{2}\theta i\theta\sigma^\mu\bar{\theta}\partial_\mu\psi(x)
+  \label{eq:superfield_expansion}
+\end{align*}
+By dimensional analysis, we see that an infinitesimal change in the field $F$, denoted $\delta F$ must take the form $\delta F\sim\partial_\mu\psi^\alpha(\sigma^\mu)_{\alpha\dot{\alpha}}\bar{\xi}^\alpha$. Thus, it is a total divergence, and so $\int d^4x F$ is invariant under supersymmetric transformations. We can generalize this result. Let $[\Phi]_F$ denote the coefficient of $\theta\theta$ in the expansion of a superfield $\Phi$. Then $\delta[\Phi]_F$ is a total divergence, and so the integral $\int d^4x [\Phi]_F$ is invariant under supersymmetry. The next thing to note is that products of chiral superfields are also superfields: $\Phi^n$ also satisfies the requisite conditions $\bar{D}_{\dot{\beta}}\Phi^n = 0$. So an integral of the form $\int d^4x[W(\Phi)]_F$, where $W(\Phi)$ is a holomorphic \footnote{That is, complex-valued and smooth.} function of the superfield $\Phi$ should also be invariant under supersymmetry. The function $W(\Phi)$ is known as the \emph{superpotential}. The other necessary components for a supersymmetric Lagrangian are the kinetic terms that make the field dynamical. These terms can be obtained by bringing $\Phi^\dagger$ into the picture, since it will contain the conjugate fields $\bar{\psi}_{\dot{\alpha}}$ necessary to construct kinetic terms such as $\bar{\psi}_{\dot{\alpha}}(\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}\partial_\mu\psi_\alpha$. 
+Having examined chiral superfields, let us move on to \emph{vector} superfields $V(x,\theta,\bar{\theta})$, defined by the constraint $V = V^\dagger$. The product $\Phi^\dagger\Phi$ satisfies this condition and is thus a vector superfield. Recalling the Taylor expansion of $\Phi$ from \autoref{eq:superfield_expansion}, the expansion of \emph{V} in powers of the fermionic coordinates looks like
+\[V = \phi^\dagger\phi + 2\bar{\theta}\bar{\psi}\theta\psi + ...\]
+The highest power that we can expand to is $\bar{\theta}\bar{\theta}\theta\theta$. Since Grassmannian variables anticommute, the only non-vanishing quadratic combination will be $\bar{\theta}^{\dot{1}}\bar{\theta}^{\dot{2}}\theta_1\theta_2$. Let us follow a similar procedure as with the chiral superfields, and denote the coefficient of $\bar{\theta}\bar{\theta}\theta\theta$ in the expansion of \emph{V} by $[V]_D$. By dimensional analysis \footnote{Explain this dimensional analysis!!} we can show that $\delta[V]_D$ is a total divergence, and so $\int d^4x[\Phi^\dagger\Phi]_D$ is also supersymmetric. Combining $[\Phi^\dagger\Phi]_D$with our superpotential $W(\Phi)$ from earlier gives us a general supersymmetric Lagrangian:
+\begin{align*}
+  \mathcal{L} = [\Phi^\dagger\Phi]_D - \left([W(\Phi)]_F + h.c.\right)
+\end{align*}
+
 \section{Chiral and gauge supermultiplets}
 All the particles in the MSSM are grouped into structures known as supermultiplets. They come in two varieties: \emph{chiral} and \emph{gauge} supermultiplets. The SM fermions and the components of the SM Higgs doublet reside inchiral supermultiplets, and the SM gauge bosons reside in gauge supermultiplets. Let us first look at what the gauge interactions of a generic chiral and gauge supermultiplet look like.
 For a generic chiral supermultiplet consisting of a complex scalar $\phi$ and its superpartner, a two-component Weyl fermion $\psi$, the kinetic terms are 
@@ -81,8 +143,6 @@ If the Lagrangian density is invariant under gauge transformations of the chiral
 \subsection{The superpotential}
 The MSSM superpotential takes the form
 \[W_\text{MSSM} = \bar{u}\mathbf{y_u}QH_u-\bar{d}\mathbf{y_d}Q H_d-\bar{e}\mathbf{y_e}L H_d+\mu H_u H_d \]
-\section{The MSSM superpotential}
-\section{Split Supersymmetry}
 
 The non-SM interactions in our signal process are the higgsino-bino-$Z$ and the higgsino-bino-$h$ interactions. To determine their coupling, we can inspect the structure of the MSSM. We will first examine the gauge interactions of higgsino and bino gauge eigenstates. Upon doing this, it will be apparent that there are no interaction terms containing both pure higgsinos and pure binos. The reason is that electroweak symmetry breaking induces mixing among the neutralinos. After this, we will move on to the coupling involving the SM Higgs boson, and see how it is obtained. 
 In the MSSM, there are two $SU(2)_L\times U(1)_Y$ Higgs doublets instead of the one that we encounter in the standard model.
@@ -102,3 +162,5 @@ The factors $f^{abc}$ represent the structure constants of the gauge group. Thus
 \[ig\lambda^{a\dagger}\overline{\sigma}^\mu f^{abc}A_\mu^b\lambda^c\]
 The bino $(\widetilde{B}^0)$ is the superpartner of the SM gauge boson associated with the $U(1)_Y$ (hypercharge) gauge symmetry. Thus, it will transform in the adjoint representation of $U(1)_Y$ as well. However, this implies that there can never be a interaction vertex containing a bino and a gauge boson, since the structure constants for $U(1)_Y$ are all simply 0. In addition, we have previously seen that examining the chiral supermultiplet conaining the higgsino does not yield a neutral higgsino-bino-$Z$ vertex either. The reason that we can consider such a vertex in our signal process is due to the fact that electroweak symmetry breaking induces mixing among neutral higgsinos, binos, and the neutral wino $(\widetilde{W}^0)$, the superpartner of the $W_\mu^3$ gauge field associated with the SM $SU(2)_L$ gauge symmetry that mixes with $B_\mu$ to form the $Z$ boson and photon.
 
+\section{Split Supersymmetry}
+With the tightening constraints on the MSSM from the LHC, it is worth considering what would happen if we relaxed our idea of `naturalness'. Such a spectrum is called a \emph{split} spectrum, with a hierarchy between the masses of the fermionic and scalar superpartners.
