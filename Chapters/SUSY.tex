@@ -102,10 +102,10 @@ A Lie algebra is defined by the commutation relations of its generators. If we e
   [P^\mu,Q_\alpha] &= [P^\mu,\bar{Q}_{\dot{\alpha}}] = 0
 \end{align*}
 where $P_\mu = i\partial_\mu$ is the generator of translations, and $\sigma^\mu$ are the matrices
-Supersymmetric transformations can be viewed as translations in a manifold known as \emph{superspace}, which is obtained by adding the `fermionic' coordinates $\theta^\alpha, \theta^\dagger_{\dot{\beta}}$. Thus the generators of these translations are represented by:
+Supersymmetric transformations can be viewed as translations in a manifold known as \emph{superspace}, which is obtained by adding the `fermionic' coordinates $\theta^\alpha, \theta^\dagger_{\dot{\beta}}$. Thus the generators $Q_\alpha, \bar{Q}_{\dot{\beta}}$ of these translations are represented by
 \begin{align*}
-  Q_\alpha &= \frac{\partial}{\partial\theta^\alpha}-i(\sigma^\mu\bar{\theta})_\alpha\partial_\mu\\
-  \bar{Q}_{\dot{\beta}} &= \frac{\partial}{\partial\bar{\theta}^{\dot{\beta}}}-i(\sigma^\mu\bar{\theta})_\beta\partial_\mu\\
+  Q_\alpha &= \frac{\partial}{\partial\theta^\alpha}-i(\sigma^\mu\bar{\theta})_\alpha\partial_\mu&&\text{and}&&
+  \bar{Q}_{\dot{\beta}} = \frac{\partial}{\partial\bar{\theta}^{\dot{\beta}}}-i(\sigma^\mu\bar{\theta})_\beta\partial_\mu.
 \end{align*}
 We define chiral covariant derivatives that are needed to construct superspace Lagrangians:
 \begin{align*}
@@ -123,14 +123,34 @@ The fields $\phi(y),\psi(y)$, and $F(y)$ are coefficients of the Taylor expansio
 By dimensional analysis, we see that an infinitesimal change in the field $F$, denoted $\delta F$ must take the form $\delta F\sim\partial_\mu\psi^\alpha(\sigma^\mu)_{\alpha\dot{\alpha}}\bar{\xi}^\alpha$. Thus, it is a total divergence, and so $\int d^4x F$ is invariant under supersymmetric transformations. We can generalize this result. Let $[\Phi]_F$ denote the coefficient of $\theta\theta$ in the expansion of a superfield $\Phi$. Then $\delta[\Phi]_F$ is a total divergence, and so the integral $\int d^4x [\Phi]_F$ is invariant under supersymmetry. The next thing to note is that products of chiral superfields are also superfields: $\Phi^n$ also satisfies the requisite conditions $\bar{D}_{\dot{\beta}}\Phi^n = 0$. So an integral of the form $\int d^4x[W(\Phi)]_F$, where $W(\Phi)$ is a holomorphic \footnote{That is, complex-valued and smooth.} function of the superfield $\Phi$ should also be invariant under supersymmetry. The function $W(\Phi)$ is known as the \emph{superpotential}. The other necessary components for a supersymmetric Lagrangian are the kinetic terms that make the field dynamical. These terms can be obtained by bringing $\Phi^\dagger$ into the picture, since it will contain the conjugate fields $\bar{\psi}_{\dot{\alpha}}$ necessary to construct kinetic terms such as $\bar{\psi}_{\dot{\alpha}}(\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}\partial_\mu\psi_\alpha$. 
 Having examined chiral superfields, let us move on to \emph{vector} superfields $V(x,\theta,\bar{\theta})$, defined by the constraint $V = V^\dagger$. The product $\Phi^\dagger\Phi$ satisfies this condition and is thus a vector superfield. Recalling the Taylor expansion of $\Phi$ from \autoref{eq:superfield_expansion}, the expansion of \emph{V} in powers of the fermionic coordinates looks like
 \[V = \phi^\dagger\phi + 2\bar{\theta}\bar{\psi}\theta\psi + ...\]
-The highest power that we can expand to is $\bar{\theta}\bar{\theta}\theta\theta$. Since Grassmannian variables anticommute, the only non-vanishing quadratic combination will be $\bar{\theta}^{\dot{1}}\bar{\theta}^{\dot{2}}\theta_1\theta_2$. Let us follow a similar procedure as with the chiral superfields, and denote the coefficient of $\bar{\theta}\bar{\theta}\theta\theta$ in the expansion of \emph{V} by $[V]_D$. By dimensional analysis \footnote{Explain this dimensional analysis!!} we can show that $\delta[V]_D$ is a total divergence, and so $\int d^4x[\Phi^\dagger\Phi]_D$ is also supersymmetric. Combining $[\Phi^\dagger\Phi]_D$with our superpotential $W(\Phi)$ from earlier gives us a general supersymmetric Lagrangian:
+The highest power that we can expand to is $\bar{\theta}\bar{\theta}\theta\theta$. Since Grassmannian variables anticommute, the only non-vanishing quadratic combination will be $\bar{\theta}^{\dot{1}}\bar{\theta}^{\dot{2}}\theta_1\theta_2$. Let us follow a similar procedure as with the chiral superfields, and denote the coefficient of $\bar{\theta}\bar{\theta}\theta\theta$ in the expansion of \emph{V} by $[V]_D$. By dimensional analysis \footnote{\Adarsh{Explain this dimensional analysis!!}} we can show that $\delta[V]_D$ is a total divergence, and so $\int d^4x[\Phi^\dagger\Phi]_D$ is also supersymmetric. Combining $[\Phi^\dagger\Phi]_D$with our superpotential $W(\Phi)$ from earlier gives us a general supersymmetric Lagrangian:
 \begin{align*}
   \mathcal{L} = [\Phi^\dagger\Phi]_D - \left([W(\Phi)]_F + h.c.\right)
 \end{align*}
+If we choose the superpotential of the form $W(\Phi) = \frac{1}{2}m\Phi^2 + \frac{1}{3}g\Phi^3$ and write the Lagrangian in terms of the component fields $\phi,\psi,F$, we get
+\begin{align*}
+  \mathcal{L} = (\partial\phi)^\dagger(\partial\phi) + i\bar{\psi}\bar{\sigma}^\mu\partial_\mu\psi+F^\dagger F-\left(mF\phi-\frac{1}{2}m\psi\psi+gF\phi^2-g\phi\psi\psi + \text{h.c.}\right)
+\end{align*}
+Note that this Lagrangian does not contain any derivatives of the field $F$. This means that it is not a dynamical/propagating field. We refer to $F$ as an \emph{auxiliary} field. We can get rid of of it by `integrating' it out. This can be interpreted in two ways. The first is to perform the path integral over the variables $F$ and $F^\dagger$:
+\begin{align*}
+\int DFDF^\dagger e^{i\int d^4x \mathcal{L}(\phi,\phi^\dagger,\psi,F,F^\dagger)} = 
+ C e^{i\int d^4x \mathcal{L}(\phi,\phi^\dagger,\psi)}
+\end{align*}
+where $C$ is some constant, which will cancel out in computations of Green's functions, interaction vertices, etc. The other interpretation is that we can exactly solve the Euler-Lagrange equations of motion for the field \emph{F}:
+\[\frac{\partial\mathcal{L}}{\partial F}-\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial(\partial_\mu F)}\right) = 0.\]
+For our particular Lagrangian, we can collect the terms involving $F$:
+\begin{align*}
+\mathcal{L}(F) &= F^\dagger F - F(m\phi+g\phi^2) - F^\dagger(m\phi+g\phi^2)^\dagger= |F-(m\phi+g\phi^2)^\dagger|^2
+\end{align*}
+The Euler-Lagrange equations will be satisfied if $F = (m\phi+g\phi^2)^\dagger$. Thus, after integrating out the auxiliary fields, we get
+\begin{align*}
+  \mathcal{L}_\text{on-shell} = |\partial\phi|^2+ i\bar{\psi}\bar{\sigma}^\mu\partial_\mu\psi-|m\phi+g\phi^2|+\left(\frac{1}{2}m\psi\psi-g\phi\psi\psi + \text{h.c.}\right)
+\end{align*}
+The subscript `on-shell' is an indicator that this Lagrangian is supersymmetric only when the equations of motion are satisfied, i.e. the particles are on-shell. Including the auxiliary fields explicitly in the Lagrangian ensures that the Lagrangian remains supersymmetric even off-shell.
 
 \section{Chiral and gauge supermultiplets}
 All the particles in the MSSM are grouped into structures known as supermultiplets. They come in two varieties: \emph{chiral} and \emph{gauge} supermultiplets. The SM fermions and the components of the SM Higgs doublet reside inchiral supermultiplets, and the SM gauge bosons reside in gauge supermultiplets. Let us first look at what the gauge interactions of a generic chiral and gauge supermultiplet look like.
-For a generic chiral supermultiplet consisting of a complex scalar $\phi$ and its superpartner, a two-component Weyl fermion $\psi$, the kinetic terms are 
+For a generic chiral supermultiplet consisting of a complex scalar \emph{ϕ} and its superpartner, a two-component Weyl fermion $\psi$, the kinetic terms are 
 \[\mathcal{L}_{\text{chiral,kinetic,fermion}} = -\partial^\mu\phi^*\partial_\mu\phi + i\psi^{\dagger}\overline{\sigma}^\mu\partial_\mu\psi.\]
 If the Lagrangian density is invariant under gauge transformations of the chiral supermultiplet under a gauge group with generators $(T^a)_i^j$ and associated gauge fields $A_\mu^a$, the partial derivatives above can be promoted to covariant derivatives:
 \begin{align}
