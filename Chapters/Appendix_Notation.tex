@@ -1,0 +1,23 @@
+\chapter{Notation}\label{ch:notation}
+\section{Van der Waerden notation}
+In the following sections, we will introduce the algebra of the supersymmetry transformation operators $Q$. To do so, we will use the two-component Weyl spinor notation, also known as the Van der Waerden notation. We have already encountered Weyl spinors in \autoref{sec:pre_yang_mills}. In that section, we denoted a Dirac spinor by
+\begin{equation*}
+\Psi = \vdoublet{\psi_L}{\psi_R}.
+\end{equation*}
+Now we will use the notation
+\begin{equation*}
+  \Psi = \vdoublet{\xi_\alpha}{\bar{\chi}^{\dot{\alpha}}}
+\end{equation*}
+Thus, $\xi_\alpha$ and $\bar{\chi}^{\dot{\alpha}}$ denote left- and right-handed Weyl spinors respectively. The indices $\alpha$ and $\dot{\alpha}$ are known as `dotted' and `undotted' indices. Even though they look similar, they are in fact independent of each other.
+
+In the Weyl basis, the gamma matrices $\gamma^\mu$ take the form
+\begin{equation}
+  \gamma^\mu = \fourmatrix{0}{\sigma^\mu}{\bar{\sigma}^\mu}{0}
+\end{equation}
+where $\sigma^\mu$ are the matrices:
+\begin{align*}
+\sigma^0 = \fourmatrix{1}{0}{0}{1}, && \sigma^1 = \fourmatrix{0}{1}{1}{0}, && \sigma^2 = \fourmatrix{0}{-i}{i}{0}, && \sigma^3 = \fourmatrix{1}{0}{0}{-1}.
+\end{align*}
+They carry dotted and undotted indices as well: $(\sigma^\mu)_{\alpha\dot{\alpha}}$ and $(\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}$. Under complex conjugation, the spinors transform as
+$(\xi_\alpha)^* = \bar{\xi}_{\dot{\alpha}}$ and $(\bar{\chi}^{\dot{\alpha}})^* = \chi^{\alpha}$. The indices can be raised and lowered as follows: $\xi_\alpha = \epsilon_{\alpha\beta}\xi^\beta$ and $\xi^\beta = \epsilon^{\beta\gamma}\xi_\gamma$.
+The indices can be contracted, similar to the Greek indices in Einstein notation. For compactness, we often write the product $\xi^\alpha\chi_\alpha = \xi\chi$.

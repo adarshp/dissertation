@@ -1,9 +1,7 @@
 \documentclass[final,twoside,10pt]{memoir}
 
 % Packages
-% \usepackage[T1]{fontenc}
 \usepackage{shellesc}
-\usepackage{luaotfload}
 \usepackage{slashed}
 \usepackage{algpseudocode, algorithm}
 \usepackage{pdfpages}
@@ -12,9 +10,15 @@
 \WarningFilter{latex}{Marginpar}
 \usepackage{tikz-feynman}
 \usepackage[tracking]{microtype}
+\usepackage{pgfplots}
 \usepackage{amsthm}
 \usepackage[scaled=0.84]{beramono}
-\usepackage[onlymath, minionint, swash]{MinionPro}
+
+% ************************************************
+% If using Minion Pro + Myriad Pro
+% ***********************************************
+
+\usepackage[onlymath, minionint, swash,lf]{MinionPro}
 \usepackage{fontspec}
 \setmainfont[%
   Ligatures = {Common, TeX},
@@ -24,6 +28,13 @@
   Alternate=1,
 ]{Minion Pro}
 \setsansfont{Myriad Pro}[BoldFont={* Semibold},Numbers=OldStyle]
+
+% ***********************************************
+% Else uncomment the line below:
+% \usepackage{mathpazo}
+%\newcommand{\slantfrac}[2]{\frac{#1}{#2}}
+% ***********************************************
+
 \usepackage[toc]{tabfigures}
 % \PassOptionsToPackage{utf8}{inputenc}
 	% \usepackage{inputenc}
@@ -37,7 +48,6 @@
 }{biblatex}
     \usepackage{biblatex}
 
-\newcommand{\Adarsh}[1]{{\color{Maroon} AP: #1}}
 
 % ********************************************************************
 % Using LuaLaTeX
@@ -62,7 +72,6 @@
 \definecolor{shadecolor}{gray}{0.9}
 
 % Plots
-\usepackage{pgfplots}
 \pgfplotsset{every axis plot post/.append style={Maroon, line width=0.2pt}}
              
 %% Externalize PGF plots and TikZ diagrams
@@ -136,6 +145,7 @@
 \newcommand{\vdoublet}[2]{\begin{pmatrix} #1 \\  #2\end{pmatrix}}
 \newcommand{\fourmatrix}[4]{\begin{pmatrix} #1 &  #2 \\ #3 & #4\end{pmatrix}}
 \renewcommand{\L}{\mathcal{L}}
+\newcommand{\Adarsh}[1]{{\color{Maroon} AP: #1}}
 
 % ********************************************************************
 % Memoir package - layout and styling
@@ -148,7 +158,6 @@
 
 % Special options for printing/binding
 \setulmarginsandblock{1.22in}{1.22in}{*}
-
 \setlrmarginsandblock{1.5in}{3.1in}{}
 % The above sets \textwidth to 281.0 pt
 \setmarginnotes{0.2in}{1.9in}{2\onelineskip}
@@ -239,7 +248,6 @@
 %\hangsecnum
 \checkandfixthelayout
 
-
 % ***********************************************
 
 % Misc layout commands
@@ -253,7 +261,6 @@
 \author{Adarsh Pyarelal}
 \postauthor{\vskip 9cm}
 \date{}
-
 \begin{document}
 \pagenumbering{arabic}
 \include{FrontBackMatter/TitlePage}
@@ -284,6 +291,7 @@
 \appendixpage
 \include{Chapters/Appendix_Group_Theory}
 \include{Chapters/Appendix_Misc}
+\include{Chapters/Appendix_Notation}
 \include{Chapters/Appendix_Statistics}
 \chapter{Light Charged Higgs Bosons to AW/HW via top decay}
 %\includepdf[pages=-]{Chapters/LightChargedHiggs}

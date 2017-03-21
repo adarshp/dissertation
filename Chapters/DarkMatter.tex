@@ -75,7 +75,7 @@ If we assume that there are no external non-gravitational forces, trajectory of 
 \begin{equation}\label{eq:gr_liouville_operator}
   \mathbf{L} = p^\mu\frac{\partial}{\partial x^\mu} - \Gamma^\mu_{\alpha\beta}p^\alpha p^\beta\frac{\partial}{\partial p^\mu}
 \end{equation}
-The isotropy of the model implies that the phase-space density \emph{f} is devoid of directionality - it will depend only on the energy \emph{E} and time \emph{t}, and can be written as $f(E,t)$. Thus, all the partial derivatives in \autoref{eq:gr_liouville_operator} will vanish except for those corresponding to $\mu = 0$. If the connections $\Gamma^\mu_{\alpha\beta}$ are calculated for the FLRW metric (see \autoref{sec:sm_cosmology}), the Liouville operator simplifies to
+The isotropy of the model implies that the phase-space density \emph{f} is devoid of directionality - it will depend only on the energy \emph{E} and time \emph{t}, and can be written as $f(E,t)$. Thus, all the partial derivatives in \eqref{eq:gr_liouville_operator} will vanish except for those corresponding to $\mu = 0$. If the connections $\Gamma^\mu_{\alpha\beta}$ are calculated for the FLRW metric (see \autoref{sec:sm_cosmology}), the Liouville operator simplifies to
 \begin{equation}\label{eq:frw_liouville_operator}
   \mathbf{L}f = E\frac{\partial f}{\partial t} + H|\mathbf{p}|^2 \frac{\partial f}{\partial E}
 \end{equation}
@@ -84,7 +84,7 @@ where $H$ is the Hubble parameter. The number density \emph{n} is given by the i
   n = 4\pi g\int dp p^2 f(E,t)
 \end{align}
 where $p = |\mathbf{p}|$, and $g$ is the number of spin degrees of freedom.
-Dividing \autoref{eq:frw_liouville_operator} by E and integrating over the momentum coordinates gives us:
+Dividing \eqref{eq:frw_liouville_operator} by E and integrating over the momentum coordinates gives us:
 \begin{align}
   4\pi g\int dp p^2 \frac{\mathbf{L}f}{E} = 4\pi g\int dp p^2 \left(\frac{\partial f}{\partial t}- H\frac{p^2}{E}\frac{\partial f}{\partial E}\right)
 \end{align}
@@ -100,7 +100,7 @@ We can simplify the second term using integration by parts:
 \begin{equation}
   \int dp p^3\frac{\partial f}{\partial p} = fp^3|_{0}^\infty - \int dp (3p^2 f)
 \end{equation}
-The first term on the right hand side of the above equation should evaluate to zero, since the probability of the particle having an infinite momentum must be zero. Substituting this expression into \autoref{eq:n_dot} and simplifying gives us
+The first term on the right hand side of the above equation should evaluate to zero, since the probability of the particle having an infinite momentum must be zero. Substituting this expression into \eqref{eq:n_dot} and simplifying gives us
 \begin{equation}\label{eq:simplified_n_density}
   \dot{n}+3Hn = 4\pi g\int \frac{dpp^2}{E}\mathbf{C}f
 \end{equation}
@@ -128,7 +128,7 @@ are phase-space integration factors. This can be simplified considerably by assu
 \end{itemize}
 The amplitude for the forward and backwards processes should be equal:
 \[|\mathcal{M}_{12\rightarrow 34}|^2 = |\mathcal{M}_{34\rightarrow 12}|^2 = |\mathcal{M}|^2 \]
-Then the expression in \autoref{eq:collision_term} simplifies to
+Then the expression in \eqref{eq:collision_term} simplifies to
 \begin{equation}
 -\sum_\text{spins}\int(f_1 f_2 - f_3 f_4)|\mathcal{M}|^2(2\pi)^4\delta(p_1 + p_2 - p_3 - p_4)d\Pi_1 d\Pi_2 d\Pi_3 d\Pi_4
 \end{equation}
@@ -169,7 +169,7 @@ And the integration limits become
   E_+ &\geq \sqrt{s}\\
   s &\geq 4m^2
 \end{align}
-With these variables, the numerator in \autoref{eq:thermal_sigma_v} becomes
+With these variables, the numerator in \eqref{eq:thermal_sigma_v} becomes
 \begin{align*}
   &2\pi^2\int dE_+\int dE_-\int ds(\sigma v)E_1E_2e^{-E_+/T}\\
   =&4\pi^2\int ds\sigma \frac{1}{2}\sqrt{s(s-4m^2)}\sqrt{1-\frac{4m^2}{s}}\int dE_+e^{-E_+/T}\sqrt{E_+-s}\\
@@ -180,7 +180,7 @@ Similarly, the denominator simplifies to $[4\pi m^2TK_2(m/T)]^2$. The functions 
     x^2\ddot{y} + x\dot{y} - (x^2+n^2)y = 0
   \end{equation*}
   admits solutions of the form $y = c_1 I_n(x) + c_2K_n(x)$. The functions $I_n$ and $K_n$ are known as modified Bessel functions of the first and second kinds, respectively.
-}. Thus \autoref{eq:thermal_sigma_v} simplifies to
+}. Thus \eqref{eq:thermal_sigma_v} simplifies to
 \[\langle\sigma v\rangle = \frac{1}{8m^4TK_2^2(m/T)}\int_{4m^2}^\infty\sigma(s-4m^2)\sqrt{s}K_1(\sqrt{s}/T)ds\]
 In this non-relativistic limit, this simplifies to
 \[\langle\sigma v\rangle \approx b_0 + \frac{3}{2}b_1x^{-1} + ...\]
