@@ -1,9 +1,5 @@
 \chapter{Dark Matter}\label{ch:bsm}
 
-In the previous chapter, we covered the Standard Model of particle physics and came up against its limits. In this chapter, we will cover some possible extensions to the Standard Model that can help us overcome those limits.
-
-\section{History of Dark Matter}\label{subsec:history-of-dark-matter}
-
 In 1933, the Swiss astronomer Fritz Zwicky turned his telescope to the night sky to measure the velocities of galaxies in a particular galaxy cluster known as the Coma cluster. He discovered that the visible matter in this cluster could not account for the speeds at which the galaxies were moving. He postulated that there must be some matter that does not emit light, but has mass and interacts only gravitationally with known matter. He termed this `Dunkle materie', or \emph{dark matter}. The evidence for dark matter has only continued to grow since then, and we now know that there is far more of it in the universe than there is regular, or \emph{baryonic} matter. The nature of dark matter is one of the most compelling mysteries in physics today.
 
 Over the years, there have been many dark matter candidates\footnote{For a while, it was debated whether the effects of dark matter could instead be explained by a deviation of the gravitational force from the usual inverse square law at large length scales. This theory was termed Modified Newtonian Dynamics, or MOND \citep{Milgrom1983}. However, it was shown in 2006 \citep{Clowe2006} that MOND was fundamentally incompatible with the data from the bullet cluster.}, but the most widely accepted view today is that dark matter is comprised of a completely new kind of particle \footnote{Of course, this is not the only possibility. Instead of a single dark matter candidate particle, there could be a 'dark sector' comprised of multiple particles and interactions between them. See (DDM papers) for developments along this line.} that interacts only weakly with the particles of the Standard Model and moves at at non-relativistic speeds.
@@ -16,10 +12,9 @@ Over the years, there have been many dark matter candidates\footnote{For a while
 \end{sidecaption}
 \end{figure}
 One of the most tantalizing clues to the nature of dark matter is the so-called 'WIMP miracle' - the remarkable coincidence that the observed dark matter density in the universe can arises naturally from a particle with mass and couplings comparable to the weak scale. This raises the hope that such particles might feasibly be detected at colliders or direct detection experiments.
-
 \section{Dark matter, three ways}\label{dark-matter-three-ways}
-
 \begin{marginfigure}
+  \centering
   \begin{tikzpicture}
     \begin{feynman}
       \vertex (v1) {\(\chi\)};
@@ -27,19 +22,22 @@ One of the most tantalizing clues to the nature of dark matter is the so-called 
       \vertex [below=of v1] (v3){\(\chi\)};
       \vertex [right=of v3] (v4){\(SM\)};
       % Placing vertex v between v1 and v4
-      \vertex at ($(v1)!0.5!(v4)$) (v);
+      \vertex [blob] (v) at ($(v1)!0.5!(v4)$) {};
+      \vertex [above=of v] (l2){Indirect};
+      \vertex [below=of v] (l3){Collider};
       \diagram*{
-        (v1) -- (v) [blob],
+        (v1) -- (v),
         (v2) -- (v),
         (v3) -- (v),
         (v4) -- (v),
       };
-      \draw [->] ($(v1.west) + (-2mm,0)$) -- ($(v3.west) + (-2mm,0)$);
+      \draw [->] ($(v1.west) + (-2mm,0)$) -- ($(v3.west) + (-2mm,0)$) node [sloped,midway,above,rotate=180] {Direct};
       \draw [->] ($(v1.north) + (0,2mm)$) -- ($(v2.north) + (0,2mm)$);
       \draw [->] ($(v4.south) + (0,-2mm)$) -- ($(v3.south) + (0,-2mm)$);
     \end{feynman}
   \end{tikzpicture}
   \caption{DM detection, three ways}
+  \label{fig:dm_annihilation}
 \end{marginfigure}
 
 There are three main methods of detecting WIMP dark matter. The first, direct detection, involves constructing a well shielded, giant vat of a relatively inert substance, and waiting for dark matter particles to interact with that substance. The second, termed indirect detection, involves searching for signs of dark matter particles annihilating each other in the cosmos. The third method, collider detection, involves producing dark matter through high energy particle collisions and searching for their associated signatures. The first two methods place relatively stringent constraints on the nature of dark matter, but have their own limitations. The smallest interaction cross-section between dark matter and regular matter that direct detection can measure is limited from below by the background of neutrinos from the sun, though there are creative methods that are being developed to deal with this background. Indirect detection suffers from large astrophysical uncertainties. Collider detection, therefore, is competitive with, and can even possibly surpass the other two methods.
@@ -105,14 +103,6 @@ The first term on the right hand side of the above equation should evaluate to z
   \dot{n}+3Hn = 4\pi g\int \frac{dpp^2}{E}\mathbf{C}f
 \end{equation}
 The operator \textbf{C} is known as the \emph{collision} operator, and contains the information about how the dark matter particles interact with themselves and other particles. For a process of the form $1+2\rightarrow 3+4$, the collision term (on the right hand side of the above equation) for particle 1 takes the form  
-\begin{marginfigure}
-  \feynmandiagram[horizontal = chi2 to SM1]{
-    {chi1 [particle = \(\chi\)], chi2 [particle = \(\chi\)],
-    SM1 [particle = \(SM\)], SM2 [particle = \(SM\)]} -- v [blob],
-  };
-  \label{fig:dm_annihilation}
-  \caption{Dark matter annihilating to SM particles.}
-\end{marginfigure}
 \begin{equation}\label{eq:collision_term}
   \begin{split}
   &-\sum_\text{spins}\int [f_1 f_2(1\pm f_3)(1\pm f_4)|\mathcal{M}_{12\rightarrow 34}|^2 + f_3 f_4(1\pm f_1)(1\pm f_2)|\mathcal{M}_{34\rightarrow 12}|^2]\\

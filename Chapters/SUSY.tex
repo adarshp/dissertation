@@ -48,7 +48,7 @@ Looking at the forms of the one-loop corrections in \eqref{eq:one_loop_fermion} 
 
 This symmetry is known as \emph{supersymmetry}. It is a rich mathematical structure with far-reaching consequences, a lot of which are beyond the scope of this work. For a pedagogical review of supersymmetry, we refer the reader to \citep{Martin1997}. This section provides a necessarily condensed version of the treatment there. Although the hierarchy problem has been the main driving force behind the development of supersymmetry, there are other benefits that can be obtained, such as gauge coupling unification and a stable dark matter candidate, that we shall revisit in future sections.
 
-The term `supersymmetry' refers to the invariance of the Lagrangian under supersymmetry transformations of the form
+The term `supersymmetry' refers to the invariance of the Lagrangian under supersymmetry transformations of the form\footnote{Of course, this is not the precise form of the transformation - as can be seen by performing some rudimentary dimensional analysis. We write done more precise transformations later.}
 \begin{align*}
   Q|\text{Boson}\rangle = |\text{Fermion}\rangle &&\text{and}&& Q|\text{Fermion}\rangle = |\text{Boson}\rangle.
 \end{align*}
@@ -119,8 +119,8 @@ We can Taylor expand once more around the bosonic coordinate \emph{x} to get
 \end{split}
   \label{eq:superfield_expansion}
 \end{align}
-By dimensional analysis\sidefootnote{The generator $P_\mu$, represents momentum, and has dimensions of mass. We represent this by $[P_\mu] = 1$. Thus, from the supersymmetry algebra (\eqref{eq:susy_algebra}), we have $[Q] = [\bar{Q}] = \slantfrac{1}{2}.$ From the differential forms of \emph{Q} and $\bar{Q}$ in \eqref{eq:susy_operators_diff_form}, we get $[\theta]=[\bar{\theta}]=-\slantfrac{1}{2}$. Since $[\phi] = [\theta\theta]$ and we know that $[\phi] = 1$, we can deduce that $[F]=2$. An infinitesimal supersymmetry transformation changes \emph{F} by an amount $\delta F$, which then must have the same dimensions as \emph{F}. But from the form of the infinitesimal transformation in \eqref{eq:gen_susy_transformation}, we can see that $\delta F$ must be linear in $\xi$ or $\bar{\xi}$, both of which have dimension $\slantfrac{1}{2}$, and so must be multiplied by some object with dimension $\slantfrac{5}{2}$. The only such object available to us from our expansion above is $\partial_\mu\psi$, which is in reality a left-handed Weyl spinor and so carries an undotted index. Multiplying $\partial_\mu\psi^\alpha$ by the object $(\sigma^\mu)_{\alpha\dot{\alpha}}$ allows us to contract the index $\mu$ (ensuring Lorentz invariance), as well as the undotted index $\alpha$. Out of $\xi$ and $\bar{\xi}$, only $\bar{\xi}$ can be used to contract the remaining dotted index. And thus we have, up to an overall constant, $\delta F\sim\bar{\xi}^{\dot{\alpha}}(\sigma^\mu)_{\alpha\dot{\alpha}}\partial_\mu\psi^\alpha$}%
-, we see that an infinitesimal change in the field $F$, denoted $\delta F$ must take the form $\delta F\sim\bar{\xi}\sigma^\mu\partial_\mu\psi$. Thus, it is a total divergence, and $\int d^4x F$ is invariant under supersymmetric transformations. We can generalize this result. Let $[\Phi]_F$ denote the coefficient of $\theta\theta$ in the expansion of a superfield $\Phi$. Then $\delta[\Phi]_F$ is a total divergence, and the integral $\int d^4x [\Phi]_F$ is invariant under supersymmetry. The next thing to note is that products of chiral superfields are also superfields: $\Phi^n$ also satisfies the requisite conditions $\bar{D}_{\dot{\beta}}\Phi^n = 0$. So an integral of the form $\int d^4x[W(\Phi)]_F$, where $W(\Phi)$ is a holomorphic \sidefootnote{That is, complex-valued and smooth.} function of the superfield $\Phi$ should also be invariant under supersymmetry. The function $W(\Phi)$ is known as the \emph{superpotential}, and contains the information about the masses and the scalar interactions of of the theory. Now let us add the kinetic terms that make the field dynamical. These terms can be obtained by bringing $\Phi^\dagger$ into the picture, since it will contain the conjugate fields $\bar{\psi}$ necessary to construct kinetic terms such as $\bar{\psi}\bar{\sigma}^\mu\partial_\mu\psi$. A first guess at a superfield that contains both $\Phi$ and $\Phi^\dagger$ is the superfield $V = \Phi^\dagger\Phi$. This field satisfies the property $(\Phi^\dagger\Phi)^\dagger = \Phi^\dagger\Phi$. In general, any superfield $V$ that satisfies the constraint $V = V^\dagger$ is known as a vector superfield.
+Using dimensional analysis, we can extract the forms of the infinitesimal supersymmetric transformations of the fields $\phi,\psi,$ and \emph{F}. The generator $P_\mu$, represents momentum, and has dimensions of mass. We represent this by $[P_\mu] = 1$. Thus, from the supersymmetry algebra (\eqref{eq:susy_algebra}), we have $[Q] = [\bar{Q}] = \slantfrac{1}{2}.$ From the differential forms of \emph{Q} and $\bar{Q}$ in \eqref{eq:susy_operators_diff_form}, we get $[\theta]=[\bar{\theta}]=-\slantfrac{1}{2}$. Since $[\phi] = [\theta\theta]$ and we know that $[\phi] = 1$, we can deduce that $[F]=2$. An infinitesimal supersymmetry transformation changes \emph{F} by an amount $\delta F$, which then must have the same dimensions as \emph{F}. But from the form of the infinitesimal transformation in \eqref{eq:gen_susy_transformation}, we can see that $\delta F$ must be linear in $\xi$ or $\bar{\xi}$, both of which have dimension $\slantfrac{1}{2}$, and so must be multiplied by some object with dimension $\slantfrac{5}{2}$. The only such object available to us from our expansion above is $\partial_\mu\psi$, which is in reality a left-handed Weyl spinor and so carries an undotted index. Multiplying $\partial_\mu\psi^\alpha$ by the object $(\sigma^\mu)_{\alpha\dot{\alpha}}$ allows us to contract the index $\mu$ (ensuring Lorentz invariance), as well as the undotted index $\alpha$. Out of $\xi$ and $\bar{\xi}$, only $\bar{\xi}$ can be used to contract the remaining dotted index. And thus we have, up to an overall constant, $\delta F\sim\bar{\xi}\sigma^\mu\partial_\mu\psi$. It can similarly be argued that $\delta\phi\sim\xi\psi$ and $\delta\psi\sim\xi F+\partial_\mu\phi\sigma^\mu\bar{\xi}$.
+The form of $\delta F$ suggests that it is a total divergence, which means that $\int d^4x F$ will be invariant under supersymmetric transformations. We can generalize this result. Let $[\Phi]_F$ denote the coefficient of $\theta\theta$ in the expansion of a superfield $\Phi$. Then $\delta[\Phi]_F$ is a total divergence, and the integral $\int d^4x [\Phi]_F$ is invariant under supersymmetry. The next thing to note is that products of chiral superfields are also superfields: $\Phi^n$ also satisfies the requisite conditions $\bar{D}_{\dot{\beta}}\Phi^n = 0$. So an integral of the form $\int d^4x[W(\Phi)]_F$, where $W(\Phi)$ is a holomorphic \sidefootnote{That is, complex-valued and smooth.} function of the superfield $\Phi$ should also be invariant under supersymmetry. The function $W(\Phi)$ is known as the \emph{superpotential}, and contains the information about the masses and the scalar interactions of of the theory. Now let us add the kinetic terms that make the field dynamical. These terms can be obtained by bringing $\Phi^\dagger$ into the picture, since it will contain the conjugate fields $\bar{\psi}$ necessary to construct kinetic terms such as $\bar{\psi}\bar{\sigma}^\mu\partial_\mu\psi$. A first guess at a superfield that contains both $\Phi$ and $\Phi^\dagger$ is the superfield $V = \Phi^\dagger\Phi$. This field satisfies the property $(\Phi^\dagger\Phi)^\dagger = \Phi^\dagger\Phi$. In general, any superfield $V$ that satisfies the constraint $V = V^\dagger$ is known as a vector superfield.
 Recalling the Taylor expansion of $\Phi$ from \eqref{eq:superfield_expansion}, the expansion of \emph{V} in powers of the fermionic coordinates looks like
 \[V = \phi^\dagger\phi + 2\bar{\theta}\bar{\psi}\theta\psi + ...\]
 The highest power of fermionic coordinates that we can expand to is $\bar{\theta}\bar{\theta}\theta\theta$. Since Grassmannian variables anticommute, the only non-vanishing quadratic combination will be $\bar{\theta}^{\dot{1}}\bar{\theta}^{\dot{2}}\theta_1\theta_2$. Let us follow a similar procedure as with the chiral superfields, and denote the coefficient of $\bar{\theta}\bar{\theta}\theta\theta$ in the expansion of \emph{V} by $[V]_D$. By a dimensional analysis similar to the one performed for the chiral superfields, we can show that $\delta[V]_D$ is a total divergence, and so $\int d^4x[\Phi^\dagger\Phi]_D$ is also supersymmetric. Combining $[\Phi^\dagger\Phi]_D$with our superpotential $W(\Phi)$ from earlier gives us a general supersymmetric Lagrangian:
@@ -131,7 +131,7 @@ If we choose the superpotential of the form $W(\Phi) = \frac{1}{2}m\Phi^2 + \fra
 \begin{align*}
   \mathcal{L} = (\partial\phi)^\dagger(\partial\phi) + i\bar{\psi}\bar{\sigma}^\mu\partial_\mu\psi+F^\dagger F-\left(mF\phi-\frac{1}{2}m\psi\psi+gF\phi^2-g\phi\psi\psi + \text{h.c.}\right)
 \end{align*}
-Written like this, it is evident that the component scalar and Weyl spinor fields of a superfield have the same mass. Note that this Lagrangian does not contain any derivatives of the field $F$. This means that it is not a dynamical/propagating field. We refer to $F$ as an \emph{auxiliary} field. We can get rid of of it by `integrating' it out. This can be interpreted in two ways. The first is to perform the path integral over the variables $F$ and $F^\dagger$:
+Written like this, it is evident that the component scalar and Weyl spinor fields of a superfield have the same mass, and that $g$ should be viewed as a Yukawa coupling strength. Note that this Lagrangian does not contain any derivatives of the field $F$. This means that it is not a dynamical/propagating field. We refer to $F$ as an \emph{auxiliary} field. We can get rid of of it by `integrating' it out. This can be interpreted in two ways. The first is to perform the path integral over the variables $F$ and $F^\dagger$:
 \begin{align*}
 \int DFDF^\dagger e^{i\int d^4x \mathcal{L}(\phi,\phi^\dagger,\psi,F,F^\dagger)} = 
  C e^{i\int d^4x \mathcal{L}(\phi,\phi^\dagger,\psi)}
@@ -191,57 +191,157 @@ Putting these terms together\footnote{There is another possible term, which we h
 \begin{equation*}
   \mathcal{L} = \left[\Phi^\dagger e^{2gqV}\Phi\right]_D + \left([W(\Phi)]_F + \text{h.c.}\right) + \frac{1}{4}\left([\mathcal{W}^\alpha\mathcal{W}_\alpha]_F + \text{h.c.}\right)
 \end{equation*}
-To generalize this to a non-Abelian gauge theory with couplings $g_a$, generators $T^a$, and associated vector superfields $V^a$, we would do the following modifications to the kinetic term and gauge transformation:
+To generalize this to a non-Abelian gauge theory with a set of chiral superfields $\Phi_i$, couplings $g_a$, generators $T^a$ represented by matrices $(T^a)_i^j$, and associated vector superfields $V^a$, we would do the following modifications to the kinetic term and gauge transformation:
 \begin{align*}
-  [\Phi^\dagger e^{2gqV}\Phi]_D&\rightarrow[\Phi^\dagger e^{2g_a\mathbf{V}}\Phi]_D\\
-  \Phi&\rightarrow e^{i\textbf{Ω}}\Phi
+  [\Phi^\dagger e^{2gqV}\Phi]_D&\rightarrow[\Phi^{i\dagger} (e^{2g_a\mathbf{V}})_i^j\Phi_j]_D\\
+  \Phi_i&\rightarrow (e^{i\textbf{Ω}})_i^j\Phi_j
 \end{align*}
-where we have defined the matrix-valued fields 
+where the boldfaced symbols are matrices defined by:
 \begin{align}
   \mathbf{V} = 2g_aT^aV^a&&\text{and}&& \textbf{Ω} = 2g_aT^a\Omega^a
   \label{eq:matrix_valued_fields}
 \end{align}
-for brevity. In this notation, the field strength for \textbf{V} is given by the chiral superfield
-\[\mathcal{W}_\alpha = -\frac{1}{2}\bar{D}\bar{D}\left(e^{-\mathbf{V}}D_\alpha e^{\mathbf{V}}\right)\]
-Finally, putting together all the ingredients, we have a general Lagrangian for a renormalizable supersymmetric field theory including non-Abelian supergauge invariance:
+In this notation, the field strength for \textbf{V} is given by the chiral superfield
+\[\mathcal{W}_\alpha = -\frac{1}{2}\bar{D}\bar{D}\left(e^{-\mathbf{V}}D_\alpha e^{\mathbf{V}}\right) = 2g_aT^a\mathcal{W}^a_\alpha\]
+Where $\mathcal{W}_\alpha^a$ are the field strengths in adjoint representation - the repeated index \emph{a} is summed over. Finally, putting together all the ingredients, we have a general Lagrangian for a renormalizable supersymmetric field theory including non-Abelian supergauge invariance:
 \begin{equation*}
-  \mathcal{L} = \left(\frac{1}{16k_ag_a^2}-i\frac{\Theta_a}{128k_a\pi^2}\right)\text{Tr}[\mathcal{W}^a\mathcal{W}_a]_F + \text{h.c.} + \left[\Phi^\dagger(e^{\mathbf{V}})\Phi\right]_D + \left([W(\Phi)]_F + \text{h.c.}\right)
+  \mathcal{L} = \left(\frac{1}{4}-\frac{ig_a^2\Theta_a}{32\pi^2}\right)[\mathcal{W}^{a\alpha}\mathcal{W}_{a\alpha}]_F + \text{h.c.} + \left[\Phi^{i\dagger}(e^{\mathbf{V}})\Phi_j\right]_D + \left([W(\Phi)]_F + \text{h.c.}\right)
+\end{equation*}
+where 
+\begin{equation*}
+  [\mathcal{W}^{a\alpha}\mathcal{W}_{a\alpha}]_F = \frac{1}{4k_ag_a^2}\text{Tr}[\mathcal{W}^\alpha\mathcal{W}_\alpha]_F
 \end{equation*}
 Here, $k_a$ defines the normalization of the generators: $\text{Tr}[T^aT^b] = k_a\delta_{ab}$, and is conventionally set to $\slantfrac{1}{2}$. The parameter $\Theta$ is a CP-violating parameter similar to the angle $\theta$ discussed at the beginning of \autoref{ch:2HDMs}. The Fayet-Iliopoulos term that we saw for Abelian supergauge symmetry is no longer allowed since individual terms of the form $-2\kappa[V^a]_D$ are no longer invariant under supergauge transformations - they induce mixing among the vector fields $V^a$ (which is why we worked instead with the matrix-valued fields from \eqref{eq:matrix_valued_fields}).
 
 \section{Chiral and gauge supermultiplets}
-All the particles in the MSSM are grouped into structures known as supermultiplets. They come in two varieties: \emph{chiral} and \emph{gauge} supermultiplets. The SM fermions and the components of the SM Higgs doublet reside inchiral supermultiplets, and the SM gauge bosons reside in gauge supermultiplets. Let us first look at what the gauge interactions of a generic chiral and gauge supermultiplet look like.
-For a generic chiral supermultiplet consisting of a complex scalar \emph{ϕ} and its superpartner, a two-component Weyl fermion $\psi$, the kinetic terms are 
-\[\mathcal{L}_{\text{chiral,kinetic,fermion}} = -\partial^\mu\phi^*\partial_\mu\phi + i\psi^{\dagger}\overline{\sigma}^\mu\partial_\mu\psi.\]
-If the Lagrangian density is invariant under gauge transformations of the chiral supermultiplet under a gauge group with generators $(T^a)_i^j$ and associated gauge fields $A_\mu^a$, the partial derivatives above can be promoted to covariant derivatives:
-\begin{align}
-  \nabla_\mu\phi_i &= \partial_\mu\phi_i - igA_\mu^a(T^a\phi)_i\label{eq:phi1}\\
-  \nabla_\mu\phi^{*i} &= \partial_\mu\phi^{*i} + igA_\mu^a(\phi^*T^a)^{i}\label{eq:phi2}\\
-  \nabla_\mu\psi_i &= \partial_\mu\psi_i - igA_\mu^a(T^a\psi)_i\label{eq:psi}
-\end{align}
+Having seen what Lagrangians with supergauge symmetry look like in the superfield and superspace formulation, we can recover regular scalar, vector and spinor fields that are functions of the bosonic coordinates by Taylor expanding the superfields in the Lagrangian. Consider the expansion of a chiral superfield given by
+\[\Phi(y,\theta) = \phi(y) + \sqrt{2}\theta\psi(y)+\theta\theta F(y).\]
+Choosing values of $\phi,\psi,$ and \emph{F} fixes $\Phi$. Thus, they can be grouped naturally into an object called a \emph{supermultiplet}. In this case, we say that the fields $\phi,\psi,$ and \emph{F} reside in a \emph{chiral} supermultiplet, and that $\phi$ and $\psi$ are superpartners of each other. Recall that an infinitesimal supersymmetry transformation mixes fermionic and bosonic degrees of freedom. Generically, the scalar partner of a fermion is referred to as a \emph{sfermion}. Similarly, recall the expansion of a vector superfield in the Wess-Zumino gauge:
+\[V_\text{Wess-Zumino gauge} = \bar{\theta}\bar{\sigma}^\mu\theta A_\mu+\bar{\theta}\bar{\theta}\theta\lambda+\theta\theta\bar{\theta}\lambda^\dagger+\frac{1}{2}\theta\theta\bar{\theta}\bar{\theta}D\]
+The fields $A_\mu,\lambda,$ and \emph{D} form another natural grouping, called a \emph{vector} supermultiplet. The fields $A_\mu$ and $\lambda$ are superpartners of each other, and fields such as $\lambda$ are generically known as \emph{gauginos}\footnote{After the co-inventor of the Wess-Zumino model, Bruno Zumino.}.
+Let us now take a superpotential of the form:
+\begin{equation}
+W = \frac{1}{2}M^{ij}\Phi_i\Phi_j + \frac{1}{6}y^{ijk}\Phi_i\Phi_j\Phi_k
+\label{eq:superpotential}
+\end{equation}
+where $M$ is a mass matrix, and $y$ represents the Yukawa couplings and scalar self-interactions.
+If we expand the superfields in terms of the component fields, and integrate out the auxiliary fields \emph{F} and \emph{D}, we end up with
+\begin{align*}
+  \mathcal{L} &= \overbrace{-D^\mu\phi^{\dagger i}D_\mu\phi_i + i\psi^{\dagger i}\bar{\sigma}^\mu D_\mu\psi_i}^\text{kinetic terms}
+  -\overbrace{\frac{1}{2}\left\{M^{ij}\psi_i\psi_j+\text{h.c.}\right\}}^{\text{fermion mass terms}}
+   +\overbrace{M_{ik}^*M^{kj}\phi^{*i}\phi_j}^\text{scalar mass terms}\\
+  &-\overbrace{\frac{1}{2}\left\{y^{ijk}\phi_i\psi_j\psi_k+\text{h.c.}\right\}}^{\text{Yukawa terms}}
+  +\overbrace{\frac{1}{2}\left\{M^{in}y_{jkn}^*\phi_i\phi^{*j}\phi^{*k}+\text{h.c.}\right\}}^\text{scalar cubic interactions}\\
+  &+\overbrace{\frac{1}{2}g_a^2(\phi^{\dagger i}(T^a)_i^j\phi_j)^2+\frac{1}{4}\left\{y^{ijn}y_{kln}^*\phi_i\phi_j\phi^{*k}\phi^{*l}\right\}}^\text{scalar quartic interactions}\\
+  &-\overbrace{\frac{1}{4}F_{\mu}^aF^{\mu\nu a}}^\text{gauge boson self-interactions}
+  +\overbrace{i\lambda^{\dagger a}\bar{\sigma}^\mu D_\mu\lambda^a}^\text{gaugino-gauge boson interactions}
+\end{align*}
 
-\subsection{Interactions}
-\subsection{The superpotential}
-The MSSM superpotential takes the form
+\section{Softly broken supersymmetry}
+The component fields of a superfield have the same mass, as can be seen from the mass terms above. This means that, if supersymmetry holds, the superpartners of the SM particles should have been discovered by now. Evidently, if this symmetry exists, it is not evident in the ground state that we inhabit - that is, it must be spontaneously broken. The exact mechanism by which it is broken is still unknown - there are a number of competing models which introduce new physics at high energy scales. To remain model-agnostic, we can simply perform a parameterized explicit breaking by inserting the relevant terms into the Lagrangian by hand. The form of these terms is constrained by the requirement that the quadratic divergences in the radiative corrections to scalar masses must still vanish. With this constraint, we can write a set of generic soft SUSY-breaking terms:
+
+\[\mathcal{L}_\text{soft} = -\left(\frac{1}{2}M_a\lambda^a\lambda^a+\frac{1}{6}a^{ijk}\phi_i\phi_j\phi_k+\frac{1}{2}b^{ij}\phi_i\phi_j+t^i\phi_i\right)+\text{h.c.}-(m^2)_j^i\phi^{j*}\phi_i\]
+Note that a general feature of the the above terms is that the masses and couplings have positive mass dimension.
+
+\section{The MSSM}
+
+Specifying a collection of chiral supermultiplets, the gauge symmetry structure, a superpotential of the form in \eqref{eq:superpotential}, and a set of soft SUSY-breaking terms should be enough to reproduce a supersymmetric Lagrangian like the one above. With that in mind, let us put together the ingredients of the MSSM. The first is a gauge symmetry structure, which we will take to be the same as the Standard Model:
+\begin{equation*}
+  SU(3)_c\times SU(2)_L\times U(1)_Y
+\end{equation*}
+The next is a set of chiral supermultiplets, and the gauge supermultiplets that correspond to our gauge symmetry structure. These supermultiplets define the particle content of the theory. We show them in \autoref{tab:chiral_supermultiplets} and \autoref{tab:gauge_supermultiplets}, grouped by which group representation they transform under. For brevity, we have not shown all three fermion generations.
+\begin{table}
+  \caption{Chiral supermultiplets of the MSSM.}
+  \label{tab:chiral_supermultiplets}
+  \begin{tabular}{cccccc}
+    \toprule
+                   & \multicolumn{2}{c}{Components}                  & \multicolumn{3}{c}{Group representation} \\ \cmidrule(r){2-3}\cmidrule(l){4-6}
+    Superfield     & Spin-0                                          & Spin-$\slantfrac{1}{2}$                                                        & $SU(3)_c$          & $SU(2)_L$    & $U(1)_Y$\\\midrule
+                   & Squarks                                         & Quarks                                                                         &                    &              & \\ \cmidrule(r){2-3}\\
+    Q              & $\vdoublet{\widetilde{u}_L}{\widetilde{d}_L}$   & $\vdoublet{u_L}{d_L}$                                                          & $\mathbf{3}$       & $\mathbf{2}$ & $\frac{1}{2}$\\\\
+    $\overline{u}$ & $\tilde{u}_R^*$                                 & $u_R^\dagger$                                                                  & $\bar{\mathbf{3}}$ & $\mathbf{1}$ & -$\frac{2}{3}$\\\\
+    $\overline{d}$ & $\tilde{d}_R^*$                                 & $d_R^\dagger$                                                                  & $\bar{\mathbf{3}}$ & $\mathbf{1}$ & $\frac{1}{3}$\\\\\cmidrule{2-3}
+                   & Sleptons                                        & Leptons                                                                        &                    &              & \\ \cmidrule{2-3}\\
+    \emph{L}       & $\vdoublet{\widetilde{\nu}_L}{\widetilde{e}_L}$ & $\vdoublet{\nu_L}{e_L}$                                                        & $\mathbf{1}$       & $\mathbf{2}$ & -$\frac{1}{2}$\\\\
+    $\overline{e}$ & $\tilde{e}_R^*$                                 & $e_R^\dagger$                                                                  & $\bar{\mathbf{1}}$ & $\mathbf{1}$ & $1$\\\\\cmidrule{2-3}
+                   & Higgses                                         & Higgsinos                                                                      &                    &              & \\ \cmidrule{2-3}\\
+    $H_u$          & $\vdoublet{H_u^+}{H_u^0}$                       & $\vdoublet{\widetilde{H}_u^+}{\widetilde{H}_u^0}$                              & $\mathbf{1}$       & $\mathbf{2}$ & $\frac{1}{2}$\\\\
+    $H_d$          & $\vdoublet{H_d^0}{H_d^-}$                       & $\vdoublet{\widetilde{H}_d^0}{\widetilde{H}_d^-}$                              & $\mathbf{1}$       & $\mathbf{2}$ & -$\frac{1}{2}$\\\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption{Gauge supermultiplets of the MSSM.}
+  \label{tab:gauge_supermultiplets}
+  \begin{tabular}{ccccc}
+    \toprule
+\multicolumn{2}{c}{Components} & \multicolumn{3}{c}{Group representation} \\ \cmidrule(r){1-2}\cmidrule(l){3-5}
+Spin-$\slantfrac{1}{2}$        & Spin-1                                                                         & $SU(3)_c$          & $SU(2)_L$    & $U(1)_Y$\\\midrule
+Gluinos: $\widetilde{g}$       & Gluons: \emph{g}                                                               & $\mathbf{8}$       & $\mathbf{1}$ & 0 \\\\
+Winos: $\widetilde{W}^0$       & W bosons: $W^\pm$                                                              & $\bar{\mathbf{1}}$ & $\mathbf{3}$ & 0\\\\
+Binos: $\widetilde{B}^0$       & B bosons: $B^0$                                                                & $\bar{\mathbf{1}}$ & $\mathbf{3}$ & 0\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Next, let us specify the superpotential. In terms of the chiral superfields in \autoref{tab:chiral_supermultiplets}, we can write the MSSM superpotential as:
 \[W_\text{MSSM} = \bar{u}\mathbf{y_u}QH_u-\bar{d}\mathbf{y_d}Q H_d-\bar{e}\mathbf{y_e}L H_d+\mu H_u H_d \]
-
-The non-SM interactions in our signal process are the higgsino-bino-$Z$ and the higgsino-bino-$h$ interactions. To determine their coupling, we can inspect the structure of the MSSM. We will first examine the gauge interactions of higgsino and bino gauge eigenstates. Upon doing this, it will be apparent that there are no interaction terms containing both pure higgsinos and pure binos. The reason is that electroweak symmetry breaking induces mixing among the neutralinos. After this, we will move on to the coupling involving the SM Higgs boson, and see how it is obtained. 
-In the MSSM, there are two $SU(2)_L\times U(1)_Y$ Higgs doublets instead of the one that we encounter in the standard model.
-\[H_u = \begin{pmatrix}H_u^+\\H_u^0\end{pmatrix};
-H_d = \begin{pmatrix}H_d^0\\H_d^-\end{pmatrix}\]
-Inserting the covariant derivatives into the kinetic terms will yield the interaction terms. Each of the fields $H_u$ and $H_d$ can be interpreted as the scalar field $\phi$ in \eqref{eq:phi1} and \eqref{eq:phi2}. Similarly, the supersymmetrizations of $H_u$ and $H_d$,
-\[\widetilde{H_u} = \begin{pmatrix}\widetilde{H_u}^+\\\widetilde{H_u}^0\end{pmatrix};
-\widetilde{H_d} = \begin{pmatrix}\widetilde{H_d}^0\\\widetilde{H_d}^-\end{pmatrix}\]
-can be equated with the field $\psi$ in \eqref{eq:psi}. The component fields of these are called \emph{higgsinos}. Once we insert the generators and associated gauge fields for the $SU(2)_L\times U(1)_Y$ symmetry in the covariant derivatives, and mix the gauge fields in the manner dictated by electroweak symmetry breaking, the gauge interactions of the higgs and higgsino fields look a lot like the SM interactions. In fact, they will have the same strength. Since we are interested in neutral higgsino-like NLSPs for our signal process, let us isolate their particular interaction terms:
-\[\frac{g}{\cos\theta_W}Z_\mu\left(\widetilde{H_u}^{0\dagger}\overline{\sigma}^\mu \widetilde{H_u}+
-\widetilde{H_d}^{0\dagger}\overline{\sigma}^\mu \widetilde{H_d}\right)\]
-Now let us turn to the interactions of gauge supermultiplets. A generic gauge supermultiplet will consist of a gauge boson $A_\mu^a$ and its two-component Weyl fermion superpartner, the \emph{gaugino} $\lambda^a$. The SM gauge bosons reside in such gauge supermultiplets, and so the index $a$ runs over the adjoint representation of the relevant gauge group. The gauge interactions of gauginos can be extracted from their kinetic term in the Lagrangian:
-\[\mathcal{L}_{\text{gaugino,kinetic}} = i\lambda^{a\dagger}\overline{\sigma}^\mu\nabla_\mu\lambda^a\]
-where the covariant derivative is given by
-\[\nabla_\mu\lambda^a = \partial_\mu\lambda^a + gf^{abc}A_\mu^b\lambda^c.\]
-The factors $f^{abc}$ represent the structure constants of the gauge group. Thus, the interaction term would look like:
-\[ig\lambda^{a\dagger}\overline{\sigma}^\mu f^{abc}A_\mu^b\lambda^c\]
-The bino $(\widetilde{B}^0)$ is the superpartner of the SM gauge boson associated with the $U(1)_Y$ (hypercharge) gauge symmetry. Thus, it will transform in the adjoint representation of $U(1)_Y$ as well. However, this implies that there can never be a interaction vertex containing a bino and a gauge boson, since the structure constants for $U(1)_Y$ are all simply 0. In addition, we have previously seen that examining the chiral supermultiplet conaining the higgsino does not yield a neutral higgsino-bino-$Z$ vertex either. The reason that we can consider such a vertex in our signal process is due to the fact that electroweak symmetry breaking induces mixing among neutral higgsinos, binos, and the neutral wino $(\widetilde{W}^0)$, the superpartner of the $W_\mu^3$ gauge field associated with the SM $SU(2)_L$ gauge symmetry that mixes with $B_\mu$ to form the $Z$ boson and photon.
+where we have abbreviated terms such as $\mu(H_u)_\alpha (H_d)_\beta\epsilon^{\alpha\beta}$ to $\mu H_u H_d$, and the matrices $\mathbf{y}$ are $3\times3$ matrices of Yukawa couplings, with indices representing the fermion generations. 
+Note also that we now see the necessity of having two Higgs doublets - one that couples to the up-type fermions, and the other to the down-type fermions. A term like $\overline{u}\mathbf{y_u}QH_d^*$ would lead to a non-conserved hypercharge.
+Finally, we have a set of terms that soft SUSY-breaking terms.
+\begin{align*}
+  \begin{split}
+    \mathcal{L}_\text{soft}^\text{MSSM} &= -\frac{1}{2}\left(M_1\tilde{B}\tilde{B}+
+    M_2\widetilde{W}\widetilde{W} + M_3\widetilde{g}\widetilde{g} + \text{h.c.}\right)\\
+    &-\left(\widetilde{\overline{u}}\mathbf{a_u}\widetilde{Q}H_u-\widetilde{\overline{d}}\mathbf{a_d}-\widetilde{\overline{e}}\mathbf{a_e}\widetilde{L}H_d+\text{h.c.}\right)\\
+    &-\widetilde{Q}^\dagger\mathbf{m_Q^2}\widetilde{Q}
+     -\widetilde{L}^\dagger\mathbf{m_L^2}\widetilde{L}
+     -\widetilde{\overline{u}}^\dagger\mathbf{m_{\overline{u}}^2}\widetilde{\overline{u}}^\dagger
+     -\widetilde{\overline{d}}^\dagger\mathbf{m_{\overline{d}}^2}\widetilde{\overline{d}}^\dagger
+     -\widetilde{\overline{e}}^\dagger\mathbf{m_{\overline{e}}^2}\widetilde{\overline{e}}^\dagger
+  \end{split}
+\end{align*}
+\subsection{Phenomenological approximations}
+Often, the MSSM has a number of simplifying assumptions motivated both by convenience and compatibility with observed experimental data. For example, it is convenient to take the Yukawa matrices $\mathbf{y_u,y_d,y_e}$ in a simplified limit, where only the heaviest generations have non-zero Yukawa couplings. 
+\begin{align*}
+  \mathbf{y_u} \approx \begin{pmatrix}
+    0 & 0 & 0\\
+    0 & 0 & 0\\
+    0 & 0 & y_t
+  \end{pmatrix},&&
+  \mathbf{y_d} \approx \begin{pmatrix}
+    0 & 0 & 0\\
+    0 & 0 & 0\\
+    0 & 0 & y_b
+  \end{pmatrix},&&
+  \mathbf{y_e} \approx \begin{pmatrix}
+    0 & 0 & 0\\
+    0 & 0 & 0\\
+    0 & 0 & y_\tau
+  \end{pmatrix}
+\end{align*}
+Furthermore, to suppress excessive CP-violation and FCNCs in the MSSM, the following approximations are often made:
+\begin{align*}
+  \mathbf{m_Q^2} = m_Q^2\mathbf{1},&&
+  \mathbf{m_{\bar{u}}^2} = m_{\bar{u}}^2\mathbf{1},&&
+  \mathbf{m_{\bar{d}}^2} = m_{\bar{d}}^2\mathbf{1},&&
+  \mathbf{m_{\bar{e}}^2} = m_{\bar{e}}^2\mathbf{1},&&
+  \mathbf{m_{\bar{L}}^2} = m_{\bar{L}}^2\mathbf{1}\\
+\end{align*}
+\begin{align*}
+  \mathbf{a_u} = A_{u0}\mathbf{y_u},&&
+  \mathbf{a_d} = A_{d0}\mathbf{y_d},&&
+  \mathbf{a_e} = A_{e0}\mathbf{y_e}\\
+\end{align*}
+\begin{align*}
+  \text{Im}(M_1)=
+  \text{Im}(M_2)=
+  \text{Im}(M_3)=
+  \text{Im}(A_{u0})=
+  \text{Im}(A_{d0})=
+  \text{Im}(A_{e0})=0
+\end{align*}
+With the above ingredients, one can work out myriad phenomenological consequences. In \autoref{ch:DM_100_TeV}, we examine the neutralino sector of the MSSM in slightly more detail.
 
 \section{Split Supersymmetry}
-With the tightening constraints on the MSSM from the LHC, it is worth considering what would happen if we relaxed our idea of `naturalness'. Such a spectrum is called a \emph{split} spectrum, with a hierarchy between the masses of the fermionic and scalar superpartners.
+This paradigm, known as `natural' supersymmetry  has been the dominant paradigm for constructing supersymmetric models for decades. However, recent data from the LHC has placed severe constraints on this picture. With this in mind, it is worth considering what would happen if we relaxed the criterion of `naturalness'. More specifically, a spectrum with a mass hierarchy between the scalar and fermionic superpartners of the SM particles - anywhere on the order of 10-100 TeV - offers a number of benefits, at the cost of some level of fine-tuning. Such a spectrum is called a \emph{split} spectrum. This idea was first introduced in \citep{Wells:2003tf,Arkani-Hamed2005,Giudice2005}, and might well take the crown from natural supersymmetry as the dominant paradigm in the decades to follow. In \autoref{ch:DM_100_TeV}, we examine a split spectrum with the hierarchy $M_1 < |\mu| << M_2$. and a strategy to probe the split parameter space at a 100 TeV collider.

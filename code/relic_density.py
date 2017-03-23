@@ -5,7 +5,7 @@ import matplotlib as mpl
 mpl.use("pgf")
 import matplotlib.pyplot as plt
 pgf_with_rc_fonts = {
-    "font.family": "Minion Pro",
+    "font.family": "serif",
     "font.serif": [],                   # use latex default serif font
     "font.sans-serif": ["DejaVu Sans"], # use a specific sans-serif font
 }

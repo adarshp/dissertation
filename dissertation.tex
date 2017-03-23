@@ -30,8 +30,9 @@
 \setsansfont{Myriad Pro}[BoldFont={* Semibold},Numbers=OldStyle]
 
 % ***********************************************
-% Else uncomment the line below:
-% \usepackage{mathpazo}
+% Else uncomment the lines below:
+%\usepackage[T1]{fontenc}
+%\usepackage{mathpazo}
 %\newcommand{\slantfrac}[2]{\frac{#1}{#2}}
 % ***********************************************
 
@@ -42,11 +43,10 @@
 \PassOptionsToPackage{fleqn}{amsmath}   % math environments and more by the AMS 
     \usepackage{amsmath}
 
-\PassOptionsToPackage{%
+\usepackage[%
     backend=biber, backref, language=auto, style=numeric-comp, sorting=none,
     maxbibnames=10, arxiv=pdf, url=false, natbib=true
-}{biblatex}
-    \usepackage{biblatex}
+]{biblatex}
 
 
 % ********************************************************************
@@ -111,6 +111,7 @@
 
 % Bibliographies
 \addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
+\addbibresource{mybiblio.bib}
 
 % ********************************
 % Math stuff
@@ -143,6 +144,7 @@
 
 % Shortcuts
 \newcommand{\vdoublet}[2]{\begin{pmatrix} #1 \\  #2\end{pmatrix}}
+\newcommand{\hdoublet}[2]{\begin{pmatrix} #1 & #2\end{pmatrix}}
 \newcommand{\fourmatrix}[4]{\begin{pmatrix} #1 &  #2 \\ #3 & #4\end{pmatrix}}
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\Adarsh}[1]{{\color{Maroon} AP: #1}}
@@ -281,8 +283,8 @@
 \include{Chapters/DarkMatter}
 \include{Chapters/ColliderPheno}
 \include{Chapters/MachineLearning}
-% \chapter{Light Charged Higgs bosons at the LHC}
 \include{Chapters/DM100TeV}
+% \chapter{Light Charged Higgs bosons at the LHC}
 % \chapter{Exotic 2HDM Higgs searches at 14 and 100 TeV}
 % ********************************************************************
 % Backmatter
