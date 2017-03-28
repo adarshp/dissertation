@@ -1,0 +1,126 @@
+\chapter{Light Charged Higgses}\label{ch:LightChargedHiggs}
+\newcommand{\sba}{\ensuremath{\sin(\beta-\alpha)}}
+\newcommand{\cba}{\ensuremath{\cos(\beta-\alpha)}}
+\newcommand{\hc}{H^{\pm}}
+\newcommand{\w}{W^{\pm}}
+\newcommand{\Barath}[1]{{\bf\color{cyan} BC: #1}}
+\newcommand{\Felix}[1]{{\bf\color{blue} FK: #1}}
+\newcommand{\Shufang}[1]{{\bf\color{red} SS: #1}}
+\newcommand{\Note}[1]{{\bf\color{red} #1}}
+\newcommand{\met}{\ensuremath{{\not\mathrel{E}}_T}}
+\newcommand{\ifb}{\ensuremath{ \text{fb}^{-1}  }}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+
+\subsection{Single Top Production}
+ \label{sec:analysis_tj}
+ 
+For single top production, we consider the channel\
+\begin{equation}
+pp\rightarrow tj\rightarrow \hc bj\rightarrow AW^{\pm}bj \rightarrow \tau\tau W bj.
+\end{equation}    The dominant SM backgrounds are $W\tau\tau$ production, which we generate with up to two additional jets (including $b$ jets); and  top pair production with both fully and semi-leptonic decay chains, which we generate with up to one additional jet. We also take into account the SM backgrounds $tj\tau\tau$ and $ttll$ with $l= (e, \mu, \tau)$.
+
+The cuts that we have imposed are:
+\begin{enumerate}
+
+\item \textbf{Identification cuts:} 
+
+\textbf{Case A ($\tau_{had}\tau_{had}$):}  {One lepton $\ell = e$ or $\mu$, two $\tau$ tagged jets, zero or one $b$ tagged jet and at least one untagged jet:} 
+\begin{equation}
+n_{\ell} = 1, \;  n_{\tau} = 2, \; n_b = 0,1 ,\; n_{j} \geq 1.
+\label{eqA}
+\end{equation}
+We require the $\tau$-tagged jets to have charges of opposite signs.
+
+\textbf{Case B ($\tau_{lep}\tau_{had}$):}  {Two leptons, one $\tau$ tagged jet, zero or one $b$ tagged jet and at least one untagged jet:}
+\begin{equation}
+n_{\ell} = 2, \; n_{\tau} = 1,\; n_b = 0,1 , \;n_{j} \geq 1.
+\label{eqB}
+\end{equation}
+We require that both leptons have the same sign, which is opposite to the sign of the $\tau$ tagged jet.
+
+\textbf{Case C ($\tau_{lep}\tau_{lep}$):}  {Three leptons, no $\tau$ tagged jet, zero or one $b$ tagged jet and at least one untagged jet:}
+\begin{equation}
+n_{\ell} = 3, \; n_{\tau} = 0, \; n_b = 0,1 ,\; n_{j} \geq 1.
+\label{eqC}
+\end{equation}
+The following selection cuts for the identification of leptons, $b$ jets and jets are used:
+\begin{equation}
+|\eta_{\ell,b,\tau}| < 2.5, \; |\eta_{j}| < 5, \; p_{T, \ell_1, j, b} > 20 \text{ GeV and } p_{T, \ell_{2}} > 10 \text{ GeV.}
+\label{eqID}
+\end{equation}
+
+
+\item \textbf{Neutrino reconstruction:}  
+We reconstruct the  momentum of the neutrino using the missing transverse momentum  and the momentum of the hardest lepton as described in \cite{Aad:2012ux}, assuming that the missing energy is solely from $W\rightarrow \ell \nu$.    In case B and C, the neutrino reconstruction  is relatively poor since there is additional missing energy from the leptonic $\tau$ decay. 
+
+\item \textbf{Neutral Higgs candidate $A$:} The $\tau$ jets (case A), the $\tau$ jet and the softer lepton (case B) or the two softer leptons (case C) are combined to form the neutral Higgs candidate.   {In cases B and C the mass reconstruction is  relatively poor due to missing energy from the neutrino associated with the leptonic $\tau$ decay. }
+
+\item \textbf{Charged Higgs candidate $H^{\pm}$:} The   neutral Higgs candidate, the reconstructed neutrino and the hardest lepton  are combined to form the charged Higgs candidate. 
+
+\item \textbf{Mass cuts:} We place upper limits on the masses of the charged and neutral Higgs candidates, optimized for each mass combination.  For $m_{\hc}=160$ GeV and $m_{A}= 70$ GeV, we impose 
+\begin{equation}
+m_{\tau\tau} < 48  \text{ GeV and } m_{\tau\tau W} < 148 \text{ GeV.}
+\label{eqMASS}
+\end{equation}
+ 
+
+ \item \textbf{Angular correlation:} A unique kinematical signature of single top production is the distribution of the angle $\theta^{*}$, which is the angle between the top momentum in the $tj$ system's rest frame and the $tj$ system's momentum in the lab frame, as suggested in \cite{Kling:2012up}. The differential distribution for $\cos\theta^{*}$  is shown in the left panel of Fig.~\ref{fig:fig3} for signal (red, solid), $t\bar{t}$ (blue, dotted) and $W\tau\tau$ (green, dotted). The signal tends to peak around $\cos\theta^* \approx -1$ while the background is   flat for $W\tau\tau$ and $t\overline{t}$.\footnote{As shown in \cite{Kling:2012up}, the $\cos\theta^{*}$ distribution for $t\bar{t}$ background would peak around $\cos\theta^{*}=1$ if the top quark could be reliably identified.   However, in this paper we approximate the top quark momentum by the momentum of the charged Higgs candidate, which results in a flat distribution of $\cos\theta^*$ for the $t\bar{t}$ system.  }   In our analysis we require  
+\begin{equation}
+ \cos\theta^*<  -0.8.
+\label{eqT}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width = 0.49\textwidth]{paperplots/angle_separated_rotated}\hfill
+ \includegraphics[width = 0.49\textwidth]{paperplots/pt_separated_rotated}
+ \caption{Normalized distribution of $\cos\theta^*$ (left  panel) and the transverse momentum of the $tj$ system $p_{T,tj}$ (right panel) for the signal (red, solid) and the dominant SM backgrounds: $t\bar{t}$ (blue, dotted)  and $W\tau\tau$ (green, dotted). The imposed cuts are indicated by the vertical dashed lines. The histograms shown are for case A with $m_{H^{\pm}}=160\text{ GeV}$ and $m_A=70$ GeV.}
+\label{fig:fig3}
+\end{figure}
+
+\item\textbf{Top and recoil jet system momentum:} In single top production, we expect that the transverse momentum of the top quark and recoil jet should balance each other, as shown in the right plot of Fig.~\ref{fig:fig3} by the red solid curve.  We impose the cut for the transverse momentum of  the $tj$ system: 
+\begin{equation}
+p_{T,tj} < 30 \text{ GeV}.
+\label{eqPT}
+\end{equation}
+This further suppresses the top pair background in the presence of additional jets coming from the   second top.
+ 
+\end{enumerate}
+
+
+
+In Table \ref{tab:tj}, we show the signal and  major  background cross sections with cuts for a signal benchmark point of $m_{\hc} = 160$ GeV and $m_A =  70$ GeV at the 14 TeV LHC. The first row shows the total cross section before cuts,  calculated using MadGraph.    The following rows show the cross sections after applying the identification cuts, mass cuts and the additional cuts on $\cos\theta^*$ and $p_{T,tj}$ for all three cases as discussed above. We have chosen a nominal value for $\sigma \times \text{BR}( p p  \rightarrow \hc b j \rightarrow \tau \tau W bj)$ of 100 fb.\footnote{For the Type II 2HDM the top branching fraction into a charged Higgs for $m_{\hc}=160$ GeV is typically  between 0.1\% and 1\% (see Fig.~\ref{fig:tBR}). Using the single top production cross section, $\sigma_{tj}=248$ pb \cite{Kidonakis:2012db} and assuming  the branching fractions BR$(\hc \rightarrow A\w)  = 100 \%$ and BR$(A \rightarrow \tau\tau)=8.6 \%$ leads to the stated $\sigma\times$ BR of around 21 $-$ 210 fb.  }
+
+
+
+\begin{table}[h]
+\centering
+\resizebox{14cm}{!} {
+\begin{tabular}{ |l | r |r r r |r r|}  \hline
+Cut 		 														&Signal 	&		$W(W)\tau\tau$ 	&	$t\bar{t}$		&$tj\tau\tau/ttll$	&$S/B$	&$S/\sqrt{B}$	\\
+																&[fb]		&			[fb]		&	[fb]					&[fb]		&		&	(300 fb$^{-1}$)		\\
+\hline
+$\sigma$    														&100 		&		  2000		&    $6.3 \cdot 10^5$  				& 257		&	-			&	-	\\
+\hline
+A: Identification [Eq.(\ref{eqA})] 		 								&0.29	 	&           5.36 		&    130			& 1.39		&	 0.002     	& 0.43	\\
+\phantom{A:} 
+Mass cuts [Eq.(\ref{eqMASS})]											&0.16	 	&           0.34 		&    2.62				& 0.04		&	 0.05     	& 1.55	\\
+\phantom{A:} $\cos\theta^*$ and $p_{T,tj}$ [Eq.(\ref{eqT}), (\ref{eqPT})]&0.07	 	&           0.03 		&    0.07					& 0.001		& 	 0.67     	& 3.72	\\
+\hline
+B: Identification [Eq.(\ref{eqB})]	 									&0.25	 	&           4.45 		&    2.46					& 1.33	&	 0.03    		& 1.51	\\
+\phantom{B:} Mass cuts [Eq.(\ref{eqMASS})]								&0.11	 	&           0.31 		&    0.20					& 0.05	&	 0.19    		& 2.48	\\
+\phantom{B:} $\cos\theta^*$ and $p_{T,tj}$ [Eq.(\ref{eqT}), (\ref{eqPT})]&0.06	 	&           0.04 		&    0.02					& 0.002		&	 0.91    		& 3.99	\\
+\hline
+C: Identification [Eq.(\ref{eqC} )]	 									&0.18	 	&           3.07 		&    6.77				& 6.74		& 	0.01     	& 0.78  \\
+\phantom{C:} Mass cuts [Eq.(\ref{eqMASS})]								&0.12	 	&           0.55 		&    0.94				& 0.28		& 	0.07     	& 1.63  \\
+\phantom{C:} $\cos\theta^*$ and $p_{T,tj}$ [Eq.(\ref{eqT}), (\ref{eqPT})]&0.07	 	&           0.08 		&    0.10					& 0.01		& 	0.38     	& 2.84 \\
+\hline
+\end{tabular}
+}
+\caption{Signal and dominant background cross sections with cuts for the signal benchmark point $m_{\hc}$ = 160 GeV   and $m_A$ = 70 GeV at the 14 TeV LHC.  We have chosen a nominal value for $\sigma \times {\text{BR}}(pp \rightarrow tj \rightarrow \hc  j b \rightarrow \tau\tau W b j )$ of 100 fb to illustrate the cut efficiencies for the signal process.  The last column of $S/\sqrt{B}$ is shown for an integrated luminosity of 300 fb$^{-1}$.  }
+\label{tab:tj}
+\end{table}
+
+We can see that the dominant background contributions after particle identification are $t\overline{t}$ for cases A and C, and $W\tau\tau$   for case B.  The reach is slightly better in case B in which the same sign dilepton signature can reduce the $t\bar{t}$ background sufficiently.  Nevertheless, soft leptons from underlying events or $b$-decay can mimic the same sign dilepton signal.  The obtained   results are sensitive to the $\tau$ tagging efficiency as well as the misidentification rate.  In our analyses, we have used a  $\tau$ tagging efficiency of $\epsilon_{tag}=60\%$ and a mistagging rate of $\epsilon_{miss}=0.4\%$,  as suggested in \cite{snowmassdetector}.  A better rejection of non-$\tau$ initiated jets would increase the significance of this channel. 

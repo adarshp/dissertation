@@ -1,7 +1,12 @@
 \chapter{Machine Learning in Particle Physics}
 \section{Particle physics as a classification problem}
 Separating signals and backgrounds in particle physics is, in the language of machine learning, a \emph{classification} problem. One can consider particle collision events as living in a space, where the coordinates of each event are represented by various \emph{features} of the event. These features could be high-level ones such as razor variables, or low-level ones, such as the momentum components of individual final state particles. What we do when we perform a cut-and-count analysis is to try and isolate a region of this space that is rich in signal events. Typically, the most straightforward approach is to define a sort of `box' in feature space using rectangular, one-dimensional cuts. However, there is no guarantee that signal events are confined to such a box --- correlations between the features can distort the distribution of events in feature space. 
-
+\strictpagecheck
+\begin{figure}
+  \begin{sidecaption}{Illustration of a non-linear decision boundary in two-dimensional feature space.}
+  \input{code/scatter.pgf}
+\end{sidecaption}
+\end{figure}
 If we consider a two- or three- dimensional feature space, this distribution of the events is typically easy to visualize, and can often be explained through a simple kinematical relation between the features. Thus, instead of a box, we might draw a ring, or perhaps some other shape as a `lasso' around the events. This kind of delineation between signal and background events is known in machine learning terms as a \emph{decision boundary}. As we go to higher dimensions, manually choosing this becomes virtually impossible - instead we resort to looking at one- and two-dimensional slices of the space and imposing cuts on those. 
 
 However, these cuts may fail to fully capture the potentially complicated correlations among the features, and we might end up rejecting too many signal events, or accepting too many background events. Machine learning techniques (or, as they are sometimes referred to in the literature, multivariate techniques) can harness the correlations between features more efficiently than manually attempting to find the optimal decision boundary in feature space.

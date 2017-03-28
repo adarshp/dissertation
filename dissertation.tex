@@ -4,6 +4,8 @@
 \usepackage{shellesc}
 \usepackage{slashed}
 \usepackage{algpseudocode, algorithm}
+\usepackage{pifont}
+\usepackage{minted}
 \usepackage{pdfpages}
 \usepackage{silence}% http://ctan.org/pkg/silence
 \WarningFilter{fontaxes}{I don't know how to decode}
@@ -147,7 +149,7 @@
 \newcommand{\hdoublet}[2]{\begin{pmatrix} #1 & #2\end{pmatrix}}
 \newcommand{\fourmatrix}[4]{\begin{pmatrix} #1 &  #2 \\ #3 & #4\end{pmatrix}}
 \renewcommand{\L}{\mathcal{L}}
-\newcommand{\Adarsh}[1]{{\color{Maroon} AP: #1}}
+\newcommand{\Adarsh}[1]{{\color{Maroon} Adarsh: #1}}
 
 % ********************************************************************
 % Memoir package - layout and styling
@@ -247,6 +249,7 @@
 }
 \chapterstyle{bringhurst}
 \headstyles{bringhurst}
+\setafterparaskip{-0.5em}
 %\hangsecnum
 \checkandfixthelayout
 
@@ -257,11 +260,11 @@
 
 % Creating the title page
 \pretitle{\vskip 3cm\LARGE\noindent}
-\title{\scshape\color{Maroon}{\MakeTextLowercase{Searches for New Physics at Colliders}}}
+\title{\scshape\color{Maroon}{\MakeTextLowercase{Hunting Hidden Higgses}}}
 \posttitle{\vskip 0.3em}
 \preauthor{\lineskip 0.5em\Large\itshape\noindent}
 \author{Adarsh Pyarelal}
-\postauthor{\vskip 9cm}
+\postauthor{\vskip 9cm\Pisymbol{MinionPro-Extra}{111}}
 \date{}
 \begin{document}
 \pagenumbering{arabic}
@@ -276,13 +279,14 @@
 \cleardoublepage
 \listoftables*
 \cleardoublepage
+\include{FrontBackMatter/Preface}
 \include{Chapters/Introduction}
 \include{Chapters/SM}
 \include{Chapters/2HDM}
 \include{Chapters/SUSY}
-\include{Chapters/DarkMatter}
 \include{Chapters/ColliderPheno}
 \include{Chapters/MachineLearning}
+\include{Chapters/LightChargedHiggs}
 \include{Chapters/DM100TeV}
 % \chapter{Light Charged Higgs bosons at the LHC}
 % \chapter{Exotic 2HDM Higgs searches at 14 and 100 TeV}
@@ -294,10 +298,10 @@
 \include{Chapters/Appendix_Group_Theory}
 \include{Chapters/Appendix_Misc}
 \include{Chapters/Appendix_Notation}
+\include{Chapters/DarkMatter}
 \include{Chapters/Appendix_Statistics}
-\chapter{Light Charged Higgs Bosons to AW/HW via top decay}
+%\include{Chapters/Appendix_Code}
 %\includepdf[pages=-]{Chapters/LightChargedHiggs}
-\chapter{A Razor search for Bino Dark Matter at 100 TeV}
 %\includepdf[pages=-]{Chapters/dm100TeV}
 \printbibliography
 \include{FrontBackMatter/Colophon}

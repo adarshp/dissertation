@@ -64,6 +64,10 @@ Particles can be defined as objects that transform under irreducible unitary rep
 
 The Lorentz group is an example of a \emph{Lie group}.
 
+\definition[Lie group]{A \emph{Lie group} is a group that is also a smooth manifold and whose group operations are smooth.\footnote{http://www.math.ucla.edu/~petersen/manifolds.pdf}}
+
+The mathematical idea of a manifold is constructed using concepts from topology, and is reviewed below.
+
 \section{Topology}
 
 \definition[Topological space, Topology]{A \emph{topological space} $X$ is a set along with a collection $T$ of open subsets of $X$ that satisfies the following conditions:
@@ -103,20 +107,21 @@ Transition maps are also known as \emph{coordinate transformations}, a term fami
 
 \definition[Smooth manifold]{A \emph{smooth manifold} is a topological manifold whose transition maps are diffeomorphisms. }
 
-\section{Lie groups and algebras}
+\section{Some definitions related to Lie groups}
 
-\definition[Lie group]{A \emph{Lie group} is a group that is also a smooth manifold and whose group operations are smooth.\footnote{http://www.math.ucla.edu/~petersen/manifolds.pdf}}
-
-\definition[Algebra]{An algebra is ...}
-\definition[Lie algebra]{A Lie algebra is a }
-\definition[Generator]{Exponentiating generators gives us members of the group ...}
+%\definition[Algebra]{An algebra is ...}
+%\definition[Lie algebra]{A Lie algebra is a }
+\definition[Generator]{Since Lie groups are manifolds, the group operations are differentiable. An infinitesimal Lie group transformation of a group element \emph{a} takes the form 
+  \[a\rightarrow a (1+\epsilon^aT^a\]
+  where $\epsilon^a$ and $T^a$ are infinitesimal transformation parameters and the \emph{generators} of the group. 
+}
 For a given group \emph{G}, let us denote the generators $T^a$ in the representation \emph{R} as the linear operators $T_R^a$. Then we can make the following definitions.
 \definition[Index]{
   The index $T(R)$ of the representation \emph{R} is given by
   \[\text{tr}[T_R^aT_R^b] = T(R)\delta^{ab}\]
 }
 \definition[Quadratic Casimir Operator]{
-  Then the quadratic Casimir $C_2(R)$ is defined by
+  The quadratic Casimir $C_2(R)$ is defined by
   \[T_R^aT_R^a = C_2(R)\cdot\mathbf{1}\]
 }
 For the special case of $SU(N)$, we can evaluate $T_R$ and $C_2(R)$ for the fundamental and adjoint representations as follows:
@@ -126,19 +131,19 @@ For the special case of $SU(N)$, we can evaluate $T_R$ and $C_2(R)$ for the fund
   C_F &= C_2(\text{fundamental}) &=& \frac{N^2-1}{2N}\\
   C_A &= C_2(\text{adjoint}) &=& N
 \end{align}
+The above definitions come into play when discussing non-Abelian gauge theories.
+%\section{Representations of the Poincar\'e group}
 
-\section{Representations of the Poincar\'e group}
+%Wigner's theorem associates unitary irreducible representations of the Poincar\'e group with two indices $m\in[0,\infty)$ and $J\in\{(n-1)/2\}$ where $n$ is an integer greater than zero, corresponding to mass and spin respectively. As it turns out
+%so(1,3) -> su2 + su2 -> representations of so(3)\\
+%classifying particles by spin/poincare transformations.\\
+%\section{Quantum Fields}
+%Map components of spinors, vectors, etc to field operators \\
+%Map field operators to kets in Hilbert (Fock?) space \\
+%\section{Connecting fields and physical systems}
+%Map kets to physical systems\\
+%scalars - higgs boson, vectors - gauge bosons, spinors - fermions\\
 
-Wigner's theorem associates unitary irreducible representations of the Poincar\'e group with two indices $m\in[0,\infty)$ and $J\in\{(n-1)/2\}$ where $n$ is an integer greater than zero, corresponding to mass and spin respectively. As it turns out
-so(1,3) -> su2 + su2 -> representations of so(3)\\
-classifying particles by spin/poincare transformations.\\
-\section{Quantum Fields}
-Map components of spinors, vectors, etc to field operators \\
-Map field operators to kets in Hilbert (Fock?) space \\
-\section{Connecting fields and physical systems}
-Map kets to physical systems\\
-scalars - higgs boson, vectors - gauge bosons, spinors - fermions\\
-
-Gauge symmetries and invariance\\
-The first term is the \emph{kinetic} term of the Lagrangian, and the second is the \emph{mass} term, with the coefficient $m_\psi$ representing the mass of the fermion. Here we employ the Feynman slash notation: $\gamma^\mu p_\mu = \slashed{p}$. 
-% Different types of Dirac bilinears?
+%Gauge symmetries and invariance\\
+%The first term is the \emph{kinetic} term of the Lagrangian, and the second is the \emph{mass} term, with the coefficient $m_\psi$ representing the mass of the fermion. Here we employ the Feynman slash notation: $\gamma^\mu p_\mu = \slashed{p}$. 
+%% Different types of Dirac bilinears?

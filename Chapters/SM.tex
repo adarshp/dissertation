@@ -55,7 +55,6 @@ The fundamental constituents of matter are fermions. They come in two varieties 
   \label{tab:gaugebosons}
 \end{margintable}
 
-\subsection{Free fermions}
 In the absence of interactions, the dynamics of a free fermion field $\psi$ are described by the Lagrangian
 \begin{align}
   \L_\text{fermion} = i\overline{\psi}\slashed{\partial}_\mu\psi-m_{\psi}\overline{\psi}\psi.
@@ -74,19 +73,18 @@ where $\lambda(x)$ is an arbitrary scalar function, the electromagnetic Lagrangi
 \footnote{The origin of the term `gauge invariance' lies in Hermann Weyl's attempt to describe electromagnetism as a geometric theory, similar to gravity, in 1916. He hoped to recover electromagnetism by imposing an invariance, termed \emph{eichinvarianz} (which translates to gauge invariance in English)  under local scale transformations, and identifying the scale factor with the electromagnetic vector potential $A_\mu$. Although this attempt was unsuccessful, the term was retained when it was discovered the correct way forward was to impose invariance under \emph{phase} transformations instead of scale transformations. For a history of the origins of gauge invariance, see \citep{Jackson2001}.}
  is a geometric one, usually discussed among mathematicians in terms of fiber bundles and connections \citep{Cheng1985}. A full geometric treatment of this topic is however beyond the scope of this work.
 
- In this section, we will show an example of the remarkable consequences of gauge symmetry. Consider the free fermion Lagrangian in \autoref{eq:fermion_lagrangian}. If we require that it is invariant under the transformation
+ In this section, we will show an example of the remarkable consequences of gauge symmetry. Consider the free fermion Lagrangian in \eqref{eq:fermion_lagrangian}. If we require that it is invariant under the transformation
 \begin{equation}\label{eq:fermion_field_transformation}
   \psi(x)\rightarrow e^{i\theta(x)}\psi(x).
 \end{equation}
-The phase of a quantum field at a particular point in spacetime is an unobservable quantity, and has no physical significance. However, we often have to compare the values of fields at different points in spacetime - for example, when we take the partial derivative $\partial_\mu$ in \autoref{eq:fermion_lagrangian}. At a very basic level, a derivative of a function $f(x)$ depends on the difference of the values of the function $f$ at the points $x$ and $x + dx$. However, the phase of the field is a matter of arbitrary convention, and our physical observables should not depend on them. To be able to compare fields at $x$ and $dx$, we need to promote our ordinary derivative $\partial_\mu$ to a \emph{gauge-covariant} or simply \emph{covariant} derivative,
+The phase of a quantum field at a particular point in spacetime is an unobservable quantity, and has no physical significance. However, we often have to compare the values of fields at different points in spacetime - for example, when we take the partial derivative $\partial_\mu$ in \eqref{eq:fermion_lagrangian}. At a very basic level, a derivative of a function $f(x)$ depends on the difference of the values of the function $f$ at the points $x$ and $x + dx$. However, the phase of the field is a matter of arbitrary convention, and our physical observables should not depend on them. To be able to compare fields at $x$ and $dx$, we need to promote our ordinary derivative $\partial_\mu$ to a \emph{gauge-covariant} or simply \emph{covariant} derivative,
 $$\partial_\mu \rightarrow D_\mu = \partial_\mu - igA_\mu$$
 Here, $A_\mu$ is a vector field that transforms as%
 %
 $$A_\mu\rightarrow A_\mu + \frac{1}{g}\partial_\mu\theta(x)$$
 %
 where $\theta(x)$ is a scalar function and $g$ is a dimensionless constant, whose physical interpretation will soon become apparent. The covariant derivative is a mathematical concept that arises in the theory of general relativity as well, and the field $A_\mu$ can be identified with a \emph{connection}, which gives us a way to compare the fields at the points $x$ and $x + dx$.
-
-Replacing the normal partial derivative in the kinetic term of the Lagrangian in \autoref{eq:fermion_lagrangian} with this covariant derivative gives us the following: 
+Replacing the normal partial derivative in the kinetic term of the Lagrangian in \eqref{eq:fermion_lagrangian} with this covariant derivative gives us the following: 
 \begin{equation}\label{eq:fermion_kinetic}
     \begin{split}
   \mathcal{L}_\text{fermion, kinetic} &= i\overline{\psi}\slashed{D}_\mu\psi\\
@@ -94,18 +92,18 @@ Replacing the normal partial derivative in the kinetic term of the Lagrangian in
 &= i\overline{\psi}\slashed{\partial}_\mu\psi + g\overline{\psi}A_\mu\psi
 \end{split}
 \end{equation}
-The second term on the right hand side of \autoref{eq:fermion_kinetic} is the interaction term describing the coupling of the vector field $A_\mu$ to fermions, with strength $g$. We also know that for $A_\mu$ to mediate interactions, it must be a dynamical, or propagating field. This means that the Lagrangian must have a term involving its derivatives, that is, the kinetic term for $A_\mu$. The simplest such gauge-invariant term with dimension four or less is %
+The second term on the right hand side of \eqref{eq:fermion_kinetic} is the interaction term describing the coupling of the vector field $A_\mu$ to fermions, with strength $g$. We also know that for $A_\mu$ to mediate interactions, it must be a dynamical, or propagating field. This means that the Lagrangian must have a term involving its derivatives, that is, the kinetic term for $A_\mu$. The simplest such gauge-invariant term with dimension four or less is %
 %
 \begin{equation}\label{eq:L_gauge_kin}
 \mathcal{L}_\text{gauge, kinetic} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
 \end{equation}
 %
-where $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$, and the factor $\frac{1}{4}$ is just a convenient normalization convention. The astute reader will notice that this has begun to look suspiciously like the Lagrangian density for the classical electromagnetic field. Indeed, if we identify the coupling constant $g$ with the electric charge of the fermion $\psi$, that is exactly what it is! The function $\frac{1}{g} \theta(x)$ can be identified with the function $\lambda(x)$ in \autoref{eq:gauge_transformation}. Combining the terms from equations \ref{eq:fermion_lagrangian}, \ref{eq:fermion_kinetic}, and \ref{eq:L_gauge_kin}, and replacing $g$ by $e$ to represent electric charge, we are led uniquely to the \textsc{qed} Lagrangian,
+where $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$, and the factor $\frac{1}{4}$ is just a convenient normalization convention. The astute reader will notice that this has begun to look suspiciously like the Lagrangian density for the classical electromagnetic field. Indeed, if we identify the coupling constant $g$ with the electric charge of the fermion $\psi$, that is exactly what it is! The function $\frac{1}{g} \theta(x)$ can be identified with the function $\lambda(x)$ in \eqref{eq:gauge_transformation}. Combining the terms from equations \ref{eq:fermion_lagrangian}, \ref{eq:fermion_kinetic}, and \ref{eq:L_gauge_kin}, and replacing $g$ by $e$ to represent electric charge, we are led uniquely to the \textsc{qed} Lagrangian,
 \begin{equation}
   \mathcal{L}_\text{QED} = i\overline{\psi}\slashed{\partial}_\mu\psi - m\overline{\psi}\psi + e\overline{\psi}A_\mu\psi -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
 \end{equation}
 Note that a mass term for the field $A_\mu$, of the form $mA_\mu A^\mu$ is not gauge-invariant and is thus forbidden, thus ensuring that the photon remains massless.
-The coefficient that is acquired by the field in \autoref{eq:fermion_field_transformation}, $e^{i\theta(x)}$, is a unitary operator. In fact, transformations of this sort form a group known as the \emph{unitary group of degree 1}, denoted $U(1)$, which is the group of $1\times 1$ matrices with determinant 1\footnote{This follows from the general definition of a unitary group $U(n)$, the group of $n\times n$ matrices with unit determinant.}. We say that the Lagrangian possesses a $U(1)_\text{em}$ gauge symmetry, where the subscript `em' stands for electromagnetism. Equivalently, we might say that the Lagrangian is invariant under the $U(1)_\text{em}$ gauge group. 
+The coefficient that is acquired by the field in \eqref{eq:fermion_field_transformation}, $e^{i\theta(x)}$, is a unitary operator. In fact, transformations of this sort form a group known as the \emph{unitary group of degree 1}, denoted $U(1)$, which is the group of $1\times 1$ matrices with determinant 1\footnote{This follows from the general definition of a unitary group $U(n)$, the group of $n\times n$ matrices with unit determinant.}. We say that the Lagrangian possesses a $U(1)_\text{em}$ gauge symmetry, where the subscript `em' stands for electromagnetism. Equivalently, we might say that the Lagrangian is invariant under the $U(1)_\text{em}$ gauge group. 
 
 \section{Pre-Yang-Mills Era}\label{sec:pre_yang_mills}
 
@@ -154,7 +152,7 @@ to the Dirac field as follows:
     0\\\psi_R
   \end{pmatrix}
 \end{align}
-From this, it is readily apparent that terms of the form shown in \autoref{eq:v_a_interaction} represent interaction between left-handed fields:
+From this, it is readily apparent that terms of the form shown in \eqref{eq:v_a_interaction} represent interaction between left-handed fields:
 \begin{equation}
 \bar{\psi'}\gamma^\mu(1-\gamma^5)\psi = 2\bar{\psi'}\gamma^\mu P_L\psi = 2\bar{\psi'_L}\gamma^\mu\psi _L.
 \end{equation}
@@ -171,7 +169,7 @@ However, the mass term for the $W$ boson in this theory - $M_W^2W_\mu^\dagger W^
 
 \section{Non-Abelian Gauge Theories}\label{sec:non_abelian}
 A non-Abelian group is one whose group operations do not commute with each other. One example of such a group is $SU(2)$. In 1954, Yang and Mills explored the implications of invariance under this group \citep{Yang1954}, leading to the creation of non-Abelian gauge theories, known as \emph{Yang-Mills theories}. 
-We will not delve into the intricacies of Yang-Mills theories, but will rather describe their essential ingredients. In \autoref{sec:gauge_invariance}, we were introduced to the concept of a covariant derivative, for the special case of the $U(1)$ gauge group. Now consider what would happen if the free fermion Lagrangian from \autoref{eq:fermion_lagrangian} was invariant under a general local symmetry group with generators $T^a$. That is, the field $\psi$ transforms as $\psi\rightarrow e^{i\epsilon_a(x) T^a}\psi$, where the parameters $\epsilon^a(x)$ are functions of space and time. To preserve the invariance of the Lagrangian under this transformation, the covariant derivative must have the form 
+We will not delve into the intricacies of Yang-Mills theories, but will rather describe their essential ingredients. In \autoref{sec:gauge_invariance}, we were introduced to the concept of a covariant derivative, for the special case of the $U(1)$ gauge group. Now consider what would happen if the free fermion Lagrangian from \eqref{eq:fermion_lagrangian} was invariant under a general local symmetry group with generators $T^a$. That is, the field $\psi$ transforms as $\psi\rightarrow e^{i\epsilon_a(x) T^a}\psi$, where the parameters $\epsilon^a(x)$ are functions of space and time. To preserve the invariance of the Lagrangian under this transformation, the covariant derivative must have the form 
 $$D_\mu = \partial_\mu - igA_\mu^aT^a$$
 where the vector fields $A_\mu^a$ transform as 
 $$A_\mu^a\rightarrow A_\mu^a + \frac{1}{g}\partial_\mu\epsilon_a(x) + f^{abc}A_\mu^b\epsilon^c(x)$$ 
@@ -238,7 +236,7 @@ V(\phi) = \frac{\lambda}{4}\left(\phi^2 - \frac{m^2}{\lambda}\right)^2
 \addplot+[mark=none,smooth](\x,{(\x^2 - 10)^2});
 \end{axis}
 \end{tikzpicture}
-\caption{The potential described in \autoref{eq:single_real_field_potential}, as a function of a spatially constant field $\phi$.}
+\caption{The potential described in \eqref{eq:single_real_field_potential}, as a function of a spatially constant field $\phi$.}
 \label{fig:single_real_field}
 \end{marginfigure}
 This Lagrangian is invariant under the reflection of the field, $\phi\rightarrow -\phi$. The Hamiltonian (density) $\mathcal{H}$ can be obtained by performing a Legendre transform:
@@ -263,7 +261,7 @@ V_\text{eff}(\phi') = \frac{\lambda}{4} + \sqrt{\frac{m^2}{\lambda}}\phi'^3 + m^
 \addplot+[mark=none,smooth] {10*x^3 + 40*x^2};
 \end{axis}
 \end{tikzpicture}
-\caption{The potential (\autoref{eq:potential_hidden_symmetry}) `seen' by the ground state, as a function of a spatially constant field $\phi'$.}
+\caption{The potential (\eqref{eq:potential_hidden_symmetry}) `seen' by the ground state, as a function of a spatially constant field $\phi'$.}
 \label{fig:hidden_symmetry}
 \end{marginfigure}
 
@@ -299,7 +297,7 @@ V(\phi) = \frac{\lambda}{4}\left(\phi^{*}\phi - \frac{m^2}{\lambda}\right)^2
 				   z buffer=sort] ({sin(x)*y}, {cos(x)*y}, {(y^2-1)^2});
         \end{axis}
 \end{tikzpicture}
-\caption{The infamous `Mexican hat potential.The masses of the fields depend upon where the theory `lives'. }.
+\caption{The infamous `Mexican hat potential.}.
 \end{marginfigure}
 
 In this case, the Lagrangian has an additional symmetry, known as
@@ -409,7 +407,7 @@ Here, $L$ is a fermion doublet of the form
 $$L = \vdoublet{\psi'_L}{\psi_L}$$
 The pair of fields $(\psi', \psi)$ can be one among the following: 
 $$(\nu_e,e), (\nu_\mu,\mu), (\nu_\tau, \tau), (u, d), (c, s), (t, b)$$
-However, the third term in \autoref{eq:interaction_lagrangian} would not exist for the first three pairs listed above, since right-handed neutrinos have not been experimentally found\footnote{Although we do know now that neutrinos have mass, and the existence of a as-yet heavy undetected right-handed neutrino is a possible mechanism for generating neutrino masses.}. The subscripts \emph{L} and \emph{R} denote the handedness of the fields.
+However, the third term in \eqref{eq:interaction_lagrangian} would not exist for the first three pairs listed above, since right-handed neutrinos have not been experimentally found\footnote{Although we do know now that neutrinos have mass, and the existence of a as-yet heavy undetected right-handed neutrino is a possible mechanism for generating neutrino masses.}. The subscripts \emph{L} and \emph{R} denote the handedness of the fields.
 \subsection{Charged currents}
 We will first consider the charged currents, corresponding to interactions involving $W^\pm$. To do this, we will isolate the terms in the covariant derivative $D_\mu$ that correspond to them, that is, the terms containing $W_1^\mu$ and $W_\mu^2$. Writing this out, we get terms of the form:
 \begin{equation*}
@@ -424,7 +422,7 @@ We will first consider the charged currents, corresponding to interactions invol
 \end{marginfigure}
 These give us Feynman diagram vertices for the interactions mediated by W bosons.
 \subsection{Neutral currents}
-We can apply a similar treatment to the neutral gauge particles $A_\mu$ and $Z_\mu$. After performing the redefinition in \autoref{eq:z_a_mixing} and isolating the kinetic terms coupling these fields to the fermions in the Lagrangian, we get terms of the form
+We can apply a similar treatment to the neutral gauge particles $A_\mu$ and $Z_\mu$. After performing the redefinition in \eqref{eq:z_a_mixing} and isolating the kinetic terms coupling these fields to the fermions in the Lagrangian, we get terms of the form
 \[\bar{\psi}A_\mu(g\st T_3 + g'\ct Y)\psi+\bar{\psi}Z_\mu(g\ct T_3 - g'\st Y)\psi\]
 Here, $\psi$ can be a left- or right-handed field. Remembering our previous definitions of $g$ and $g'$ in terms of the mixing angle $\theta_w$, we can write the expressions for $Z_\mu$ and its orthogonal field $A_\mu$.
 The above expression can be simplified futher by noting that
@@ -471,7 +469,7 @@ The self-interactions of the gauge bosons follow the structure discussed in \aut
 
 Peter Higgs was the first to postulate the existence of a physical \emph{Higgs boson} that could be produced by perturbing the vacuum. To see how this plays out, let us parameterize the Higgs doublet field as 
 \[H = \frac{1}{\sqrt{2}}\exp\left(i\xi^a(x)\frac{\tau^a}{v}\right)\vdoublet{0}{v + h(x)}\]
-where the  $\langle\xi\rangle=\langle h\rangle=0$. The simplest gauge choice is the unitary gauge, where $\xi(x)=0$. In this gauge, the potential $V(H)$ from \autoref{eq:higgs_potential} becomes:
+where the  $\langle\xi\rangle=\langle h\rangle=0$. The simplest gauge choice is the unitary gauge, where $\xi(x)=0$. In this gauge, the potential $V(H)$ from \eqref{eq:higgs_potential} becomes:
 \[V(H) = -\frac{1}{2}m_h^2 h^2 - \lambda vh^3 -\frac{1}{4}\lambda h^4\]
 The field $h$ is the physical Higgs boson. It is the only fundamental scalar in the Standard Model, and was discovered in 2012, nearly 50 years after it was first predicted. The coefficient of the term quadratic in $h$ is its mass, $m_h = \sqrt{2}\mu$. This mass is a free parameter that had to be determined experimentally. The second and third terms in the above expression represent the trilinear and and quartic self-coupling of the Higgs boson:
 \begin{align*}
@@ -485,7 +483,7 @@ The field $h$ is the physical Higgs boson. It is the only fundamental scalar in 
 };
 = -i6\lambda
 \end{align*}
-The coupling of the Higgs boson to the $W$ and $Z$ bosons can be seen by re-examining the kinetic term in \autoref{eq:higgs_kinetic} in the unitary gauge:
+The coupling of the Higgs boson to the $W$ and $Z$ bosons can be seen by re-examining the kinetic term in \eqref{eq:higgs_kinetic} in the unitary gauge:
 \[\mathcal{L}_K = \frac{1}{2}(\partial_\mu h)^2 + \left(m_W^2 W_\mu^+ W^{\mu-} + \frac{1}{2}m_Z^2Z_\mu Z^\mu\right)\cdot\left(1+\frac{h}{v}\right)^2\]
 which gives us the interaction vertices
 \begin{align*}
@@ -499,7 +497,7 @@ which gives us the interaction vertices
 };
 = 2i\frac{m_Z^2}{v}g^{\mu\nu}
 \end{align*}
-The coupling to the fermions can be found by looking at the fermion mass terms from \autoref{eq:fermion_masses} in the unitary gauge. Doing so, we get the interactions shown in \autoref{fig:higgs_fermion_coupling}, where $m_f$ is the mass of the fermion. Thus we see that the coupling of the Higgs boson is in general proportional to the mass of the particle it couples to. As expected, we do not see any tree-level couplings between the Higgs boson and photons, which are massless. 
+The coupling to the fermions can be found by looking at the fermion mass terms from \eqref{eq:fermion_masses} in the unitary gauge. Doing so, we get the interactions shown in \autoref{fig:higgs_fermion_coupling}, where $m_f$ is the mass of the fermion. Thus we see that the coupling of the Higgs boson is in general proportional to the mass of the particle it couples to. As expected, we do not see any tree-level couplings between the Higgs boson and photons, which are massless. 
 \begin{marginfigure}
 \begin{align*}
 \feynmandiagram [small, baseline = (v.base), horizontal = h to v] {
@@ -523,7 +521,6 @@ When we discussed fermion masses, we glossed over an interesting feature of the 
     V_{td} & V_{ts} & V_{tb}
   \end{pmatrix}
 \end{equation}
-
 This matrix has been experimentally determined to be nearly diagonal, with the elements getting smaller as they are further off-diagonal.
 
 \section{Asymptotic freedom and QCD}
@@ -534,7 +531,7 @@ The $\beta$-function of a gauge theory describes the evolution of the coupling c
   \beta(g_R) = \mu\frac{d}{d\mu}g_R = -\frac{g_R^3}{(4\pi)^2}\left[\frac{11}{3}C_A -\frac{4}{3}n_fT_F\right]
 \end{equation}
 where $\mu$ is the renormalization scale, $C_A$ is the quadratic Casimir operator for the adjoint representation, and $T_F$ is the \emph{index} of the fundamental representation.
-In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus $C_A = 3$ and $T_F = \frac{1}{2}$. If $n_f$, the number of quark flavors is less than 17 \footnote{Which it is, since the number of quark flavors is six, as can be seen in \autoref{tab:quarks}.}, the $\beta$ function has a \emph{negative} sign, which means that the coupling \emph{decreases} at higher energies. This is the underlying basis of asymptotic freedom. The theory of the strong interaction is known as \emph{quantum chromodynamics}, or QCD for short. The analogue of electric charge for this theory is a quantity referred to as \emph{color} (hence the name of the theory). The gauge fields that mediate this interaction, that correspond to the generators of $SU(3)$, are known as \emph{gluons}. 
+In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus $C_A = 3$ and $T_F = \frac{1}{2}$. If $n_f$, the number of quark flavors is less than 17 \footnote{Which it is, since the number of quark flavors is six, as can be seen in \autoref{tab:quarks}.}, the $\beta$ function has a \emph{negative} sign, which means that the coupling \emph{decreases} at higher energies. This is the underlying basis of asymptotic freedom. The theory of the strong interaction is known as \emph{quantum chromodynamics}, or QCD for short. The analogue of electric charge for this theory is a quantity referred to as \emph{color} (hence the name of the theory). The gauge fields that mediate this interaction, that correspond to the generators of $SU(3)$, are known as \emph{gluons}. At a hadron collider, it is of crucial importance to understand the physics of gluons and jets.
 \begin{marginfigure}[-15cm]
   \includegraphics[width=0.8\textwidth]{images/proton_innards}
 \caption{A representation of the innards of a proton, showing the dynamic structure. Image source:\citep{proton_structure}}
@@ -543,14 +540,14 @@ In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus
 \section{Limits of the Standard Model}
 The Standard Model of particle physics has been remarkably successful, and over the decades has yielded some of the most precise measurements in all of physics. However, as mentioned in \autoref{ch:introduction}, there still remain unresolved issues with the SM. Some of the more pressing ones include the following.
 
-\paragraph{Quantum Gravity} So far we have seen that the SM explains the electromagnetic, weak, and strong interactions. As it turns out, gravity can be cast as a quantum field theory, with the gravitational force mediated by spin-2 particles known as \emph{gravitons}. The trouble is that, like Fermi's theory of weak interactions, it is a non-renormalizable theory, valid only much below the Planck scale. Just as Fermi's theory was shown to be a low-energy effective approximation for the Glashow-Weinberg-Salam theory of weak interactions, it is believed that quantized general relativity is similarly a low-energy approximation to some underlying theory that is perturbative at the Planck scale as well. The pre-eminent contender for a perturbative theory of quantum gravity is \emph{string theory}, which describes particles as strings of finite size that propagate through space-time and interact with each other. Another approach is based upon discretizing space-time itself, and is known as \emph{loop quantum gravity}.
+\paragraph{Quantum Gravity} So far, we have seen that the SM explains the electromagnetic, weak, and strong interactions. As it turns out, gravity can be cast as a quantum field theory as well, with the gravitational force mediated by spin-2 particles known as \emph{gravitons}. The trouble is that, like Fermi's theory of weak interactions, it is a non-renormalizable theory, valid only much below the Planck scale. Just as Fermi's theory was shown to be a low-energy effective approximation for the Glashow-Weinberg-Salam theory of weak interactions, it is believed that quantized general relativity is similarly a low-energy approximation to some underlying theory that is perturbative at the Planck scale as well. The pre-eminent contender for a perturbative theory of quantum gravity is \emph{string theory}, which describes particles as strings of finite size that propagate through space-time and interact with each other. Another approach is based upon discretizing space-time itself, and is known as \emph{loop quantum gravity}.
 
-\paragraph{Neutrino masses} Experiments have shown that neutrinos have a small mass, in conflict with the Standard Model, which predicts massless neutrinos. 
+\paragraph{Neutrino masses} Experiments have shown that neutrinos have a small mass, in conflict with the Standard Model, which predicts massless neutrinos. There have been a number of proposed extensions to the Standard Model that address this issue.
 \paragraph{Hierarchy problem}
-The hierarchy problem refers to the unusual sensitivity of the Higgs potential to any new physics at higher energy scales. While the masses of fermions and gauge bosons are protected by symmetries, no such symmetry protects the mass of the Higgs boson. 
+The hierarchy problem, which we will return to in \autoref{ch:supersymmetry},  refers to the troubling sensitivity of the mass of the Higgs to any new physics at higher energy scales - the parameters of any new physics theory must be extremely \emph{finely-tuned} to recover the experimental value of the Higgs mass that is observed.
 \paragraph{Baryon asymmetry} The SM by itself does not explain the magnitude of the imbalance between matter and antimatter in the universe. We need some additional mechanism to do so.
-\paragraph{The strong CP problem} While the weak interactions violate parity, we observe that the strong interactions do not. However, it is possible to write a term in the Lagrangian that is CP-violating, but this term is vanishingly small. There is no a priori reason that this term must be so small, and thus it is an example of a \emph{fine-tuning} problem, similar to the hierarchy problem discussed previously, and is known as the \emph{strong CP problem}.
+\paragraph{The strong CP problem} While the weak interactions violate parity, we observe that the strong interactions do not. However, it is possible to write a term in the Lagrangian that is CP-violating, but this term is vanishingly small. There is no a priori reason that this term must be so small, and thus it is an another example of a fine-tuning problem, similar to the hierarchy problem discussed previously, and is known as the \emph{strong CP problem}.
 \paragraph{Dark Matter}
 Experiments have shown that visible matter accounts for only a small fraction of the universe. The majority consists of \emph{dark energy} and \emph{dark matter}. The SM has no viable dark matter candidate, and clearly needs to be augmented to satisfactorily incorporate dark matter.
 
-Clearly there is much motivation to come up with extensions to the Standard Model. In the next chapter, we will discuss a few of them.
+Clearly there is much motivation to come up with extensions to the Standard Model. In the next two chapters, we will discuss two kinds of extensions to the Standard Model: Two-Higgs Doublet Models, and supersymmetric models. More specifically, we will describe the salient features of the Minimal Supersymmetric Standard Model, or MSSM.

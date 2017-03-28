@@ -1,30 +1,67 @@
 \chapter{A razor search for dark matter at 100 TeV}\label{ch:DM_100_TeV}
 
+In 1933, the Swiss astronomer Fritz Zwicky turned his telescope to the night sky to measure the velocities of galaxies in a particular galaxy cluster known as the Coma cluster. He discovered that the visible matter in this cluster could not account for the speeds at which the galaxies were moving. He postulated that there must be some matter that does not emit light, but has mass and interacts only gravitationally with known matter. He termed this `Dunkle materie', or \emph{dark matter}. The evidence for dark matter has only continued to grow since then, and we now know that there is far more of it in the universe than there is regular, or \emph{baryonic} matter. The nature of dark matter is one of the most compelling mysteries in physics today.
+
+Over the years, there have been many dark matter candidates\footnote{For a while, it was debated whether the effects of dark matter could instead be explained by a deviation of the gravitational force from the usual inverse square law at large length scales. This theory was termed Modified Newtonian Dynamics, or MOND \citep{Milgrom1983}. However, it was shown in 2006 \citep{Clowe2006} that MOND was fundamentally incompatible with the data from the bullet cluster.}, but the most widely accepted view today is that dark matter is comprised of a completely new kind of particle \footnote{Of course, this is not the only possibility. Instead of a single dark matter candidate particle, there could be a 'dark sector' comprised of multiple particles and interactions between them. See (DDM papers) for developments along this line.} that interacts only weakly with the particles of the Standard Model and moves at at non-relativistic speeds.
+
+\strictpagecheck
+\begin{figure}
+  \begin{sidecaption}
+    {Rotation curves for a number of spiral galaxies. \citep{Sofue2001}}
+  \includegraphics[width=\textwidth]{images/rotation_curves}
+\end{sidecaption}
+\end{figure}
+One of the most tantalizing clues to the nature of dark matter is the so-called 'WIMP miracle' - the remarkable coincidence that the observed dark matter density in the universe can arises naturally from a particle with mass and couplings comparable to the weak scale. This raises the hope that such particles might feasibly be detected at colliders or direct detection experiments.
+\section{Dark matter, three ways}\label{dark-matter-three-ways}
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}
+    \begin{feynman}
+      \vertex (v1) {\(\chi\)};
+      \vertex [right=of v1] (v2){\(SM\)};
+      \vertex [below=of v1] (v3){\(\chi\)};
+      \vertex [right=of v3] (v4){\(SM\)};
+      % Placing vertex v between v1 and v4
+      \vertex [blob] (v) at ($(v1)!0.5!(v4)$) {};
+      \vertex [above=of v] (l2){Indirect};
+      \vertex [below=of v] (l3){Collider};
+      \diagram*{
+        (v1) -- (v),
+        (v2) -- (v),
+        (v3) -- (v),
+        (v4) -- (v),
+      };
+      \draw [->] ($(v1.west) + (-2mm,0)$) -- ($(v3.west) + (-2mm,0)$) node [sloped,midway,above,rotate=180] {Direct};
+      \draw [->] ($(v1.north) + (0,2mm)$) -- ($(v2.north) + (0,2mm)$);
+      \draw [->] ($(v4.south) + (0,-2mm)$) -- ($(v3.south) + (0,-2mm)$);
+    \end{feynman}
+  \end{tikzpicture}
+  \caption{DM detection, three ways}
+  \label{fig:dm_annihilation}
+\end{marginfigure}
+
+There are three main methods of detecting WIMP dark matter. The first, direct detection, involves constructing a well shielded, giant vat of a relatively inert substance, and waiting for dark matter particles to interact with that substance. The second, termed indirect detection, involves searching for signs of dark matter particles annihilating each other in the cosmos. The third method, collider detection, involves producing dark matter through high energy particle collisions and searching for their associated signatures. The first two methods place relatively stringent constraints on the nature of dark matter, but have their own limitations. The smallest interaction cross-section between dark matter and regular matter that direct detection can measure is limited from below by the background of neutrinos from the sun, though there are creative methods that are being developed to deal with this background. Indirect detection suffers from large astrophysical uncertainties. Collider detection, therefore, is competitive with, and can even possibly surpass the other two methods.
+
 \newcommand{\cb}{ c_\beta}
 \newcommand{\cw}{ c_W}
 \newcommand{\sinb}{ s_\beta}
 \newcommand{\sw}{ s_W}
 \newcommand{\mz}{ m_Z}
 
-The non-SM interactions in our signal process are the higgsino-bino-$Z$ and the higgsino-bino-$h$ interactions. To determine their coupling, we can inspect the structure of the MSSM. We will first examine the gauge interactions of higgsino and bino gauge eigenstates. Upon doing this, it will be apparent that there are no interaction terms containing both pure higgsinos and pure binos. The reason is that electroweak symmetry breaking induces mixing among the neutralinos. After this, we will move on to the coupling involving the SM Higgs boson, and see how it is obtained. 
-Inserting the covariant derivatives into the kinetic terms will yield the interaction terms. Each of the fields $H_u$ and $H_d$ can be interpreted as the scalar field $\phi$ in \eqref{eq:phi1} and \eqref{eq:phi2}. Similarly, the supersymmetrizations of $H_u$ and $H_d$,
-\[\widetilde{H_u} = \begin{pmatrix}\widetilde{H_u}^+\\\widetilde{H_u}^0\end{pmatrix};
-\widetilde{H_d} = \begin{pmatrix}\widetilde{H_d}^0\\\widetilde{H_d}^-\end{pmatrix}\]
-can be equated with the field $\psi$ in \eqref{eq:psi}. The component fields of these are called \emph{higgsinos}. Once we insert the generators and associated gauge fields for the $SU(2)_L\times U(1)_Y$ symmetry in the covariant derivatives, and mix the gauge fields in the manner dictated by electroweak symmetry breaking, the gauge interactions of the higgs and higgsino fields look a lot like the SM interactions. In fact, they will have the same strength. Since we are interested in neutral higgsino-like NLSPs for our signal process, let us isolate their particular interaction terms:
-\[\frac{g}{\cos\theta_W}Z_\mu\left(\widetilde{H_u}^{0\dagger}\overline{\sigma}^\mu \widetilde{H_u}+
-\widetilde{H_d}^{0\dagger}\overline{\sigma}^\mu \widetilde{H_d}\right)\]
-Now let us turn to the interactions of gauge supermultiplets. A generic gauge supermultiplet will consist of a gauge boson $A_\mu^a$ and its two-component Weyl fermion superpartner, the \emph{gaugino} $\lambda^a$. The SM gauge bosons reside in such gauge supermultiplets, and so the index $a$ runs over the adjoint representation of the relevant gauge group. The gauge interactions of gauginos can be extracted from their kinetic term in the Lagrangian:
-\[\mathcal{L}_{\text{gaugino,kinetic}} = i\lambda^{a\dagger}\overline{\sigma}^\mu\nabla_\mu\lambda^a\]
-where the covariant derivative is given by
-\[\nabla_\mu\lambda^a = \partial_\mu\lambda^a + gf^{abc}A_\mu^b\lambda^c.\]
-The factors $f^{abc}$ represent the structure constants of the gauge group. Thus, the interaction term would look like:
-\[ig\lambda^{a\dagger}\overline{\sigma}^\mu f^{abc}A_\mu^b\lambda^c\]
-The bino $(\widetilde{B}^0)$ is the superpartner of the SM gauge boson associated with the $U(1)_Y$ (hypercharge) gauge symmetry. Thus, it will transform in the adjoint representation of $U(1)_Y$ as well. However, this implies that there can never be a interaction vertex containing a bino and a gauge boson, since the structure constants for $U(1)_Y$ are all simply 0. In addition, we have previously seen that examining the chiral supermultiplet conaining the higgsino does not yield a neutral higgsino-bino-$Z$ vertex either. The reason that we can consider such a vertex in our signal process is due to the fact that electroweak symmetry breaking induces mixing among neutral higgsinos, binos, and the neutral wino $(\widetilde{W}^0)$, the superpartner of the $W_\mu^3$ gauge field associated with the SM $SU(2)_L$ gauge symmetry that mixes with $B_\mu$ to form the $Z$ boson and photon.
-
-\section{Background generation challenges}
-One of the challenges we faced while performing this analysis was dealing with the sheer number of background events to generate and analyze. At a 100 TeV collider, the background cross-sections grow very large compared to their 14 TeV counterparts. For example, the cross section for the inclusive production of top quark pairs increases from $\sim975$ pb (N$^{3}$LO) to $\sim34,000$ pb (NLO) \citep{Mangano:2016jyj}, that is, increasing the collision energy by about seven times increases the number of events by a factor of more than 30! Multiplying this by 3 ab$^{-1}$ (the expected integrated luminosity from the first 10 years of running the FCC), gives us 96 billion top pair production events. Simulating this many events would require enormous amounts of computing time as well as huge amounts of storage. To alleviate the first problem, we generated events on the University of Arizona cluster, leveraging the power of many computing nodes to perform event generation simultaneously. But this alone would not be enough. 
-
-\section{Introduction}
+%The non-SM interactions in our signal process are the higgsino-bino-$Z$ and the higgsino-bino-$h$ interactions. To determine their coupling, we can inspect the structure of the MSSM. We will first examine the gauge interactions of higgsino and bino gauge eigenstates. Upon doing this, it will be apparent that there are no interaction terms containing both pure higgsinos and pure binos. The reason is that electroweak symmetry breaking induces mixing among the neutralinos. After this, we will move on to the coupling involving the SM Higgs boson, and see how it is obtained. 
+%Inserting the covariant derivatives into the kinetic terms will yield the interaction terms. Each of the fields $H_u$ and $H_d$ can be interpreted as the scalar field $\phi$ in \eqref{eq:phi1} and \eqref{eq:phi2}. Similarly, the supersymmetrizations of $H_u$ and $H_d$,
+%\[\widetilde{H_u} = \begin{pmatrix}\widetilde{H_u}^+\\\widetilde{H_u}^0\end{pmatrix};
+%\widetilde{H_d} = \begin{pmatrix}\widetilde{H_d}^0\\\widetilde{H_d}^-\end{pmatrix}\]
+%can be equated with the field $\psi$ in \eqref{eq:psi}. The component fields of these are called \emph{higgsinos}. Once we insert the generators and associated gauge fields for the $SU(2)_L\times U(1)_Y$ symmetry in the covariant derivatives, and mix the gauge fields in the manner dictated by electroweak symmetry breaking, the gauge interactions of the higgs and higgsino fields look a lot like the SM interactions. In fact, they will have the same strength. Since we are interested in neutral higgsino-like NLSPs for our signal process, let us isolate their particular interaction terms:
+%\[\frac{g}{\cos\theta_W}Z_\mu\left(\widetilde{H_u}^{0\dagger}\overline{\sigma}^\mu \widetilde{H_u}+
+%\widetilde{H_d}^{0\dagger}\overline{\sigma}^\mu \widetilde{H_d}\right)\]
+%Now let us turn to the interactions of gauge supermultiplets. A generic gauge supermultiplet will consist of a gauge boson $A_\mu^a$ and its two-component Weyl fermion superpartner, the \emph{gaugino} $\lambda^a$. The SM gauge bosons reside in such gauge supermultiplets, and so the index $a$ runs over the adjoint representation of the relevant gauge group. The gauge interactions of gauginos can be extracted from their kinetic term in the Lagrangian:
+%\[\mathcal{L}_{\text{gaugino,kinetic}} = i\lambda^{a\dagger}\overline{\sigma}^\mu\nabla_\mu\lambda^a\]
+%where the covariant derivative is given by
+%\[\nabla_\mu\lambda^a = \partial_\mu\lambda^a + gf^{abc}A_\mu^b\lambda^c.\]
+%The factors $f^{abc}$ represent the structure constants of the gauge group. Thus, the interaction term would look like:
+%\[ig\lambda^{a\dagger}\overline{\sigma}^\mu f^{abc}A_\mu^b\lambda^c\]
+%The bino $(\widetilde{B}^0)$ is the superpartner of the SM gauge boson associated with the $U(1)_Y$ (hypercharge) gauge symmetry. Thus, it will transform in the adjoint representation of $U(1)_Y$ as well. However, this implies that there can never be a interaction vertex containing a bino and a gauge boson, since the structure constants for $U(1)_Y$ are all simply 0. In addition, we have previously seen that examining the chiral supermultiplet conaining the higgsino does not yield a neutral higgsino-bino-$Z$ vertex either. The reason that we can consider such a vertex in our signal process is due to the fact that electroweak symmetry breaking induces mixing among neutral higgsinos, binos, and the neutral wino $(\widetilde{W}^0)$, the superpartner of the $W_\mu^3$ gauge field associated with the SM $SU(2)_L$ gauge symmetry that mixes with $B_\mu$ to form the $Z$ boson and photon.
 
 % Motivation: dark matter is interesting
 The existence of dark matter is unambiguous evidence of the need for new physics beyond the Standard Model (SM) of particle physics. Indeed, given that there is far more dark matter in the universe than there is baryonic matter, determining its precise nature is one of the most exciting challenges in physics today. It is widely believed that dark matter is comprised of stable weakly interacting massive particles. These particles arise naturally in many extensions of the SM. Of these extensions, one of the most studied is the Minimal Supersymmetric Standard Model (MSSM). For a detailed review, see \citep{Martin1997}. In the MSSM, the lightest supersymmetric partner (LSP) is predicted to be absolutely stable, making it a good candidate for dark matter. The identity of the LSP is determined by the mass hierarchy of the superpartners, which in turn depends on how supersymmetry is broken. However, taking into account experimental constraints and phenomenological considerations, the lightest neutralino emerges as the most attractive candidate for the LSP \citep{Bertone2005a}. 
@@ -34,7 +71,13 @@ Despite the attractive simplicity of natural SUSY, it is under siege from recent
 
 % Why a 100 TeV collider?
 The most interesting regions of the split SUSY parameter space lies beyond the reach of the LHC. Consider, for example the case in which the dark matter candidate is a nearly-pure bino. Even though the simplicity of its gauge singlet structure makes it an attractive DM candidate, It is well known that heavy bino LSPs heavier than about 200 GeV result in an overabundance of dark matter in the universe, in conflict with experimental observations. However, if the bino is nearly mass-degenerate with another supersymmetric particle, such as the gluino, stau, or a squark, it can coannihilate with it, thereby reducing the dark matter abundance to acceptable levels. Coannihilation with a gluino would raise the acceptable bino mass to $\sim 7$ TeV, and coannihilation with a stop or squark raises the acceptable bino mass to $\sim 2$ TeV. Bringing one of these particles down to the low-energy spectrum should not affect the branching ratio of the higgsinos too much. Gluino coannhilators would not change the branching ratios of the neutral higgsinos, since they are uncharged under $SU(3)_c$\footnote{But doing so would reduce the importance of electroweak search channels in comparison, as gluinos would then be abundantly produced.}. Higgsino-fermion-sfermion couplings are Yukawa-like, and are proportional to the mass of the fermion in the interaction vertex. Thus, this coupling will be relatively small (with the possible exception of the higgsino-top-stop case). In this paper, we will simply assume that a scalar can be brought down into the low-energy spectrum to be nearly mass-degenerate with the bino, thus satisfying the relic density requirement. Such heavy binos are out of the reach of the 14 TeV LHC, but well within the reach of a 100 TeV collder. 
-
+\begin{marginfigure}
+  \feynmandiagram [layered layout, vertical = a to b]{
+  bino [label = \(\tilde{B}^0\)] -- [fermion] a -- [anti fermion] tau [label = \(\tau\)],
+  stau [label = \(\widetilde{\tau}\)] -- [anti charged scalar] b -- [boson] Z [label = \(Z\)],
+  {[same layer] a -- [charged scalar, edge label=\(\widetilde{\tau}\)] b},
+};
+\end{marginfigure}
 %For example, if dark matter consists of nearly pure winos\footnote{Throughout this paper, we will refer to wino-like, higgsino-like, or bino-like neutralinos as simply winos, higgsinos, and binos.} or higgsinos, \Shufang{Higgsino} \Adarsh{What did you want me to change here?}  they would have to be extremely heavy (3.1 TeV and 1 TeV respectively) to be consistent with the observed relic density of dark matter in the universe. However, the LHC, with its center of mass energy of 14 TeV, is expected to discover winos only up to a mass of about 500 GeV, and higgsinos up to a mass of about 200 GeV.  \Shufang{reference here.} \Adarsh{These limits are from [6].}  In contrast, a 100 TeV proton-proton collider would be able to probe directly produced thermal winos \citep{Low2014}, as well as thermal higgsinos produced in cascade decays \citep{Gori:2014oua}.
 
 Apart from being able to probe thermal neutralino dark matter candidates, a 100 TeV collider would open up an immense number of physics opportunities not afforded to a 14 TeV collider \citep{Arkani-Hamed2015}. 
@@ -151,6 +194,8 @@ In this section, we will describe out strategies for both the traditional cut-an
 \subsection{Simulation}\label{simulation}
 
 We simulated parton-level events using \texttt{MadGraph5 v2.3.2.2} and \texttt{MadEvent} \citep{Alwall2014}, then passed those events to Pythia 6 \citep{Sjostrand2006} for showering and hadronization. Finally, we used \texttt{Delphes 3} \citep{DeFavereau2014a} to perform a fast, parametrized detector simulation, with the detector card devised by the FCC-hh working group\footnote{\url{https://github.com/HEP-FCC/FCCSW/tree/master/Sim/Sim/Delphes/Interface/data}}. For the backgrounds, we allowed up to one additional jet in the final state, to approximate NLO QCD effects, and performed MLM matching with the \texttt{xqcut} parameter set to 40 GeV. The Higgsino pair production cross sections were calculated using \texttt{Prospino2} \citep{Beenakker1999}. To decouple the wino, we set its mass parameter $M_2$ to 3 TeV.
+
+One of the challenges we faced while performing this analysis was dealing with the sheer number of background events to generate and analyze. At a 100 TeV collider, the background cross-sections grow very large compared to their 14 TeV counterparts. For example, the cross section for the inclusive production of top quark pairs increases from $\sim975$ pb (N$^{3}$LO) to $\sim34,000$ pb (NLO) \citep{Mangano:2016jyj}, that is, increasing the collision energy by about seven times increases the number of events by a factor of more than 30! Multiplying this by 3 ab$^{-1}$ (the expected integrated luminosity from the first 10 years of running the FCC), gives us 96 billion top pair production events. Simulating this many events would require enormous amounts of computing time as well as huge amounts of storage. To alleviate the first problem, we generated events on the University of Arizona cluster, leveraging the power of many computing nodes to perform event generation simultaneously. But this alone would not be enough. 
 
 Since we expect our signal process to have a dilepton resonance from an on-shell $Z$ boson, we restricted the phase space for event generation for backgrounds to the region where the invariant mass of dilepton pairs lies between 80 and 100 GeV. Additionally, the bino dark matter that escapes the detector would result in a large amount of missing transverse energy ($\slashed{E}_T$), so we required a minimum $\slashed{E}_T$ of 100 GeV at the parton level for the backgrounds as well. 
 
