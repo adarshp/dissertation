@@ -185,6 +185,7 @@
 \marginparmargin{outer}
 % Style the chapter entries in the Table of Contents
 \renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
+\renewcommand*{\cftpartfont}{\color{Maroon}\scshape\MakeTextLowercase}
 \captionstyle[\centering]{\footnotesize}
 \captionnamefont{\footnotesize}
 
@@ -250,6 +251,10 @@
 }
 \chapterstyle{bringhurst}
 \headstyles{bringhurst}
+% Styling Part headings
+\renewcommand{\parttitlefont}{\color{Maroon}\normalfont\scshape\LARGE\MakeTextLowercase}
+\renewcommand{\partnamefont}{\normalfont\large}
+\renewcommand{\partnumfont}{\normalfont\large}
 \setafterparaskip{-0.5em}
 %\hangsecnum
 \checkandfixthelayout
@@ -272,6 +277,7 @@
 \include{FrontBackMatter/TitlePage}
 \include{FrontBackMatter/CommitteeApproval}
 \include{FrontBackMatter/StatementByAuthor}
+\include{FrontBackMatter/Acknowledgments}
 \include{FrontBackMatter/Abstract}
 \cleardoublepage
 \tableofcontents*
@@ -282,24 +288,24 @@
 \cleardoublepage
 \include{FrontBackMatter/Preface}
 \include{Chapters/Introduction}
+\part{Theory}\label{part:Theory}
 \include{Chapters/SM}
 \include{Chapters/2HDM}
 \include{Chapters/SUSY}
+\part{Phenomenology}\label{Part:Phenomenology}
 \include{Chapters/ColliderPheno}
 \include{Chapters/MachineLearning}
+\part{Three searches for BSM physics}\label{part:Three}
 \include{Chapters/LightChargedHiggs}
 \include{Chapters/DM100TeV}
-% \chapter{Light Charged Higgs bosons at the LHC}
-% \chapter{Exotic 2HDM Higgs searches at 14 and 100 TeV}
-% ********************************************************************
+\include{Chapters/ExoticHiggs}
+%********************************************************************
 % Backmatter
 %*******************************************************
 \appendix
 \appendixpage
-\include{Chapters/Appendix_Group_Theory}
-\include{Chapters/Appendix_Misc}
 \include{Chapters/Appendix_Notation}
-\include{Chapters/DarkMatter}
+%\include{Chapters/DarkMatter}
 \include{Chapters/Appendix_Statistics}
 %\include{Chapters/Appendix_Code}
 %\includepdf[pages=-]{Chapters/LightChargedHiggs}
