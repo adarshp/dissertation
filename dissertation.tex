@@ -5,9 +5,8 @@
 \usepackage{slashed}
 \usepackage{algpseudocode, algorithm}
 \usepackage{pifont}
-\usepackage{minted}
-\usepackage{pdfpages}
-\usepackage{silence}% http://ctan.org/pkg/silence
+% Silence some noisy warnings temporarily
+\usepackage{silence}
 \WarningFilter{fontaxes}{I don't know how to decode}
 \WarningFilter{latex}{Marginpar}
 \usepackage{tikz-feynman}
@@ -256,6 +255,7 @@
 \renewcommand{\partnamefont}{\normalfont\large}
 \renewcommand{\partnumfont}{\normalfont\large}
 \setafterparaskip{-0.5em}
+\newsubfloat{figure}
 %\hangsecnum
 \checkandfixthelayout
 
@@ -299,6 +299,7 @@
 \include{Chapters/LightChargedHiggs}
 \include{Chapters/DM100TeV}
 \include{Chapters/ExoticHiggs}
+\include{Chapters/Conclusion}
 %********************************************************************
 % Backmatter
 %*******************************************************
@@ -308,8 +309,6 @@
 %\include{Chapters/DarkMatter}
 \include{Chapters/Appendix_Statistics}
 %\include{Chapters/Appendix_Code}
-%\includepdf[pages=-]{Chapters/LightChargedHiggs}
-%\includepdf[pages=-]{Chapters/dm100TeV}
 \printbibliography
 \include{FrontBackMatter/Colophon}
 \end{document}

@@ -265,11 +265,14 @@ Table \ref{tab:bdt_cutflowtable} shows the cut efficiences for the same represen
 
 \paragraph{Note on low event counts and statistics} For certain values of the cuts on kinematical variables or the score of the ML classifier, no MC events survived for one or more of the background components. To guard against overly optimistic estimates of the significance $S/\sqrt{B}$, we set a lower bound of 3 for the number of MC events after cuts for each background component.
 
+\strictpagecheck
 \begin{figure}[h]
+  \begin{sidecaption}{Discovery (red) and exclusion (blue) contours for the traditional cut-and-count analysis (solid) and boosted decision tree analysis (dashed), for an integrated luminosity of 3000 fb$^{-1}$.}
 \centering
-\includegraphics[width=0.9\textwidth]{images/combined.pdf}
-\caption{Discovery (red) and exclusion (blue) contours for the traditional cut-and-count analysis (solid) and boosted decision tree analysis (dashed), for an integrated luminosity of 3000 fb$^{-1}$.   }
+%\includegraphics[width=0.9\textwidth]{images/combined.pdf}
+\input{images/dm_100_TeV_contours.pgf}
 \label{fig:contours}
+\end{sidecaption}
 \end{figure}
 
 \subsection{Reach in parameter space}
@@ -305,3 +308,4 @@ Overall, we find that the reach of our analysis strategy is a significant improv
 Additionally, we found that the reach for both strategies is considerably reduced when the difference $M_1 - |\mu|$ is high, since it results in a highly boosted $h$ that decays to a collimated pair of $b$'s that will most likely be identified as a single jet. This is not an insurmountable difficulty - there are ways to deal with collimated jets, although they are beyond the scope of this work. This issue does, however, highlight the necessity of improving isolation performance at a 100 TeV machine, where large mass hierarchies can result in highly boosted/collimated decay products. For a review of currently used methods to determine jet substructure, see \citep{Shelton:2013an}. In the future, machine learning techniques might be profitably applied to this area as well - for a review of developments along this line, see \citep{Schwartzman:2016jqu}. The collimation of the b-jets, along with the fact that we take into account detector effects using Delphes, result in a lower reach in the high $|\mu|$, low $M_1$ region than the multilepton analysis in \citep{Gori:2014oua}, which is able to exclude higgsinos up to a mass of 2.9 TeV for massless binos. The reach of our analysis is slightly higher in the region where the difference between $|\mu|$ and $M_1$ is smaller. This is consistent with our usage of the razor variable $M_R$, which is sensitive to the mass difference between the parent higgsino and daughter bino.
 
 A 100 TeV proton-proton collider represents an excellent opportunity to discover physics beyond the standard model. The extremely high energies and luminosities involved will present new challenges for particle physicists, and it is likely that machine learning will play an important part in facing them. 
+

@@ -1,11 +1,98 @@
-\chapter{Exotic Higgses at 100 TeV}\label{ch:ExoticHiggs}
-% Motivation
-\section{Motivation}
-% Background
-\section{Background}
+\chapter{Exotic Higgs decays at 14 and 100 TeV}\label{ch:ExoticHiggs}
+
+Having taken a detour into examining Higgsinos - the fermionic superpartners of Higgs fields that arise in supersymmetrized versions of type-II 2HDMs, we now return to the the scalar sector of a generic type-II 2HDM. In \autoref{ch:LightChargedHiggs}, we showed how exotic decay modes offered an important and complementary avenue for discovering charged Higgs bosons at the LHC. While that analysis was performed for a single BSM Higgs and a single exotic decay mode, in the project that forms the basis of this project, we aim to do something much more ambitious, namely, perform a comprehensive set of collider analyses for all the exotic decay modes for heavy Higgses in type-II 2HDMs, both at the 14 TeV LHC, as well as a future 100 TeV hadron collider.
+
+\section{Setting the stage}
+As pointed out in \autoref{ch:LightChargedHiggs}, most experimental analyses aimed at discovering BSM Higgses focus on conventional decay modes to Standard Model Particles. The reason for this is that most studies assume the \emph{decoupling limit}, where the states \emph{H,A,$H^\pm$} are much heavier than \emph{h}. Decoupling implies the phenomenon of \emph{alignment}, that is, the field \emph{h} is the SM Higgs boson, or equivalently, the angles $\beta$ and $\alpha$ satisfy the condition $\beta-\alpha = \pi/2$ \cite{Contino:2016spe}. The limit of decoupling with alignment is an attractive one, since it implies that the undiscovered Higgses are all much heavier than the SM Higgs, thus accounting for why they have not been found yet. However, in the decoupling limit, the splitting between the squared masses of heavy Higgses is constrained to be small, on the order of $\sim\mathcal{O}(v^2)$, by the following conditions \cite{Gunion:2002zf}:
+%Recall that the scalar potential of a CP-conserving 2HDM with a softly broken $\mathcal{Z}_2$ symmetry takes the form
+%\begin{align*}
+%V(\Phi_1,\Phi_2) =& m_{11}^2\Phi_1^\dagger\Phi_1 + m_{22}^2\Phi_2^\dagger\Phi_2-
+%m_{12}^2(\Phi_1^\dagger\Phi_2 + \text{h.c.}) + \frac{\lambda_1}{2}(\Phi_1^\dagger\Phi_1)^2 + \frac{\lambda_2}{2}(\Phi_2^\dagger\Phi_2)^2\\
+%&+\lambda_3(\Phi_1^\dagger\Phi_1)(\Phi_2^\dagger\Phi_2)+\lambda_4(\Phi_1^\dagger\Phi_2)(\Phi_2^\dagger\Phi_1) + \frac{1}{2}\left[\lambda_5(\Phi_1^\dagger\Phi_2)^2 + \text{h.c.}\right]
+%\end{align*}
+\begin{itemize}
+\item The quartic scalar self-couplings must be sufficiently small to maintain perturbativity.
+\item The S-matrix for tree-level scattering processes involving scalars must be unitary.
+\item The scalar potential $V(\Phi_1,\Phi_2)$ must be bounded from below. 
+\end{itemize}
+This constraint on the size of the mass splittings implies that decays of heavy Higgses into final states that contain other heavy Higgses will be kinematically disfavored, and thus they will dominantly decay to final states with SM particles.
+
+The relation between decoupling and alignment is not bidirectional, though - alignment does not necessarily imply decoupling. In the limit of alignment without decoupling, it is possible to have sizable mass splittings between the heavy Higgses. While this scenario is necessarily less generic than the decoupling limit, it is well worth considering, especially given that large mass splittings are consistent with a strongly first order electroweak phase transition. This type of phase transition is necessary for the mechanism of electroweak baryogenesis, which can explain the observed level of baryon asymmetry in the universe. It is also possible to generate such mass splittings away from the alignment limit. While this scenario is experimentally disfavored to \cite{Aad:2015pla} (to a significance of about $1\sigma$)
+
+The presence of large mass splittings opens up the possibility that the heavy Higgses could decay into final states containing other heavy Higgses, that is, they could decay via exotic decay channels.
+
+\section{Classifying exotic decays}
+Given the large number of degrees of freedom in generic 2HDMs, it is important for us to whittle down the number of possible scenarios to a more managable number by imposing some kinds of constraints. The authors of \cite{Kling2016} have systematically categorized the scenarios (with differing mass orderings, splittings, values of the parameter $m_{12}$, and degrees of alignment) that are still viable after imposing all the relevant theoretical and experimental constraints. Based on this categorization, they have presented a number of benchmark planes 
+%Exotic Higgs via AZ/HZ: A snowmass whitepaper \cite{Coleppa2013a}
+%\cite{Coleppa2014a} Exotic Decays of a heavy neutral Higgs through HZ/AZ channel
+%\cite{Brownson:2013lka} Heavy Higgs Scalars at Future Hadron Colliders (A Snowmass whitepaper)
+%\cite{Coleppa:2014cca} Charged Higgs search via AW+/HW+ channel.
+%\cite{Kling2015c} Light Charged Higgs Bosons to AW/HW via Top Decay
+%\cite{Li:2015lra} Exotic Higgs Decay via Charged Higgs
+%\cite{Maitra:2014qea} Searching for an elusive charged Higgs boson at the Large Hadron Collider
+%\cite{Basso:2012st} Probing the charged Higgs boson at the LHC in the CP-violating type-II 2HDM
+%\cite{Dermisek:2013cxa} A New Avenue to Charged Higgs Discovery in Multi-Higgs Models
+%\cite{Mohn:2005lda} The ATLAS discovery potential for a heavy Charged Higgs boson in a large mass splitting MSSM scenario.
+%\cite{Assamagan:2000ud}
+
+
+Figure \ref{fig:exotic_higgs_brs} shows branching ratios for vari
+\begin{figure}
+  \centering
+  \subbottom[]{\includegraphics[width=3in]{images/BR-A-mH200-mA500-mC200.pdf}}
+  \subbottom[]{\includegraphics[width=2.8in]{images/BR-A-mH200-mA500-mC500.pdf}}\\
+  \subbottom[]{\includegraphics[width=3in]{images/BR-C-mH200-mA500-mC500.pdf}}
+  \subbottom[]{\includegraphics[width=3in]{images/BR-H-mH500-mA200-mC200.pdf}}
+\caption{Branching fractions for exotic decays in type-II 2HDMs, as a function of $t_\beta$, with $c_{\beta-\alpha} = 0$.}
+\label{fig:exotic_higgs_brs}
+\end{figure}
+
+\begin{figure}
+  \subbottom[]{\includegraphics[width=3in]{images/bb2A2tatall_dm200.pdf}}
+  \subbottom[]{\includegraphics[width=2.8in]{images/bb2H2tatall_dm200.pdf}}\\
+  \subbottom[]{\includegraphics[width=3in]{images/gg2A2tatall_dm200.pdf}}
+  \subbottom[]{\includegraphics[width=3in]{images/gg2H2tatall_dm200.pdf}}
+\caption{Branching fractions for exotic decays in type-II 2HDMs, as a function of $t_\beta$, with $c_{\beta-\alpha} = 0$.}
+\label{fig:honglei_results}
+\end{figure}
+
 % Methodology
 \section{Methods}
 % Results
 \section{Results}
+Here are some preliminary results.
+\strictpagecheck
+\begin{figure}
+  \begin{sidecaption}{Exclusion and discovery reaches in the $m_{H^\pm}-m_{H}$ plane for the exotic decay $H^\pm\rightarrow HW^\pm$.}
+%\includegraphics[width=\textwidth]{images/hC_HW_contours.pdf}
+    \input{images/combined.pgf}
+\end{sidecaption}
+\end{figure}
+
+%\begin{marginfigure}
+%\includegraphics[width=\textwidth]{images/hC_HW_contours.pdf}
+%\caption{Exclusion and discovery reaches in the $m_{H^\pm}-m_{H}$ plane for the exotic decay $H^\pm\rightarrow HW^\pm$.}
+%\end{marginfigure}
+In \autoref{tab:exotic_decay_summary}, we summarize the five main possible exotic decay modes for non-SM Higgses. In the second column, \emph{H} refers to any of the neutral Higgs bosons \emph{h,H}, and \emph{A}.
+
+\begin{table}
+\begin{adjustwidth*}{0in}{-2.1in}
+\centering
+  \begin{tabular}{llll}
+  \toprule
+ Parent Higgs & Decay type& Channels in 2HDM & Possible Final States  \\
+ \midrule
+               & \emph{HH} & $H\rightarrow AA, hh$                  & (\emph{bb/$\tau\tau$/WW/ZZ/$\gamma\gamma$})(\emph{bb/$\tau\tau$/WW/ZZ/$\gamma\gamma$}) \\
+ Neutral Higgs & \emph{HZ} & $H\rightarrow AZ, A\rightarrow HZ, hZ$ & (\emph{ll/qq/$\nu\nu$})(\emph{bb/$\tau\tau$/WW/ZZ/$\gamma\gamma$}) \\
+ \emph{H,A}    & $H^+H^-$  & $H\rightarrow H^+H^-$                  & (\emph{tb/$\tau\nu$/cs})(\emph{tb/$\tau\nu$/cs}) \\
+               & $H^\pm W^\mp$  & $H/A\rightarrow H^\pm W^\mp$      & (\emph{l\nu/qq'})(\emph{tb/$\tau\nu$/cs}) \\
+               \midrule
+Charged Higgs  & $HW^\pm$  & $H^\pm\rightarrow hW^\pm/HW^\pm/AW^\pm$ & (\emph{l\nu/qq'})(\emph{bb/$\tau\tau$/WW/ZZ/$\gamma\gamma$}) \\
+ \bottomrule
+ \end{tabular}
+ \caption{A table summarizing the possible exotic decay modes for non-SM Higgs bosons. Source: \cite{Contino:2016spe}.}
+ \label{tab:exotic_decay_summary}
+\end{adjustwidth*}
+\end{table}
 % Future work
 \section{Future work}

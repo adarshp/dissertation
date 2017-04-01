@@ -16,3 +16,6 @@ latex.out
 
 # Python bytecode
 *.pyc
+
+# Source code listings w/ the minted package
+_minted*

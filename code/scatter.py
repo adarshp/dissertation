@@ -6,7 +6,6 @@ import numpy as np
 import matplotlib as mpl
 # mpl.use('pgf')
 import matplotlib.pyplot as plt
-import plotly.plotly as py
 pgf_with_rc_fonts = {
     # "pgf.texsystem": "lualatex",
     "font.family": "serif",
@@ -31,7 +30,6 @@ plt.rc('font',size=10)
 plt.rc('xtick',labelsize=10)
 plt.rc('ytick',labelsize=10)
 plt.rc('axes',labelsize=10)
-plt.rc('axes',titlesize=10)
 
 
 circle = plt.Circle((5,5),2.0,facecolor='none',edgecolor='Green',linewidth=3)
