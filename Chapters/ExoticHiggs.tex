@@ -1,6 +1,6 @@
 \chapter{Exotic Higgs decays at 14 and 100 TeV}\label{ch:ExoticHiggs}
 
-Having taken a detour into examining Higgsinos - the fermionic superpartners of Higgs fields that arise in supersymmetrized versions of type-II 2HDMs, we now return to the the scalar sector of a generic type-II 2HDM. In \autoref{ch:LightChargedHiggs}, we showed how exotic decay modes offered an important and complementary avenue for discovering charged Higgs bosons at the LHC. While that analysis was performed for a single BSM Higgs and a single exotic decay mode, in the project that forms the basis of this project, we aim to do something much more ambitious, namely, perform a comprehensive set of collider analyses for all the exotic decay modes for heavy Higgses in type-II 2HDMs, both at the 14 TeV LHC, as well as a future 100 TeV hadron collider.
+Having taken a detour into examining Higgsinos - the fermionic superpartners of Higgs fields that arise in supersymmetrized versions of type-II 2HDMs, we now return to the the scalar sector of a generic type-II 2HDM. In \autoref{ch:LightChargedHiggs}, we showed how exotic decay modes offered an important and complementary avenue for discovering charged Higgs bosons at the LHC. While that analysis was performed for a single BSM Higgs and a single exotic decay mode, in the project that forms the basis of this project, we aim to do something much more ambitious, namely, perform a comprehensive set of collider analyses for all the exotic decay modes for heavy Higgses in type-II 2HDMs\footnote{\Adarsh{Are we looking only at type-II 2HDMs in this project?}}, both at the 14 TeV LHC, as well as a future 100 TeV hadron collider.
 
 \section{Setting the stage}
 As pointed out in \autoref{ch:LightChargedHiggs}, most experimental analyses aimed at discovering BSM Higgses focus on conventional decay modes to Standard Model Particles. The reason for this is that most studies assume the \emph{decoupling limit}, where the states \emph{H,A,$H^\pm$} are much heavier than \emph{h}. Decoupling implies the phenomenon of \emph{alignment}, that is, the field \emph{h} is the SM Higgs boson, or equivalently, the angles $\beta$ and $\alpha$ satisfy the condition $\beta-\alpha = \pi/2$ \cite{Contino:2016spe}. The limit of decoupling with alignment is an attractive one, since it implies that the undiscovered Higgses are all much heavier than the SM Higgs, thus accounting for why they have not been found yet. However, in the decoupling limit, the splitting between the squared masses of heavy Higgses is constrained to be small, on the order of $\sim\mathcal{O}(v^2)$, by the following conditions \cite{Gunion:2002zf}:
@@ -17,70 +17,57 @@ As pointed out in \autoref{ch:LightChargedHiggs}, most experimental analyses aim
 \end{itemize}
 This constraint on the size of the mass splittings implies that decays of heavy Higgses into final states that contain other heavy Higgses will be kinematically disfavored, and thus they will dominantly decay to final states with SM particles.
 
-The relation between decoupling and alignment is not bidirectional, though - alignment does not necessarily imply decoupling. In the limit of alignment without decoupling, it is possible to have sizable mass splittings between the heavy Higgses. While this scenario is necessarily less generic than the decoupling limit, it is well worth considering, especially given that large mass splittings are consistent with a strongly first order electroweak phase transition. This type of phase transition is necessary for the mechanism of electroweak baryogenesis, which can explain the observed level of baryon asymmetry in the universe. It is also possible to generate such mass splittings away from the alignment limit. While this scenario is experimentally disfavored to \cite{Aad:2015pla} (to a significance of about $1\sigma$)
+The relation between decoupling and alignment is not bidirectional, though - alignment does not necessarily imply decoupling. In the limit of alignment without decoupling, it is possible to have sizable mass splittings between the heavy Higgses. While this scenario is necessarily less generic than the decoupling limit, it is well worth considering, especially given that large mass splittings are consistent with a strongly first order electroweak phase transition. This type of phase transition is necessary for the mechanism of electroweak baryogenesis, which can explain the observed level of baryon asymmetry in the universe. It is also possible to generate such mass splittings away from the alignment limit. While this scenario is experimentally disfavored \cite{Aad:2015pla}, it has not been excluded, and so we study it for completeness.
 
-The presence of large mass splittings opens up the possibility that the heavy Higgses could decay into final states containing other heavy Higgses, that is, they could decay via exotic decay channels.
+The presence of large mass splittings opens up the possibility that the heavy Higgses could decay into final states containing other heavy Higgses, that is, they could decay via exotic decay channels. As mentioned when we studied the exotic decay mode $H^\pm AW^\pm$ in \autoref{ch:LightChargedHiggs}, in certain regions of parameter space, once the exotic decay modes are allowed, they will dominate the conventional decay modes. This is illustrated in \autoref{fig:exotic_higgs_brs} for a few scenarios. Subfigures (a) and (b) show the branching fractions for the decays of \emph{A}, with $m_{12}^2 = m_H^2 s_\beta c_\beta$. Subfigures (c) and (d) show similar plots, this time for the branching fractions of $H^\pm$, with $m_{12}^2$ equal to $m_H^2 s_\beta c_\beta$ and $0$ respectively. The dashed lines indicate the branching fractions to SM particles in the absence of the exotic decay modes. These channels have begun to garner additional interest in recent years, with the publication of a number of original studies on the topic \cite{Dorsch:2014qja,Dorsch:2016tab,Coleppa2013a,Coleppa2014a,Brownson:2013lka,Coleppa:2014cca,Kling2015c,Li:2015lra,Maitra:2014qea,Basso:2012st,Dermisek:2013cxa,Mohn:2005lda,Assamagan:2000ud}. 
+
+\begin{marginfigure}
+  \centering
+  \subbottom[]{\includegraphics[width=\textwidth]{images/BR-A-mH200-mA500-mC200.pdf}}
+  \subbottom[]{\includegraphics[width=\textwidth]{images/BR-A-mH200-mA500-mC500.pdf}}\\
+  \subbottom[]{\includegraphics[width=\textwidth]{images/BR-C-mH200-mA500-mC500.pdf}}
+  \subbottom[]{\includegraphics[width=\textwidth]{images/BR-H-mH500-mA200-mC200.pdf}}
+  \caption{Branching fractions for exotic decays in type-II 2HDMs, as a function of $t_\beta$, with $c_{\beta-\alpha} = 0$. Source: \cite{Kling2016}.}
+\label{fig:exotic_higgs_brs}
+\end{marginfigure}
 
 \section{Classifying exotic decays}
-Given the large number of degrees of freedom in generic 2HDMs, it is important for us to whittle down the number of possible scenarios to a more managable number by imposing some kinds of constraints. The authors of \cite{Kling2016} have systematically categorized the scenarios (with differing mass orderings, splittings, values of the parameter $m_{12}$, and degrees of alignment) that are still viable after imposing all the relevant theoretical and experimental constraints. Based on this categorization, they have presented a number of benchmark planes 
-%Exotic Higgs via AZ/HZ: A snowmass whitepaper \cite{Coleppa2013a}
-%\cite{Coleppa2014a} Exotic Decays of a heavy neutral Higgs through HZ/AZ channel
-%\cite{Brownson:2013lka} Heavy Higgs Scalars at Future Hadron Colliders (A Snowmass whitepaper)
-%\cite{Coleppa:2014cca} Charged Higgs search via AW+/HW+ channel.
-%\cite{Kling2015c} Light Charged Higgs Bosons to AW/HW via Top Decay
-%\cite{Li:2015lra} Exotic Higgs Decay via Charged Higgs
-%\cite{Maitra:2014qea} Searching for an elusive charged Higgs boson at the Large Hadron Collider
-%\cite{Basso:2012st} Probing the charged Higgs boson at the LHC in the CP-violating type-II 2HDM
-%\cite{Dermisek:2013cxa} A New Avenue to Charged Higgs Discovery in Multi-Higgs Models
-%\cite{Mohn:2005lda} The ATLAS discovery potential for a heavy Charged Higgs boson in a large mass splitting MSSM scenario.
-%\cite{Assamagan:2000ud}
 
+The complete list of possible exotic decay modes in 2HDMs is given in \autoref{tab:exotic_decay_summary}. In the second column, \emph{H} refers to any of the neutral Higgs bosons \emph{h,H}, and \emph{A}. Given the large number of degrees of freedom in generic 2HDMs, it is important for us to whittle down the number of possible scenarios to a more managable number by imposing some kinds of constraints. The authors of \cite{Kling2016} have systematically categorized the scenarios (with differing mass orderings, splittings, values of the parameter $m_{12}$, and degree of deviation from alignment) that are still viable after imposing all the relevant theoretical and experimental constraints. Based on this categorization, they have presented a number of benchmark planes to guide searches for new scalars at the LHC via exotic decay modes. These planes are summarized in \autoref{tab:benchmark_planes}. Even after this constraining, there remain a plethora of possible final states, as evidenced by the last column of \autoref{tab:exotic_decay_summary}. In this work, we aim to answer the questions: which among these final states are the most promising to find new physics, and what are the best strategies to do so at a collider? In the next section, we outline some of the details of our approach.
 
-Figure \ref{fig:exotic_higgs_brs} shows branching ratios for vari
-\begin{figure}
+\begin{table}
   \centering
-  \subbottom[]{\includegraphics[width=3in]{images/BR-A-mH200-mA500-mC200.pdf}}
-  \subbottom[]{\includegraphics[width=2.8in]{images/BR-A-mH200-mA500-mC500.pdf}}\\
-  \subbottom[]{\includegraphics[width=3in]{images/BR-C-mH200-mA500-mC500.pdf}}
-  \subbottom[]{\includegraphics[width=3in]{images/BR-H-mH500-mA200-mC200.pdf}}
-\caption{Branching fractions for exotic decays in type-II 2HDMs, as a function of $t_\beta$, with $c_{\beta-\alpha} = 0$.}
-\label{fig:exotic_higgs_brs}
-\end{figure}
+  \begin{tabular}{lclr}
+    \toprule
+    Name & Plane & Decays & $m_{12}^2$\\
+    \midrule
+    IA & $m_A > m_H = m_{H^\pm}$ & $A\rightarrow H^\pm W^\mp$ & $m_H^2s_\beta c_\beta$\\
+       &                         & $A\rightarrow HZ$ & 0 \\
+       \midrule
+    IB & $m_A < m_H = m_{H^\pm}$ & $H\rightarrow AZ/AA$ & 0\\
+       &                         & $H^\pm\rightarrow AW^\pm$ &  \\
+       \midrule
+    IIA & $m_H > m_A = m_{H^\pm}$ & $H\rightarrow AZ/AA$ & 0\\
+       &                         & $H\rightarrow H^+H^-/H^\pm W^\pm$&  \\
+       \midrule
+    IIB & $m_H < m_A = m_{H^\pm}$ & $A\rightarrow HZ$ & $m_H^2s_\beta c_\beta$\\
+       &                         & $H^\pm\rightarrow HW^\pm$ & 0 \\
+       \midrule
+       III & $m_A = m_H = m_{H^\pm}$& $A\rightarrow hZ,H^\pm\rightarrow hW^\pm$ & $m_H^2s_\beta c_\beta$\\
+       &     vs $c_{\beta-\alpha}$  & $H\rightarrow hh$ & 0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Summary of benchmark planes for exploring exotic Higgs decays in 2HDMs.}
+  \label{tab:benchmark_planes}
+\end{table}
 
-\begin{figure}
-  \subbottom[]{\includegraphics[width=3in]{images/bb2A2tatall_dm200.pdf}}
-  \subbottom[]{\includegraphics[width=2.8in]{images/bb2H2tatall_dm200.pdf}}\\
-  \subbottom[]{\includegraphics[width=3in]{images/gg2A2tatall_dm200.pdf}}
-  \subbottom[]{\includegraphics[width=3in]{images/gg2H2tatall_dm200.pdf}}
-\caption{Branching fractions for exotic decays in type-II 2HDMs, as a function of $t_\beta$, with $c_{\beta-\alpha} = 0$.}
-\label{fig:honglei_results}
-\end{figure}
-
-% Methodology
-\section{Methods}
-% Results
-\section{Results}
-Here are some preliminary results.
 \strictpagecheck
-\begin{figure}
-  \begin{sidecaption}{Exclusion and discovery reaches in the $m_{H^\pm}-m_{H}$ plane for the exotic decay $H^\pm\rightarrow HW^\pm$.}
-%\includegraphics[width=\textwidth]{images/hC_HW_contours.pdf}
-    \input{images/combined.pgf}
-\end{sidecaption}
-\end{figure}
-
-%\begin{marginfigure}
-%\includegraphics[width=\textwidth]{images/hC_HW_contours.pdf}
-%\caption{Exclusion and discovery reaches in the $m_{H^\pm}-m_{H}$ plane for the exotic decay $H^\pm\rightarrow HW^\pm$.}
-%\end{marginfigure}
-In \autoref{tab:exotic_decay_summary}, we summarize the five main possible exotic decay modes for non-SM Higgses. In the second column, \emph{H} refers to any of the neutral Higgs bosons \emph{h,H}, and \emph{A}.
-
 \begin{table}
 \begin{adjustwidth*}{0in}{-2.1in}
 \centering
   \begin{tabular}{llll}
   \toprule
- Parent Higgs & Decay type& Channels in 2HDM & Possible Final States  \\
+ Parent Higgs & Decay type& Channels in 2HDM & Main Final States  \\
  \midrule
                & \emph{HH} & $H\rightarrow AA, hh$                  & (\emph{bb/$\tau\tau$/WW/ZZ/$\gamma\gamma$})(\emph{bb/$\tau\tau$/WW/ZZ/$\gamma\gamma$}) \\
  Neutral Higgs & \emph{HZ} & $H\rightarrow AZ, A\rightarrow HZ, hZ$ & (\emph{ll/qq/$\nu\nu$})(\emph{bb/$\tau\tau$/WW/ZZ/$\gamma\gamma$}) \\
@@ -94,5 +81,53 @@ Charged Higgs  & $HW^\pm$  & $H^\pm\rightarrow hW^\pm/HW^\pm/AW^\pm$ & (\emph{l\
  \label{tab:exotic_decay_summary}
 \end{adjustwidth*}
 \end{table}
-% Future work
-\section{Future work}
+
+%Exotic Higgs via AZ/HZ: A snowmass whitepaper \cite{Coleppa2013a}
+%\cite{Coleppa2014a} Exotic Decays of a heavy neutral Higgs through HZ/AZ channel
+%\cite{Brownson:2013lka} Heavy Higgs Scalars at Future Hadron Colliders (A Snowmass whitepaper)
+%\cite{Coleppa:2014cca} Charged Higgs search via AW+/HW+ channel.
+%\cite{Kling2015c} Light Charged Higgs Bosons to AW/HW via Top Decay
+%\cite{Li:2015lra} Exotic Higgs Decay via Charged Higgs
+%\cite{Maitra:2014qea} Searching for an elusive charged Higgs boson at the Large Hadron Collider
+%\cite{Basso:2012st} Probing the charged Higgs boson at the LHC in the CP-violating type-II 2HDM
+%\cite{Dermisek:2013cxa} A New Avenue to Charged Higgs Discovery in Multi-Higgs Models
+%\cite{Mohn:2005lda} The ATLAS discovery potential for a heavy Charged Higgs boson in a large mass splitting MSSM scenario.
+%\cite{Assamagan:2000ud}
+
+% Methodology
+\section{Analysis details}
+Recognizing the power of statistical learning techniques to efficiently find non-linear decision boundaries in feature space, we use boosted decision tree classifiers to discriminate between signal and background events. For each channel, we provide the classifier with a mixture of low-level and high-level features. Low-level features include readily available information such as the momenta of the final state particles, whereas high-level features are functions of the low-level features designed to exploit kinematic relations unique to each decay topology. In practice, using high and low level features in conjunction with each other yields better results than using either of them alone. Take for example the search channel involving the associated production of a charged Higgs with a top quark, followed by the decay chain shown below:
+\[pp\rightarrow tbH^+\rightarrow (Wb)b(HW)\rightarrow l\nu bb\tau_h\tau_ljj.\]
+Here, one of the \emph{W}'s and one of the $\tau$s decays hadronically, and the other decays leptonically. To construct the feature arrays for the boosted decision tree classifier, we first selected events with two leptons, one or two \emph{b}-tagged jets, one $\tau$-tagged jet, and at least two untagged jets, provided that the leptons had the same sign, which was opposite to that of the $\tau$-tagged jet. For events that passed these selection criteria, we constructed the invariant masses as follows.
+We first reconstruct the \emph{W}s - the hadronically decaying \emph{W} is reconstructed by selecting the combination of two untagged jets with invariant mass closest to $m_W$. Similarly, the leptonically decaying \emph{W} is reconstructed using the momentum of the hardest lepton and the momentum of the neutrino which is determined using the missing transverse momentum and imposing the mass conditions \cite{Aad:2012ux}. The top candidate is reconstructed by taking the combination of \emph{W} candidate and \emph{b}-tagged jet with invariant mass closest to $m_t$. Similarly, the \emph{H} candidate is reconstructed by combining the $\tau$-tagged jet and the softer lepton. The charged Higgs candidate is reconstructed by combining the \emph{H} candidate and the \emph{W} candidate that was not used for top reconstruction. The invariant masses of the top, \emph{H}, $H^\pm$ candidates are used as features for the boosted decision tree classifier. Similarly, unique high-level kinematical variables will be constructed for the other search channels.
+
+\section{Results}
+In this section, we will present some of the preliminary results of this project. In \autoref{fig:Honglei_A_tatall}, we see the reach obtainable in the $bb/gg\rightarrow A\rightarrow HZ\rightarrow \tau\tau ll$ channels, and in \autoref{fig:Honglei_H_tatall}, we see the reach obtainable in the $bb/gg\rightarrow H\rightarrow AZ\rightarrow \tau\tau ll$ channels. We see from \autoref{fig:Honglei_A_tatall} that for the $A\rightarrow HZ$ decay, we are able to discover points with $m_A$ up to 700 GeV for $t_\beta$ between 10 and 50, and exclude points up to 900 GeV for $t_\beta$ from about 7 to 50. At a 100 TeV collider, this reach improves dramatically - we are able to discover points with $m_A$ up to about 3 TeV for intermediate values of $\tan\beta$ between 15 and 40, and exclude them up to 3.5 TeV for $\tan\beta$ between 10 and 20. The $bb\rightarrow A$ production channel fares better than the $gg\rightarrow A$ production channel. Both the plots show the reach in the $m_A = m_H^{\pm} - \tan\beta$ plane, with $|m_H - m_A| = $ 200 GeV. This plane simply represents the region along the diagonal of benchmark plane IIB - this region was chosen since it survives all the theoretical and experimental constraints. Varying $\tan\beta$ does not vary the kinematics of the final state particles, just the total $\sigma\times$BR. 
+\strictpagecheck
+\begin{figure}
+\centering
+  \subbottom[]{\includegraphics[width=0.49\textwidth]{images/bb2A2tatall_dm200.pdf}}
+  \subbottom[]{\includegraphics[width=0.49\textwidth]{images/gg2A2tatall_dm200.pdf}}
+\caption{Results for the channel $A\rightarrow HZ\rightarrow \tau\tau ll$.}
+\label{fig:Honglei_A_tatall}
+\end{figure}
+The subplots in \autoref{fig:Honglei_H_tatall} show the reach for the exotic decay mode $H\rightarrow AZ$ in the $\tau\tau ll$ final state, with the production mechanisms $bb/gg\rightarrow H$. The reach is shown in the $m_H = m_{H^\pm}-t_\beta$ plane, corresponding to benchmark plane IB with varying values of $t_\beta$. Again, the mass difference between the parent and daughter Higgs is fixed at 200 GeV. We see that, among these, the maximum reach is obtained in the $bb\rightarrow H$ production channel, with points up to $m_H\approx$ 3.5 TeV being excluded in all but the small $\tan\beta$ region, at a 100 TeV collider.
+\strictpagecheck
+\begin{figure}
+  \subbottom[]{\includegraphics[width=0.49\textwidth]{images/bb2H2tatall_dm200.pdf}}
+  \subbottom[]{\includegraphics[width=0.49\textwidth]{images/gg2H2tatall_dm200.pdf}}
+\caption{Results for the channel $H\rightarrow AZ\rightarrow \tau\tau ll$.}
+\label{fig:Honglei_H_tatall}
+\end{figure}
+For the charged Higgs channel described in the previous section, the reach for a 100 TeV collider is shown in \autoref{fig:charged_higgs_100_TeV}. We see that we are able to exclude charged Higgs masses up to 2 TeV for $m_H$ up to 500 GeV.
+\strictpagecheck
+\begin{figure}
+%\includegraphics[width=\textwidth]{images/hC_HW_contours.pdf}
+  \begin{sidecaption}{Exclusion and discovery reaches in the $m_{H^\pm}-m_{H}$ plane for the exotic decay $H^\pm\rightarrow HW^\pm$.\Adarsh{This figure has been generated using only low-level features as input to the BDT classifier. I expect the reach to improve once I finish implementing the high-level features (the combinatorics make it complicated).}}
+    \input{images/combined.pgf}
+\label{fig:charged_higgs_100_TeV}
+\end{sidecaption}
+\end{figure}
+
+\section{Conclusions and outlook}
+In this chapter, we have provided some preliminary results from a project aimed at evaluating the prospects of discovering new heavy scalars from 2HDMs at the 14 TeV LHC and a 100 TeV collider, in the physically well-motivated but underexamined scenario where they can have large mass splittings. The approach we take is to examine the resulting `exotic' decay modes of these heavy scalars, since they can dominate over the conventional decay modes, once kinematically allowed. We began by examining two of the benchmark planes suggested in \cite{Kling2016}. The first, benchmark plane IB was probed using the exotic decay $H\rightarrow AZ$, with the subsequent decays $A\rightarrow \tau\tau, Z\rightarrow ll$. The second plane, labeled IIB was investigated using the exotic decay modes $A\rightarrow HZ$ and $H^\pm \rightarrow HW^\pm$. For the first mode, we consider the final state $\tau\tau ll$, similar to the $H\rightarrow AZ$ case, while for the second, we consider the more complicated final state $bbWW\tau\tau$, where one $\tau$ and one \emph{W} decay hadronically, and the other $\tau$ and \emph{W} decay leptonically. We used boosted decision tree classifiers to separate signal and background events, using a mixture of low-level features and physically inspired high-level features that are unique to each of the channels. For the benchmark plane IB, we found that we are able to exclude points with $m_A = m_H^{\pm}$ up to 3.5 TeV at optimal points in the $m_A = m_{H^\pm}$ plane, with a fixed $m_H =$200 GeV, for a 100 TeV collider. For benchmark plane IIB, we found that the reach is higher - we can discover points with $m_H = m_{H^\pm}$ up to 3.5 TeV, again for the same mass difference between the parent and daughter Higgs. Preliminary results for the charged Higgs show a discovery reach in benchmark plane IIB up to charged Higgs masses of about 2 TeV, for $m_H$ up to 500 GeV. This region is complementary in the BP IIB plane to the previous analysis. These preliminary results look promising - we aim to complete our investigation of all the benchmark planes in the near future. An extended scalar sector arises frequently in theories beyond the Standard Model, and would have important implications for the electroweak phase transition, electroweak baryogenesis, as well as the hierarchy problem. Understanding its structure, then, is of vital importance. 
