@@ -3,9 +3,9 @@
 \newcommand{\ct}{\cos\theta_w}
 \newcommand{\st}{\sin\theta_w}
 
-In this chapter we will describe the components of the Standard Model (SM) of particle physics, with particular attention to the theory of weak interactions. The treatment is semi-historical. We assume familiarity with the basic concepts of quantum field theory and quantum electrodynamics (\textsc{qed}), including what a particle is, the connection between particles and fields, and how to interpret Feynman diagrams. We will first talk about the matter content, followed by a discussion of gauge invariance and how it leads to gauge fields that both interact with themselves and mediate the interactions between the matter fields. We then discuss the historical development of electroweak theory, and build up to an explanation of electroweak symmetry breaking and the Higgs mechanism. Strong interactions and the concept of asymptotic freedom are briefly discussed, after which We conclude by highlighting the limits of the Standard Model and the need for new physics extensions to it. The material in this chapter draws from a number of excellent treatments of the subject \citep{Cheng1985,Schwartz2014,Zee2010,Peskin:1995ev}.
+In this chapter we will describe the components of the Standard Model (SM) of particle physics, with particular attention to the theory of weak interactions. The treatment is semi-historical.The material in this chapter draws from a number of excellent treatments of the subject \citep{Cheng1985,Schwartz2014,Zee2010,Peskin:1995ev}.
 
-\section{Particle content}
+\section{Particle content and gauge invariance}\label{sec:gauge_invariance}
 
 The fundamental constituents of matter are fermions. They come in two varieties - quarks and leptons. Quarks are found in places such as atomic nuclei and in cosmic rays mesons that bombard the Earth on a regular basis. The most well-known example of leptons are electrons, that orbit atomic nuclei, but there are many other flavors of leptons as well. The full lists of quarks and leptons in the SM can be found in tables \ref{tab:quarks} and \ref{tab:leptons}. The particles that mediate the interactions between these are called \emph{gauge bosons}, and are listed in table \ref{tab:gaugebosons}. The photon is the mediator of the electromagnetic force, the $W$ and $Z$ bosons mediate the weak force, which is responsible for radioactive decay, and gluons mediate the strong force between quarks, which is responsible for the formation of protons, neutrons and other heavy particles.
 
@@ -60,11 +60,8 @@ In the absence of interactions, the dynamics of a free fermion field $\psi$ are 
   \L_\text{fermion} = i\overline{\psi}\slashed{\partial}_\mu\psi-m_{\psi}\overline{\psi}\psi.
 \label{eq:fermion_lagrangian}
 \end{align}
-Where $m_\psi$ is the mass of the fermion. Interactions and the corresponding gauge bosons arise organically when we impose gauge invariance upon this Lagrangian, as we shall see in the next section.
+Where $m_\psi$ is the mass of the fermion. Interactions and the corresponding gauge bosons arise organically when we impose gauge invariance upon this Lagrangian, as we shall soon see. The concept of gauge invariance arose in the context of electrodynamics, with the realization that there was an intrinsic degree of freedom for the electromagnetic vector potential $A_\mu$. Basically, under the transformation 
 
-\section{Gauge invariance}\label{sec:gauge_invariance}
-
-The concept of gauge invariance arose in the context of electrodynamics, with the realization that there was an intrinsic degree of freedom for the electromagnetic vector potential $A_\mu$. Basically, under the transformation 
 \begin{align}
   A_\mu\rightarrow A_\mu + \partial_\mu \lambda(x),
   \label{eq:gauge_transformation}
@@ -73,11 +70,11 @@ where $\lambda(x)$ is an arbitrary scalar function, the electromagnetic Lagrangi
 \footnote{The origin of the term `gauge invariance' lies in Hermann Weyl's attempt to describe electromagnetism as a geometric theory, similar to gravity, in 1916. He hoped to recover electromagnetism by imposing an invariance, termed \emph{eichinvarianz} (which translates to gauge invariance in English)  under local scale transformations, and identifying the scale factor with the electromagnetic vector potential $A_\mu$. Although this attempt was unsuccessful, the term was retained when it was discovered the correct way forward was to impose invariance under \emph{phase} transformations instead of scale transformations. For a history of the origins of gauge invariance, see \citep{Jackson2001}.}
  is a geometric one, usually discussed among mathematicians in terms of fiber bundles and connections \citep{Cheng1985}. A full geometric treatment of this topic is however beyond the scope of this work.
 
- In this section, we will show an example of the remarkable consequences of gauge symmetry. Consider the free fermion Lagrangian in \eqref{eq:fermion_lagrangian}. If we require that it is invariant under the transformation
+ In this section, we will show an example of the remarkable consequences of gauge symmetry. The free fermion Lagrangian in \eqref{eq:fermion_lagrangian} is invariant under the transformation
 \begin{equation}\label{eq:fermion_field_transformation}
   \psi(x)\rightarrow e^{i\theta(x)}\psi(x).
 \end{equation}
-The phase of a quantum field at a particular point in spacetime is an unobservable quantity, and has no physical significance. However, we often have to compare the values of fields at different points in spacetime - for example, when we take the partial derivative $\partial_\mu$ in \eqref{eq:fermion_lagrangian}. At a very basic level, a derivative of a function $f(x)$ depends on the difference of the values of the function $f$ at the points $x$ and $x + dx$. However, the phase of the field is a matter of arbitrary convention, and our physical observables should not depend on them. To be able to compare fields at $x$ and $dx$, we need to promote our ordinary derivative $\partial_\mu$ to a \emph{gauge-covariant} or simply \emph{covariant} derivative,
+The phase $\theta(x)$ of field at a particular point in spacetime is an unobservable quantity, and has no physical significance. However, we often have to compare the values of fields at different points in spacetime - for example, when we take the partial derivative $\partial_\mu$ in \eqref{eq:fermion_lagrangian}. At a very basic level, a derivative of a function $f(x)$ depends on the difference of the values of the function $f$ at the points $x$ and $x + dx$. However, the phase of the field is a matter of arbitrary convention, and our physical observables should not depend on them. To be able to compare fields at $x$ and $dx$, we need to promote our ordinary derivative $\partial_\mu$ to a \emph{gauge-covariant} or simply \emph{covariant} derivative,
 $$\partial_\mu \rightarrow D_\mu = \partial_\mu - igA_\mu$$
 Here, $A_\mu$ is a vector field that transforms as%
 %
@@ -105,7 +102,8 @@ where $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$, and the factor $\f
 Note that a mass term for the field $A_\mu$, of the form $mA_\mu A^\mu$ is not gauge-invariant and is thus forbidden, thus ensuring that the photon remains massless.
 The coefficient that is acquired by the field in \eqref{eq:fermion_field_transformation}, $e^{i\theta(x)}$, is a unitary operator. In fact, transformations of this sort form a group known as the \emph{unitary group of degree 1}, denoted $U(1)$, which is the group of $1\times 1$ matrices with determinant 1\footnote{This follows from the general definition of a unitary group $U(n)$, the group of $n\times n$ matrices with unit determinant.}. We say that the Lagrangian possesses a $U(1)_\text{em}$ gauge symmetry, where the subscript `em' stands for electromagnetism. Equivalently, we might say that the Lagrangian is invariant under the $U(1)_\text{em}$ gauge group. 
 
-\section{Pre-Yang-Mills Era}\label{sec:pre_yang_mills}
+\section{The Higgs mechanism}
+\subsection{Pre-Yang-Mills Era}\label{subsec:pre_yang_mills}
 
 The group $U(1)$ is known as an \emph{Abelian} group. That is, the group operations commute with each other. It turns out that a consistent perturbative theory of weak and strong interactions requires invariance under \emph{non-Abelian} gauge groups. Prior to the formulation of electroweak theory, the weak interactions were first described by a phenomenological model proposed by Enrico Fermi in 1934 \citep{Fermi:1934sk,Fermi:1934hr} to describe the phenomenon of the $\beta$-decay of neutrons: $n\rightarrow p e \bar{\nu_e}$ This theory had a four-fermion interaction vertex described by the term
 \begin{equation}
@@ -167,7 +165,7 @@ The $V-A$ interaction term is a dimension-six operator, and so is not renormaliz
 \end{marginfigure}
 However, the mass term for the $W$ boson in this theory - $M_W^2W_\mu^\dagger W^\mu$ - spoiled the renormalizability of the theory. As we will see, the key to solving this problem is to frame the weak interactions as a \emph{non-Abelian} gauge theory. 
 
-\section{Non-Abelian Gauge Theories}\label{sec:non_abelian}
+\subsection{Non-Abelian Gauge Theories}\label{subsec:non_abelian}
 A non-Abelian group is one whose group operations do not commute with each other. One example of such a group is $SU(2)$. In 1954, Yang and Mills explored the implications of invariance under this group \citep{Yang1954}, leading to the creation of non-Abelian gauge theories, known as \emph{Yang-Mills theories}. 
 We will not delve into the intricacies of Yang-Mills theories, but will rather describe their essential ingredients. In \autoref{sec:gauge_invariance}, we were introduced to the concept of a covariant derivative, for the special case of the $U(1)$ gauge group. Now consider what would happen if the free fermion Lagrangian from \eqref{eq:fermion_lagrangian} was invariant under a general local symmetry group with generators $T^a$. That is, the field $\psi$ transforms as $\psi\rightarrow e^{i\epsilon_a(x) T^a}\psi$, where the parameters $\epsilon^a(x)$ are functions of space and time. To preserve the invariance of the Lagrangian under this transformation, the covariant derivative must have the form 
 $$D_\mu = \partial_\mu - igA_\mu^aT^a$$
@@ -210,14 +208,13 @@ $$\mathcal{L}_\text{Yang-Mills} = \bar{\psi}\slashed{D}\psi - \frac{1}{4}\left(F
 \end{marginfigure}
 Non-Abelian gauge theories have some very distinctive properties compared to their Abelian counterparts. One feature becomes apparent by examining the term containing $(F_{\mu\nu}^i)^2$, which contains terms that are trilinear and quadrilinear in the gauge fields $A_\mu^a$. That is, gauge fields possess self-interactions, unlike in the Abelian case. The other important feature is asymptotic freedom, which plays a critical role in the theory of strong interactions. 
 
-\section{Electroweak unification}
+\subsection{Electroweak unification}
 
 In 1957, Schwinger proposed the unification of the weak and electromagnetic interactions, citing their vectorial nature. In 1961, Glashow proposed a model for weak interactions governed by symmetry under the product group $SU(2)\times U(1)$. The trouble was, experiments had shown that the weak interactions had a short range, implying that the vector bosons that mediated them must be massive. But as we saw before in the case of \textsc{qed}, gauge symmetry prohibits mass terms for the intermediate vector bosons. Glashow's theory included these mass terms, but they were put in by hand, and spoiled the renormalizability of the theory. A possible way out was to break the gauge symmetry \emph{spontaneously} rather than explicitly. Spontaneous symmetry breaking, which we will discuss further in the next section, refers to the phenomenon where the ground state of a system does not respect the symmetry of the full Lagrangian. However, Goldstone's theorem states that for every spontaneously broken symmetry, there exists a set of massless spin-0 bosons corresponding to the generators of the symmetry group. The trouble was, there was no sign of the existence of such particles. 
 
 Thus we seem to have to choose between two undesirable outcomes: a set of massless gauge bosons, or a set of massless scalars, both of which go against what we actually see in nature. Remarkably, each of these problems would turn out to be the solution for the other, through the marvelous \emph{Higgs mechanism}. This mechanism was first put forth by Philip W. Anderson in the context of condensed matter systems. In 1964, three groups -- Peter Higgs, the duo of Francois Englert and Robert Brout, and the trio of Gerald Guralnik, C. R. Hagen, and Tom Kibble -- independently and almost simultaneously proposed that this mechanism could explain how the the weak interaction mediators can acquire mass. There is likely a strong case for naming the mechanism after all of these physicists, but for the sake of expediency, we will simply refer to it as the Higgs mechanism. Before tackling it in the context of electroweak theory, it will be instructive to examine a few simpler cases of spontaneous symmetry breaking. 
 
-\section{Spontaneous Symmetry Breaking}
-
+\subsection{Spontaneous Symmetry Breaking}
 \subsection{Single real field}
 
 The simplest case of spontaneous symmetry breaking can be seen in systems with global symmetry. Consider for example this Lagrangian for a single real scalar field, $\phi$.
@@ -338,7 +335,7 @@ We see that the field $A_\mu$ acquires a mass of $gv$ and the field that changes
 to the two possible polarization states, and the $\xi$ and $\rho$ had one degree of freedom each. The $\rho$ retained its degree of freedom, but the vector boson field now has three degrees of freedom (three possible polarization states) after `eating' the $\xi$ field. The $\xi$ field is called a `would-be' Goldstone boson. We have just finished describing the Higgs mechanism for the spontaneous breaking of an Abelian symmetry. Having performed these warm-up exercises, we are in good shape to tackle electroweak symmetry breaking.
 
 
-\section{Electroweak symmetry breaking}
+\subsection{Electroweak symmetry breaking}
 
 Electroweak symmetry breaking is the spontaneous breakdown of the product group $SU(2)_L\times U(1)_Y\rightarrow U(1)_{EM}$. This is achieved by adding to the theory a scalar field $H$:
 $$H = \vdoublet{H^+}{H^0}$$
@@ -397,7 +394,7 @@ Fermion masses can be generated by their coupling to the Higgs doublet $H$. Term
 \end{equation}
 where $yv/\sqrt{2}$ is the mass of the fermion. In general, the masses of fermions are proportional to their Yukawa couplings.
 
-\section{Electroweak Interactions}
+\subsection{Electroweak Interactions}
 
 The interactions between fermions and the electroweak vector bosons ($W,Z,\gamma$) can be derived by inspecting the kinetic terms of the fermions:
 \begin{equation}
@@ -464,7 +461,7 @@ The different charges of the SM fermions under the operators $T_3, Y$, and $Q$ a
 
 \subsection{Gauge boson self-interactions}
 
-The self-interactions of the gauge bosons follow the structure discussed in \autoref{sec:non_abelian}, with the appropriate mixing factors and the structure constants for the $SU(2)$, the antisymmetric Levi-Civita tensor $\epsilon_{ijk}$.
+The self-interactions of the gauge bosons follow the structure discussed in \autoref{subsec:non_abelian}, with the appropriate mixing factors and the structure constants for the $SU(2)$, the antisymmetric Levi-Civita tensor $\epsilon_{ijk}$.
 
 \subsection{The Higgs boson and its couplings}
 
@@ -511,8 +508,8 @@ The coupling to the fermions can be found by looking at the fermion mass terms f
 \end{marginfigure}
 
 
-\section{CKM mixing}
-When we discussed fermion masses, we glossed over an interesting feature of the SM: the distinction between the mass and the gauge eigenstates of the quarks, first hinted at by the Cabibbo angle introduced in \autoref{sec:pre_yang_mills}. While gauge eigenstates have well defined transformations under gauge groups, the physical particles that we observe at a collider will in fact be mass eigenstates. The two are related by the \emph{Cabibbo-Kobayashi-Maskawa} (\textsc{ckm}) mixing matrix:
+\section{Mass and gauge eigenstates}
+When we discussed fermion masses, we glossed over an interesting feature of the SM: the distinction between the mass and the gauge eigenstates of the quarks, first hinted at by the Cabibbo angle introduced in \autoref{subsec:pre_yang_mills}. While gauge eigenstates have well defined transformations under gauge groups, the physical particles that we observe at a collider will in fact be mass eigenstates. The two are related by the \emph{Cabibbo-Kobayashi-Maskawa} (\textsc{ckm}) mixing matrix:
 
 \begin{equation}
   V_\text{CKM} =

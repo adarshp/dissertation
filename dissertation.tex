@@ -1,76 +1,24 @@
+% =============================================================================
+% PhD Dissertation: Hunting Hidden Higgses
+% Author: Adarsh Pyarelal
+% =============================================================================
 \documentclass[final,twoside,10pt]{memoir}
 
-% Packages
-\usepackage{shellesc}
-\usepackage{slashed}
+% Packages for algorithms
 \usepackage{algpseudocode, algorithm}
-\usepackage{pifont}
+
+% Support for images
+\usepackage{graphicx} 
+
 % Silence some noisy warnings temporarily
 \usepackage{silence}
 \WarningFilter{fontaxes}{I don't know how to decode}
 \WarningFilter{latex}{Marginpar}
-\usepackage{tikz-feynman}
 \usepackage[tracking]{microtype}
+
+% Packages for creating native Feynman diagrams and plots in LaTeX
+\usepackage{tikz-feynman}
 \usepackage{pgfplots}
-\usepackage{amsthm}
-\usepackage[scaled=0.84]{beramono}
-
-% ************************************************
-% If using Minion Pro + Myriad Pro
-% ***********************************************
-
-\usepackage[onlymath, minionint, swash,lf]{MinionPro}
-\usepackage{fontspec}
-\setmainfont[%
-  Ligatures = {Common, TeX},
-  Numbers = {OldStyle, Proportional},
-  ItalicFeatures={Style=Swash},
-  SmallCapsFeatures={Letters=SmallCaps,LetterSpace=6},
-  Alternate=1,
-]{Minion Pro}
-\setsansfont{Myriad Pro}[BoldFont={* Semibold},Numbers=OldStyle]
-
-% ***********************************************
-% Else uncomment the lines below:
-%\usepackage[T1]{fontenc}
-%\usepackage{mathpazo}
-%\newcommand{\slantfrac}[2]{\frac{#1}{#2}}
-% ***********************************************
-
-\usepackage[toc]{tabfigures}
-% \PassOptionsToPackage{utf8}{inputenc}
-	% \usepackage{inputenc}
-
-\PassOptionsToPackage{fleqn}{amsmath}   % math environments and more by the AMS 
-    \usepackage{amsmath}
-
-\usepackage[%
-    backend=biber, backref, language=auto, style=numeric-comp, sorting=none,
-    maxbibnames=10, arxiv=pdf, url=false, natbib=true
-]{biblatex}
-
-
-% ********************************************************************
-% Using LuaLaTeX
-% ********************************************************************
-\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels=true}{hyperref}
-    \usepackage{hyperref}  % backref linktocpage pagebackref
-\pdfcompresslevel=9
-\pdfadjustspacing=1 
-\usepackage{graphicx} 
-
-% ********************************************************************                
-% Colors
-% ********************************************************************
-\PassOptionsToPackage{dvipsnames}{xcolor}
-    \RequirePackage{xcolor} % [dvipsnames] 
-\definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
-\definecolor{webgreen}{rgb}{0,.5,0}
-\definecolor{webbrown}{rgb}{.6,0,0}
-\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
-\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
-\definecolor{Black}{cmyk}{0, 0, 0, 0}
-\definecolor{shadecolor}{gray}{0.9}
 
 % Plots
 \pgfplotsset{every axis plot post/.append style={Maroon, line width=0.2pt}}
@@ -83,9 +31,77 @@
   %system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"},
 ]
 
-% ********************************************************************
-% Hyperreferences
-% ********************************************************************
+\usepackage[scaled=0.84]{beramono}
+
+% =============================================================================
+% If using Minion Pro
+% =============================================================================
+
+\usepackage[onlymath, minionint, swash,lf]{MinionPro}
+\usepackage{fontspec}
+\setmainfont[%
+  Ligatures = {Common, TeX},Numbers = {OldStyle, Proportional},Alternate=1,
+  ItalicFeatures={Style=Swash},
+  SmallCapsFeatures={Letters=SmallCaps,LetterSpace=6},
+]{Minion Pro}
+\usepackage{pifont} % To get Minion Pro ornaments
+
+% =============================================================================
+% If not using Minion Pro, uncomment the lines below, and comment out the lines
+% in the block above.
+% =============================================================================
+% \usepackage[T1]{fontenc}
+% \usepackage{mathpazo}
+% \newcommand{\slantfrac}[2]{\frac{#1}{#2}}
+% =============================================================================
+
+\usepackage[toc]{tabfigures}
+% \PassOptionsToPackage{utf8}{inputenc}
+	% \usepackage{inputenc}
+
+\PassOptionsToPackage{fleqn}{amsmath}   % math environments and more by the AMS 
+    \usepackage{amsmath}
+
+% =============================================================================
+% Bibliography management
+% =============================================================================
+
+\usepackage[%
+    backend=biber, backref, language=auto, style=numeric-comp, sorting=none,
+    maxbibnames=10, arxiv=pdf, url=false, natbib=true
+]{biblatex}
+\addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
+\addbibresource{mybiblio.bib}
+\addbibresource{light_charged_higgs_biblio.bib}
+
+% Set up back references
+\DefineBibliographyStrings{english}{%
+    backrefpage = {cited on page},% originally "cited on page"
+      backrefpages = {cited on pages},% originally "cited on pages"
+}
+
+% =============================================================================
+% Colors
+% =============================================================================
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+    \RequirePackage{xcolor} % [dvipsnames] 
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\definecolor{Black}{cmyk}{0, 0, 0, 0}
+\definecolor{shadecolor}{gray}{0.9}
+
+% =============================================================================
+% Set up hyperlinks
+% =============================================================================
+
+\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels=true}{hyperref}
+    \usepackage{hyperref}  % backref linktocpage pagebackref
+\pdfcompresslevel=9
+\pdfadjustspacing=1 
+
 \hypersetup{%
     colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
     breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
@@ -100,24 +116,17 @@
     pdfproducer={LaTeX}%
 }   
 
-\DefineBibliographyStrings{english}{%
-    backrefpage = {cited on page},% originally "cited on page"
-      backrefpages = {cited on pages},% originally "cited on pages"
-}
-
 \def\equationautorefname{equation}
 \def\figureautorefname{figure}
 \def\tableautorefname{table}
-%\renewcommand{\bar}{\overline}
 
-% Bibliographies
-\addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
-\addbibresource{mybiblio.bib}
-\addbibresource{light_charged_higgs_biblio.bib}
+% =============================================================================
+% Set up maths
+% =============================================================================
 
-% ********************************
-% Math stuff
-% ********************************
+% Math symbols
+\usepackage{amsthm}
+\usepackage{slashed}
 
 % Here we define custom style for definitions.
 \newtheoremstyle{definition}
@@ -141,39 +150,49 @@
     { } % Punctuation after theorem head
     {.5em} % Space after theorem head
     {\thmname{#1} \thmnumber{#2} (\thmnote{#3})} % Theorem head spec
+
 \theoremstyle{theorem}
 \newtheorem{theorem}{Theorem}[chapter]
 
-% Shortcuts
+% =============================================================================
+% User-defined macros
+% =============================================================================
+
 \newcommand{\vdoublet}[2]{\begin{pmatrix} #1 \\  #2\end{pmatrix}}
 \newcommand{\hdoublet}[2]{\begin{pmatrix} #1 & #2\end{pmatrix}}
 \newcommand{\fourmatrix}[4]{\begin{pmatrix} #1 &  #2 \\ #3 & #4\end{pmatrix}}
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\Adarsh}[1]{{\color{Maroon} Adarsh: #1}}
 
-% ********************************************************************
+% =============================================================================
 % Memoir package - layout and styling
-% ********************************************************************
+% =============================================================================
 
 % Here we set typeblock widths for the main body and the footnotes
-\setlxvchars[\normalfont\normalsize]
-\setxlvchars[\normalfont\footnotesize]
-% \settypeblocksize{46\onelineskip}{\lxvchars}{*}
+\setlxvchars[\normalfont\normalsize] % about 66 characters per column
+\setxlvchars[\normalfont\footnotesize] % about 45 characters per column
 
-% Special options for printing/binding
+% Set outer and spine margins (designed for Minion Pro 10pt, change accordingly
+% for different fonts. A wide margin is chosen both for legibility of the
+% typeblock and for tight integration of marginfigures and margin footnotes.
+\setlrmarginsandblock{1.5in}{3.1in}{} % This sets \textwidth to 281.0 pt
+
+% Set upper and lower margins
 \setulmarginsandblock{1.22in}{1.22in}{*}
-\setlrmarginsandblock{1.5in}{3.1in}{}
-% The above sets \textwidth to 281.0 pt
-\setmarginnotes{0.2in}{1.9in}{2\onelineskip}
 
-% Set parameters for side-captioned floats
+% Set properties of margin notes, sidecaptioned floats, and footnotes in the
+% margin.
+\setmarginnotes{0.2in}{1.9in}{2\onelineskip}
 \setsidecaps{0.2in}{1.9in}
 \sidecapmargin{outer}
 \renewcommand*{\sidecapstyle}{\normalfont\footnotesize}
 \setsidecappos{t}
+
 % Set footnotes in the margin rather than at the foot of the page
 \footnotesinmargin
 \setsidefeet{\marginparsep}{1.9in}{0.2in}{0pt}{\flushleftright\footnotesize}{*}
+
+% Integrate the counters of the sidefootnotes and footnotes in margin.
 \letcountercounter{sidefootnote}{footnote}
 \setlength{\footmarkwidth}{0em}
 \setlength{\footmarksep}{-\footmarkwidth}
@@ -182,23 +201,20 @@
 
 \renewcommand*{\sideparfont}{\normalfont\footnotesize}
 \marginparmargin{outer}
-% Style the chapter entries in the Table of Contents
+
+% Style the entries in the Table of Contents
 \renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
 \renewcommand*{\cftpartfont}{\color{Maroon}\scshape\MakeTextLowercase}
 \captionstyle[\centering]{\footnotesize}
 \captionnamefont{\footnotesize}
-
-% Set section, subsection, and subsubsection heading styles
-%\setsecheadstyle{\bfseries\sffamily}
-% \setsecheadstyle{\sscshape\MakeTextLowercase}
-%\setsubsecheadstyle{\itshape}
-%\setsubsubsecheadstyle{\sffamily}
-
 % Reduce spacing between list items
 \tightlists
+
+
+% Make marginfigures centered by default
 \setfloatadjustment{marginfigure}{\centering}
 
-% Headers and footers
+% Headers and footers - page numbers, section headings, etc.
 \makepagestyle{tufte}
 \createmark{chapter}{left}{nonumber}{}{}
 \createmark{section}{right}{nonumber}{}{}
@@ -209,29 +225,7 @@
 \nouppercaseheads
 \pagestyle{tufte}
 
-% Creating a modified version of the Pedersen chapter headings
-  \makechapterstyle{tufte-inspired}{%
-    \setlength{\beforechapskip}{-30pt}
-      \setlength{\afterchapskip}{20pt}
-      \renewcommand*{\chapnamefont}{\normalfont\Huge\itshape}
-      \renewcommand*{\chapnumfont}{\normalfont\HUGE\itshape\colorchapnum}
-      \renewcommand*{\chaptitlefont}{\normalfont\Huge\itshape\colorchaptitle}
-      \renewcommand*{\afterchapternum}{}
-      \renewcommand*{\printchaptername}{}
-      \setlength{\midchapskip}{15mm}
-      \renewcommand*{\chapternamenum}{}
-      \renewcommand*{\printchapternum}{%
-        \begin{marginfigure}[-20pt]
-          \resizebox{!}{\midchapskip}{\emph{\thechapter}}
-        \end{marginfigure}
-      }
-      \renewcommand*{\printchaptertitle}[1]{
-			\chaptitlefont ##1
-            \bigskip
-            % \textcolor{gray}{\hrule width 26pc depth 0.05pt}
-    }
-}
-%% Bringhurst chapter style 
+%% Bringhurst chapter and head styles with a pedersen-type Chapter number
 \makechapterstyle{bringhurst}{%
 	\renewcommand{\chapterheadstart}{} 
 	\renewcommand{\printchaptername}{} 
@@ -251,20 +245,25 @@
 \chapterstyle{bringhurst}
 \headstyles{bringhurst}
 % Styling Part headings
-\renewcommand{\parttitlefont}{\color{Maroon}\normalfont\scshape\LARGE\MakeTextLowercase}
+\renewcommand{\parttitlefont}{\color{Maroon}\normalfont\scshape%
+                              \LARGE\MakeTextLowercase}
 \renewcommand{\partnamefont}{\normalfont\large}
 \renewcommand{\partnumfont}{\normalfont\large}
 \setafterparaskip{-0.5em}
+
+% Setting up figures to allow subfloats
 \newsubfloat{figure}
-%\hangsecnum
 \checkandfixthelayout
 
-% ***********************************************
-
+% =============================================================================
 % Misc layout commands
+% =============================================================================
+
 \linespread{1.1}
 
+% =============================================================================
 % Creating the title page
+% =============================================================================
 \pretitle{\vskip 3cm\LARGE\noindent}
 \title{\scshape\color{Maroon}{\MakeTextLowercase{Hunting Hidden Higgses}}}
 \posttitle{\vskip 0.3em}
@@ -272,42 +271,54 @@
 \author{Adarsh Pyarelal}
 \postauthor{\vskip 9cm\Pisymbol{MinionPro-Extra}{111}}
 \date{}
+% =============================================================================
+
 \begin{document}
 \pagenumbering{arabic}
+
+% =============================================================================
+% Frontmatter
+% =============================================================================
 \include{FrontBackMatter/TitlePage}
 \include{FrontBackMatter/CommitteeApproval}
 \include{FrontBackMatter/StatementByAuthor}
 \include{FrontBackMatter/Acknowledgments}
-\include{FrontBackMatter/Abstract}
-\cleardoublepage
-\tableofcontents*
-\cleardoublepage
-\listoffigures*
-\cleardoublepage
-\listoftables*
-\cleardoublepage
-\include{FrontBackMatter/Preface}
+\include{FrontBackMatter/Abstract}\cleardoublepage
+\tableofcontents*\cleardoublepage
+\listoffigures\cleardoublepage
+\listoftables\cleardoublepage
+
+% =============================================================================
+% Main content
+% =============================================================================
+
 \include{Chapters/Introduction}
-\part{Theory}\label{part:Theory}
+\part{Theory and Phenomenology}\label{part:Theory_and_Phenomenology}
 \include{Chapters/SM}
 \include{Chapters/2HDM}
 \include{Chapters/SUSY}
-\part{Phenomenology}\label{Part:Phenomenology}
 \include{Chapters/ColliderPheno}
-\include{Chapters/MachineLearning}
 \part{Three searches for BSM physics}\label{part:Three}
 \include{Chapters/LightChargedHiggs}
-\include{Chapters/DM100TeV}
 \include{Chapters/ExoticHiggs}
+\include{Chapters/DM100TeV}
 \include{Chapters/Conclusion}
-%********************************************************************
+
+% =============================================================================
 % Backmatter
-%*******************************************************
-\appendix
-\appendixpage
-\include{Chapters/Appendix_Notation}
-%\include{Chapters/DarkMatter}
-%\include{Chapters/Appendix_Code}
+% =============================================================================
+%\appendix
+%\appendixpage
+%\include{Chapters/Appendix_Notation}
+
+% =============================================================================
+% Bibliography
+% =============================================================================
 \printbibliography
+
+% =============================================================================
+% Colophon
+% =============================================================================
 \include{FrontBackMatter/Colophon}
+
 \end{document}

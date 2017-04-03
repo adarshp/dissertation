@@ -1,4 +1,4 @@
-\chapter{Supersymmetry and the MSSM}\label{ch:supersymmetry}
+\chapter{The Minimal Supersymmetric Standard Model}\label{ch:supersymmetry}
 
 Historically, examining nature at increasing energy scales (and correspondingly decreasing length scales ) has consistently yielded new physics. For example, higher-energy experiments were able to probe the structure of the weak interactions, precisely at the energy scale that the 4-Fermi theory started to fail. Similarly, the challenges listed at the end of \autoref{ch:sm} most likely point to new physics at higher energy scales, between the currently explored weak scale to the reduced Planck scale:
 \begin{equation*}
@@ -66,6 +66,29 @@ The third major motivation (and the one most relevant to this dissertation) is t
 However, before describing the salient features of the MSSM, we will outline the construction of a general supersymmetric Lagrangian with all the necessary ingredients we need: kinetic terms, mass terms, scalar self-interactions, gauge symmetry, and Yukawa interactions, and then specialize to the MSSM.
 
 \section{Construction of supersymmetric Lagrangians}
+In the following sections, we will introduce the algebra of the supersymmetry transformation operators $Q$. To do so, we will use the two-component Weyl spinor notation, also known as the Van der Waerden notation. We have already encountered Weyl spinors in \autoref{sec:pre_yang_mills}. In that section, we denoted a Dirac spinor by
+\begin{equation*}
+\Psi = \vdoublet{\psi_L}{\psi_R}.
+\end{equation*}
+Now we will use the notation
+\begin{equation*}
+  \Psi = \vdoublet{\xi_\alpha}{\bar{\chi}^{\dot{\alpha}}}
+\end{equation*}
+Thus, $\xi_\alpha$ and $\bar{\chi}^{\dot{\alpha}}$ denote left- and right-handed Weyl spinors respectively. The indices $\alpha$ and $\dot{\alpha}$ are known as `dotted' and `undotted' indices. Even though they look similar, they are in fact independent of each other.
+
+In the Weyl basis, the gamma matrices $\gamma^\mu$ take the form
+\begin{equation}
+  \gamma^\mu = \fourmatrix{0}{\sigma^\mu}{\bar{\sigma}^\mu}{0}
+\end{equation}
+where $\sigma^\mu$ are the matrices:
+\begin{align*}
+\sigma^0 = \fourmatrix{1}{0}{0}{1}, && \sigma^1 = \fourmatrix{0}{1}{1}{0}, && \sigma^2 = \fourmatrix{0}{-i}{i}{0}, && \sigma^3 = \fourmatrix{1}{0}{0}{-1}.
+\end{align*}
+They carry dotted and undotted indices as well: $(\sigma^\mu)_{\alpha\dot{\alpha}}$ and $(\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}$. Under complex conjugation, the spinors transform as
+$(\xi_\alpha)^* = \bar{\xi}_{\dot{\alpha}}$ and $(\bar{\chi}^{\dot{\alpha}})^* = \chi^{\alpha}$. The indices can be raised and lowered as follows: $\xi_\alpha = \epsilon_{\alpha\beta}\xi^\beta$ and $\xi^\beta = \epsilon^{\beta\gamma}\xi_\gamma$.
+The indices can be contracted, similar to the Greek indices in Einstein notation. For compactness, we often write the product $\xi^\alpha\chi_\alpha = \xi\chi$.
+
+\paragraph{Note on complex and hermitian conjugation} When we work with superfields in a classical sense, strictly speaking, complex conjugation is the relevant operation. When these fields are promoted to operators, complex conjugation must be replaced by hermitian conjugation. Technically, it is correct to just keep writing hermitian conjugates for both classical and quantum fields, but it is important to note the difference.
 %Symmetries of the S-matrix
 In 1967, Coleman and Mandula \citep{Coleman1967} showed that, given certain assumptions, the only possible Lie group symmetries allowed for relativistic interacting field theories in four dimensions are direct products of the Poincar\'e group and an internal symmetry group (i.e. a gauge symmetry) \citep{Mandula2015}.
 A Lie algebra is defined by the commutation relations of its generators. If we extend the notion of a Lie algebra to include \emph{anticommutation} relations \citep{Wess1992}, the theorem no longer applies. These kinds of algebras are known as \emph{graded Lie algebras}, or \emph{superalgebras}. The trio of Haag, Łopuszanski, and Sohnius \citep{Haag1975} applied a similar treatment as Coleman and Mandula to determine the most general superalgebra consistent with relativistic quantum field theory. The generators $Q_\alpha$ of this algebra are known as fermionic operators, and must transform as Weyl spinors. The anticommutation (and commutation) relations take the form
@@ -244,7 +267,7 @@ The component fields of a superfield have the same mass, as can be seen from the
 \[\mathcal{L}_\text{soft} = -\left(\frac{1}{2}M_a\lambda^a\lambda^a+\frac{1}{6}a^{ijk}\phi_i\phi_j\phi_k+\frac{1}{2}b^{ij}\phi_i\phi_j+t^i\phi_i\right)+\text{h.c.}-(m^2)_j^i\phi^{j*}\phi_i\]
 Note that a general feature of the the above terms is that the masses and couplings have positive mass dimension.
 
-\section{The MSSM}
+\section{The Minimal Supersymmetry Standard Model}
 
 Specifying a collection of chiral supermultiplets, the gauge symmetry structure, a superpotential of the form in \eqref{eq:superpotential}, and a set of soft SUSY-breaking terms should be enough to reproduce a supersymmetric Lagrangian like the one above. With that in mind, let us put together the ingredients of the MSSM. The first is a gauge symmetry structure, which we will take to be the same as the Standard Model:
 \begin{equation*}
@@ -346,6 +369,3 @@ Finally, requiring that the soft SUSY breaking parameters are real enables us to
   \text{Im}(A_{e0})=0.
 \end{align*}
 With the above ingredients, one can work out myriad phenomenological consequences. In \autoref{ch:DM_100_TeV}, we examine the neutralino sector of the MSSM in slightly more detail.
-
-\section{Split Supersymmetry}
-This paradigm, known as `natural' supersymmetry  has been the dominant paradigm for constructing supersymmetric models for decades. However, recent data from the LHC has placed severe constraints on this picture. With this in mind, it is worth considering what would happen if we relaxed the criterion of `naturalness'. More specifically, a spectrum with a mass hierarchy between the scalar and fermionic superpartners of the SM particles - anywhere on the order of 10-100 TeV - offers a number of benefits, at the cost of some level of fine-tuning. Such a spectrum is called a \emph{split} spectrum. This idea was first introduced in \citep{Wells:2003tf,ArkaniHamed:2004fb,Giudice2005}, and might well take the crown from natural supersymmetry as the dominant paradigm in the decades to follow. In \autoref{ch:DM_100_TeV}, we examine a split spectrum with the hierarchy $M_1 < |\mu| << M_2$. and a strategy to probe the split parameter space at a 100 TeV collider.
