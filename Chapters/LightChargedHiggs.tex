@@ -1,392 +1,317 @@
 \chapter{Light Charged Higgses at the LHC}\label{ch:LightChargedHiggs}
 
 \def\h{h}
-\def\H{h}
+\def\H{H}
 \def\A{A}
-\newcommand{\sba}{\ensuremath{\sin(\beta-\alpha)}}
+\newcommand{\sba}{\ensuremath{s_{\beta-\alpha}}}
 \newcommand{\cba}{\ensuremath{\cos(\beta-\alpha)}}
 \newcommand{\met}{\ensuremath{{\not\mathrel{E}}_T}}
 \newcommand{\ifb}{\ensuremath{ \text{fb}^{-1} }}
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
-In \autoref{ch:2HDMs}, we introduced a well-motivated class of extensions to the scalar sector, known as Two-Higgs Doublet Models ($2$HDMs). In these models, the mass spectrum of the scalar sector contains, in addition to the SM Higgs, a CP-even scalar \emph{H}\footnote{Note that we use \emph{h} and \emph{H} to refer to the lighter or the heavier CP-even Higgs for models with two CP-even Higgs bosons. When there is no need to specify, we use \emph{H} to refer to the CP-even Higgses.}, a CP-odd pseudoscalar \emph{A}, and a charged scalar $H^\pm$. 
+In \autoref{sec:2HDMs}, we introduced a well-motivated class of extensions to the scalar sector, known as Two-Higgs Doublet Models ($2$HDMs). In these models, the mass spectrum of the scalar sector contains, in addition to the SM Higgs, a CP-even scalar \emph{H}\footnote{Note that we use \emph{h} and \emph{H} to refer to the lighter or the heavier CP-even Higgs for models with two CP-even Higgs bosons. When there is no need to specify, we use \emph{H} to refer to the CP-even Higgses.}, a CP-odd pseudoscalar \emph{A}, and a charged scalar $H^\pm$. 
 
-The discovery of one or more of these new particles would be a clear indication of an extended Higgs sector as the source of electroweak symmetry breaking (EWSB). There have been a number of experimental searches carried out to find these particles at the Large Electron-Positron Collider (LEP), the Tevatron experiment at Fermilab, and most recently, at the LHC. \cite{LEP_Higgs, Aad:2014vgg, Khachatryan:2014wca, TheATLAScollaboration:2013wia, CMS:2014cdp, Aad:2013hla, CMS:2014kga, Khachatryan:2015cwa}. These searches were performed assuming that these new scalar states decay solely through conventional channels, that is, into SM particles. However, if they are kinematically allowed, `exotic' decay channels, in which a heavy Higgs boson decays into either a pair of lighter Higgses, or a Higgs and a gauge boson, can dominate the conventional decay channels for certain regions of parameter space, thus reducing the reach of the conventional search channels. Some of these channels have already been studied in both theoretical \cite{Curtin:2013fra, Brownson:2013lka, Coleppa:2014hxa, Coleppa:2014cca,Li:2015lra,Dorsch:2014qja,Chen:2013emb,Chen:2014dma,Enberg:2014pua} and experimental \cite{Aad:2015wra, CMS:2014yra,CMS:2013eua} settings. With the increase in center of mass collision energy to 14 TeV, more of those exotic decay channels will be accessible at the LHC. It is therefore timely to study the LHC reach of those channels more carefully.
+The discovery of one or more of these new particles would be a clear indication of an extended Higgs sector as the source of electroweak symmetry breaking (EWSB). A number of experimental searches have been carried out to find these particles at the Large Electron-Positron Collider (LEP), the Tevatron experiment at Fermilab, and most recently, at the LHC. \cite{LEP_Higgs, Aad:2014vgg, Khachatryan:2014wca, TheATLAScollaboration:2013wia, CMS:2014cdp, Aad:2013hla, CMS:2014kga, Khachatryan:2015cwa}. These searches were performed assuming that these new scalar states decay solely through conventional channels, that is, into SM particles. However, if they are kinematically allowed, `exotic' decay channels, in which a heavy Higgs boson decays into either a pair of lighter Higgses, or a Higgs and a gauge boson, can be the dominant decay channels for certain regions of parameter space, thus reducing the reach of the conventional search channels. Some of these channels have already been studied both theoretically \cite{Curtin:2013fra, Brownson:2013lka, Coleppa:2014hxa, Coleppa:2014cca,Li:2015lra,Dorsch:2014qja,Chen:2013emb,Chen:2014dma,Enberg:2014pua} and experimentally \cite{Aad:2015wra, CMS:2014yra,CMS:2013eua}. With the increase in center of mass collision energy of the LHC from 7 to 14 TeV, more of those exotic decay channels will be accessible at the LHC. It is therefore timely to study the LHC reach of those channels more carefully.
 
-In this study, we examine the prospects of detecting a light charged Higgs boson, with $m_{H^\pm}<m_t$, through the exotic decay channel
-\[H^\pm\rightarrow (A/H)W^\pm\rightarrow \tau\tau W^\pm.\]
-By `light', we mean that it is lighter than the top quark, and so can be produced via the decays of top quarks:
-\[t\rightarrow H^+b.\]
-The large production rate of top quarks at the LHC should enable us to observe a sizable number of signal events. Current search strategies for light charged Higgses at the LHC assume that they decay either leptonically ($H^{\pm} \rightarrow \tau\nu$) or hadronically ($H^{\pm} \rightarrow cs$). The null search results obtained by both the ATLAS and CMS experiments exclude a light charged Higgs below a mass of about 160 GeV for most of the two-dimensional $m_{H^\pm}-t_{\beta}$ plane\sidefootnote{Here we use the abbreviated notations for trigonometric functions introduced in \autoref{ch:2HDMs}} in parameter space \cite{TheATLAScollaboration:2013wia,CMS:2014cdp}. However, if there exists a neutral Higgs (\emph{A/H}) light enough such that the $H^{\pm} \rightarrow AW^{\pm}/HW^{\pm}$ channel is kinematically open, the branching fractions into the conventional final states $\tau\nu$ and $cs$ are suppressed and the exclusion bounds can be significantly weakened. Due to experimental challenges at low energies, such a light neutral Higgs has not been fully excluded yet. A relatively large region of $m_H^\pm > $ 150 GeV and $t_\beta \lesssim 20$ is still allowed, while no limits exist for $m_H^\pm > $ 160 GeV.
+In this study, we examine the prospects of detecting a light (that is, lighter than the top quark) charged Higgs boson through the exotic decay channel
+\[H^\pm\rightarrow (A/H)W^\pm\rightarrow (\tau\tau) W^\pm\]
+and produced via the decay of the top quark, $t\rightarrow H^+ b$.
+The collider analysis in \cite{Coleppa:2014cca} studies the same exotic decay channel, but for a charged Higgs heavier than the top quark, produced in $H^\pm tb$ associated production.
+The large rate of production of top quarks at the LHC should enable us to observe a sizable number of signal events. Current search strategies for light charged Higgses at the LHC assume that they decay either leptonically to the $\tau\nu$ final state, or hadronically, to the $cs$ final state. The null search results obtained by both the ATLAS and CMS experiments exclude a light charged Higgs below a mass of about 160 GeV for most of the two-dimensional $m_{H^\pm}-t_{\beta}$ plane\sidefootnote{Here we use the abbreviated notations for trigonometric functions introduced in \autoref{sec:2HDMs}} in parameter space \cite{TheATLAScollaboration:2013wia,CMS:2014cdp}. However, if there exists a neutral Higgs (\emph{A/H}) light enough such that the $H^{\pm} \rightarrow AW^{\pm}/HW^{\pm}$ channel is kinematically open, the branching fractions into the conventional final states $\tau\nu$ and $cs$ are suppressed and the exclusion bounds can be significantly weakened. Due to experimental challenges at low energies, such a light neutral Higgs has not been fully excluded yet. A relatively large region of $m_H^\pm > $ 150 GeV and $t_\beta \lesssim 20$ is still allowed, while no limits exist for $m_H^\pm > $ 160 GeV.
 
-The exotic decay channel of $H^\pm \to AW/HW$, on the other hand,  offers an additional opportunity for the detection of a light charged Higgs, closing the loophole of the current light charged Higgs searches.  While there are strong constraints on the mass of the light charged Higgs from flavor~\cite{Mahmoudi:2009zx,Coleppa:2013dya} and precision~\cite{Frogatt:1991qw,Frogatt:1992wt,Pomarol:1993mu,WahabElKafas:2007xd,Haber:2010bw} observables, those limits are typically model dependent and could be relaxed when there are contributions from the other sectors of the model~\cite{Han:2013mga}. A direct search for a light charged Higgs, on the other hand,  provides a model-independent and complementary reach. It is thus timely and worthwhile to fully explore the discovery or exclusion potential of the light charged Higgs at the LHC.
+The exotic decay channel of $H^\pm \to AW/HW$, on the other hand,  offers an additional opportunity for the detection of a light charged Higgs, closing the loophole of the current light charged Higgs searches.  While there are strong constraints on the mass of the light charged Higgs from flavor~\cite{Mahmoudi:2009zx,Coleppa:2013dya} and precision~\cite{Froggatt:1991qw,Froggatt:1992wt,Pomarol:1993mu,WahabElKaffas:2007xd,Haber:2010bw} observables, those limits are typically model dependent and could be relaxed when there are contributions from the other sectors of the model~\cite{Han:2013mga}. A direct search for a light charged Higgs, on the other hand,  provides a model-independent and complementary reach. It is thus timely and worthwhile to fully explore the discovery or exclusion potential of the light charged Higgs at the LHC.
 
-The exclusion bounds and discovery reach will be explored and interpreted in the context of the Type II $2$HDM. A collider analysis considering the same decay channel of a heavy charged Higgs produced in $H^{\pm} tb$ associated production has been performed in \cite{Coleppa:2014cca}. 
+In this chapter we study the exotic decay of a charged Higgs $H^\pm\to AW/HW$  with $A/H$ decaying into  $\tau\tau$.  We focus on the light charged Higgs produced via top decay, considering both the single top and top pair production channels. We obtain model-independent exclusion and discovery limits that are subsequently interpreted in the context of the Type II $2$HDM.
 
-In this paper we study the exotic decay of a charged Higgs $H^\pm\to AW/HW$  with $A/H$ decaying into  $\tau\tau$.  We focus on the light charged Higgs  produced via top decay, considering both the single top and top pair production channels. The exclusion bounds and discovery reach will be explored and interpreted in the context of the Type II $2$HDM.  A collider analysis considering the same decay channel of a heavy charged Higgs   produced in $H^\pm tb$ associate production has been performed in \cite{Coleppa:2014cca}.  
-
-The rest of the chapter is structured as folllows. In section \ref{sec:motivation}, we briefly introduce the relevant couplings and branching ratios for our decay channel for the type II $2$HDM and present scenarios that permit a large branching fraction for the process $H^{\pm} \rightarrow AW/HW$. In section \ref{sec:limits}, we summarize the current experimental constraints on a light charged Higgs. In section \ref{sec:light_charged_analysis}, we present the details of our collider analysis. We investigate the single top and top pair production channels in section \ref{sec:light_charged_analysis_tj} and \ref{sec:light_charged_analysis_tt}, respectively, and present the model independent 95\% C.L. exclusion and 5$\sigma$ discovery limits for both processes at the 14 TeV LHC with various luminosities in Section \ref{sec:ana_limits}. In section \ref{sec:implication}, we discuss the implications of our analysis for the Type II $2$HDM and translate our results into reaches in parameter space. We conclude in section \ref{sec:light_charged_conclusion}.
+The rest of the chapter is structured as folllows. In \autoref{sec:motivation}, we briefly introduce the relevant couplings and branching ratios for our decay channel for the type II $2$HDM and present scenarios that permit a large branching fraction for the process $H^{\pm} \rightarrow AW/HW$. In \autoref{sec:limits}, we summarize the current experimental constraints on a light charged Higgs. In \autoref{sec:light_charged_analysis}, we present the details of our collider analysis, and in \autoref{subsec:ana_limits}, the model independent 95\% C.L. exclusion and 5$\sigma$ discovery limits for the 14 TeV LHC with various luminosities.In section \ref{sec:implication}, we discuss the implications of our analysis for the Type II $2$HDM and translate our results into reaches in parameter space. We conclude in section \ref{sec:light_charged_conclusion}.
  
 \section{Couplings and branching ratios} \label{sec:motivation}
 
-If the charged Higgs is lighter enough, the top quark can either decay to $W^\pm b$ or to $H^{\pm}b$. The first decay is controlled by the SM gauge coupling
+\subsection{Decays of the top quark}
+If the charged Higgs is light enough, the top quark can either decay to $W^\pm b$ or to $H^{\pm}b$. The first decay is controlled by the SM gauge coupling
 \begin{equation}
 g_{W^{\pm} tb} = \frac{g}{\sqrt{2}} \gamma^\mu \frac{1-\gamma_5}{2}, 
 \end{equation}
-with $g$ is the SM $\text{SU}(2)_L$ coupling, while the second is a function of the parameter $t_{\beta}$ (see the form of the Yukawa coupling in \eqref{eq:$2$HDM_Yukawa_couplings}). More specifically, for a type-II $2$HDM, it takes the form (see \autoref{tab:xi_factors}) 
+with $g$ being the SM $\text{SU}(2)$ coupling, while the second is a function of the parameter $t_{\beta}$ (see the form of the Yukawa coupling in \eqref{eq:2HDM_Yukawa_couplings}). More specifically, for a type-II $2$HDM, it takes the form (see \autoref{tab:xi_factors}) 
 \begin{equation}
-g_{H^{\pm} tb} = \frac{g}{2 \sqrt{2} m_W} \left[ (m_b t_{\beta} + m_t \cot \beta ) \pm (m_b t_{\beta} - m_t \cot \beta ) \gamma_5 \right].
+g_{H^{\pm} tb} = \frac{g}{2 \sqrt{2} m_W} \left[ (m_b t_{\beta} + m_t /t_\beta) \pm (m_b t_{\beta} - m_t /t_\beta ) \gamma_5 \right].
 \end{equation}
-This coupling is enhanced for both small and large values $t_{\beta}$. In Fig.~\ref{fig:tBR}, we present contours of the branching fraction BR$(t \rightarrow H^{\pm} b)$ in the $m_{H^{\pm}}-t_{\beta}$ plane, calculated using the Two-Higgs Doublet Model Calculator ($2$HDMC) program \cite{Eriksson:2009ws}. We see that it can reach values of 5\% and above for both large and small $t_{\beta}$, but reaches a minimum at $t_{\beta} = \sqrt{m_t/m_b}\sim 8 $. It also decreases rapidly as the charged Higgs mass approaches the mass of the top quark.
-\begin{marginfigure}
+
+\begin{marginfigure}[-1in]
 \centering
-	\includegraphics[width=\textwidth]{./paperplots/BR_tHpm.pdf}
-\caption{Branching fractions of $t\rightarrow H^{\pm}b$ in the $m_{H^{\pm}}-t_{\beta}$ plane.}
+	\includegraphics[width=\textwidth]{./images/BR_tHpm.pdf}
+\caption{Branching fractions of the top quark to the charged Higgs, in the $m_{H^{\pm}}-t_{\beta}$ plane.}
 \label{fig:tBR}
 \end{marginfigure}
 
-Conventionally, a light charged Higgs is assumed to either decay into $\tau\nu$ or $cs$, with the corresponding couplings given by
+This coupling is enhanced for both small and large values $t_{\beta}$. In \autoref{fig:tBR}, we present contours of the branching fraction BR$(t \rightarrow H^{\pm} b)$ in the $m_{H^{\pm}}-t_{\beta}$ plane, calculated using the Two-Higgs Doublet Model Calculator ($2$HDMC) \cite{Eriksson:2009ws}. We see that it can reach values of 5\% and above for both large and small $t_{\beta}$, but reaches a minimum at $t_{\beta} = \sqrt{m_t/m_b}\sim 8 $. It also decreases rapidly as the charged Higgs mass approaches the mass of the top quark.
+
+\subsection{Decays of the charged Higgs}
+Conventionally, a light charged Higgs is assumed to either decay into the $\tau\nu$ or $cs$ final states, with the corresponding couplings given by
 \begin{align*}
-g_{H^{\pm} \tau\nu} &= \frac{g}{2 \sqrt{2} m_W} m_\tau t_{\beta}(1\pm \gamma_5 ), \\
+  g_{H^{\pm} \tau\nu} &= \frac{g}{2 \sqrt{2} m_W} m_\tau t_{\beta}(1\pm \gamma_5 ) \text{ and} \\
 g_{H^{\pm} cs} &= \frac{g}{2 \sqrt{2} m_W} \left[ (m_s t_{\beta} + m_c \cot \beta ) \pm (m_s t_{\beta} - m_c \cot \beta ) \gamma_5 \right].
  \end{align*}
-If there is an additional light neutral Higgs boson \emph{h} or $A$, additional decay channels into $hW/AW$ open up. The couplings are determined by the gauge coupling structure, as well as the mixing angles \cite{Gunion:1989we}: 
+If there exists an additional neutral Higgs boson \emph{h} or $A$ that is lighter than the charged Higgs, then additional decay channels into $hW/AW$ open up. The couplings are determined by the gauge coupling structure, as well as the mixing angles \cite{Gunion:1989we} 
 \begin{align*}
-  g_{H^{\pm} h W^{\mp}}&= \frac{gc_{\beta-\alpha}}{2}(p_{\h}-p_{H^{\pm}})^\mu, \\
- g_{H^{\pm} A W^{\mp}}&= \frac{g}{2}(p_{A}-p_{H^{\pm}})^\mu, 
+  g_{H^{\pm} h W^{\mp}}&= \frac{gc_{\beta-\alpha}}{2}(p_{\h}-p_{H^{\pm}})^\mu &\text{ and }& 
+ g_{H^{\pm} A W^{\mp}}&= \frac{g}{2}(p_{A}-p_{H^{\pm}})^\mu,
  \end{align*}
 where $p_\mu$ is the incoming momentum for the corresponding particle. 
 
-The $H^{\pm}\rightarrow hW$ channel for a light charged Higgs is open only if we demand the heavy CP-even neutral Higgs \emph{H} to be the observed 126 GeV SM-like Higgs. In this case $|c_{\beta-\alpha} \sim 1$ is preferred by experiments and the $H^{\pm}hW^{\pm}$ coupling is unsuppressed. The $H^{\pm} A W^{\pm}$ coupling is independent of $s_{\beta-\alpha}$ and always unsuppressed. In this scenario, There is no $H^{\pm} \rightarrow HW$ channel since it is kinematically forbidden given $m_{H^{\pm}}<m_t$ and $m_{H}\geq126$ GeV.
+The $H^{\pm}\rightarrow hW$ channel for a light charged Higgs is open only if we demand the heavy CP-even neutral Higgs \emph{H} to be the SM-like Higgs. In this case $|c_{\beta-\alpha}| \sim 1$ is preferred by experiments and the $H^{\pm}hW^{\pm}$ coupling is unsuppressed. The $H^{\pm} A W^{\pm}$ coupling is independent of $s_{\beta-\alpha}$ and always unsuppressed. In this scenario, there is no $H^{\pm} \rightarrow HW$ channel since it is kinematically forbidden.
 
 In the generic $2$HDM, there are no mass relations between the charged scalars, the scalar and pseudoscalar states. Therefore, both the decays $H^{\pm} \rightarrow h W$ and $H^{\pm} \rightarrow A W$ can be accessible or even dominant in certain regions of the parameter space. It was shown in \cite{Coleppa:2013dya} that in the Type II $2$HDM with $\mathcal{Z}_2$ symmetry, imposing all experimental and theoretical constraints still leaves large regions in the parameter space that permit such exotic decays with unsuppressed decay branching fractions. 
-
-%Why mA = 70 GeV?
-In \autoref{fig:br_hC_AW}, we show the contours of the branching fraction BR$(H^{\pm} \rightarrow A W)$ in the $m_{H^{\pm}}-t_{\beta}$ plane, $h$ being the SM-like Higgs and $m_{H}$ decoupled. This branching fraction dominates for values of $t_{\beta}$ less than 10 to 30 for charged Higgs masses in the range between 155 GeV and 170 GeV. For large values of $t_{\beta}$, the $\tau\nu$ channel dominates, as shown in the \autoref{fig:br_hC_AW_sm} for $m_{H^{\pm}}$ = 160 GeV. For small charged Higgs masses close to the $m_A + m_W$ threshold, the decay is kinematically suppressed. Similar results can be obtained for $H^{\pm} \rightarrow \h W$ with $m_{h} = 70$ GeV,  $s_{\beta-\alpha}\sim 0$ and decoupled $m_A$. In both plots, we assume the existence of a pseudoscalar \emph{A} with mass 70 GeV.
-
-\begin{marginfigure}[-8cm]
- 	\includegraphics[width=\textwidth]{paperplots/BR_HpmAW.pdf}
+\begin{marginfigure}[-5in]
+ 	\includegraphics[width=\textwidth]{images/BR_HpmAW.pdf}
     \caption{The branching fraction BR$( H^{\pm} \rightarrow AW)$ in the Type II $2$HDM in $m_{H^\pm}-t_{\beta}$ plane.}
     \label{fig:br_hC_AW}
 \end{marginfigure}
 
-\begin{marginfigure}
- 	\includegraphics[width=\textwidth,trim=0 +0.05cm 0 0 ]{paperplots/BR_Hpm_tanb_log.pdf}
+\begin{marginfigure}[-1.2in]
+ 	\includegraphics[width=\textwidth,trim=0 +0.05cm 0 0 ]{images/BR_Hpm_tanb_log.pdf}
 \caption{The branching fractions of $H^{\pm} \rightarrow AW$ (red), $\tau\nu$ (green) and $cs$ (blue) as a function of $t_{\beta}$ for a 160 GeV $H^{\pm}$.}
 \label{fig:br_hC_AW_sm}
 \end{marginfigure}
- 
-The MSSM Higgs mass spectrum is more restricted. At tree level, the mass matrix depends on $m_A$ and $t_{\beta}$ only, and the charged Higgs mass is related to $m_A$ by $m_{H^{\pm}}^2 =m_A^2 + m_W^2$ . Large loop corrections are needed to increase the mass splitting to permit the decay of $H^{\pm} \rightarrow A W$. In the non-decoupling region of MSSM with \emph{H} being the SM-like Higgs, the light CP-even Higgs \emph{h} can be light: $m_{h}<m_{H^{\pm}}-m_W$. The branching fractions can reach values up to 10\% \cite{Heinemeyer:2013tqa} in some regions of parameter space. In the NMSSM, the Higgs sector is enlarged by an additional singlet. The authors of \cite{Christensen:2013dra,Drees:1999sb} have shown that decays of $H^{\pm} \rightarrow A_iW/H_iW$ can be significant in certain regions of parameter space. 
- 
-\section{Current experimental limits}
-\label{sec:limits}
 
-Searches for a light charged Higgs boson with mass $m_{H^{\pm}}<m_t$ have been performed by both ATLAS and CMS~\cite{TheATLAScollaboration:2013wia,CMS:2014cdp} with 19.7 $\ifb$ integrated luminosity at 8 TeV and 4.6 $\ifb$ integrated luminosity at 7 TeV. The production mechanism considered is top pair production in which one top quark decays to $bH^{\pm} $ while the other decays to $bW^\pm$. These studies focus on the $H^{\pm} \rightarrow \tau \nu$ decay channel, which is dominant in most parts of the parameter space in the absence of decays into lighter Higgses. Assuming a branching fraction BR$(H^{\pm} \rightarrow \tau \nu) = 100 \%$, the null search results from CMS~\cite{CMS:2014cdp} imply upper bounds for the top quark branching fraction BR$(t \rightarrow H^{\pm} b)$ varying between 1.2\% to 0.16\% for charged Higgs masses between 80 GeV and 160 GeV. This result can be translated into bounds on the MSSM parameter space. The obtained exclusion limits for the MSSM $m_h^\text{max}$ scenario can be seen in the right panel of Fig.~\ref{fig:lim_BR_Hpm} (region to the left of red line). Only charged Higgs masses in the small region 155 GeV $< m_{H^{\pm}} < 160 $ GeV around $t_{\beta} = 8$ are still allowed. The ATLAS results \cite{TheATLAScollaboration:2013wia} are similar.
+%Why mA = 70 GeV?
+In \autoref{fig:br_hC_AW}, we show the contours of the branching fraction of the charged Higgs to the $AW$ final state in the $m_{H^{\pm}}-t_{\beta}$ plane, with $h$ being the SM-like Higgs and \emph{H} being heavy enough to be decoupled. This branching fraction reaches large values for $t_{\beta}$ between than 10 to 30 and charged Higgs masses between 155 and 170 GeV. For small charged Higgs masses close to the $m_A + m_W$ threshold, the decay is kinematically suppressed. In \autoref{fig:br_hC_AW_sm}, we show the same branching fraction, but this time as a function of $t_\beta$, for a fixed charged Higgs mass of 160 GeV. For large values of $t_{\beta}$, the branching fraction of the $\tau\nu$ mode dominates that of the $AW$ mode. In both plots, we assume the existence of a pseudoscalar \emph{A} with mass 70 GeV. Similar results can be obtained for $H^{\pm} \rightarrow \h W$ with $m_{h} = 70$ GeV,  $s_{\beta-\alpha}\sim 0$ and \emph{A} decoupled. 
+
+The MSSM Higgs mass spectrum is more restricted. At tree level, the mass matrix depends on $m_A$ and $t_{\beta}$ only, and the mass of the charged Higgs mass is related to that of the pseudoscalar \emph{A} by $m_{H^{\pm}}^2 =m_A^2 + m_W^2$. Large loop corrections are therefore needed to increase the mass splitting enough that the decay $H^{\pm} \rightarrow AW$ becomes kinematically permitted. In the non-decoupling region of MSSM with \emph{H} being the SM-like Higgs, the CP-even Higgs \emph{h} can be light: $m_{h}<m_{H^{\pm}}-m_W$. The branching fractions can reach values up to 10\% \cite{Heinemeyer:2013tqa} in some regions of parameter space. In the NMSSM, where the Higgs sector is enlarged by an additional singlet, decays of $H^{\pm} \rightarrow A_iW/H_iW$ can be significant in certain regions of parameter space \cite{Christensen:2013dra,Drees:1999sb}.
+
+\section{Literature review}\label{sec:limits}
+
+Searches for a light charged Higgs boson have been performed by both ATLAS and CMS~\cite{TheATLAScollaboration:2013wia,CMS:2014cdp} with 19.7 $\ifb$ of integrated luminosity at 8 TeV and 4.6 $\ifb$ of integrated luminosity at 7 TeV. The production mechanism considered in these searches is top pair production, with one top quark decaying to $bH^{\pm} $ while the other decays to $bW^\pm$. These studies focus on the $H^{\pm} \rightarrow \tau \nu$ decay channel, which is dominant in most parts of the parameter space in the absence of decays into lighter Higgses. Assuming a branching fraction BR$(H^{\pm} \rightarrow \tau \nu) = 100 \%$, the null search results from CMS~\cite{CMS:2014cdp} imply upper bounds for the top quark branching fraction BR$(t \rightarrow H^{\pm} b)$ ranging from 1.2\% to 0.16\% for charged Higgs masses between 80 and 160 GeV. This result can be translated into bounds on the MSSM parameter space. The obtained exclusion limits for the MSSM $m_h^\text{max}$ scenario can be seen in \autoref{fig:lim_BR_Hpm_right} (region to the left of red line). Only charged Higgs masses in the small region between 155 and 160 GeV around $t_{\beta} = 8$ are still allowed. The results from ATLAS \cite{TheATLAScollaboration:2013wia} are similar.
  
-A search with the $H^{\pm} \rightarrow cs$ final states has been performed by ATLAS \cite{Aad:2013hla} using 4.7 fb$^{-1}$ integrated luminosity at 7 TeV and by CMS \cite{CMS:2014kga} using 19.7 fb$^{-1}$ integrated luminosity at 8 TeV. Assuming BR$(H^{\pm} \rightarrow c s) = 100 \%$, the ATLAS results imply an upper bound for BR$(t \rightarrow b H^{\pm} )$ around 5\% to 1\% for charged Higgs masses between 90 GeV and 150 GeV while the CMS searches impose an upper bound of BR$(t \rightarrow b H^{\pm} ) $ around 2\% to 7\% for a charged Higgs mass between 90 and 160 GeV.
+A search with the $H^{\pm} \rightarrow cs$ decay channel has been performed by ATLAS \cite{Aad:2013hla} using 4.7 fb$^{-1}$ integrated luminosity at 7 TeV and by CMS \cite{CMS:2014kga} using 19.7 fb$^{-1}$ integrated luminosity at 8 TeV. Assuming BR$(H^{\pm} \rightarrow c s) = 100 \%$, the ATLAS results imply an upper bound for BR$(t \rightarrow b H^{\pm} )$ around 5\% to 1\% for charged Higgs masses between 90 and 150 GeV, while the CMS searches imply an upper bound of around 2\% to 7\% for a charged Higgs masses between 90 and 160 GeV.
 
 \begin{marginfigure}
- 	\includegraphics[width=\textwidth,]{paperplots/BR_tHpm_CMS.pdf}
-    \caption{CMS limits on the branching fraction BR$( t \rightarrow H^{\pm}b)$ assuming a 100\% BR$(H^{\pm} \rightarrow \tau \nu)$ (black line)~\cite{CMS:2014cdp}, as well as the weakened limits in the Type II $2$HDM in the presence of a light neutral Higgs for $t_{\beta}=1$ (red), $t_{\beta}=7$ (blue) and $t_{\beta}=50$ (green).}
+ 	\includegraphics[width=\textwidth,]{images/BR_tHpm_CMS.pdf}
+    \caption{CMS limits on the branching fraction of the top quark to the charged Higgs, assuming a BR$(H^{\pm} \rightarrow \tau \nu) = 100\%$ (black line)~\cite{CMS:2014cdp}, as well as the weakened limits in the Type II $2$HDM in the presence of a light neutral Higgs for various values of $t_{\beta}$.}
 \label{fig:lim_BR_Hpm_left}
 \end{marginfigure}
 
-These limits get weaker once we assume realistic branching fractions smaller than 100\%. Figure \ref{fig:lim_BR_Hpm_left} shows how the CMS limits on the branching fraction BR$(t \rightarrow H^{\pm} b)$ can change significantly in the presence of an additional light neutral Higgs. The black curve shows the CMS limits presented in \cite{CMS:2014cdp} assuming a 100\% BR$(H^{\pm} \rightarrow \tau \nu)$. The modified limits assuming the presence of a 70 GeV CP-odd neutral Higgs are shown for $t_{\beta}=1$ (red), $t_{\beta}=7$ (blue) and $t_{\beta}=50$ (green). We can see that for large $t_{\beta}$, the limits stay almost unchanged since $H^{\pm} \rightarrow \tau \nu$ is the dominating decay channel, but for smaller values of $t_{\beta}$ these limits are weakened significantly.
+These limits get weaker once we consider realistic branching fractions that are smaller than 100\%. In \autoref{fig:lim_BR_Hpm_left}, we show how the CMS limits on the branching fraction BR$(t \rightarrow H^{\pm} b)$ can change significantly in the presence of an additional light neutral Higgs. The black curve shows the CMS limits presented in \cite{CMS:2014cdp} assuming a BR$(H^{\pm} \rightarrow \tau \nu) = 100\%$. The modified limits assuming the existence of a 70 GeV CP-odd neutral Higgs are shown for $t_{\beta}=1$ (red), 7 (blue) and 50 (green). We can see that for large $t_{\beta}$, the limits stay almost unchanged since $H^{\pm} \rightarrow \tau \nu$ is the dominant decay channel, but for smaller values of $t_{\beta}$ these limits are weakened significantly.
 
-\begin{marginfigure}
- 	\includegraphics[width=\textwidth,trim=0 -0.1cm 0 0 ]{paperplots/Limits_CMS.pdf}
-    \caption{The excluded region in $m_{H^\pm}-t_{\beta}$ plane assuming a 100\% BR$(H^{\pm} \rightarrow \tau \nu)$ (yellow and cyan regions) and the weakened limits with a light neutral Higgs (cyan region).}
+\begin{marginfigure}[2in]
+ 	\includegraphics[width=\textwidth,trim=0 -0.1cm 0 0 ]{images/Limits_CMS.pdf}
+    \caption{The excluded region in $m_{H^\pm}-t_{\beta}$ plane assuming a BR$(H^{\pm} \rightarrow \tau \nu) = 100\%$ (combined yellow and cyan regions) and the weakened limits with a light neutral Higgs (cyan region only).}
 \label{fig:lim_BR_Hpm_right}
 \end{marginfigure}
 
-Figure \ref{fig:lim_BR_Hpm_right} shows how the CMS limits in the $m_{H^{\pm}}-t_{\beta}$ plane weaken in the presence of an additional light Higgs. The yellow shaded region (plus the cyan region) assumes a 100\% BR$(H^{\pm} \rightarrow \tau \nu)$ while the cyan region assumes the Type II $2$HDM branching fractions in the presence of a 70 GeV CP-odd neutral Higgs.  For $t_{\beta}<15$, the surviving region in $m_{H^{\pm}}$ is much more relaxed, extending down to about 150 GeV. Therefore, the presence of exotic decay modes substantially weakens the current and future limits based on searches for the conventional $H^{\pm} \rightarrow \tau \nu, cs$ decay modes. 
+Similarly, \autoref{fig:lim_BR_Hpm_right} shows how the CMS limits in the $m_{H^{\pm}}-t_{\beta}$ plane weaken in the presence of an additional light Higgs. The union of the yellow and cyan regions is excluded by CMS assuming BR$(H^{\pm} \rightarrow \tau \nu) = 100\%$, while only the cyan region is excluded assuming the branching fractions predicted by a Type II $2$HDM in the presence of a CP-odd neutral Higgs with mass 70 GeV. This weakening is most prominent in the low $t_\beta$ region - the lower limit on charged Higgs masses reduces to about 150 GeV for $t_{\beta}<$ 15. Therefore, the presence of exotic decay modes substantially weakens the current and future limits based on searches based on the conventional $H^{\pm} \rightarrow \tau \nu, cs$ decay modes. 
 
+A light charged Higgs could have a large impact on precision and flavor observables as well~\cite{Olive2016}. For example, for a Type II $2$HDM, the bounds on the rate of the decay $b\rightarrow s\gamma$ restrict the charged Higgs to be heavier than 300 GeV. A detailed analysis of precision and flavor bounds in the $2$HDM can be found in refs.~\cite{Coleppa:2013dya,Mahmoudi:2009zx}. Flavor constraints on the Higgs sector are however typically model-dependent, and could be alleviated by contributions from other new particles in a model~\cite{Han:2013mga}. Since our focus in this work is on collider searches for light charged Higgses, we consider the scenario of a light charged Higgs as long as it satisfies the direct bounds set by collider searches for Higgs bosons.
 
- A light charged Higgs could have a large impact on precision and flavor observables~\cite{Olive2016}. For example, in the $2$HDM, the bounds on $b\rightarrow s\gamma$ restrict the charged Higgs to be heavier than 300 GeV. A detailed analysis of precision and flavor bounds in the $2$HDM can be found in refs.~\cite{Coleppa:2013dya,Mahmoudi:2009zx}. Flavor constraints on the Higgs sector are, however, typically model-dependent, and could be alleviated when there are contributions from other new particles in the model~\cite{Han:2013mga}. Since our focus in this work is on collider searches for a light charged Higgs and their implications for the Type II $2$HDM, we consider the scenario of a light charged Higgs: $m_{H^{\pm}}<m_t$, as long as it satisfies the direct collider Higgs search bounds.
+Our study also assumes the existence of a light neutral Higgs $A/H$. This type of Higgs has been constrained by the $A/H \rightarrow \tau\tau$ searches at the LHC~\cite{Khachatryan:2014wca,Aad:2014vgg}, in particular, for $m_{A/H}>90$ GeV and relatively large $t_{\beta}$. No limit, however, exists for $m_{A/H}<90$ GeV due to the difficulties in the identification of the relatively soft taus and the overwhelming SM backgrounds for soft leptons and $\tau$-jets. Furthermore, LEP limits~\cite{LEP_Higgs} based on $VH$ associated production do not apply to the CP-odd $A$ or the non-SM like CP-even Higgs. LEP limits based on \emph{AH} pair production also do not apply, as long as $m_A+m_H>$208 GeV. Therefore, in our analyses below, we choose the daughter (neutral) Higgs mass to be 70 GeV\footnote{The mass of 70 GeV is also chosen to be less than half the mass of the SM Higgs. This prohibits the decay channel $h_\text{SM} \rightarrow AA$ and enforces consistency with the current measurements of branching ratios of the SM Higgs.}.
 
-Our study also assumes the existence of a light neutral Higgs $A/H$, which has been constrained by the $A/H \rightarrow \tau\tau$ searches at the LHC~\cite{Khachatryan:2014wca,Aad:2014vgg}, in particular, for $m_{A/H}>90$ GeV and relatively large $t_{\beta}$. No limit, however, exists for $m_{A/H}<90$ GeV due to the difficulties in the identification of the relatively soft taus and the overwhelming SM backgrounds for soft leptons and $\tau$-jets. Furthermore, LEP limits~\cite{LEP_Higgs} based on $VH$ associated production do not apply for the CP-odd $A$ or the non-SM like CP-even Higgs. LEP limits based on $AH$ pair production can also be avoided as long as $m_A+m_H>208$ GeV. Therefore, in our analyses below, we choose the daughter (neutral) Higgs mass to be 70 GeV.\footnote{The mass of 70 GeV is also chosen to be above the $h_\text{SM} \rightarrow AA$ threshold to avoid significant deviations of the 126 GeV SM-like Higgs branching fractions from current measurements.}
+There have been other theoretical studies on light charged Higgses as well - the authors of \cite{Guedes:2012eu} and \cite{Hashemi:2013kga} analyzed light charged Higgses produced via single top production and decaying to the $\tau\nu$ final state, while the authors of \cite{Hashemi:2011gy} and \cite{Das:2014fha} investigate light charged Higgses that are produced via the top pair production channel, and decay to $\mu\nu$ and $\gamma\gamma W$ final states. 
 
-There have been theoretical studies on other light charged Higgs production and decay channels. The authors of \cite{Guedes:2012eu,Hashemi:2013kga} analyzed the possibility of using the single top production mode to observe a light charged Higgs boson decaying into a $\tau\nu$ final state. The detectability of a charged Higgs decay into a $ \mu \nu $ final state or a $\gamma\gamma W$ final state via $AW$ with a light charged Higgs produced via top decay in top pair production has been investigated in~\cite{Hashemi:2011gy} and \cite{Das:2014fha}. 
+Charged Higgses heavier than the top quark have been analyzed in detail in \cite{Coleppa:2014cca}, which considers the associated production channel $H^{\pm} tb$ and the exotic decay channel $H^{\pm}\rightarrow AW/HW^{\pm}$. Given that our study considers the same final state ($bbWWA/H$) as the one in \cite{Coleppa:2014cca}, we can use a similar search strategy to find light charged Higgses that come from the decay of pair-produced top quarks.
 
-The $H^{\pm} tb$ associated production with $H^{\pm}\rightarrow AW/HW^{\pm} $ has been analyzed in detail in Ref.~\cite{Coleppa:2014cca}, which focuses on heavy charged Higgs bosons ($m_{H^{\pm}}>m_t$). Given the same final state of $bbWWA/H$, the same search strategy can be used to analyze light charged Higgs coming from top decay with top pair production. Furthermore, we analyze single top production with $pp \rightarrow tj$ and $t \rightarrow H^{\pm} b \rightarrow A/HWb $. This channel permits a cleaner signal due to its unique kinematic features. 
+\section{Collider analysis}\label{sec:light_charged_analysis}
 
+In our analysis we study the exotic decay $H^{\pm} \rightarrow AW/HW$ of light charged Higgs bosons $(m_{H^{\pm}}<m_t)$ produced via top decay. We consider two production mechanisms for the parent top quarks: $t$-channel single top production\footnote{We only consider the dominant $t$-channel single top mode since the $s$-channel mode suffers from a very small production rate and the $tW$ mode has a final state similar to that of the top pair production case.} ($tj$) and top pair production ($t\bar{t}$)~\cite{Kidonakis:2012db}.
 
+The light neutral Higgs boson can either be the CP-even $H$ or the CP-odd $A$. In the analysis that follows, we use the decay $H^{\pm} \rightarrow A W^{\pm}$ as an illustration. Since we do not use angular correlations of the charged Higgs decay, the bounds obtained for $H^{\pm} \rightarrow A W^{\pm}$ will apply to $H^{\pm} \rightarrow H W^{\pm}$ as well.
 
+The neutral Higgs boson $A$ itself will decay further. In this analysis we look at the decay $A \rightarrow\tau\tau$ for single top production and both the fermionic $\tau\tau$ and the hadronic $bb$ modes for top pair production. While the $bb$ mode has the advantage of a large branching fraction $\text{BR}(A \rightarrow bb)$, the $\tau\tau$ case has smaller SM backgrounds and therefore leads to a cleaner signal. We study both leptonic ($\tau_\text{lep}$) and hadronic ($\tau_\text{had}$) decays of the tau lepton, and consider the following cases: $\tau_\text{had}\tau_\text{had}$, $\tau_\text{lep}\tau_\text{had}$ and $\tau_\text{lep}\tau_\text{lep}$. The $\tau_\text{lep}\tau_\text{had}$ case is particularly promising since we can utilize the same sign dilepton signal with the leptons from the decays of the $W$ and the $\tau$. 
+
+We use Madgraph 5/MadEvent v1.5.11 \cite{Alwall2014} to generate our signal and background events. These events are passed to Pythia v2.1.21 \cite{Sjostrand:2006za} to simulate initial and final state radiation, showering and hadronization. The events are further passed through Delphes 3.07 \cite{DeFavereau2014a} with the Snowmass combined LHC detector card \cite{Anderson:2013kxz} to simulate detector effects. The discovery reach and exclusion bounds have been determined using RooStats~\cite{Moneta:2010pm} and theta-auto \cite{thetaauto}. 
+
+In this section, we will present model \emph{independent} limits on the $\sigma\times\text{BR}$ for both 95\% C.L. exclusion and 5$\sigma$ discovery for both single top and top pair production with possible final states $\tau\tau bW j$ and $\tau\tau bbWW$/$bbbbWW$. We consider parent charged Higgses with masses between 150 and 170 GeV and a daughter Higgs \emph{A} with a mass of 70 GeV. 
+
+\subsection{Single Top Production}\label{subsec:light_charged_analysis_tj}
  
+For single top production, we consider the channel
+\[pp\rightarrow tj\rightarrow H^{\pm} bj\rightarrow AW^{\pm}bj \rightarrow \tau\tau W bj.\]
+The dominant SM backgrounds are $W\tau\tau$ production, which we generate with up to two additional jets (including $b$ jets); and top pair production with both fully leptonic and semileptonic decay chains, which we generate with up to one additional jet. We also take into account the SM backgrounds $tj\tau\tau$ and $ttll$ with $l= (e, \mu, \tau)$. Our approach is to perform a traditional `cut-and-count' analysis, with the following selection cuts.
 
-
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%***********************************************************************************************************************
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Collider analysis}
- \label{sec:light_charged_analysis}
-
-
-In our analysis we study the exotic decay $H^{\pm} \rightarrow AW/HW$ of light charged Higgs bosons $(m_{H^{\pm}}<m_t)$ produced via top decay. We consider two production mechanisms: $t$-channel single top production\footnote{We only consider the dominant $t$-channel single top mode since the $s$-channel mode suffers from a very small production rate and the $tW$ mode has a final state similar to that of the top pair production case.} ($tj$) and top pair production ($t\bar{t}$)~\cite{Kidonakis:2012db}. 
-
- 
- The light neutral Higgs boson can either be the CP-even $H$ or the CP-odd $A$. In the analysis that follows, we use the decay $H^{\pm} \rightarrow A W^{\pm}$ as an illustration. Since we do not use angular correlations of the charged Higgs decay, the bounds obtained for $H^{\pm} \rightarrow A W^{\pm}$ apply to $H^{\pm} \rightarrow H W^{\pm}$ as well.
-
-The neutral Higgs boson ($A$) itself will decay further. In this analysis we look at the fermionic decay $A \rightarrow\tau\tau$ for single top production and both the $\tau\tau$ and the hadronic $bb$ modes for top pair production. While the $bb$ mode would have the advantage of a large branching fraction $\text{BR}(A \rightarrow bb)$, the $\tau\tau$ case has smaller SM backgrounds and therefore leads to a cleaner signal. We study both leptonic and hadronic $\tau$ decays and consider three cases: $\tau_{had}\tau_{had}$, $\tau_{lep}\tau_{had}$ and $\tau_{lep}\tau_{lep}$. The $\tau_{lep}\tau_{had}$ case is particularly promising since we can utilize the same sign dilepton signal with the leptons from the decays of the $W$ and the $\tau$. 
-
-We use Madgraph 5/MadEvent v1.5.11 \cite{Allwall:2011uj,Alwall2014} to generate our signal and background events. These events are passed to Pythia v2.1.21 \cite{Sjostrand:2006za} to simulate initial and final state radiation, showering and hadronization. The events are further passed through Delphes 3.07 \cite{Ovyn:2009tx} with the Snowmass combined LHC detector card \cite{Anderson:2013kxz} to simulate detector effects. The discovery reach and exclusion bounds have been determined using the program RooStats~\cite{Moneta:2010pm} and theta-auto \cite{thetaauto}. 
-
-
-In this section, we will present model \emph{independent} limits on the $\sigma\times\text{BR}$ for both 95\% C.L. exclusion and 5$\sigma$ discovery for both single top and top pair production with possible final states $\tau\tau bW j$ and $\tau\tau bbWW$/$bbbbWW$. We consider the parent particle mass $m_{H^{\pm}}$ in the range 150 $-$ 170 GeV and the daughter particle mass, $m_A=70$ GeV. 
-
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection{Single Top Production}
- \label{sec:light_charged_analysis_tj}
- 
-For single top production, we consider the channel\
-\begin{equation}
-pp\rightarrow tj\rightarrow H^{\pm} bj\rightarrow AW^{\pm}bj \rightarrow \tau\tau W bj.
-\end{equation} The dominant SM backgrounds are $W\tau\tau$ production, which we generate with up to two additional jets (including $b$ jets); and top pair production with both fully and semi-leptonic decay chains, which we generate with up to one additional jet. We also take into account the SM backgrounds $tj\tau\tau$ and $ttll$ with $l= (e, \mu, \tau)$.
-
-The cuts that we have imposed are:
 \begin{enumerate}
 
-\item \textbf{Identification cuts:} 
+\item \emph{Identification cuts:} 
 
-\textbf{Case A ($\tau_{had}\tau_{had}$):} {One lepton $\ell = e$ or $\mu$, two $\tau$ tagged jets, zero or one $b$ tagged jet and at least one untagged jet:} 
-\begin{equation}
-n_{\ell} = 1, \; n_{\tau} = 2, \; n_b = 0,1 ,\; n_{j} \geq 1.
-\label{eqA}
-\end{equation}
-We require the $\tau$-tagged jets to have charges of opposite signs.
+  \begin{itemize}
+    \item \emph{Case A} ($\tau_\text{had}\tau_\text{had}$): We select events with exactly one lepton (\emph{e} or $\mu$), two $\tau$ tagged jets, fewer than two $b$ tagged jets, and at least one untagged jet. We also require the $\tau$-tagged jets to have opposite-sign charges.
 
-\textbf{Case B ($\tau_{lep}\tau_{had}$):} {Two leptons, one $\tau$ tagged jet, zero or one $b$ tagged jet and at least one untagged jet:}
-\begin{equation}
-n_{\ell} = 2, \; n_{\tau} = 1,\; n_b = 0,1 , \;n_{j} \geq 1.
-\label{eqB}
-\end{equation}
-We require that both leptons have the same sign, which is opposite to the sign of the $\tau$ tagged jet.
+\item \emph{Case B} ($\tau_\text{lep}\tau_\text{had}$): Same as case A, except that we require exactly two leptons instead of one. Additionally, we require that both of these leptons have charges of the same sign, which is opposite to the sign of the $\tau$ tagged jet.
+\item \emph{Case C} ($\tau_\text{lep}\tau_\text{lep}$): Same as case A, except that we require exactly three leptons instead of one. No conditions are placed on the signs of the charges for this case.
+\end{itemize}
+The following criteria were also required for the identification of leptons, and jets: $|\eta_{l,b,\tau}| <$ 2.5, $|\eta_{j}| <$~5, $p_{T}(l_1, j, b) >$~20 GeV and $p_{T}(l_{2}) >$~10 GeV.
 
-\textbf{Case C ($\tau_{lep}\tau_{lep}$):} {Three leptons, no $\tau$ tagged jet, zero or one $b$ tagged jet and at least one untagged jet:}
-\begin{equation}
-n_{\ell} = 3, \; n_{\tau} = 0, \; n_b = 0,1 ,\; n_{j} \geq 1.
-\label{eqC}
-\end{equation}
-The following selection cuts for the identification of leptons, $b$ jets and jets are used:
-\begin{equation}
-|\eta_{\ell,b,\tau}| < 2.5, \; |\eta_{j}| < 5, \; p_{T, \ell_1, j, b} > 20 \text{ GeV and } p_{T, \ell_{2}} > 10 \text{ GeV.}
-\label{eqID}
-\end{equation}
+\item \emph{Neutrino reconstruction:} 
+We reconstruct the momentum of the neutrino using the missing transverse momentum and the momentum of the hardest lepton as described in \cite{Aad:2012ux}, assuming that the missing energy is solely from the decay $W\rightarrow l \nu$.
 
+\item \emph{Neutral Higgs candidate:} The $\tau$ jets (case A), the $\tau$ jet and the softer lepton (case B) or the two softer leptons (case C) are combined to form the neutral Higgs candidate. The reconstruction of the neutrino and the neutral Higgs candidate are relatively poor in cases B and C due to additional missing energy from the neutrino associated with the leptonic $\tau$ decay. 
 
-\item \textbf{Neutrino reconstruction:} 
-We reconstruct the momentum of the neutrino using the missing transverse momentum and the momentum of the hardest lepton as described in \cite{Aad:2012ux}, assuming that the missing energy is solely from $W\rightarrow \ell \nu$. In case B and C, the neutrino reconstruction is relatively poor since there is additional missing energy from the leptonic $\tau$ decay. 
+\item \emph{Charged Higgs candidate:} The momenta of the neutral Higgs candidate, the reconstructed neutrino and the hardest lepton are combined to form the charged Higgs candidate. 
 
-\item \textbf{Neutral Higgs candidate $A$:} The $\tau$ jets (case A), the $\tau$ jet and the softer lepton (case B) or the two softer leptons (case C) are combined to form the neutral Higgs candidate. {In cases B and C the mass reconstruction is relatively poor due to missing energy from the neutrino associated with the leptonic $\tau$ decay. }
+\item \emph{Mass cuts:} We place upper limits on the masses of the charged and neutral Higgs candidates, optimized for each mass combination. For $m_{H^{\pm}}=$160 GeV and $m_{A}=$ 70 GeV, we impose the cuts $m_{\tau\tau} <$ 48 GeV, and $m_{\tau\tau W} <$ 148 GeV.
 
-\item \textbf{Charged Higgs candidate $H^{\pm}$:} The neutral Higgs candidate, the reconstructed neutrino and the hardest lepton are combined to form the charged Higgs candidate. 
-
-\item \textbf{Mass cuts:} We place upper limits on the masses of the charged and neutral Higgs candidates, optimized for each mass combination. For $m_{H^{\pm}}=160$ GeV and $m_{A}= 70$ GeV, we impose 
-\begin{equation}
-m_{\tau\tau} < 48 \text{ GeV and } m_{\tau\tau W} < 148 \text{ GeV.}
-\label{eqMASS}
-\end{equation}
- 
-
- \item \textbf{Angular correlation:} A unique kinematical signature of single top production is the distribution of the angle $\theta^{*}$, which is the angle between the top momentum in the $tj$ system's rest frame and the $tj$ system's momentum in the lab frame, as suggested in \cite{Kling:2012up}. The differential distribution for $\cos\theta^{*}$ is shown in the left panel of Fig.~\ref{fig:fig3} for signal (red, solid), $t\bar{t}$ (blue, dotted) and $W\tau\tau$ (green, dotted). The signal tends to peak around $\cos\theta^* \approx -1$ while the background is flat for $W\tau\tau$ and $t\overline{t}$.\footnote{As shown in \cite{Kling:2012up}, the $\cos\theta^{*}$ distribution for $t\bar{t}$ background would peak around $\cos\theta^{*}=1$ if the top quark could be reliably identified. However, in this paper we approximate the top quark momentum by the momentum of the charged Higgs candidate, which results in a flat distribution of $\cos\theta^*$ for the $t\bar{t}$ system. } In our analysis we require 
-\begin{equation}
- \cos\theta^*< -0.8.
-\label{eqT}
-\end{equation}
-
-\begin{marginfigure}
+\begin{marginfigure}[-8in]
 \centering
-\includegraphics[width = \textwidth]{paperplots/angle_separated_rotated}\hfill
- \caption{Normalized distribution of $\cos\theta^*$ (left panel) and the transverse momentum of the $tj$ system $p_{T,tj}$ (right panel) for the signal (red, solid) and the dominant SM backgrounds: $t\bar{t}$ (blue, dotted) and $W\tau\tau$ (green, dotted). The imposed cuts are indicated by the vertical dashed lines. The histograms shown are for case A with $m_{H^{\pm}}=160\text{ GeV}$ and $m_A=70$ GeV.}
-\label{fig:fig3}
+\includegraphics[width = \textwidth]{images/angle_separated_rotated}\hfill
+ \caption{Normalized distribution of $\cos\theta^*$, for case A with $m_{H^{\pm}}=160\text{ GeV}$. The imposed cuts are indicated by the vertical dashed lines.}
+\label{fig:angular_correlations}
 \end{marginfigure}
 
-\begin{marginfigure}
+\begin{marginfigure}[-3in]
 \centering
- \includegraphics[width = \textwidth]{paperplots/pt_separated_rotated}
- \caption{Normalized distribution of $\cos\theta^*$ (left panel) and the transverse momentum of the $tj$ system $p_{T,tj}$ (right panel) for the signal (red, solid) and the dominant SM backgrounds: $t\bar{t}$ (blue, dotted) and $W\tau\tau$ (green, dotted). The imposed cuts are indicated by the vertical dashed lines. The histograms shown are for case A with $m_{H^{\pm}}=160\text{ GeV}$ and $m_A=70$ GeV.}
-\label{fig:fig4}
+\includegraphics[trim = {1.5cm 0 0 0}, clip, width = \textwidth]{images/pt_separated_rotated}
+ \caption{Normalized distribution of the transverse momentum of the $tj$ system $p_{T,tj}$, for case A with $m_{H^{\pm}}=160\text{ GeV}$. The imposed cuts are indicated by the vertical dashed lines.}
+\label{fig:tj}
 \end{marginfigure}
 
-\item\textbf{Top and recoil jet system momentum:} In single top production, we expect that the transverse momentum of the top quark and recoil jet should balance each other, as shown in the right plot of Fig.~\ref{fig:fig3} by the red solid curve. We impose the cut for the transverse momentum of the $tj$ system: 
-\begin{equation}
-p_{T,tj} < 30 \text{ GeV}.
-\label{eqPT}
-\end{equation}
-This further suppresses the top pair background in the presence of additional jets coming from the second top.
+\item \emph{Angular correlation:} A unique kinematical signature of single top production is the distribution of the angle $\theta^{*}$, which is the angle between the top momentum in the \emph{tj} system's rest frame and the \emph{tj} system's momentum in the lab frame. This variable was first introduced in \cite{Kling:2012up}. The differential distribution for $\cos\theta^{*}$ is shown in \autoref{fig:angular_correlations} for the signal (red), and the backgrounds $t\bar{t}$ (blue) and $W\tau\tau$ (green). The signal distribution tends to peak around $\cos\theta^* \approx -1$ while the background distribution is flat for $W\tau\tau$ and $t\overline{t}$.\sidefootnote{As shown in \cite{Kling:2012up}, the $\cos\theta^{*}$ distribution for $t\bar{t}$ background would peak around $\cos\theta^{*}=1$ if the top quark could be reliably identified. However, in this study we approximate the top quark momentum by the momentum of the charged Higgs candidate, which results in a flat distribution of $\cos\theta^*$ for the $t\bar{t}$ system.} In our analysis we require $\cos\theta^*< -0.8$.
  
+\item\emph{Top and recoil jet system momentum:} In single top production, we expect that the transverse momentum of the top quark and recoil jet should balance each other, as shown in \autoref{fig:tj} by the red curve. We require that the transverse momentum of the $tj$ system, $p_{T,tj}$, must be less than 30 GeV. This further suppresses the top pair background in the presence of additional jets coming from the second top quark.
 \end{enumerate}
+In \autoref{tab:tj}, we show a representative cut flow table for a signal benchmark point with $m_{H^{\pm}} = 160$ GeV and $m_A = 70$ GeV at the 14 TeV LHC. The first row shows the total cross section before cuts, calculated using MadGraph. The following rows show the cross sections for the signal and major backgrounds after applying the selection cuts discussed above. We have chosen a nominal value for $\sigma \times \text{BR}( p p \rightarrow H^{\pm} b j \rightarrow \tau \tau W bj)$ of 100 fb to illustrate the cut efficiencies.\footnote{This is consistent with the Type II $2$HDM the top branching fraction into a charged Higgs for $m_{H^{\pm}}=160$ GeV, which is typically between 0.1\% and 1\% (see \autoref{fig:tBR}). Using the single top production cross section, $\sigma_{tj}=248$ pb \cite{Kidonakis:2012db} and assuming the branching fractions BR$(H^{\pm} \rightarrow AW^{\pm}) = 100 \%$ and BR$(A \rightarrow \tau\tau)=8.6 \%$ leads to the stated $\sigma\times$ BR of around 21 $-$ 210 fb. }
 
-
-
-In Table \ref{tab:tj}, we show the signal and major background cross sections with cuts for a signal benchmark point of $m_{H^{\pm}} = 160$ GeV and $m_A = 70$ GeV at the 14 TeV LHC. The first row shows the total cross section before cuts, calculated using MadGraph. The following rows show the cross sections after applying the identification cuts, mass cuts and the additional cuts on $\cos\theta^*$ and $p_{T,tj}$ for all three cases as discussed above. We have chosen a nominal value for $\sigma \times \text{BR}( p p \rightarrow H^{\pm} b j \rightarrow \tau \tau W bj)$ of 100 fb.\sidefootnote{For the Type II $2$HDM the top branching fraction into a charged Higgs for $m_{H^{\pm}}=160$ GeV is typically between 0.1\% and 1\% (see Fig.~\ref{fig:tBR}). Using the single top production cross section, $\sigma_{tj}=248$ pb \cite{Kidonakis:2012db} and assuming the branching fractions BR$(H^{\pm} \rightarrow AW^{\pm}) = 100 \%$ and BR$(A \rightarrow \tau\tau)=8.6 \%$ leads to the stated $\sigma\times$ BR of around 21 $-$ 210 fb. }
-
-
-\begin{table}[h]
+\begin{table}
 \centering
 \strictpagecheck
-\begin{adjustwidth*}{0in}{-2.1in}
-  \begin{tabularx}{6in}{lrrrrrr}
+\begin{adjustwidth*}{0in}{-1.1in}
+  \begin{tabular}{clrrrrrr}
     \toprule
-    Cut & Signal & $W(W)\tau\tau$ & $t\bar{t}$ & $tj\tau\tau/ttll$ & $S/B$ & $S/\sqrt{B}$ (300 fb$^{-1}$) \\
-\midrule
-$\sigma$ 														&100 		&		 2000		& 6.3 $\cdot$ 10$^5$ 				& 257		&	-			&	-	\\
-\midrule
-A: Identification [Eq.(\ref{eqA})] & 0.29 & 5.36 & 130 & 1.39 & 0.002 & 0.43	\\
-\phantom{A:} 
-Mass cuts [Eq.(\ref{eqMASS})]											&0.16	 	&   0.34 		& 2.62				& 0.04		&	 0.05  	& 1.55	\\
-\phantom{A:} $\cos\theta^*$ and $p_{T,tj}$ [Eq.(\ref{eqT}), (\ref{eqPT})]&0.07	 	&   0.03 		& 0.07					& 0.001		& 	 0.67  	& 3.72	\\
-\hline
-B: Identification [Eq.(\ref{eqB})]	 									&0.25	 	&   4.45 		& 2.46					& 1.33	&	 0.03 		& 1.51	\\
-\phantom{B:} Mass cuts [Eq.(\ref{eqMASS})]								&0.11	 	&   0.31 		& 0.20					& 0.05	&	 0.19 		& 2.48	\\
-\phantom{B:} $\cos\theta^*$ and $p_{T,tj}$ [Eq.(\ref{eqT}), (\ref{eqPT})]&0.06	 	&   0.04 		& 0.02					& 0.002		&	 0.91 		& 3.99	\\
-\hline
-C: Identification [Eq.(\ref{eqC} )]	 									&0.18	 	&   3.07 		& 6.77				& 6.74		& 	0.01  	& 0.78 \\
-\phantom{C:} Mass cuts [Eq.(\ref{eqMASS})]								&0.12	 	&   0.55 		& 0.94				& 0.28		& 	0.07  	& 1.63 \\
-\phantom{C:} $\cos\theta^*$ and $p_{T,tj}$ [Eq.(\ref{eqT}), (\ref{eqPT})]&0.07	 	&   0.08 		& 0.10					& 0.01		& 	0.38  	& 2.84 \\
+ Case   & Cut                           & $\sigma_\text{Signal}$ & $\sigma_{W(W)\tau\tau}$ & $\sigma_{t\bar{t}}$ & $\sigma_{tj\tau\tau/ttll}$ & $S/B$ & $S/\sqrt{B}$\\\midrule
+        &  Original                             & 100                    & 2000                    & 6.3 $\times$ 10$^5$ & 257                        & -     & -	\\\midrule
+    A   & Identification                & 0.29                   & 5.36                    & 130                 & 1.39                       & 0.002 & 0.43	\\
+        & Mass cuts                     & 0.16                   & 0.34                    & 2.62                & 0.04                       & 0.05  & 1.55	\\
+        & $\cos\theta^*$ and $p_{T,tj}$ & 0.07                   & 0.03                    & 0.07                & 0.001                      & 0.67  & 3.72	\\\midrule
+    B   & Identification                & 0.25                   & 4.45                    & 2.46                & 1.33                       & 0.03  & 1.51	\\
+        & Mass cuts                     & 0.11                   & 0.31                    & 0.20                & 0.05                       & 0.19  & 2.48	\\
+        & $\cos\theta^*$ and $p_{T,tj}$ & 0.06                   & 0.04                    & 0.02                & 0.002                      & 0.91  & 3.99	\\\midrule
+    C   & Identification                & 0.18                   & 3.07                    & 6.77                & 6.74                       & 0.01  & 0.78 \\
+        & Mass cuts                     & 0.12                   & 0.55                    & 0.94                & 0.28                       & 0.07  & 1.63 \\
+        & $\cos\theta^*$ and $p_{T,tj}$ & 0.07                   & 0.08                    & 0.10                & 0.01                       & 0.38  & 2.84 \\
 \bottomrule
-\end{tabularx}
-\caption{Signal and dominant background cross sections with cuts for the signal benchmark point $m_{H^{\pm}}$ = 160 GeV and $m_A$ = 70 GeV at the 14 TeV LHC. We have chosen a nominal value for $\sigma \times \text{BR}(pp \rightarrow tj \rightarrow H^{\pm} j b \rightarrow \tau\tau W b j )$ of 100 fb to illustrate the cut efficiencies for the signal process. The last column of $S/\sqrt{B}$ is shown for an integrated luminosity of $\mathcal{L}=300\ \text{fb}^{-1}$. All cross sections are given in femtobarns.}
+\end{tabular}
+\caption{Representative cut flow table for the benchmark point with $m_{H^{\pm}}$ = 160 GeV and $m_A$ = 70 GeV at the 14 TeV LHC. All cross sections are given in femtobarns. We have chosen a nominal value for $\sigma \times \text{BR}(pp \rightarrow tj \rightarrow H^{\pm} j b \rightarrow \tau\tau W b j )$ of 100 fb to illustrate the cut efficiencies for the signal process. The significance, $S/\sqrt{B}$ is calculated for an integrated luminosity of 300 fb$^{-1}$.}
 \label{tab:tj}
 \end{adjustwidth*}
 \end{table}
 
-We can see that the dominant background contributions after particle identification are $t\overline{t}$ for cases A and C, and $W\tau\tau$ for case B. The reach is slightly better in case B in which the same sign dilepton signature can reduce the $t\bar{t}$ background sufficiently. Nevertheless, soft leptons from underlying events or $b$-decay can mimic the same sign dilepton signal. The obtained results are sensitive to the $\tau$ tagging efficiency as well as the misidentification rate. In our analyses, we have used a $\tau$ tagging efficiency of $\epsilon_{tag}=60\%$ and a mistagging rate of $\epsilon_{miss}=0.4\%$, as suggested in \cite{Anderson:2013kxz}. A better rejection of non-$\tau$ initiated jets would increase the significance of this channel. 
+We can see that the dominant background contributions after particle identification are $t\overline{t}$ for cases A and C, and $W\tau\tau$ for case B. The reach is slightly better in case B since the same sign dilepton signature can efficiently reduce the $t\bar{t}$ background. Nevertheless, soft leptons from underlying events or $b$-decay can mimic the same sign dilepton signal. The obtained results are sensitive to the $\tau$ tagging efficiency as well as the misidentification rate. In our analyses, we have used a $\tau$ tagging efficiency of 60\% and a mistagging rate of 0.4\%, as suggested in \cite{Anderson:2013kxz}. A better rejection of non-$\tau$ initiated jets would increase the significance of this channel. 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \subsection{Top Pair Production}
  \label{sec:light_charged_analysis_tt}
 
-We now turn to the top pair production channel 
+We now turn to the top pair production channel, 
 \begin{equation}
 pp \rightarrow tt \rightarrow H^{\pm} tb \rightarrow AbbWW\rightarrow \tau\tau bbWW/bbbbWW.
 \end{equation} 
-A detailed collider study with the same final states has been performed in \cite{Coleppa:2014cca} with a focus on high charged Higgs masses. The same strategy has been adopted for the light charged Higgs case and we refer to Ref.~\cite{Coleppa:2014cca} for details of the analysis. 
+As mentioned earlier, a detailed collider study with the same final states has been performed in \cite{Coleppa:2014cca} with a focus on high charged Higgs masses. We adopt the same strategy for the light charged Higgs case and refer to \cite{Coleppa:2014cca} for the details of the analysis. 
 
-To analyze this channel, we consider decay modes of the neutral Higgs into $\tau_{had}\tau_{had}$, $\tau_{had}\tau_{lep}$, $\tau_{lep}\tau_{lep}$ and $bb$. For the two $W$ bosons, we require one to decay leptonically and the other to decay hadronically to reduce backgrounds.
+To analyze this channel, we consider the same decay modes for the neutral Higgs as we did for the single top production case: $\tau_\text{had}\tau_\text{had}$, $\tau_\text{had}\tau_\text{lep}$, $\tau_\text{lep}\tau_\text{lep}$, along with the additional mode $A\rightarrow bb$. We require that one of the two $W$ bosons from the decays of the charged Higgses decay leptonically, and the other hadronically, to strike a balance between reducing backgrounds and keeping a substantial production cross section.
  
- The dominant SM background for the $\tau\tau$ channel is semi- and fully leptonic $t\bar{t}$ pair production. We also take into account $ttll$ production with $l = (e, \mu, \tau)$, as well as $W\tau\tau$ and $WW\tau\tau$. We ignored the subdominant backgrounds from single vector boson production, $WW$, $ZZ$, single top production, as well as multijet QCD background. Those backgrounds are either small or can be sufficiently suppressed by the cuts imposed. Similar backgrounds are considered for the $bb$ process. 
+The dominant SM background for the $\tau\tau$ channel is top pair production with  semi and fully leptonic decay chains. We also take into account $ttll$ production with $l = (e, \mu, \tau)$, as well as $W\tau\tau$ and $WW\tau\tau$. We ignored the subdominant backgrounds from single vector boson production, \emph{WW}, \emph{ZZ}, single top production, as well as multijet QCD background. Those backgrounds are either small or can be sufficiently suppressed by the cuts imposed. Similar backgrounds are considered for the \emph{bb} process. 
 
-In Table \ref{tab:tt}, we show the signal and major background cross sections of the $\tau\tau$ channel with cuts for a signal benchmark point of $m_{H^{\pm}} = 160$ GeV and $m_A = 70$ GeV at the 14 TeV LHC, similar to Table \ref{tab:tj}. We have chosen a nominal value for $\sigma \times \text{BR}(pp \rightarrow tt \rightarrow H^{\pm} tb \rightarrow \tau\tau bb WW)$ of 1000 fb to illustrate the cut efficiencies for the signal process. 
+In \autoref{tab:tt}, we show a representative cut flow table for a signal benchmark point with $m_{H^{\pm}}=$ 160 GeV and $m_A=$ 70 GeV and the decay $A\rightarrow\tau\tau$ at the 14 TeV LHC, similar to \autoref{tab:tj}. We have chosen a nominal value for $\sigma \times \text{BR}(pp \rightarrow tt \rightarrow H^{\pm} tb \rightarrow \tau\tau bb WW)$ of 1000 fb to illustrate the cut efficiencies for the signal process. 
 
-After the cuts, the dominant background contributions are $t\bar{t}$ ($\tau_{had}\tau_{had}$, $\tau_{lep}\tau_{lep}$) as well as $t\bar{t}ll$ ($\tau_{had}\tau_{lep}$) while the backgrounds including vector bosons do not contribute much. We find that the case in which one $\tau$ decays leptonically and the other $\tau$ decays hadronically gives the best reach. This is because the same sign dilepton signature can reduce the $t\bar{t}$ background sufficiently. 
+After the cuts, the dominant background contributions are $t\bar{t}$ ($\tau_\text{had}\tau_\text{had}$, $\tau_\text{lep}\tau_\text{lep}$) as well as $t\bar{t}ll$ ($\tau_\text{had}\tau_\text{lep}$) while the backgrounds including vector bosons do not contribute much. Similar to the single top case, we find that the $\tau_\text{lep}\tau_\text{had}$ case gives the best reach.
 
- 
-\begin{table}[h]
+\begin{table}
 \centering
-\resizebox{14cm}{!} {
-\begin{tabular}{ |c | r |r r r |r r|} \hline
-Cut 		 								&Signal [fb] 	&$t\bar{t}$ [fb] 		&$t\bar{t}ll$ [fb]	&$W(W)\tau\tau$ [fb]	&$S/B$	&$S/\sqrt{B}$	\\
-\hline
-$\sigma$ 								&1000 		&$6.3 \cdot 10^5$	& 247 		 	& 2000 		 &		 	 &		 \\
-\hline
-$\tau_{had}\tau_{had}$: Identification 		 			&4.1	 		&   23.3 		& 0.58			 			& 0.078  		& 0.17	&	14.9		\\
-\ \ \ $m_{\tau\tau}$ vs $m_{\tau\tau W}$ 			&0.6 		&   0.31 		& 0.021 			 			& 0.003  		& 1.9 	&	18.8		\\
-\hline
- $\tau_{lep}\tau_{had}$: Identification 	 				&3.3 			&   0.35 		& 0.697 			 			& 0.072  		& 3.0		&	55.3		\\
- \ \ \ $m_{\tau\tau}$ vs $m_{\tau\tau W}$ 			&0.69 		&   0.035 		& 0.042 			 			& 0.007 		& 8.1		&	41.1		\\
-\hline
- $\tau_{lep}\tau_{lep}$: Identification 	 				&3.1			&   2.35 		& 5.11 			 				& 0.058  		& 0.41	&	19.9		\\
- \ \ \ $m_{\tau\tau}$ vs $m_{\tau\tau W}$ 			&0.62 		&   0.25 		& 0.16 			 				& 0.006   	& 1.4		&	16.5		\\
- \hline
+\begin{adjustwidth*}{0in}{-0.8in}
+\begin{tabular}{clrrrrrr}
+  \toprule
+  Case    & Cut                                & $\sigma_\text{Signal}$ & $\sigma_{t\bar{t}}$ & $\sigma_{t\bar{t}ll}$ & $\sigma_{W(W)\tau\tau}$ & $S/B$ & $S/\sqrt{B}$	\\\midrule
+          & Original                           & 1000                   & 6.3 $\times$ 10$^5$ & 247                   & 2000                    & -     & - \\\midrule
+  A       & Identification                     & 4.1                    & 23.3                & 0.58                  & 0.078                   & 0.17  & 14.9		\\
+          & $m_{\tau\tau}$ vs $m_{\tau\tau W}$ & 0.6                    & 0.31                & 0.021                 & 0.003                   & 1.9   & 18.8		\\\midrule
+  B       & Identification                     & 3.3                    & 0.35                & 0.697                 & 0.072                   & 3.0   & 55.3		\\
+          & $m_{\tau\tau}$ vs $m_{\tau\tau W}$ & 0.69                   & 0.035               & 0.042                 & 0.007                   & 8.1   & 41.1		\\\midrule
+  C       & Identification                     & 3.1                    & 2.35                & 5.11                  & 0.058                   & 0.41  & 19.9		\\
+          & $m_{\tau\tau}$ vs $m_{\tau\tau W}$ & 0.62                   & 0.25                & 0.16                  & 0.006                   & 1.4   & 16.5		\\\midrule
 \end{tabular}
-}
-\caption{Signal and background cross sections with cuts for the signal benchmark point $m_{H^{\pm}}$ = 160 GeV and $m_A$ = 70 GeV at the 14 TeV LHC. We have chosen a nominal value for $\sigma \times \text{BR}(pp \rightarrow tt \rightarrow H^{\pm} tb \rightarrow \tau\tau bb WW)$ of 1000 fb to illustrate the cut efficiencies for the signal process. The last column of $S/\sqrt{B}$ is shown for an integrated luminosity of $\mathcal{L}=300\ \text{fb}^{-1}$. See details in Ref.~\cite{Coleppa:2014cca} for the identification cuts and $m_{\tau\tau}$ vs $m_{\tau\tau W}$ cuts.  }
+\caption{Representative cut flow table for benchmark point with $m_{H^{\pm}}$ = 160 GeV and $m_A$ = 70 GeV at the 14 TeV LHC, for the decay mode $A\rightarrow\tau\tau$. We have chosen a nominal value for $\sigma \times \text{BR}(pp \rightarrow tt \rightarrow H^{\pm} tb \rightarrow \tau\tau bbWW)$ of 1000 fb to illustrate the cut efficiencies for the signal process. The significance, $S/\sqrt{B}$ is calculated for an integrated luminosity of 300 fb$^{-1}$. See \cite{Coleppa:2014cca} for the details of the selection cuts used.}
 \label{tab:tt}
+\end{adjustwidth*}
 \end{table}
 
-\subsection{Limits}
-\label{sec:ana_limits}
+\subsection{Model-independent limits}\label{subsec:ana_limits}
 
-Fig.~\ref{fig:ana_limits} displays the 95\% C.L. exclusion (green curve) and 5$\sigma$ discovery (red curve) limits at the 14 TeV LHC for both the single top (left) and top pair (right) channel . The dot-dashed, solid and dashed line show the results for three luminosities: 100 fb$^{-1}$, 300 fb$^{-1}$ and 1000 fb$^{-1}$, respectively. In these plots we have combined all three cases of $\tau$ decays. While in the single top channel, all three cases contribute roughly the same to the overall significance, the highest sensitivity in the top pair production channel comes from the $\tau_{lep}\tau_{had}$ case. Due to the small number of events in both channels, the statistical error dominates over the assumed 10\% systematic error in the background cross sections. Therefore, higher luminosities lead to better reaches. Assuming 300 $\text{fb}^{-1}$ integrated luminosity, the 95\% C.L. limits on $\sigma\times\text{BR}$ are about 35 and 55 fb for the single top and top pair production processes respectively. The discovery reaches are about 3 times higher. 
+\begin{marginfigure}[-2in]
+  \subbottom[Single top production]{\includegraphics[width=\textwidth]{images/lim_comb_tj.pdf}}
+  \subbottom[Top pair production]{\includegraphics[width=\textwidth]{images/lim_comb_tt.pdf}}
+  \caption{Exclusion and discovery limits on $\sigma\times$BR for the single top channel.}
+  \label{fig:ana_limits}
+\end{marginfigure}
 
-Assuming a 100\% branching fraction BR$(H^{\pm} \rightarrow A W )$ and BR$(A \rightarrow \tau\tau)=8.6\%$\footnote{Assuming $bb$ and $\tau\tau$ are the dominant decay modes of a light $A$, BR$(A \rightarrow \tau\tau)=8.6$\% in the Type II $2$HDM or MSSM at medium to large $t_{\beta}$. This branching fraction decreases for small $t_{\beta}$ when the $cs$-channel is enhanced.}, we can reinterpret $\sigma\times\text{BR}$ limits as limits on the branching fraction $\text{BR}(t \rightarrow H^{\pm} b)$ as indicated by the vertical axis on the right. While the cross section limits are better in the single top channel, the corresponding limits on the branching fraction $\text{BR}(t \rightarrow H^{\pm} b)$ are weaker due to the smaller single top production cross section. The 95\% C.L. exclusion limit on BR$(t \rightarrow H^{\pm} b)$ is about 0.2\% for the single top process and 0.03\% for the top pair production process, respectively.
+Figure~\ref{fig:ana_limits} displays the exclusion (green) and discovery (red) limits at the 14 TeV LHC for the single top production and top pair channels, assuming BR$(H^\pm\rightarrow AW^\pm) =$ 100\% and BR$(A\rightarrow\tau\tau) =$ 8.6\%, and a systematic error of 10\%. The dot-dashed, solid and dashed lines show the results for integrated luminosities of 100, 300, and 1000 fb$^{-1}$ respectively. The left vertical axis shows limits on $\sigma\times$BR, and the right vertical axis shows the corresponding limits on BR$(t\rightarrow H^+ b)$. In these plots we have combined all three cases of $\tau$ decays. While in the single top channel, cases A, B, and C contribute roughly the same to the overall significance, the sensitivity achieved in case B is substantially greater than in cases A and B in the top pair production channel. Due to the small number of events in both channels, the statistical error dominates over the systematic error in the background cross sections. Therefore, higher luminosities lead to better reaches. Assuming 300 fb$^{-1}$ of integrated luminosity, the exclusion limits on $\sigma\times\text{BR}$ are about 35 and 55 fb for the single top and top pair production processes respectively. The discovery reaches are about three times higher. 
 
-A study of the $A \rightarrow bb$ decay using the top pair production channel leads to worse results due to the significantly higher SM backgrounds. For the 14 TeV LHC with 300 fb$^{-1}$, the exclusion limit on $\sigma \times \text{BR}$ is about 7 pb for a charged Higgs with mass $m_{H^{\pm}} = 160$ GeV, assuming the existence of a light neutral Higgs with mass $m_A=70$ GeV. Thus, given the typical ratio of $\text{BR}(A/H \rightarrow bb) : \text{Br}(A/H\rightarrow \tau\tau) \sim 3m^2_b/m^2_{\tau}$, we conclude that the reach in the $bb$ case is much worse than that in the $\tau\tau$ case.
+Assuming that the branching fraction BR$(H^{\pm} \rightarrow A W )$ is 100\% and BR$(A \rightarrow \tau\tau)=8.6\%$\footnote{Assuming $bb$ and $\tau\tau$ are the dominant decay modes of a light $A$, BR$(A \rightarrow \tau\tau)=8.6$\% in a Type II $2$HDM or the MSSM at medium to large $t_{\beta}$. This branching fraction decreases for small $t_{\beta}$ when the $cs$-channel is enhanced.}, we can reinterpret the limits on $\sigma\times\text{BR}$ as limits on the branching fraction $\text{BR}(t \rightarrow H^{\pm} b)$ as indicated by the vertical axes on the right. While the cross section limits are better in the single top channel, the corresponding limits on the branching fraction $\text{BR}(t \rightarrow H^{\pm} b)$ are weaker due to the smaller single top production cross section. The achievable upper limit on BR$(t \rightarrow H^{\pm} b)$ is about 0.2\% for the single top process and 0.03\% for the top pair production process, respectively.
 
- \begin{figure}[h!]
- \centering
- 	\includegraphics[width=0.45\textwidth]{paperplots/lim_comb_tj.pdf} \hspace{0.2 in}
- 	\includegraphics[width=0.45\textwidth]{paperplots/lim_comb_tt.pdf}
-\caption{The 95\% C.L. exclusion (green) and 5$\sigma$ discovery (red) limits for $\sigma \times $BR and BR$(t \rightarrow H^{\pm} b)$ (right vertical axis) assuming BR$(H^{\pm} \rightarrow A W)=100\%$ and BR$(A \rightarrow \tau\tau)=8.6\%$ for $m_A = 70$ GeV at the 14 TeV LHC using the single top (left panel) and top pair (right panel) production channels. The dot-dashed, solid and dashed lines correspond to an integrated luminosity of 100, 300 and 1000 fb$^{-1}$ respectively. Here, we have assumed a 10\% systematic error on the backgrounds. } 
-\label{fig:ana_limits}
-\end{figure}
+A study of the $A \rightarrow bb$ decay using the top pair production channel leads to worse results due to the significantly higher SM backgrounds. For the 14 TeV LHC with 300 fb$^{-1}$, the exclusion limit on $\sigma \times \text{BR}$ is about 7 pb for a charged Higgs with a mass of 160 GeV, assuming the existence of a light neutral Higgs with a mass of 70 GeV. Thus, given the typical ratio of $\text{BR}(A/H \rightarrow bb) : \text{Br}(A/H\rightarrow \tau\tau) \sim 3m^2_b/m^2_{\tau}$, we conclude that the reach in the $bb$ case is much worse than that of the $\tau\tau$ case.
 
+We reiterate here that the limits on $\sigma \times \text{BR}$ are completely model independent. Whether or not discovery/exclusion is actually feasible in this channel should be answered within the context of a particular model, in which the theoretically predicted cross sections and branching fractions can be compared with the model-independent limits. We will do this in \autoref{sec:implication} for a Type II $2$HDM. 
+
+\section{Implications for the Type II 2HDM}\label{sec:implication}
+
+Two-Higgs Doublet Models allow us to interpret the observed Higgs signal either as the lighter CP-even Higgs ($h$-126) or the heavier CP-even Higgs ($H$-126). The authors of \cite{Coleppa:2013dya} have identified the parameter space of Type II $2$HDMs that survives all the existing experimental and theoretical constraints in both of these cases, assuming $m_{12}^2=0$. In the $h$-126 case, we are restricted to either a SM-like region at $s_{\beta-\alpha}=\pm1$ with $t_{\beta}<$4 or an extended region with 0.6 $<s_{\beta-\alpha}<$ 0.9 and 1.5 $<t_{\beta}<$ 4 with relatively unconstrained masses. In the $H$-126 case, a SM-like region around $s_{\beta-\alpha}=0$ and $t_{\beta}<8$, and an extended region with -0.8 $< s_{\beta-\alpha}<$ 0.05 and $t_{\beta}$ up to 30 or higher, survive all constraints. 
  
+We can interpret the results of the previous section in two ways: the light neutral Higgs that the charged Higgs decays to could either be either CP-even Higgs $h$ or the CP-odd Higgs $A$. The decay mode $H^{\pm} \rightarrow HW$ is not possible given that $m_{H}\geq 126$ GeV. The decay $H^{\pm} \rightarrow AW$ is possible in both the $h$-126 and $H$-126 case and the partial decay width is independent of $s_{\beta-\alpha}$. However, the branching fraction depends on whether $H^{\pm} \rightarrow \h W$ is open or not. For simplicity, we choose a benchmark point BP1, with $\left\{ {m_{H^{\pm}},m_{\A},m_{\h},m_{\H}}\right\}=$ \{160, 70, 126, 700\} such that only the decay mode $H^{\pm} \rightarrow AW$ is kinematically accessible. The decay width $H^{\pm} \rightarrow h W$ depends on $s_{\beta-\alpha}$ and is only sizable in the $h$-126 case. We illustrate this case with a second benchmark point, BP2: $\left\{ {m_{H^{\pm}},m_{\A},m_{\h},m_{\H}}\right\}=$ \{160, 700, 70, 126\}, assuming that the CP-odd Higgs $A$ decouples. We list the benchmark points in \autoref{tab:classification}. 
 
-We reiterate here that the exclusion and discovery limits on $\sigma \times \text{BR}$ are completely model independent. Whether or not discovery/exclusion is actually feasible in this channel should be answered within the context of a particular model, in which the theoretically predicted cross sections and branching fractions can be compared with the exclusion or discovery limits. We will do this in Sec.~\ref{sec:implication} using the Type II $2$HDM as a specific example. 
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Implications for the Type II $2$HDM}
- \label{sec:implication}
-
- The results in the previous section on $\text{BR}(t \rightarrow b H^{\pm})$ can be applied to any beyond the SM scenarios containing a light charged Higgs boson with the $H^{\pm} \rightarrow AW/HW$ channel being kinematically accessible. To give a specific example of the implication of this channel, we will now apply the exclusion and discovery limits in the context of the Type II $2$HDM. 
-
- The $2$HDM allows us to interpret the observed Higgs signal either as the lighter CP-even Higgs ($h$-126) or the heavier CP-even Higgs ($h$-126). The authors of Ref.~\cite{Coleppa:2013dya} have identified the Type II $2$HDM parameter space in both cases, assuming $m_{12}^2=0$ and including all the experimental and theoretical constraints. In the $h$-126 case, we are restricted to either a SM-like region at $\sin(\beta-\alpha)=\pm1$ with $t_{\beta}<4$ or an extended region with $0.6<\sin(\beta-\alpha)<0.9$ and $1.5<t_{\beta}<4$ with relatively unconstrained masses. In the $h$-126 case, a SM-like region, around $\sin(\beta-\alpha)=0$ and $t_{\beta}<8$, and an extended region with $-0.8 < \sin(\beta-\alpha)<0.05$ and $t_{\beta}$ up to 30 or higher, survive all constraints. 
- 
-We can interpret the results of the previous section in two ways: the light neutral Higgs in the charged Higgs decay could either be the light CP-even Higgs $h$ or the CP-odd Higgs $A$. The decay mode $H^{\pm} \rightarrow h W$ is not possible given that $m_{\H}\geq 126$ GeV. The decay $H^{\pm} \rightarrow AW$ is possible in both the $h$-126 and $h$-126 case and the partial decay width is independent of $\sin(\beta-\alpha)$. The decay branching fraction, however, depends on whether $H^{\pm} \rightarrow \h W$ is open or not. For simplicity, we choose a benchmark point BP1, with $\left\{ {m_{H^{\pm}},m_{\A},m_{\h},m_{\H}}\right\}=\left\{ {160, 70, 126, 700}\right\}$ such that only $H^{\pm} \rightarrow AW$ is kinematically accessible. The decay width $H^{\pm} \rightarrow h W$ depends on $\sin(\beta-\alpha)$ and is only sizable in the $h$-126 case. We illustrate this case with a second benchmark point BP2: $\left\{ {m_{H^{\pm}},m_{\A},m_{\h},m_{\H}}\right\}=\left\{ {160, 700, 70, 126}\right\}$, assuming that the CP-odd Higgs $A$ decouples. We list the benchmark points in Table~\ref{tab:classification}. 
-
- \begin{table}[h]
+\begin{table}
 \begin{center}
- \begin{tabular}{|l|c|c|c| l | }
- \hline
- $\left\{ {m_{H^{\pm}},m_{\A},m_{\h},m_{\H}}\right\}$ GeV & $H^{\pm}\rightarrow\A W$ & $H^{\pm}\rightarrow\h W$ & Favored Region \\ \hline
-  BP1: $\left\{ {160, 70, 126, 700}\right\}$ & \cmark & \xmark & $\sba\approx\pm$ 1 \\ \hline
- BP2: $\left\{ {160, 700, 70, 126}\right\}$ & \xmark & \cmark & $\sba\approx $ 0 \\ \hline
+ \begin{tabular}{ccccl}
+ \toprule
+ Masses (GeV) & \multicolumn{2}{c}{Kinematically allowed?} & Favored\\ \cmidrule{2-3}
+ $\left\{ {m_{H^{\pm}},m_{\A},m_{\h},m_{\H}}\right\}$ & $H^{\pm}\rightarrow\A W$ & $H^{\pm}\rightarrow\h W$ & Region\\\midrule
+  BP1: \{160, 70, 126, 700\} & Yes & No & $\sba\approx\pm$ 1 \\ \midrule
+ BP2: \{160, 700, 70, 126\} & No & Yes & $\sba\approx$ 0 \\
+ \bottomrule
  \end{tabular}
 \end{center}
-\caption{Benchmark points used for illustrating the discovery and exclusion limits in the context of the Type II $2$HDM. The checkmarks indicate kinematically allowed channels. Also shown are the typical favored region of $\sin(\beta-\alpha)$ for each case (see Ref.~\cite{Coleppa:2013dya}). } 
+\caption{Benchmark points used for illustrating the discovery and exclusion limits in the context of the Type II $2$HDM. Also shown are the typical favored regions of $s_{\beta-\alpha}$ for each case (see \cite{Coleppa:2013dya}). } 
 \label{tab:classification}
 \end{table}
 
-In the left panel of Fig.~\ref{fig:imp_BP_BR}, we show the branching faction BR$(H^{\pm} \rightarrow AW)$ for BP1, which is independent of $\sin(\beta-\alpha)$ and decreases with increasing $t_{\beta}$ due to the enhancement of the $\tau\nu$ mode. The branching fraction can reach values of 90\% or larger for small $t_{\beta}<4$ and stays the dominating channel until $t_{\beta}=12$. 
 
+In the top panel of \autoref{fig:imp_BP_BR}, we show the branching faction BR$(H^{\pm} \rightarrow AW)$ for BP1, which is independent of $s_{\beta-\alpha}$ and decreases with increasing $t_{\beta}$ due to the enhancement of the $\tau\nu$ mode. The branching fraction can reach values of 90\% or larger for small $t_{\beta}<$ 4 and stays the dominant channel until $t_{\beta}=$ 12. 
 
- \begin{figure}[h!]
+\begin{marginfigure}[3cm]
  \centering
- 	\includegraphics[width=0.45\textwidth]{paperplots/BP1_BR.pdf}
-	\includegraphics[width=0.45\textwidth]{paperplots/BP2_BR.pdf}
-\caption{Contours of branching fractions of $H^{\pm} \rightarrow AW$ (left panel) and $ H^{\pm} \rightarrow \h W$ (right panel) for BP1 and BP2, respectively. }
+ \subbottom[BR($H^\pm \rightarrow AW^\pm$)]{\includegraphics[width=\textwidth]{images/BP1_BR.pdf}}
+ \subbottom[BR($H^\pm \rightarrow hW^\pm$)]{\includegraphics[width=\textwidth]{images/BP2_BR.pdf}}
+\caption{Contours of branching fractions for the benchmark points BP1 and BP2.}
 \label{fig:imp_BP_BR}
-\end{figure}
+\end{marginfigure}
 
-The right panel of Fig.~\ref{fig:imp_BP_BR} shows the branching fraction, BR$(H^{\pm} \rightarrow hW)$, for BP2. It reaches maximal values around $\sin(\beta-\alpha)=0$ and decreases for larger $|\sin(\beta-\alpha)|$ compared to BP1 due to the suppressed $H^{\pm} h W$ coupling. 
+The bottom panel of \autoref{fig:imp_BP_BR} shows the branching fraction, BR$(H^{\pm} \rightarrow hW)$, for BP2. It reaches maximal values around $s_{\beta-\alpha}=0$ and decreases for larger $|s_{\beta-\alpha}|$ compared to BP1 due to the suppressed $H^{\pm} hW$ coupling. 
 
-In Fig.~\ref{fig:imp_BP_Lim}, we display the 95\% exclusion (yellow regions enclosed by the solid lines as well as the cyan regions) and 5$\sigma$ discovery reach (cyan regions enclosed by the dashed lines) for BP1 (left panel) and BP2 (right panel) at the 14 TeV LHC with 300 $\text{fb}^{-1}$ integrated luminosity. The red lines refer to the limits based on top pair production, and the blue lines refer to the limits based on single top production.  
-
- For the benchmark point BP1 with $H^{\pm} \rightarrow AW^{\pm}$, the exclusion reach based on top pair production covers the entire parameter space, while discovery is possible for small $t_{\beta}<6$ and large $t_{\beta}>18$, independent of $\sba$. Intermediate values of $t_{\beta}$ have a reduced branching fraction BR$(t \rightarrow H^{\pm} b)$ (see Fig.~\ref{fig:tBR}) and therefore the total $\sigma \times$BR is suppressed. At high $t_{\beta}$, BR$(t \rightarrow H^{\pm} b)$ is enhanced sufficiently to overcome the reduced branching fraction BR$(H^{\pm} \rightarrow AW)$. The search based on single top production is only effective in the small $t_{\beta}$ region, with an exclusion reach of $t_{\beta} <4$ and a discovery reach of $t_{\beta}<2$. 
-
- \begin{figure}[h!]
+\begin{figure}
  \centering
- 	\includegraphics[width=0.45\textwidth]{paperplots/BP1_Lim.pdf}
-	\includegraphics[width=0.45\textwidth]{paperplots/BP2_Lim.pdf}
-\caption{The 95\% exclusion (yellow regions enclosed by the solid lines as well as the cyan regions) and the $5\sigma$ discovery reach (cyan regions enclosed by the dashed lines) obtained by the $tj$-channel (blue) and $tt$-channel (red) in the $t_{\beta}$ versus $\sba$ plane for BP1 (left panel) and BP2 (right panel), with an integrated luminosity of 300 fb$^{-1}$ at the 14 TeV LHC. }
+ \subbottom[Benchmark point 1]{\includegraphics[width=0.49\textwidth]{images/BP1_Lim.pdf}}
+ \subbottom[Benchmark point 2]{\includegraphics[width=0.49\textwidth]{images/BP2_Lim.pdf}}
+\caption{The exclusion and discovery reach achievable in the $t_{\beta}$ versus $\sba$ plane for the benchmark points 1 and 2, with an integrated luminosity of 300 fb$^{-1}$ at the 14 TeV LHC. }
 \label{fig:imp_BP_Lim}
 \end{figure}
 
-The right panel of Fig.~\ref{fig:imp_BP_Lim} shows the reach for BP2. The exclusion region for top pair production covers the entire parameter space except for $|\sin(\beta-\alpha)| >0.85$ and $t_{\beta}> 4$. Discovery is possible for large $t_{\beta}>18$ with $|\sin(\beta-\alpha)|<0.5$ and for small $t_{\beta}<6$. The reach for single top production is limited to the small $t_{\beta}$ region.
+In \autoref{fig:imp_BP_Lim}, we display the regions that can be excluded (yellow regions enclosed by the solid lines as well as the cyan regions) and discovered (cyan regions enclosed by the dashed lines) for BP1 (left panel) and BP2 (right panel) at the 14 TeV LHC with 300 fb$^{-1}$ integrated luminosity. The red lines represent the limits from the top pair production channel, and the blue lines represent the limits from the single top production channel.
 
-In Fig.~\ref{fig:imp_Limits}, we show the reach in the $m_{H^{\pm}}-t_{\beta}$ plane for $H^{\pm} \rightarrow AW$ with $m_A=70$ GeV with both $\h$ and $\H$ outside the kinematic reach. These limits also apply for $H^{\pm} \rightarrow hW$ with $m_{h}=70$ GeV and $\sin(\beta-\alpha)=0$ with a decoupled $A$. We display the 95\% exclusion (yellow regions enclosed by the solid lines as well as the cyan regions) and 5$\sigma$ discovery limits (cyan regions enclosed by the dashed lines) for an integrated luminosity of 300 fb$^{-1}$ at the 14 TeV LHC. Superimposed are the current CMS limits (black hatched region)~\cite{CMS:2014cdp} which exclude the large $t_{\beta}$ region at $m_{H^\pm}<160$ GeV. 
+For the benchmark point BP1 with $H^{\pm} \rightarrow AW^{\pm}$, the exclusion reach based on top pair production covers the entire parameter space, while discovery is possible for small $t_{\beta}<$ 6 and large $t_{\beta}>$ 18, independent of $\sba$. Intermediate values of $t_{\beta}$ have a reduced branching fraction BR$(t \rightarrow H^{\pm} b)$ (see \autoref{fig:tBR}) and therefore the total $\sigma\times$BR is suppressed. At high $t_{\beta}$, BR$(t \rightarrow H^{\pm}b)$ is enhanced enough to overcome the reduced branching fraction BR$(H^{\pm} \rightarrow AW)$. The search based on single top production is only effective in the small $t_{\beta}$ region, with an exclusion reach of $t_{\beta} <$ 4 and a discovery reach of $t_{\beta}<$ 2. 
 
-The best reach is obtained by the top pair channel, as indicated by regions enclosed by the red lines. The model can be excluded up to 167 GeV for all $t_{\beta}$ and up to 170 GeV for $t_{\beta}<4$ or $t_{\beta}>29$. Discovery is possible for both low $t_{\beta}<$6 in the entire region of 150 GeV $< m_{H^\pm}<170$ GeV and high $t_{\beta} > 17$ with 155 GeV $< m_{H^\pm}<165$ GeV. The reach is weakened for intermediate $t_{\beta}$ due to the reduced branching fraction $t \rightarrow H^{\pm} b$. The single top channel (blue lines) only provides sensitivity in the low $t_{\beta}$ region and permits exclusion (discovery) for $t_{\beta} \lesssim$ 4 (3). 
-
-
-
- \begin{figure}[h!]
+The right panel of \autoref{fig:imp_BP_Lim} shows the reach for BP2. The exclusion region for top pair production covers the entire parameter space except for $|s_{\beta-\alpha}| >$ 0.85 and $t_{\beta}>$ 4. Discovery is possible for large $t_{\beta}>$ 18 with $|s_{\beta-\alpha}|<$ 0.5 and for small $t_{\beta}<$ 6. The reach for single top production is limited to the small $t_{\beta}$ region.
+\begin{marginfigure}[1in]
  \centering
- 	\includegraphics[scale=0.8]{paperplots/LIMITS_AWCHANNEL.pdf}
-\caption{95\% exclusion (yellow regions bounded by solid lines as well as the cyan regions) and the $5\sigma$ discovery (cyan regions bounded by the dashed lines) imposed by the $tj$-channel (blue) and $tt$-channel (red) in the $m_{H^{\pm}}-t_{\beta}$ parameter space for 300 fb$^{-1}$ luminosity with $m_\A=$ 70 GeV. The same limits apply for $m_{h}=70$ GeV and $\sin(\beta-\alpha)=0$ if $A$ is decoupled. The black hatched region indicates the region excluded by the CMS search based on $H^{\pm} \rightarrow \tau \nu$~\cite{CMS:2014cdp}. }
+ 	\includegraphics[width=\textwidth]{images/LIMITS_AWCHANNEL.pdf}
+    \caption{Exclusion (yellow regions bounded by solid lines as well as the cyan regions) and discovery (cyan regions bounded by the dashed lines) imposed by the $tj$-channel (blue) and $tt$-channel (red) in the $m_{H^{\pm}}-t_{\beta}$ parameter space for 300 fb$^{-1}$ luminosity with $m_\A=$ 70 GeV. The same limits apply for $m_{h}=$ 70 GeV and $s_{\beta-\alpha}=$ 0 if \emph{A} is decoupled. The black hatched region indicates the region excluded by the CMS search based on $H^{\pm} \rightarrow \tau \nu$~\cite{CMS:2014cdp}.}
 \label{fig:imp_Limits}
-\end{figure}
+\end{marginfigure}
+
+In \autoref{fig:imp_Limits}, we show the reach in the $m_{H^{\pm}}-t_{\beta}$ plane for $H^{\pm} \rightarrow AW$ with $m_A=$ 70 GeV with decays of $H^\pm$ to both $\h$ and $\H$ kinematically disallowed. These limits also apply for $H^{\pm} \rightarrow hW$ with $m_{h}=$ 70 GeV and $s_{\beta-\alpha}=$ 0 with a decoupled $A$. We display the exclusion (yellow regions enclosed by the solid lines as well as the cyan regions) and discovery limits (cyan regions enclosed by the dashed lines) for an integrated luminosity of 300 fb$^{-1}$ at the 14 TeV LHC. Superimposed are the current CMS limits (black hatched region)~\cite{CMS:2014cdp} which exclude the large $t_{\beta}$ region at $m_{H^\pm}<$ 160 GeV. 
+
+The best reach is obtained by the top pair channel, as indicated by regions enclosed by the red lines. Charged Higgs masses can be excluded up to 167 GeV for all $t_{\beta}$ and up to 170 GeV for $t_{\beta}<$ 4 or $t_{\beta}>$ 29. Discovery is possible for both low $t_{\beta}<$ 6 with $m_{H^\pm}$ between 150 and 170 GeV and high $t_{\beta} >$ 17 with $m_{H^\pm}$ between 155 and 165 GeV. The reach is weakened for intermediate $t_{\beta}$ due to the reduced branching fraction BR$(t \rightarrow H^{\pm} b)$. The single top channel (blue lines) only provides sensitivity in the low $t_{\beta}$ region and permits exclusion for $t_{\beta} \lesssim$ 4 and discovery for $t_\beta < $ 3. 
+
 
  We conclude this section with the following observations: 
 \begin{itemize}
-\item Once the $AW/hW$ channels are kinematically accessible, they dominate for small and intermediate values of $t_{\beta}$. The reach in the $H^{\pm} \rightarrow \tau\nu$ mode is significantly weakened in the presence of the $H^{\pm} \rightarrow AW/hW$ modes, in particular for small to intermediate $t_{\beta}$, leaving the possibility of a light charged Higgs that has escaped detection so far.
 \item Both the $H^{\pm} \rightarrow A W$ channel for the $\h$-126 case and the $H^{\pm} \rightarrow \h W$ channel in the $\H$-126 case permit exclusion and discovery in large regions of the parameter space.
-\item The reach in the exotic channels $H^{\pm} \rightarrow \A W/h W$ is complementary to the reach in the conventional search channel $H^{\pm} \rightarrow \tau\nu$, especially for small to intermediate values of $t_{\beta}$. 
+
 \item While the top pair production channel covers a large region of parameter space, the single top channel permits discovery/exclusion in the low $t_{\beta}$ region.  
 \end{itemize} 
 
@@ -395,13 +320,12 @@ The best reach is obtained by the top pair channel, as indicated by regions encl
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Conclusion}
 \label{sec:light_charged_conclusion}
+After the discovery of the first fundamental scalar by both the ATLAS and CMS collaboration, it is now time to carefully measure its properties to determine the nature of this particle. Current measurements still permit the possibility that the discovered signal is not the SM Higgs particle, but just one scalar particle contained in a larger Higgs sector, as predicted by many extensions of the SM.
 
-After the discovery of the first fundamental scalar by both the ATLAS and CMS collaboration, it is now time to carefully measure its properties to determine the nature of this particle. Current measurements still permit the possibility that the discovered signal is not the SM Higgs particle, but just one scalar particle contained in a larger Higgs sector, as predicted by many extensions of the SM. While most of the current searches for the non-SM Higgs bosons focus on conventional search channels, increasing attention is being paid to exotic Higgs decay channels \cite{Curtin:2013fra, Brownson:2013lka, Coleppa:2014hxa, Coleppa:2014cca,Li:2015lra,Dorsch:2014qja,Chen:2013emb,Chen:2014dma,Enberg:2014pua,CMS:2014yra,Aad:2015wra,CMS:2013eua} into a pair of lighter Higgses or a Higgs plus vector boson final states that can become dominant once kinematically allowed. 
+In this chapter we consider the prospects of discovering a charged Higgs lighter than the top quark, produced via top decay $t \rightarrow H^{\pm} b$. Due to the large single top and top pair production cross sections at the LHC, such a charged Higgs can be produced copiously. Assuming that the light charged Higgs predominantly decays into $\tau\nu$, both ATLAS and CMS exclude a light charged Higgs for most regions of the MSSM and Type II $2$HDM parameter spaces. The branching fraction BR$(H^{\pm} \rightarrow \tau\nu)$ can be significantly reduced once the exotic decay channel into a light Higgs, $H^{\pm} \rightarrow AW/HW$, is open. In this case, the exclusion bounds from the $\tau\nu$ search get weakened, in particular for small and intermediate $t_{\beta}$, leaving the possibility of a light charged Higgs open. This loophole, however, can be closed when we consider the alternative charged Higgs decay channel: $H^\pm \to AW/HW$.
 
-In this paper we consider the possibility of a light charged Higgs $m_{H^{\pm}} < m_t$ produced via top decay $t \rightarrow H^{\pm} b$. Due to the large single top and top pair production cross section at the LHC, the charged Higgs can be produced copiously. Assuming that a light charged Higgs predominantly decays into $\tau\nu$, both ATLAS and CMS exclude a light charged Higgs for most regions of the MSSM and the Type II $2$HDM parameter spaces. The branching fraction BR$(H^{\pm} \rightarrow \tau\nu)$ can be significantly reduced once the exotic decay channel into a light Higgs, $H^{\pm} \rightarrow AW/HW$, is open. In this case, the exclusion bounds from the $\tau\nu$ search get weakened, in particular for small and intermediate $t_{\beta}$, leaving the possibility of a light charged Higgs open. This loophole, however, can be closed when we consider the alternative charged Higgs decay channel: $H^\pm \to AW/HW$.
+Our analysis examines the decay mode $H^{\pm} \rightarrow AW/HW$ decay mode assuming that the lighter Higgs $A/H$ decays into either $\tau\tau$ or $bb$. While the top pair channel benefits from a large production cross section, the single top channel permits a cleaner signal due to its unique kinematic features. Assuming the existence of a light neutral Higgs of mass 70 GeV, the model independent exclusion limits on $\sigma\times$BR based on the $\tau\tau$ channel are about 35 fb for the single top channel and 55 fb for the top pair channel. The discovery reaches are about three times higher. Assuming $\text{BR}(H^{\pm} \rightarrow AW/HW)=$ 100\% and $\text{BR}(A/H \rightarrow \tau\tau)=$ 8.6\%, the exclusion limits on $\text{BR}(t \rightarrow H^+ b)$ are about 0.2\% and 0.03\% for single top and top pair production, respectively. A significantly worse reach is obtained in the $bb$ channel. 
 
-In this paper we analyze the possibility of discovering a light charged Higgs via the $H^{\pm} \rightarrow AW/HW$ decay mode assuming that the light Higgs $A/H$ decays into either $\tau\tau$ or $bb$. While the top pair channel benefits from a large production cross section, the single top channel permits a cleaner signal due to its unique kinematic features. Assuming the existence of a light neutral Higgs of mass 70 GeV, the model independent 95\% C.L. exclusion limits on $\sigma\times$BR based on $\tau\tau$ channel are about 35 fb for the single top channel and 55 fb for the top pair channel. The discovery reaches are about three times higher. Assuming $\text{BR}(H^{\pm} \rightarrow AW/HW)=100\%$ and $\text{BR}(A/H \rightarrow \tau\tau)=8.6\%$, the exclusion limits on $\text{BR}(t \rightarrow H^+ b)$ are about 0.2\% and 0.03\% for single top and top pair production, respectively. A significantly worse reach is obtained in the $bb$ channel. 
+We discuss the implications of the obtained exclusion and discovery bounds in the context of the Type II $2$HDM, focusing on two scenarios: the decay $H^{\pm} \rightarrow AW$ with a light $A$ in the $\h$-126 case and the decay $H^{\pm} \rightarrow \h W$ in the $\H$-126 case.  The top pair channel provides the best reach and permits discovery for both large $t_{\beta}>$ 17 around $m_{H^{\pm}}=$ 160 GeV and small $t_{\beta}<$ 6 over the entire mass range, while exclusion is possible in the entire $t_{\beta}$ versus $m_{H^{\pm}}$ plane except for charged Higgs masses close to the top threshold. The single top channel is sensitive in the low $t_{\beta}$ region and permits discovery for $t_{\beta}<$ 3. In particular, the low $t_{\beta}$ region is not constrained by searches in $\tau\nu$ channel, making $H^{\pm} \rightarrow AW/\h W$ a complementary channel for charged Higgs searches.
 
-We discuss the implications of the obtained exclusion and discovery bounds in the context of the Type II $2$HDM, focusing on two scenarios: the decay $H^{\pm} \rightarrow AW$ with a light $A$ in the $\h$-126 case and the decay $H^{\pm} \rightarrow \h W$ in the $\H$-126 case.  The top pair channel provides the best reach and permits discovery for both large $t_{\beta}>17$ around $m_{H^{\pm}}=160$ GeV and small $t_{\beta}<6$ over the entire mass range, while exclusion is possible in the entire $t_{\beta}$ versus $m_{H^{\pm}}$ plane except for charged Higgs masses close to the top threshold. The single top channel is sensitive in the low $t_{\beta}$ region and permits discovery for $t_{\beta}< 3$. In particular, the low $t_{\beta}$ region is not constrained by searches in $\tau\nu$ channel, making the $H^{\pm} \rightarrow AW/\h W$ a complementary channel for charged Higgs searches.
-
-While most of the recent searches for additional Higgs bosons have focused on conventional decay channels, searches using exotic decay channels have just started~\cite{Curtin:2013fra, Brownson:2013lka, Coleppa:2014hxa, Coleppa:2014cca,Li:2015lra,Dorsch:2014qja,Chen:2013emb,Chen:2014dma,Enberg:2014pua,CMS:2014yra,Aad:2015wra,CMS:2013eua}. Studying all of the possibilities for the non-SM Higgs decays will allow us to explore the full potential of the LHC and future colliders in understanding the nature of electroweak symmetry breaking. 
+While most of the searches for additional Higgs bosons have focused on conventional decay channels, searches using exotic decay channels have started to garner additional interest~\cite{Curtin:2013fra, Brownson:2013lka, Coleppa:2014hxa, Coleppa:2014cca,Li:2015lra,Dorsch:2014qja,Chen:2013emb,Chen:2014dma,Enberg:2014pua,CMS:2014yra,Aad:2015wra,CMS:2013eua}. Studying all of the possibilities for the non-SM Higgs decays will allow us to exploit the full potential of the LHC and future colliders to improve our understanding of the nature of electroweak symmetry breaking.
