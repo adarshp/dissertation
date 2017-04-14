@@ -24,13 +24,12 @@ If a particle is energetic enough to go beyond the tracking chamber, it enters t
 A transverse slice of the CMS detector is shown in \autoref{fig:CMS_slice}, depicting the trajectories taken by different kinds of particles through the layers of the detector.
 The specific design of a detector depends upon the vision of the collaboration running it. With a finite construction and operation budget, tradeoffs must inevitably be made. Although ATLAS and CMS are both state of the art multipurpose detectors, they have their strengths and weaknesses relative to each other based upon different sets of priorities. For this reason, we do not provide the specifics of their construction, and instead point the reader to \citep{Froidevaux2006} for a detailed review and comparison of the two.
 For our purposes, the features of the collision events that we use to perform our analyses (particle momentum, missing transverse energy, etc.) can be measured with either of these detectors.
-\begin{figure}[h]
+\begin{figure}
   \begin{sidecaption}
-    {Transverse slice of the CMS detector, showing the paths of various particles. Source: \citep{CMS_Slice}}
+    {Transverse slice of the CMS detector, showing the paths of various particles. Source: \citep{CMS_Slice}}[fig:CMS_slice]
     \centering
     \includegraphics[trim={0 0 0 4cm},clip,width=\textwidth]{images/CMS_slice}
   \end{sidecaption}
-  \label{fig:CMS_slice}
 \end{figure}
 \paragraph{Trigger} As mentioned in \autoref{ch:introduction}, there are hundreds of millions of collisions every second at the LHC. Recording and analyzing all of these events would be impractical, given that most of the collisions simply involve small deflections. What we are really interested in are the \emph{hard} collisions, with the final state particles having a high amount of momentum in the transverse plane. To filter out the uninteresting events, we employ a \emph{trigger} - that is, a condition that an event must satisfy to be stored for further analysis. For example, in \autoref{ch:DM_100_TeV}, we choose to trigger on a hard lepton, that is, one with a high transverse momentum.
 \paragraph{Invisibles} An important point to note is that certain particles, such as neutrinos and dark matter candidates, escape the detector entirely, leaving no tracks or energy deposits. The existence of one of these `invisible' particles in a collision event can only be inferred from an observed imbalance of momenta of the final state particles in the transverse direction. Thus, for analyses involving neutrinos or dark matter, the kinematic quantity known as \emph{missing transverse energy}, denoted by $\slashed{E}_T$, is of utmost importance.
@@ -60,6 +59,7 @@ In the following section, we will address how we answer the question ``Does this
 \section{Statistical significance in particle physics}
 A hypothesis is a claim about what the experimental data will look like, given some model parameters. Let us consider hypothesis testing in the context of a simple counting experiment, in the frequentist interpretation. In this experiment, we examine the subset of a dataset $\mathcal{D}$ that resides in a region of the `data space' labeled the \emph{signal region} (SR), and contains $n_{SR}$ events. Our competing hypotheses are the `background-only' and `signal plus background' hypotheses, described in \autoref{tab:hypotheses}. 
 \begin{table}
+  \begin{sidecaption}{The two competing hypotheses for our simple number counting example. Source: \cite{Cranmer2015}.}[tab:hypotheses]
   \begin{tabular}{llll}
     \toprule
     Symbol & Statistical name & Physics name & Probability model\\
@@ -68,8 +68,7 @@ A hypothesis is a claim about what the experimental data will look like, given s
     $H_1$ & Alternate & Signal+Background & Pois($n_{SR}|\nu_S+\nu_B$)\\
     \bottomrule
   \end{tabular}
-  \caption{The two competing hypotheses for our simple number counting example. Source: \cite{Cranmer2015}.}
-  \label{tab:hypotheses}
+\end{sidecaption}
 \end{table}
 The probability models associated with these hypotheses are Poisson models\footnote{The exact probabiliity distribution for counting experiments is given by the binomial frequency function. In the limit of a large number of events, this approaches the Poisson frequency function, given by
   \[\text{Pois}(n|\nu) = \nu^n\frac{e^{-\nu}}{n!}\]
@@ -98,10 +97,9 @@ Traditionally, promising signal regions are found by formulating kinematic varia
 Separating signals and backgrounds in particle physics is, in the language of machine learning, a \emph{classification} problem. One can consider particle collision events as residing in a space, where the coordinates of each event are represented by various \emph{features} of the event. This is equivalent to the `data space' discussed in the previous section. These features could be high-level ones such as invariant masses, or low-level ones, such as the momentum components of individual final state particles. What we do when we perform a cut-and-count analysis is to try and isolate a region of this space that is rich in signal events. Typically, the most straightforward approach is to define a sort of `box' in feature space using rectangular, one-dimensional cuts. However, there is no guarantee that signal events are confined to such a box --- correlations between the features can distort the distribution of events in feature space. 
 \strictpagecheck
 \begin{figure}
-  \begin{sidecaption}{Illustration of a non-linear decision boundary in two-dimensional feature space.}
+  \begin{sidecaption}{Illustration of a non-linear decision boundary in two-dimensional feature space.}[fig:nonlinear_decision_boundary]
   \input{code/scatter.pgf}
 \end{sidecaption}
-\label{fig:nonlinear_decision_boundary}
 \end{figure}
 If we consider a two or three dimensional feature space, this distribution of the events is typically easy to visualize, and can often be explained through a simple kinematical relation between the features. Thus, instead of a box, we might draw a ring, or perhaps some other shape as a `lasso' around the events. This kind of delineation between signal and background events is known in machine learning terms as a \emph{decision boundary}. As we go to higher dimensional feature spaces, choosing this decision boundary by visual inspection becomes virtually impossible - instead, we resort to looking at one and two dimensional slices of the space. 
 

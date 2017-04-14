@@ -12,6 +12,7 @@ The fundamental constituents of matter are fermions. The interactions between th
 This means that each fermion transforms in a unique way under transformations corresponding to these gauge groups. In addition to the fermions and gauge bosons, the standard model contains a scalar $SU(2)$ doublet \emph{H}, known as the Higgs field. In \autoref{tab:SM_fields}, we collect the fundamental fields of the SM and their transformation properties under different gauge groups. The fermion labels \emph{u,d,e} and $\nu$ are collective labels for three generations of fermions, shown in \autoref{tab:fermion_generations}. The fields \emph{g}, $W_\mu$, and $B_\mu$ are vector bosons that that correspond to the $SU(3)$, $SU(2)$ and $U(1)$ gauge group respectively.
 
 \begin{table}
+  \begin{sidecaption}{The fields of the Standard Model, grouped by their charges under the relevant gauge groups.}[tab:SM_fields]
   \[
   \begin{array}{lccccc}
     \toprule
@@ -28,8 +29,7 @@ This means that each fermion transforms in a unique way under transformations co
     \bottomrule
   \end{array}
 \]
-\caption{The fields of the Standard Model, grouped by their charges under the relevant gauge groups.}
-\label{tab:SM_fields}
+\end{sidecaption}
 \end{table}
 
 The ground state that we inhabit spontaneously breaks the larger symmetry $SU(2)\times U(1)_Y$ to the symmetry $U(1)_\text{EM}$. The subscript \emph{Y} denotes the hypercharge of the field, while the subscript EM denotes electromagnetism. In this process of electroweak symmetry breaking (which we will revisit in more detail in \autoref{subsec:ewsb}), the three gauge fields $W_\mu$, corresponding to the $SU(2)$ gauge symmetry, combine with the $B_\mu$ field corresponding to the $U(1)_Y$ symmetry to form the massive gauge bosons $W^\pm$ and $Z$, and a massless photon, $A_\mu$ (often denoted by $\gamma$ instead). The \emph{W} and \emph{Z} bosons mediate the weak interactions that responsible to phenomena such as radioactive decay, while the photon mediates electromagnetic interactions. The gauge field \emph{g} corresponding to the $SU(3)$ gauge symmetry is known as the gluon, and mediates the strong force between nucleons. 
@@ -86,11 +86,16 @@ After accounting for symmetry factors, we get the masses of the W and Z bosons a
   m_W &=\frac{ev}{2\st} & 
   m_Z &=\frac{ev}{\sin2\theta_w}
 \end{align*}
-We see that there is no mass term for $A_\mu$, which means that this gauge field remains massless. Thus we see that the \emph{W} and \emph{Z} bosons gain mass, limiting their range, while the photon remains massless, corresponding to what is experimentally observed. Remarkably, we have done this without violating gauge invariance. 
+We see that there is no mass term for $A_\mu$, which means that this gauge field remains massless. Thus we see that the \emph{W} and \emph{Z} bosons gain mass, limiting their range, while the photon remains massless, corresponding to what is experimentally observed. Remarkably, we have done this without violating gauge invariance. Colloquially, we say that the \emph{W} and \emph{Z} bosons have `eaten' the Goldstone boson degrees of freedom to obtain mass. 
 
+Peter Higgs was the first to postulate the existence of a physical \emph{Higgs boson} that could be produced by perturbing the vacuum. To see how this plays out, let us parameterize the Higgs doublet field as 
+\[H = \frac{1}{\sqrt{2}}\exp\left(i\xi^a(x)\frac{\tau^a}{v}\right)\vdoublet{0}{v + h(x)}.\]
+where $\tau^a$ are the Pauli matrices, $\xi^a$ are functions of spacetime, $\langle\xi\rangle=\langle h\rangle=0$, and \emph{v} is the vacuum expectation value of the Higgs doublet, experimentally measured to be about 246 GeV. The simplest gauge choice is the unitary gauge, where $\xi(x)=0$. In this gauge, the potential $V(H)$ from \eqref{eq:higgs_potential} becomes:
+\[V(H) = -\frac{1}{2}m_h^2 h^2 - \lambda vh^3 -\frac{1}{4}\lambda h^4\]
+The field $h$ is the physical Higgs boson. It is the only fundamental scalar in the Standard Model, and was discovered in 2012, nearly 50 years after it was first predicted. The coefficient of the term quadratic in $h$ is its mass, $m_h$. This mass is a free parameter that had to be determined experimentally. The second and third terms in the above expression represent the trilinear and and quartic self-coupling of the Higgs boson.
 \subsection{Quark mass and gauge eigenstates}
-While the quarks listed in tables \ref{tab:fermion_generations} are gauge eigenstates, with well defined transformations under the gauge groups, the physical states that we observe at a collider will in fact be mass eigenstates. The two are related by the \emph{Cabibbo-Kobayashi-Maskawa} (\textsc{ckm}) matrix:
-
+While the quarks listed in \autoref{tab:fermion_generations} are gauge eigenstates, with well defined transformations under the gauge groups, the physical states that we observe at a collider will in fact be mass eigenstates. The two are related by the \emph{Cabibbo-Kobayashi-Maskawa} (\textsc{ckm}) matrix:
+\sidepar{The Cabibbo-Kobayashi-Maskawa quark mixing matrix}
 \begin{equation}
   V_\text{CKM} =
   \begin{pmatrix}
@@ -102,18 +107,20 @@ While the quarks listed in tables \ref{tab:fermion_generations} are gauge eigens
 The elements of the matrix denote the level of mixing between the gauge eigenstates. Experimentally, the matrix has been determined to be nearly diagonal.
 
 \subsection{Asymptotic freedom and QCD}
-In the 50s and 60s, experiments were devised to unravel the structure of the proton. They found two seemingly incompatible results: on the one hand, colliding protons resulted in the production of a large number of pions collinear with the beam axis, implying that the protons could not absorb a large momentum transfer. However, deep inelastic scattering experiments showed that it was possible for an energetic electron to undergo hard electrmagnetic scattering off a proton. These disparate phenomena were reconciled by the introduction of the \emph{parton model} by Bjorken and Feynman. In this model, hadrons were comprised of a collection of loosely bound pieces, known as partons. To an energetic incoming electron, these partons would appear approximately free, allowing it to scatter with a large momentum transfer off of one of them. The struck parton will then exchange momentum softly via the strong interaction among the other partons, which results in the production of a \emph{jet} of hadrons, collinear with the direction of the original struck parton. The deeper reason for this behavior is that these partons are charged under a non-Abelian gauge group, $SU(3)$. The phenomenon of the weakening of the strong interaction at large momentum transfers is known as \emph{asymptotic freedom}, and it is a property of non-Abelian gauge theories.
 
-The $\beta$-function of a gauge theory describes the evolution of the coupling constant with energy. For non-Abelian gauge theories, it takes the following form (up to leading order):
+In the 50s and 60s, experiments were devised to unravel the structure of the proton. They found two seemingly incompatible results: on the one hand, colliding protons resulted in the production of a large number of pions collinear with the beam axis, implying that the protons could not absorb a large momentum transfer. However, deep inelastic scattering experiments showed that it was possible for an energetic electron to undergo hard electrmagnetic scattering off a proton. These disparate phenomena were reconciled by the introduction of the \emph{parton model} by Bjorken and Feynman. In this model, hadrons were comprised of a collection of loosely bound pieces, known as partons. To an energetic incoming electron, these partons would appear approximately free, allowing it to scatter with a large momentum transfer off of one of them. The struck parton will then exchange momentum softly via the strong interaction among the other partons, which results in the production of a \emph{jet} of hadrons, collinear with the direction of the original struck parton. The deeper reason for this behavior is that these partons are charged under a non-Abelian gauge group, $SU(3)$. The phenomenon of the weakening of the strong interaction at large momentum transfers is known as \emph{asymptotic freedom}, and it is a property of non-Abelian gauge theories.
+\begin{marginfigure}[-3in]
+  \strictpagecheck
+  \includegraphics[width=0.8\textwidth]{images/proton_innards}
+\caption{A representation of the innards of a proton, showing the dynamic structure. Image source:\citep{proton_structure}}
+\end{marginfigure}
+The $\beta$-function of a gauge theory describes the evolution of the coupling constant with energy. For non-Abelian gauge theories, it takes the following form (up to leading order):%
+\sidepar{Leading order $\beta$-function for non-Abelian gauge theories}
 \begin{equation}
   \beta(g_R) = \mu\frac{d}{d\mu}g_R = -\frac{g_R^3}{(4\pi)^2}\left[\frac{11}{3}C_A -\frac{4}{3}n_fT_F\right]
 \end{equation}
 where $\mu$ is the renormalization scale, $C_A$ is the quadratic Casimir operator for the adjoint representation, and $T_F$ is the \emph{index} of the fundamental representation.
-In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus $C_A = 3$ and $T_F = \frac{1}{2}$. If $n_f$, the number of quark flavors is less than 17 \footnote{Which it is, since the number of quark flavors is six, as can be seen in \autoref{tab:quarks}.}, the $\beta$ function has a \emph{negative} sign, which means that the coupling \emph{decreases} at higher energies. This is the underlying basis of asymptotic freedom. The theory of the strong interaction is known as \emph{quantum chromodynamics}, or QCD for short. The analogue of electric charge for this theory is a quantity referred to as \emph{color} (hence the name of the theory). The gauge fields that mediate this interaction, that correspond to the generators of $SU(3)$, are known as \emph{gluons}. At a hadron collider, it is of crucial importance to understand the physics of gluons and jets.
-\begin{marginfigure}[-15cm]
-  \includegraphics[width=0.8\textwidth]{images/proton_innards}
-\caption{A representation of the innards of a proton, showing the dynamic structure. Image source:\citep{proton_structure}}
-\end{marginfigure}
+In the case of the strong interaction, the relevant gauge group is $SU(3)$. Thus $C_A = 3$ and $T_F = \frac{1}{2}$. If $n_f$, the number of quark flavors is less than 17 \footnote{Which it is, since the number of quark flavors is six, as can be seen in \autoref{tab:fermion_generations}.}, the $\beta$ function has a \emph{negative} sign, which means that the coupling \emph{decreases} at higher energies. This is the underlying basis of asymptotic freedom. The theory of the strong interaction is known as \emph{quantum chromodynamics}, or QCD for short. The analogue of electric charge for this theory is a quantity referred to as \emph{color} (hence the name of the theory). The gauge fields that mediate this interaction, that correspond to the generators of $SU(3)$, are known as \emph{gluons}. At a hadron collider, it is of crucial importance to understand the physics of gluons and jets.
 
 The Standard Model of particle physics has been remarkably successful, and over the decades has yielded some of the most precise measurements in all of physics. However, as mentioned in \autoref{ch:introduction}, there still remain unresolved issues with the SM. In the next two sections we will discuss some of these issues in more depth, and introduce extensions to the SM that potentially resolve them.
 
@@ -133,21 +140,21 @@ The strongest motivation for $2$HDMs is, however, their connection to supersymme
 
 \subsection{The $2$HDM scalar potential}
 The most general renormalizable scalar potential for two scalar doublets $\Phi_1$ and $\Phi_2$ with hypercharge $+1$ is:
-
+\strictpagecheck
+\sidepar{Scalar potential for a Two-Higgs Doublet Model}
 \begin{align*}
   V(\Phi_1,\Phi_2) &= m_{11}^2|\Phi_1|^2 + m_{22}^2|\Phi_2|^2 - m_{12}^2\left(\Phi_1^\dagger\Phi_2 + \text{h.c.}\right)\\
 &+\frac{\lambda_1}{2}|\Phi_1|^4 + \frac{\lambda_2}{2}|\Phi_2|^4+\lambda_3|\Phi_1|^2|\Phi_2|^2 + \lambda_4|\Phi_1^\dagger\Phi_2|^2\\
 &+\left[\frac{\lambda_5}{2}\left(\Phi_1^\dagger\Phi_2 \right)^2+\lambda_6|\Phi_1|^2(\Phi_1^\dagger\Phi_2)+\lambda_7|\Phi_2|^2(\Phi_1^\dagger\Phi_2) + \text{h.c.}\right]
 \label{eq:2HDM_scalar_potential}
 \end{align*}
-where h.c. stands for the hermitian conjugate of the terms immediately preceding it. The parameters $m_{11}, m_{22}$, and $\lambda_{1,2,3,4}$ are real while $m_{12}$ and $\lambda_{5,6,7}$ can be complex. Naively, it would seem that this potential has 14 degrees of freedom - six from the real parameters, and eight from the complex parameters. However, it should be noted that we have the freedom to perform basis transformations, that is, we can write the potential in terms of new doublets $\Phi_a' = \sum_{b=1}^2U_{ab}\Phi_b$. where $U_{ab}$ is a $2\times 2$ unitary matrix. The condition of unitarity implies that $U$ has three degrees of freedom, which can absorb three out of the 14 degrees of freedom listed earlier. Thus, only 11 out of the original 14 degrees of freedom are physical.
+where h.c. stands for the hermitian conjugate of the terms immediately preceding it. The parameters $m_{11}^2, m_{22}^2$, and $\lambda_{1,2,3,4}$ are real while $m_{12}^2$ and $\lambda_{5,6,7}$ can be complex. Naively, it would seem that this potential has 14 degrees of freedom - six from the real parameters, and eight from the complex parameters. However, it should be noted that we have the freedom to perform basis transformations, that is, we can write the potential in terms of new doublets $\Phi_a' = \sum_{b=1}^2U_{ab}\Phi_b$. where $U_{ab}$ is a $2\times 2$ unitary matrix. The condition of unitarity implies that $U$ has three degrees of freedom, which can absorb three out of the 14 degrees of freedom listed earlier. Thus, only 11 out of the original 14 degrees of freedom are physical.
 
 In principle, we could proceed with these 11 parameters, however, there are a couple of reasons to attempt to reduce this number. The first is that a large number of free parameters makes a theory less falsifiable, thus reducing its predictive power. The second is that in order to distinguish between pseudoscalars and scalars, CP must be conserved in the Higgs sector. Finally, the potential in \eqref{eq:2HDM_scalar_potential} allows for tree-level flavor-changing neutral currents (FCNC), which are experimentally measured to be highly suppressed. These can be eliminated by introducing discrete or continuous symmetries. Imposing a discrete symmetry such as $\mathcal{Z}_2$, that is, the Lagrangian is invariant under the reflection of one of the doublets: $\Phi_i\rightarrow-\Phi_i$, removes the terms that are odd in $\Phi_i$. This effectively sets $\lambda_6=\lambda_7 = 0$. In principle, this should set $m_{12} = 0$ as well, but we retain this term since it breaks the $\mathcal{Z}_2$ symmetry softly, which relaxes the experimental bounds on the mass spectrum.
 After imposing these constraints, all the remaining parameters $\lambda_{1,2,3,4,5}, m_{11,12,22}$ are real. From here on, we will only consider $2$HDMs with these constraints. 
 
 There are four such models, classified based on the coupling patterns of the fermions to the two Higgs doublets. In Type I $2$HDMs, all the quarks couple to only one of the Higgs doublets (chosen by convention to be $\Phi_2$. In Type II $2$HDMs, the up-type right-handed quarks (\emph{u,c,t}) couple to $\Phi_2$, and the down-type right-handed quarks (\emph{d,s,b}) couple to $\Phi_1$. In both of these models, the right-handed leptons couple to the same doublet as the down-type quarks. There are two other models that do not have tree-level FCNCs. The lepton-specific model is similar to the Type I model, except in this case, the right-handed leptons couple to $\Phi_1$. Similarly, the `flipped' model is similar to the Type II $2$HDM, except that the leptons couple to $\Phi_2$. The coupling patterns for these models are collected in \autoref{tab:no_FCNC_$2$HDMs}.
-
-\begin{margintable}
+\begin{margintable}[1cm]
 \small{
   \begin{tabular}{lccc}
 	\toprule
@@ -218,7 +225,17 @@ h_\text{SM} = \rho_1\cos\beta + \rho_2\sin\beta = h\sin(\alpha-\beta)-H\cos(\alp
 \newcommand{\sacb}{s_\alpha/c_\beta}
 \newcommand{\sasb}{s_\alpha/s_\beta}
 
-\begin{margintable}[-5cm]
+In this section, we discuss the interactions that are relevant to our analyses. Namely the ones governing the exotic decays of Higgses to other, lighter Higgses, and the subsequent decays of the lighter Higgses to SM fermions. The decays to SM fermions is governed by the Yukawa terms in the Lagrangian:
+\sidepar{Yukawa terms for flavor-conserving 2HDMs}
+\begin{align*}
+&\mathcal{L}^{\mathrm{2HDM}}_{\text{Yukawa}} = - \sum_{f = u, d, l} \frac{m_f}{v}
+\left(\xi_h^f \overline{f}fh+\xi_H^f \overline{f}fH-i\xi_A^f \overline{f}\gamma_5fA \right)\\
+&-\left\{\frac{\sqrt{2}V_{ud}}{v}\overline{u}\left(m_u\xi_A^uP_l+m_d\xi_A^dP_R\right)dH^+ + \frac{\sqrt{2}m_l\xi^l_A}{v}\overline{\nu}_Ll_RH^+ + h.c.\right\}
+\label{eq:2HDM_Yukawa_couplings}
+\end{align*}
+where $f$ is a fermion with mass $m_f$, the fields $u$ and $d$ are up and down type quarks with masses $m_u$ and $m_d$ and CKM mixing $V_{ud}$, $l$ is a lepton with mass $m_l$, and $\nu_L$ is a neutrino. 
+The factors $\xi$ in the above expressions depend on the specific model being considered. For the Type II $2$HDM, they take on the values listed in \autoref{tab:xi_factors}.
+\begin{margintable}[3in]
   \[
     \begin{array}{lr}
       \toprule
@@ -243,28 +260,18 @@ h_\text{SM} = \rho_1\cos\beta + \rho_2\sin\beta = h\sin(\alpha-\beta)-H\cos(\alp
 \label{tab:xi_factors}
 \end{margintable}
 
-In this section, we discuss the interactions that are relevant to our analyses. Namely the ones governing the exotic decays of Higgses to other, lighter Higgses, and the subsequent decays of the lighter Higgses to SM fermions. The decays to SM fermions is governed by the Yukawa terms in the Lagrangian:
-\begin{align}
-\mathcal{L}^{\mathrm{2HDM}}_{\text{Yukawa}} =& - \sum_{f = u, d, l} \frac{m_f}{v}
-\left(\xi_h^f \overline{f}fh+\xi_H^f \overline{f}fH-i\xi_A^f \overline{f}\gamma_5fA \right)\\
-&-\left\{\frac{\sqrt{2}V_{ud}}{v}\overline{u}\left(m_u\xi_A^uP_l+m_d\xi_A^dP_R\right)dH^+ + \frac{\sqrt{2}m_l\xi^l_A}{v}\overline{\nu}_Ll_RH^+ + h.c.\right\}
-\label{eq:2HDM_Yukawa_couplings}
-\end{align}
-where $f$ is a fermion with mass $m_f$, the fields $u$ and $d$ are up and down type quarks with masses $m_u$ and $m_d$ and CKM mixing $V_{ud}$, $l$ is a lepton with mass $m_l$, and $\nu_L$ is a neutrino. 
-The factors $\xi$ in the above expressions depend on the specific model being considered. For the Type II $2$HDM, they take on the values listed in \autoref{tab:xi_factors}.
-
 For the exotic decays, we can obtain the coupling strengths from the kinetic terms for the fields $\Phi_i$, similar to what we do for the SM electroweak interactions. With a little bit of work (we omit the details for brevity), we can extract the following couplings: (see \citep{Kling2016a} for details):
 \begin{align*}
-g_{AH^\pm W^\mp} &= \frac{g}{2}(p_{H^+}-p_{A})^\mu\\
-g_{hAZ} &= is_{\beta-\alpha}\frac{g}{2c_{\theta_w}}(p_A-p_h)^\mu\\
-g_{hH^\pm W^\mp} &= -is_{\beta-\alpha}\frac{g}{2}(p_{H^\pm}-p_h)^\mu\\
-g_{HAZ} &= ic_{\beta-\alpha}\frac{g}{2c_{\theta_w}}(p_A-p_H)^\mu\\
-g_{HH^\pm W^\mp} &= -ic_{\beta-\alpha}\frac{g}{2}(p_{H^\pm}-p_H)^\mu\\
+& g_{AH^\pm W^\mp} & = && \frac{g}{2}(p_{H^+}-p_{A})^\mu\\
+& g_{hAZ}          & = && is_{\beta-\alpha}\frac{g}{2c_{\theta_w}}(p_A-p_h)^\mu\\
+& g_{hH^\pm W^\mp} & = && -is_{\beta-\alpha}\frac{g}{2}(p_{H^\pm}-p_h)^\mu\\
+& g_{HAZ}          & = && ic_{\beta-\alpha}\frac{g}{2c_{\theta_w}}(p_A-p_H)^\mu\\
+& g_{HH^\pm W^\mp} & = && -ic_{\beta-\alpha}\frac{g}{2}(p_{H^\pm}-p_H)^\mu\\
 \end{align*}
 
 \subsection{The Type II $2$HDM}
 
-As mentioned at the beginning of this chapter, The Type II $2$HDM is of special interest since it has the same fermion-Higgs doublet coupling pattern as the MSSM. In fact, the MSSM can be viewed as a special case of a Type II $2$HDM, one that incorporates supersymmetry. We will examine the MSSM in more detail in the next section, but will note that if we can recover the tree-level MSSM scalar potential from a Type II $2$HDM by setting the parameters $\lambda_i$ to the following values:
+As mentioned at the beginning of this chapter, The Type II $2$HDM is of special interest since it has the same fermion-Higgs doublet coupling pattern as the MSSM. We will examine the MSSM in more detail in the next section, but will note that if we can recover the tree-level MSSM scalar potential from a Type II $2$HDM by setting the parameters $\lambda_i$ to the following values:
 \begin{align}
 \lambda_{1,2} = \frac{g^2+g'^2}{2} &,& \lambda_3 = \frac{g^2-g'^2}{4} &,& \lambda_4 = -\frac{g^2}{2}&,&\lambda_{5,6,7} = 0.
 \end{align}
@@ -324,7 +331,6 @@ The term `supersymmetry' refers to the invariance of the Lagrangian under supers
 \begin{align*}
   Q|\text{Boson}\rangle = |\text{Fermion}\rangle &&\text{and}&& Q|\text{Fermion}\rangle = |\text{Boson}\rangle.
 \end{align*}
-
 The minimal phenomenologically viable supersymmetric extension to the Standard Model is known as the \emph{Minimal Supersymmetric Standard Model}, or the MSSM. Although the hierarchy problem has been the main driving force behind the development of supersymmetry, there are other benefits that the MSSM provides as well.
 One of them is that the MSSM has the right particle content to unify the strong and electroweak couplings at a high energy scale, as seen in \autoref{fig:gauge_coupling_unification}.
 
@@ -339,6 +345,7 @@ The third major motivation (and the one most relevant to this dissertation) is t
 \subsection{The supersymmetry algebra}
 In 1967, Coleman and Mandula \citep{Coleman1967} showed that, given certain assumptions, the only possible Lie group symmetries allowed for relativistic interacting field theories in four dimensions are direct products of the Poincar\'e group and an internal symmetry group (i.e. a gauge symmetry) \citep{Mandula2015}.
 A Lie algebra is defined by the commutation relations of its generators. If we extend the notion of a Lie algebra to include \emph{anticommutation} relations \citep{Wess1992}, the theorem no longer applies. These kinds of algebras are known as \emph{graded Lie algebras}, or \emph{superalgebras}. The trio of Haag, Łopuszanski, and Sohnius \citep{Haag1975} applied a similar treatment as Coleman and Mandula to determine the most general superalgebra consistent with relativistic quantum field theory. The generators $Q_\alpha$ of this algebra are known as fermionic operators, and must transform as Weyl spinors. The anticommutation (and commutation) relations take the form
+\sidepar{The supersymmetry algebra}
 \begin{align}
   \begin{split}
   \{Q_\alpha, \bar{Q}_{\dot{\beta}}\} &= 2(\sigma^\mu)_{\alpha\dot{\beta}}P^\mu\\
@@ -351,19 +358,23 @@ where $P_\mu = i\partial_\mu$ is the generator of translations.
 
 The first supersymmetric Lagrangian density in four-dimensions was formulated by Wess and Zumino \citep{Wess1974}. The approach taken was to define infinitesimal `supergauge' transformations for scalars and spinors that generated a closed algebraic structure. Soon afterwards, Salam and Strathdee \citep{Salam1974} created a more systematic approach to constructing these transformations, by giving them a geometric interpretation. 
 
-In this picture, supersymmetric transformations can be viewed as translations in a manifold known as \emph{superspace}, which is obtained by adding the `fermionic' coordinates $\theta^\alpha$, and $\bar{\theta}^{\dot{\beta}}$ to the regular spacetime coordinates $x^\mu$. Thus, the generators of these translations are represented by
+In this picture, supersymmetric transformations can be viewed as translations in a manifold known as \emph{superspace}, which is obtained by adding the `fermionic' coordinates $\theta^\alpha$, and $\bar{\theta}^{\dot{\beta}}$ to the regular spacetime coordinates $x^\mu$. 
+\sidepar{Generators of superspace translations}
+Thus, the generators of these translations are represented by
 \begin{align}
   Q_\alpha &= \frac{\partial}{\partial\theta^\alpha}-i(\sigma^\mu \bar{\theta})_\alpha \partial_\mu&&\text{and}&&
   \bar{Q}_{\dot{\beta}} = \frac{\partial}{\partial\bar{\theta}^{\dot{\beta}}}-i(\sigma^\mu\bar{\theta})_{\dot{\beta}}\partial_\mu.
 \label{eq:susy_operators_diff_form}
 \end{align}
 These transformations act on objects known as superfields, which are complex scalar fields parameterized by the coordinates $(x^\mu,\theta,\bar{\theta})$.
+\sidepar{Infinitesimal SUSY transformations}
 Under an infinitesimal supersymmetry transformation, a general superfield $S(x,\theta,\bar{\theta})$ transforms as
 \begin{align}
 S\rightarrow S' = (1+i\xi^\alpha Q_\alpha + i\bar{\xi}_{\dot{\alpha}}\bar{Q}^{\dot{\alpha}})S
 \label{eq:gen_susy_transformation}
 \end{align}
 The fermionic coordinate $\theta$ has two components: $\theta^\alpha = (\theta^1,\theta^2)$. Each of these two components is a \emph{Grassmannian} variable, satisfying the anticommutation relation $\{\theta^i,\theta^i\} = 0$. This implies that $(\theta^i)^2 = 0$. This means that a Taylor expansion in powers of a fermionic coordinate must always terminate with a finite number of terms. For a general superfield \emph{S}, the Taylor expansion about the fermionic coordinates $\theta,\bar{\theta}$ takes the form
+\sidepar{General superfield expansion}
 \begin{align}
   \begin{split}
   S(x,\theta,\bar{\theta}) = a &+ \theta\xi + \bar{\theta}\chi^\dagger + \theta\theta b + \bar{\theta}\bar{\theta}c+\bar{\theta}\bar{\sigma}^\mu\theta v_\mu \\
@@ -372,6 +383,7 @@ The fermionic coordinate $\theta$ has two components: $\theta^\alpha = (\theta^1
   \label{eq:general_superfield_expansion}
 \end{align}
 where \emph{a,b,c} and \emph{d} are complex-valued scalar fields, $\xi,\chi,\eta$ and $\zeta$ are spinor fields, and $v_\mu$ is a vector field. These coefficients in the Taylor expansion will be identified with the regular (non-super) fields that we see in the SM and its supersymmetrized version, the MSSM. The matter content of the MSSM can be derived from expanding superfields of a particular type, known as \emph{chiral} superfields. The expansion of a generic chiral superfield $\Phi$ takes the form:
+\sidepar{Chiral superfield expansion}
 \begin{align}
   \begin{split}
   \Phi(y,\theta) &= \phi(x) + \sqrt{2}\theta\psi(x)+\theta\theta F(x)\\
@@ -379,7 +391,9 @@ where \emph{a,b,c} and \emph{d} are complex-valued scalar fields, $\xi,\chi,\eta
 \end{split}
   \label{eq:chiral_superfield_expansion}
 \end{align}
-Similarly the gauge bosons come from the expansion of \emph{vector} superfields $V$, obtained by imposing the condition $V = V^\dagger$. The expansion of $V$ takes the form:
+Similarly the gauge bosons come from the expansion of \emph{vector} superfields $V$, obtained by imposing the condition $V = V^\dagger$. 
+\sidepar{Vector superfield expansion}
+The expansion of $V$ takes the form:
 \begin{align}
 V = \bar{\theta}\bar{\sigma}^\mu\theta A_\mu+\bar{\theta}\bar{\theta}\theta\lambda+\theta\theta\bar{\theta}\lambda^\dagger+\frac{1}{2}\theta\theta\bar{\theta}\bar{\theta}D
 \label{eq:vector_superfield_expansion}
@@ -388,7 +402,9 @@ V = \bar{\theta}\bar{\sigma}^\mu\theta A_\mu+\bar{\theta}\bar{\theta}\theta\lamb
 We see that the expansion of the chiral superfield $\Phi$ contains a scalar field $\phi$, a Weyl fermion $\psi$, and a field $F$. Thus, choosing values of $\phi,\psi$, and $F$ fixes $\Phi$. These fields, known as the \emph{component fields} of $\Phi$ can be naturally placed in a collection known as a \emph{supermultiplet}. The scalar superpartners $\phi$ are referred to as \emph{sfermions}. 
 Similarly, the fields $A_\mu,\lambda,$ and \emph{D} form another natural grouping, called a \emph{vector} supermultiplet. The fields $A_\mu$ and $\lambda$ are superpartners of each other, and fields such as $\lambda$ are generically known as \emph{gauginos}\footnote{After the co-inventor of the Wess-Zumino model, Bruno Zumino.}. The particle content of the MSSM, grouped into supermultiplets, is shown in tables \ref{tab:chiral_supermultiplets} and \ref{tab:gauge_supermultiplets}. For brevity, we have not shown all three fermion generations. Also, the fields $F$ and $D$ are not included, since they are \emph{auxiliary} fields, serving only to make sure that supersymmetry holds off-shell. The gauge structure of the MSSM is the same as that of the SM - there are no new gauge interactions.
 
-The mass terms and Yukawa terms of the MSSM Lagrangian come from the collection of terms known as the \emph{superpotential}. In terms of the chiral superfields in \autoref{tab:chiral_supermultiplets}, we can write the MSSM superpotential as:
+The mass terms and Yukawa terms of the MSSM Lagrangian come from the collection of terms known as the \emph{superpotential}. 
+\sidepar{The MSSM superpotential}
+In terms of the chiral superfields in \autoref{tab:chiral_supermultiplets}, we can write the MSSM superpotential as:
 \[W_\text{MSSM} = \bar{u}\mathbf{y_u}QH_u-\bar{d}\mathbf{y_d}Q H_d-\bar{e}\mathbf{y_e}L H_d+\mu H_u H_d \]
 We have abbreviated terms such as $\mu(H_u)_\alpha (H_d)_\beta\epsilon^{\alpha\beta}$ to $\mu H_u H_d$, and the matrices $\mathbf{y}$ are $3\times3$ matrices of Yukawa couplings, with indices representing the fermion generations. Note also that we now see the necessity of having two Higgs doublets - one that couples to the up-type fermions, and the other to the down-type fermions. A term like $\overline{u}\mathbf{y_u}QH_d^*$ would lead to a non-conserved hypercharge.
 
@@ -431,6 +447,7 @@ Binos: $\widetilde{B}^0$       & B bosons: $B^0$                                
 \end{table}
 
 The soft supersymmetry breaking terms, written in terms of component fields, are as follows.
+\sidepar{Soft supersymmetry breaking terms}
 \begin{align*}
   \begin{split}
     \mathcal{L}_\text{soft}^\text{MSSM} = &-\frac{1}{2}\left(M_1\widetilde{B}\widetilde{B}+
@@ -446,7 +463,8 @@ The soft supersymmetry breaking terms, written in terms of component fields, are
      &-m^2_{H_u}H^*_uH_u-m^2_{H_d}H_d^*H_d-(bH_uH_d+\text{h.c.}) 
   \end{split}
 \end{align*}
-The tildes denote ...
+
+The tildes denote superpartners of the corresponding SM field - for example, $\widetilde{g}$ is a gluino, $\widetilde{\bar{e}}$ is the scalar superpartner of a right-handed electron, and so on. The parameters $M_1$, $M_2$, $M_3$ govern the masses of the gauginos $\widetilde{g}, \widetilde{W}$, and $\widetilde{B}$.
 
 \subsection{Phenomenological approximations}
 The MSSM has a number of simplifying assumptions motivated both by convenience and compatibility with observed experimental data. For example, it is convenient to take the Yukawa matrices $\mathbf{y_u,y_d,y_e}$ in a simplified limit, where only the heaviest generations have non-zero Yukawa couplings. 

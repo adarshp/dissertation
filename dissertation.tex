@@ -16,6 +16,7 @@
 \WarningFilter{latex}{Marginpar}
 \usepackage[tracking]{microtype}
 
+\usepackage{pgfornament}
 % Packages for creating native Feynman diagrams and plots in LaTeX
 \usepackage{tikz-feynman}
 \usepackage{pgfplots}
@@ -72,7 +73,6 @@
 ]{biblatex}
 \addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
 \addbibresource{mybiblio.bib}
-\addbibresource{light_charged_higgs_biblio.bib}
 
 % Set up back references
 \DefineBibliographyStrings{english}{%
@@ -108,7 +108,7 @@
     plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
     hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
     urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
-    pdftitle={Dissertation},%
+    pdftitle={Hunting Hidden Higgses and Dark Matter at Colliders},%
     pdfauthor={Adarsh Pyarelal},%
     pdfsubject={},%
     pdfkeywords={},%
@@ -186,7 +186,7 @@
 \setsidecaps{0.2in}{1.9in}
 \sidecapmargin{outer}
 \renewcommand*{\sidecapstyle}{\normalfont\footnotesize}
-\setsidecappos{t}
+\setsidecappos{c}
 
 % Set footnotes in the margin rather than at the foot of the page
 \footnotesinmargin
@@ -199,7 +199,8 @@
 \setlength{\footparindent}{1em}
 \sideparmargin{outer}
 
-\renewcommand*{\sideparfont}{\normalfont\footnotesize}
+\renewcommand*{\sideparfont}{\color{Maroon}\itshape}
+\renewcommand*{\sideparvshift}{2\baselineskip}
 \marginparmargin{outer}
 
 % Style the entries in the Table of Contents
@@ -265,12 +266,13 @@
 % Creating the title page
 % =============================================================================
 \pretitle{\vskip 3cm\LARGE\noindent}
-\title{\scshape\color{Maroon}{\MakeTextLowercase{Hunting Hidden Higgses}}}
+\title{\scshape\color{Maroon}{\MakeTextLowercase{Hidden Higgses and Dark Matter at Current and Future Colliders}}}
 \posttitle{\vskip 0.3em}
 \preauthor{\lineskip 0.5em\Large\itshape\noindent}
 \author{Adarsh Pyarelal}
-\postauthor{\vskip 9cm\Pisymbol{MinionPro-Extra}{111}}
+\postauthor{\vskip 9cm\pgfornament[width=5cm]{84}}
 \date{}
+
 % =============================================================================
 
 \begin{document}
