@@ -12,20 +12,21 @@ Additionally, in \autoref{ch:DM_100_TeV}, we presented an analysis aimed at disc
 
 In some ways, the three analyses presented in this dissertation can be viewed as a progression on two fronts. On the one hand, they involve increasingly high collider energies, going from 14 TeV to 100 TeV. On the other, they involve an increasing use of machine learning techniques. The first analysis solely uses rectangular selection cuts, the second qualitatively compares rectangular cut and machine learning strategies, and the third uses machine learning exclusively. The author believes that it is likely that this trend will be reflected in experimental particle physics research in the future, as we attempt to grapple with increasingly difficult questions at the frontier of the field. Increasing collider energies will be required to probe physically well-motivated scenarios with a TeV scale mass spectrum, while machine learning techniques will be increasingly needed to tackle the extremely large backgrounds and small signal rates at future colliders.
 
-\paragraph{Open Science} The author strongly believes in the value of reproducible research and open science. In this spirit, the source code for the dissertation document has been made freely available online at
+\section*{Open Science}
+
+The author strongly believes in the value of reproducible research and open science. In this spirit, an effort has been made to make as much of the source code involved in the creation of this dissertation has been made freely available online.
+
+\begin{itemize}
+\item The source code for the dissertation manuscript itself can be found at 
 
 \url{https://github.com/adarshp/dissertation}.
-
-\noindent The code for the analysis in \autoref{ch:DM_100_TeV} can be found at
+\item The code for the analysis in \autoref{ch:DM_100_TeV} can be found at
 
 \url{https://github.com/adarshp/Dark-Matter-at-100-TeV}
-
-\noindent while the code for the analysis of the $H^\pm\rightarrow HW^\pm$ decay channel in \autoref{ch:ExoticHiggs} can be found at
+\item The code for the analysis of the $H^\pm\rightarrow HW^\pm$ decay channel in \autoref{ch:ExoticHiggs} can be found at
 
 \url{https://github.com/adarshp/ExoticHiggs}.
-
-\noindent In addition, the code for both of these analyses utilizes a Python-based software framework, \texttt{clusterpheno}, written by the author during the course of his graduate work, for the purpose of performing large-scale event generation and analysis on the University of Arizona cluster. The source code for this framework can be found online at 
+\item In addition, the code for both of these analyses utilizes a Python-based software framework, \texttt{clusterpheno}, written by the author during the course of his graduate work, for the purpose of performing large-scale event generation and analysis on the University of Arizona cluster. The source code for this framework can be found online at 
 
 \url{https://github.com/adarshp/clusterpheno}.
-
-%Generating these samples for hundreds of signal benchmark points and backgrounds with extremely large cross sections is not a trivial task (and even less so at 100 TeV), and requires careful management of computational resources. During the course of performing the research that comprises this dissertation, the author has developed a Python-based framework, \texttt{clusterpheno}, for event generation and analysis on a cluster. An advantage of using this over the CMS gridpack method is that the entire pipeline of MadGraph-Pythia-Delphes is integrated
+\end{itemize}

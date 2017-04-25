@@ -14,13 +14,15 @@
 \usepackage{silence}
 \WarningFilter{fontaxes}{I don't know how to decode}
 \WarningFilter{latex}{Marginpar}
+\WarningFilter{hyperref}{subfigure}
 \usepackage[tracking]{microtype}
 \usepackage[smaller]{acronym}
-\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
+\renewcommand*{\aclabelfont}[1]{\acsfont{\scshape #1}}
 \usepackage{pgfornament}
 % Packages for creating native Feynman diagrams and plots in LaTeX
 \usepackage{tikz-feynman}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
 
 % Plots
 \pgfplotsset{every axis plot post/.append style={Maroon, line width=0.2pt}}
@@ -30,7 +32,8 @@
 \immediate\write18{mkdir -p pgf-img}  %% Create `pgf-img` directory
 \tikzexternalize[                     %% Activate externalization
   prefix=pgf-img/,                    %% Avoid cluttering the directory
-  %system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"},
+  %system call={lualatex \tikzexternalcheckshellescape -halt-on-error 
+  %-interaction=batchmode -jobname="\image" "\texsource"},
 ]
 
 \usepackage[scaled=0.8]{beramono}
@@ -108,13 +111,13 @@ BoldFont={Scala Sans Bold LF},
   \clearname{note}%
   }
 \renewbibmacro{in:}{}
-\addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
+%\addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
 \addbibresource{mybiblio.bib}
 
 % Set up back references
 \DefineBibliographyStrings{english}{%
     backrefpage = {cited on p.},% originally "cited on page"
-      backrefpages = {cited on pages},% originally "cited on pages"
+    backrefpages = {cited on pages},% originally "cited on pages"
 }
 
 % =============================================================================
@@ -162,34 +165,7 @@ BoldFont={Scala Sans Bold LF},
 % =============================================================================
 
 % Math symbols
-\usepackage{amsthm}
 \usepackage{slashed}
-
-% Here we define custom style for definitions.
-\newtheoremstyle{definition}
-    {3pt} % Space above
-    {3pt} % Space below
-    {\upshape} % Body font
-    {} % Indent amount
-    {\bfseries} % Theorem head font
-    { } % Punctuation after theorem head
-    {.5em} % Space after theorem head
-    {\thmname{#1} \thmnumber{#2} (\thmnote{#3})} % Theorem head spec
-\theoremstyle{definition}
-\newtheorem{definition}{Def}[chapter]
-
-\newtheoremstyle{theorem}
-    {3pt} % Space above
-    {3pt} % Space below
-    {\upshape} % Body font
-    {} % Indent amount
-    {\bfseries} % Theorem head font
-    { } % Punctuation after theorem head
-    {.5em} % Space after theorem head
-    {\thmname{#1} \thmnumber{#2} (\thmnote{#3})} % Theorem head spec
-
-\theoremstyle{theorem}
-\newtheorem{theorem}{Theorem}[chapter]
 
 % =============================================================================
 % User-defined macros
@@ -243,11 +219,10 @@ BoldFont={Scala Sans Bold LF},
 % Style the entries in the Table of Contents
 \renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
 \renewcommand*{\cftpartfont}{\color{Maroon}\scshape\MakeTextLowercase}
-\captionstyle[\centering]{\footnotesize}
-\captionnamefont{\color{Maroon}\footnotesize}
+\captionstyle[\centering]{\sffamily\footnotesize}
+\captionnamefont{\color{Maroon}\footnotesize\sffamily}
 % Reduce spacing between list items
 \tightlists
-
 
 % Make marginfigures centered by default
 \setfloatadjustment{marginfigure}{\centering}
@@ -324,9 +299,12 @@ BoldFont={Scala Sans Bold LF},
 \include{FrontBackMatter/StatementByAuthor}
 \include{FrontBackMatter/Acknowledgments}
 \include{FrontBackMatter/Abstract}\cleardoublepage
-\tableofcontents\cleardoublepage
-\listoffigures\cleardoublepage
-\listoftables\cleardoublepage
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+\tableofcontents*\cleardoublepage
+\pdfbookmark[1]{\listfigurename}{lof}
+\listoffigures*\cleardoublepage
+\pdfbookmark[1]{\listtablename}{lot}
+\listoftables*\cleardoublepage
 \include{FrontBackmatter/Acronyms}
 
 % =============================================================================

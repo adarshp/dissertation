@@ -67,7 +67,7 @@ This study aims to add to the corpus an assessment of the prospects of finding p
 
 Finding higgsinos has traditionally been more challenging than finding winos, due to their lower production rate - it is thus important to devise innovative strategies to do so. In addition, the higgsino mass parameter $\mu$ that governs the mass of the higgsino plays an important role in electroweak symmetry breaking \citep{Acharya:2014pua}. This combination of NLSP (next-to-lightest supersymmetric partner) and LSP has been studied earlier in \citep{Gori:2014oua} with intermediate vector dibosons and multilepton final states. In this study, however, we attempt to exploit the relatively high branching ratio of the SM Higgs boson to $b$ quarks (as suggested in \cite{Han:2013kza}), and choose the decay modes $Z\rightarrow ll$ and $h\rightarrow bb$ for the intermediate $Z$ and $h$ bosons in our search channel.  
 
-At a 100 TeV collider, the backgrounds are going to be even larger than at the LHC. We will need to harness all the possible tools we can to deal with them. An ancillary goal of this study is to investigate the potential for machine learning (ML) techniques to augment our analysis. with the advent of more powerful computers and simultaneous advances in the field of statistical learning in recent years, the usage of ML is rising in experimental particle physics. In fact, the discovery of the SM Higgs boson in 2012 was done with the help of neural networks \citep{Aad:2012tfa2012} and boosted decision trees \citep{Chatrchyan:2012xdj}.
+At a 100 TeV collider, the backgrounds are going to be even larger than at the LHC. We will need to harness all the possible tools we can to deal with them. An ancillary goal of this study is to investigate the potential for machine learning (ML) techniques to augment our analysis. with the advent of more powerful computers and simultaneous advances in the field of statistical learning in recent years, the usage of ML is rising in experimental particle physics. In fact, the discovery of the SM Higgs boson in 2012 was done with the help of neural networks \citep{Aad:2012tfa} and boosted decision trees \citep{Chatrchyan:2012xdj}.
 
 The rest of this chapter is structured as follows. In \autoref{sec:model}, we describe our model and search channel in more detail, and list the existing experimental constraints on it. In \autoref{sec:analysis}, we describe our analysis strategies and results obtained for both the traditional cut-and-count analysis and the analysis performed with boosted decision trees. Finally, we conclude with the implications in \autoref{sec:conclusion}.
 
@@ -135,7 +135,7 @@ h1 --  [color = red] bino2 [particle=\(\widetilde{B^0}\),color = red],
   b2 -- [opacity = 0.0] b3 -- [opacity = 0.0] wm,
   v -- [opacity = 0.0] lp -- [opacity = 0.0] lm -- [opacity = 0.0] vl,
 };}}
-\hrule
+{\color{gray}\hrule}
 \label{fig:feynman_diagrams}
 \end{marginfigure}
 
@@ -166,7 +166,7 @@ Applying $BR(W\rightarrow l\nu)$, & 0.42 fb & 0.32 fb\\
 $BR(Z\rightarrow ll)$ \& $BR(h\rightarrow bb)$ &&\\
 \bottomrule
 \end{tabular}
-\caption{Comparison of cross-sections for $(\widetilde{\chi}_{2,3}^0\widetilde{\chi}^\pm_{2})$ and $(\widetilde{\chi}^0_{2}\widetilde{\chi}^0_{3})$, for $|\mu|\approx 1$ TeV, at a 100 TeV $pp$ collider. The pair-production cross sections are taken from \citep{Gori:2014oua}. The branching ratio to intermediate dibosons is evaluated in the limit where the Goldstone equivalence theorem applies so that $\text{BR}(\widetilde{\chi}_{2,3}^0\rightarrow \widetilde{\chi}_0^1h)\approx \text{BR}(\widetilde{\chi}_{2,3}^0\rightarrow \widetilde{\chi}_0^1Z) \approx 50\%$. The branching ratios of \emph{W}, \emph{Z}, and \emph{h} are taken to be the same as the SM ones listed in the PDG review \citep{Olive2016}.}
+\caption{Comparison of cross-sections for $(\widetilde{\chi}_{2,3}^0\widetilde{\chi}^\pm_{2})$ and $(\widetilde{\chi}^0_{2}\widetilde{\chi}^0_{3})$, for $|\mu|\approx 1$ TeV, at a 100 TeV $pp$ collider. The pair-production cross sections are taken from \citep{Gori:2014oua}. The branching ratio to intermediate dibosons is evaluated in the limit where the Goldstone equivalence theorem applies so that $\text{BR}(\widetilde{\chi}_{2,3}^0\rightarrow \widetilde{\chi}_0^1h)\approx \text{BR}(\widetilde{\chi}_{2,3}^0\rightarrow \widetilde{\chi}_0^1Z) \approx 50\%$. The branching ratios of \emph{W}, \emph{Z}, and \emph{h} are taken to be the same as the SM ones listed in the PDG review \citep{Olive:2016xmw}.}
 \label{tab:xsections}
 \end{table}
 
@@ -175,13 +175,13 @@ So far, the well-separated spectra have been studied using multi-lepton channels
 where $\widetilde{\chi}_\text{NLSP}$ is the next-to-lightest neutralino or chargino, and $\widetilde{\chi}_\text{LSP}$ is the lightest neutralino. These searches work well since the large mass difference between the electroweakinos can lead to energetic leptons that can be easily identified. Among the multi-lepton searches, the trilepton searches (with $W$ and $Z$ as the intermediate dibosons) have the best reach, due to the high production cross-section of chargino-neutralino pairs combined with the large reduction in $t\overline{t}$ and QCD backgrounds obtained by requiring three leptons. Multilepton searches with $Zh$ and $ZZ$ as the intermediate dibosons are unlikely to be as powerful, due to the lower pair-production cross-section of neutral higgsinos, combined with the low branching ratio of $Z$ to leptons. However, if we move beyond multilepton searches, the channel with $Zh$ as the intermediate dibosons emerges as a possible competitor to the $WZ$ channel. If the $Z$ decays leptonically and $h$ decays to a pair of $b$s, then after applying the relevant branching ratios, the signal cross sections become comparable (for details, see \autoref{tab:xsections}). 
 \begin{figure}
     \centering
-    \begin{sidecaption}{Higgsino pair production cross section as a function of $\mu$, for a $M_1=$ 25 GeV.}[fig:xsection_plot]
+    \begin{sidecaption}{Higgsino pair production cross section as a function of $\mu$, for $M_1=$ 25 GeV.}[fig:xsection_plot]
 \input{images/xsection_plot.pgf}
 \end{sidecaption}
 \end{figure}
 \begin{figure}
     \centering
-    \begin{sidecaption}{Higgsino decay branching ratios of $\mu$, for a $M_1=$ 25 GeV.}[fig:br_plot]
+    \begin{sidecaption}{Higgsino decay branching ratios of $\mu$, for $M_1=$ 25 GeV.}[fig:br_plot]
 \input{images/higgsino_br_plot.pgf}
 \end{sidecaption}
 \end{figure}
@@ -254,7 +254,7 @@ For our process, the visible particles $Q_i$ correspond to the reconstructed SM 
 
 \begin{table}
   \centering
-\begin{adjustwidth*}{0in}{-0.8in}
+\begin{adjustwidth*}{0in}{-1.5in}
   \input{tables/cutflowtable.tex}
   \caption{Representative cut flow table for the benchmark point $|\mu|=1$ TeV, $M_1 = 25$ GeV, for a traditional cut-and-count analysis. All cross sections are given in femtobarns, and the units for the missing energy, invariant mass, and razor variable cuts are GeV. The significance, $S/\sqrt{B}$, is calculated for an integrated luminosity of 3 ab$^{-1}$.}
 \label{tab:cc_cutflowtable}
