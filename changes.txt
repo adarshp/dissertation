@@ -1,0 +1,11 @@
+1. Abstract rewritten/expanded
+2. Attribution of credit in the introduction changed a bit
+3. Captions/legends
+4. Minor stylistic changes
+
+Stuff to do (optional)
+1. TikZ-ify histograms for DM chapter
+2. OSF figures for DM contour plot
+3. Acronyms - smallcaps?
+4. Cite madgraph, pythia and delphes in exotichiggs chapter
+5. Entry sets for geant/delphes/madgraph/madevent/pythia

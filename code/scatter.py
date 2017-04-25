@@ -33,8 +33,8 @@ plt.rc('axes',labelsize=10)
 
 
 circle = plt.Circle((5,5),2.0,facecolor='none',edgecolor='Green',linewidth=3)
-plt.xlabel("Feature One")
-plt.ylabel("Feature Two");
+plt.xlabel(r"\emph{x}")
+plt.ylabel(r"\emph{y}");
 
 
 np.random.seed(5)

@@ -15,7 +15,8 @@
 \WarningFilter{fontaxes}{I don't know how to decode}
 \WarningFilter{latex}{Marginpar}
 \usepackage[tracking]{microtype}
-
+\usepackage[smaller]{acronym}
+\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
 \usepackage{pgfornament}
 % Packages for creating native Feynman diagrams and plots in LaTeX
 \usepackage{tikz-feynman}
@@ -32,7 +33,7 @@
   %system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"},
 ]
 
-\usepackage[scaled=0.84]{beramono}
+\usepackage[scaled=0.8]{beramono}
 
 % =============================================================================
 % If using Minion Pro
@@ -45,6 +46,10 @@
   ItalicFeatures={Style=Swash},
   SmallCapsFeatures={Letters=SmallCaps,LetterSpace=6},
 ]{Minion Pro}
+\setsansfont[%
+Numbers = {OldStyle, Proportional},
+BoldFont={Scala Sans Bold LF},
+]{Scala Sans}
 \usepackage{pifont} % To get Minion Pro ornaments
 
 % =============================================================================
@@ -69,14 +74,46 @@
 
 \usepackage[%
     backend=biber, backref, language=auto, style=numeric-comp, sorting=none,
-    maxbibnames=10, arxiv=pdf, url=false, natbib=true,doi=false
+    maxbibnames=10, arxiv=abs, natbib=true,doi=false,url=false, 
+    isbn=false
 ]{biblatex}
+
+\DeclareBibliographyDriver{set}{%
+  \entryset
+    {%
+     $\cdot$~\setunit*{\addnbspace}}
+    {}%
+  \finentry}
+\DeclareFieldFormat[phdthesis]{title}{\mkbibemph{#1}\isdot}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}\isdot}
+\DeclareFieldFormat[article]{title}{\mkbibemph{#1}\isdot}
+\DeclareFieldFormat[article]{journaltitle}{#1\isdot}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}\isdot}
+\DeclareFieldFormat[article]{number}{}
+\DeclareFieldFormat[report]{number}{\textsc{\MakeTextLowercase{#1}}}
+\DeclareFieldFormat{eprint:arxiv}{%
+  \ifhyperref
+    {\href{http://arxiv.org/\abx@arxivpath/#1}{%
+       \nolinkurl{[arXiv: #1]}%
+       \iffieldundef{eprintclass}
+         {}
+         {}}}
+    {\nolinkurl{#1}
+     \iffieldundef{eprintclass}
+       {}
+       {}}}
+\renewcommand{\newunitpunct}{, }
+\renewcommand{\entrysetpunct}{\\}
+\AtEveryBibitem{%
+  \clearname{note}%
+  }
+\renewbibmacro{in:}{}
 \addbibresource{/Users/adarsh/Research/MendeleyBibliography/library.bib}
 \addbibresource{mybiblio.bib}
 
 % Set up back references
 \DefineBibliographyStrings{english}{%
-    backrefpage = {cited on page},% originally "cited on page"
+    backrefpage = {cited on p.},% originally "cited on page"
       backrefpages = {cited on pages},% originally "cited on pages"
 }
 
@@ -108,7 +145,7 @@
     plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
     hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
     urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
-    pdftitle={Hunting Hidden Higgses and Dark Matter at Colliders},%
+    pdftitle={Hidden Higgses and Dark Matter at Current and Future Colliders},%
     pdfauthor={Adarsh Pyarelal},%
     pdfsubject={},%
     pdfkeywords={},%
@@ -207,7 +244,7 @@
 \renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
 \renewcommand*{\cftpartfont}{\color{Maroon}\scshape\MakeTextLowercase}
 \captionstyle[\centering]{\footnotesize}
-\captionnamefont{\footnotesize}
+\captionnamefont{\color{Maroon}\footnotesize}
 % Reduce spacing between list items
 \tightlists
 
@@ -245,6 +282,7 @@
 }
 \chapterstyle{bringhurst}
 \headstyles{bringhurst}
+\setsecheadstyle{\bfseries\sffamily}
 % Styling Part headings
 \renewcommand{\parttitlefont}{\color{Maroon}\normalfont\scshape%
                               \LARGE\MakeTextLowercase}
@@ -270,7 +308,7 @@
 \posttitle{\vskip 0.3em}
 \preauthor{\lineskip 0.5em\Large\itshape\noindent}
 \author{Adarsh Pyarelal}
-\postauthor{\vskip 9cm\pgfornament[width=5cm]{84}}
+\postauthor{\vskip 9cm}
 \date{}
 
 % =============================================================================
@@ -286,16 +324,17 @@
 \include{FrontBackMatter/StatementByAuthor}
 \include{FrontBackMatter/Acknowledgments}
 \include{FrontBackMatter/Abstract}\cleardoublepage
-\tableofcontents*\cleardoublepage
+\tableofcontents\cleardoublepage
 \listoffigures\cleardoublepage
 \listoftables\cleardoublepage
+\include{FrontBackmatter/Acronyms}
 
 % =============================================================================
 % Main content
 % =============================================================================
 
 \include{Chapters/Introduction}
-\include{Chapters/SM}
+\include{Chapters/Theory}
 %\include{Chapters/2HDM}
 %\include{Chapters/SUSY}
 \include{Chapters/ColliderPheno}
