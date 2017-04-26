@@ -278,12 +278,20 @@ BoldFont={Scala Sans Bold LF},
 % =============================================================================
 % Creating the title page
 % =============================================================================
-\pretitle{\vskip 3cm\LARGE\noindent}
-\title{\scshape\color{Maroon}{\MakeTextLowercase{Hidden Higgses and Dark Matter at Current and Future Colliders}}}
-\posttitle{\vskip 0.3em}
-\preauthor{\lineskip 0.5em\Large\itshape\noindent}
+\pretitle{\vskip 3cm\noindent}
+\title{{\scshape\color{Maroon}{\MakeTextLowercase{\LARGE Hidden Higgses and Dark Matter at Current and Future Colliders}}}}
+\posttitle{\vskip 0.5em by \vskip 0.7em}
+\preauthor{\lineskip 0.5em\begingroup\noindent}
 \author{Adarsh Pyarelal}
-\postauthor{\vskip 9cm}
+\postauthor{\endgroup\vskip 5cm
+\begin{center}
+    \begin{tabular}{m{5cm}}
+        \midrule
+        \centering Copyright © {\@author} 2017\\
+    \end{tabular}
+\end{center}
+\hfill\vfill
+}
 \date{}
 
 % =============================================================================
