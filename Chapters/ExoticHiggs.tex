@@ -53,8 +53,8 @@ Charged Higgs  & $HW^\pm$  & $H^\pm\rightarrow hW^\pm/HW^\pm/AW^\pm$ & (\emph{l\
 Given the large number of degrees of freedom in generic $2$HDMs, it is important for us to whittle down the number of possible scenarios to a more managable number by imposing some constraints. The authors of \cite{Kling:2016opi} have systematically categorized the scenarios (with differing mass orderings and splittings, values of the parameter $m_{12}$, and degrees of deviation from alignment) that are still viable after imposing all the relevant theoretical and experimental constraints. Based on this categorization, they have presented a set of benchmark planes to guide searches for new scalars at the LHC via exotic decay modes. These planes are summarized in \autoref{tab:benchmark_planes}. 
 
 \begin{table}
-  \centering
   \begin{sidecaption}{Summary of benchmark planes for exploring exotic Higgs decays in $2$HDMs that survive theoretical and experimental constraints. Source: \cite{Kling:2016opi}.}[tab:benchmark_planes]
+  \centering
   \begin{tabular}{lclr}
     \toprule
     Name    & Plane                   & Decays                                    & $m_{12}^2$\\\midrule
@@ -111,6 +111,42 @@ For the exotic decay modes $(A/H)\rightarrow(H/A)Z$ with the final state $\tau\t
       \item {\itshape Other features}: We also collect the following set of features: the transverse momenta of the leptons, and \emph{b}-tagged jets (case A), or the $\tau$-tagged jets (case B). Finally, we collect the missing transverse energy and hadronic transverse energy of the event.
     \end{enumerate}
 \end{enumerate}
+\begin{marginfigure}
+\centering
+\caption{Feynman diagrams for charged Higgs production in association with a heavy quark.)}%
+\subbottom[\emph{t}-channel]{\resizebox{\textwidth}{!}{
+\feynmandiagram [layered layout, vertical = g1  to g2] { 
+% Draw the top and bottom lines 
+g1	-- [gluon] a 
+	-- [fermion] t [particle=\(t\)],
+    { [same layer] a -- [opacity = 0.0] c},  
+                     % --c},
+    a --[anti fermion, edge label = \(\overline{t}^*\)] v, v --  [anti fermion, edge label' = \(\overline{b}^*\)] c,
+    v -- [scalar] h [particle = \(H^-\)],
+g2 -- [gluon] c 
+   -- [anti fermion] b [particle=\(\overline{b}\)],
+% Draw the two internal fermion lines 
+};
+ }}
+ \subbottom[\emph{s}-channel]{\resizebox{\textwidth}{!}{
+\feynmandiagram [layered layout, horizontal=v1 to v2] { 
+  g1 -- [gluon] v1 -- [fermion, edge label=\(b^*\)] v2 -- [fermion] t [particle = \(t\)],
+  g2 -- [gluon] v3,
+  {[same layer] v3 -- [fermion, edge label = \(t\)] v1},
+  v3 -- [anti fermion] b [particle = \(\overline{b}\)] ,
+  v2 -- [scalar] h [particle= \(H^-\)],
+};
+}}
+\subbottom[$t\overline{t}$-like]{\resizebox{\textwidth}{!}{
+\feynmandiagram [horizontal = v1 to v2] { 
+  {g1 , g2 } -- [gluon] v1 -- [gluon] v2,
+  t [particle = \(\overline{t}\)]-- [fermion] v2 -- [fermion, edge label = \(t^*\)] tb,
+  hc [particle = \(H^+\)]-- [scalar] tb -- [fermion] b [particle = \(b\)],
+};
+}}
+\label{fig:feynman_diagrams}
+\end{marginfigure}
+
 \subsection{Exotic decays of the charged Higgs}\label{subsec:Hpm_analysis}
 The search channel involving the charged Higgs, has the production and decay chain: 
 \[pp\rightarrow tbH^+\rightarrow (Wb)b(HW)\rightarrow l\nu bb\tau_h\tau_ljj.\]
