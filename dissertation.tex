@@ -2,7 +2,7 @@
 % PhD Dissertation: Hunting Hidden Higgses
 % Author: Adarsh Pyarelal
 % =============================================================================
-\documentclass[final,twoside,10pt]{memoir}
+\documentclass[final,twoside,10pt,openany]{memoir}
 
 % Packages for algorithms
 \usepackage{algpseudocode, algorithm}
@@ -36,7 +36,6 @@
   %-interaction=batchmode -jobname="\image" "\texsource"},
 ]
 
-\usepackage[scaled=0.8]{beramono}
 
 % =============================================================================
 % If using Minion Pro
@@ -51,8 +50,9 @@
 ]{Minion Pro}
 \setsansfont[%
 Numbers = {OldStyle, Proportional},
-BoldFont={Scala Sans Bold LF},
+BoldFont={ScalaSans Bold},
 ]{Scala Sans}
+\setmonofont{Menlo}[Scale=MatchLowercase]
 \usepackage{pifont} % To get Minion Pro ornaments
 
 % =============================================================================
@@ -217,6 +217,7 @@ BoldFont={Scala Sans Bold LF},
 \marginparmargin{outer}
 
 % Style the entries in the Table of Contents
+\renewcommand*{\contentsname}{Table of Contents}
 \renewcommand*{\cftchapterfont}{\scshape\MakeTextLowercase}
 \renewcommand*{\cftpartfont}{\color{Maroon}\scshape\MakeTextLowercase}
 \captionstyle[\centering]{\sffamily\footnotesize}
@@ -234,7 +235,7 @@ BoldFont={Scala Sans Bold LF},
 \makeoddhead{tufte}{}{}{\scshape\MakeTextLowercase{\leftmark}~~|~~\thepage}
 \makeevenhead{tufte}{\thepage~~|~~\scshape\MakeTextLowercase{\rightmark}}{}{}
  \makerunningwidth{tufte}[8in]{8in}
-\aliaspagestyle{chapter}{empty}
+%\aliaspagestyle{chapter}{empty}
 \nouppercaseheads
 \pagestyle{tufte}
 
@@ -306,13 +307,12 @@ BoldFont={Scala Sans Bold LF},
 \include{FrontBackMatter/CommitteeApproval}
 \include{FrontBackMatter/StatementByAuthor}
 \include{FrontBackMatter/Acknowledgments}
-\include{FrontBackMatter/Abstract}\cleardoublepage
+\include{FrontBackMatter/Abstract}
 \pdfbookmark[1]{\contentsname}{tableofcontents}
 \tableofcontents*\cleardoublepage
-\pdfbookmark[1]{\listfigurename}{lof}
-\listoffigures*\cleardoublepage
-\pdfbookmark[1]{\listtablename}{lot}
-\listoftables*\cleardoublepage
+\listoffigures\cleardoublepage
+\listoftables\cleardoublepage
+
 \include{FrontBackmatter/Acronyms}
 
 % =============================================================================
