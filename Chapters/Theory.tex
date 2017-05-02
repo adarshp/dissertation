@@ -38,7 +38,7 @@ The ground state that we inhabit spontaneously breaks the larger symmetry $SU(2)
 \begin{table}
   \raggedright
 \strictpagecheck
-\begin{adjustwidth}{-0.5in}{0in}
+\begin{adjustwidth*}{0in}{0.5in}
   \begin{tabular}{cllll}
     \toprule
     Generation & \multicolumn{2}{c}{Quarks} & $e$: Leptons & $\nu$: Neutrinos \\ \cmidrule(r){2-3}
@@ -50,7 +50,7 @@ The ground state that we inhabit spontaneously breaks the larger symmetry $SU(2)
   \end{tabular}
   \caption{The fermion sector of the Standard Model, grouped by generation.}
   \label{tab:fermion_generations}
-\end{adjustwidth}
+\end{adjustwidth*}
 \end{table}
 \subsection{Electroweak symmetry breaking}\label{subsec:ewsb}
 In 1957, Schwinger proposed the unification of the weak and electromagnetic interactions, citing their vectorial nature. In 1961, Glashow proposed a model for weak interactions governed by symmetry under the product group $SU(2)\times U(1)$. The trouble was, experiments had shown that the weak interactions had a short range, implying that the vector bosons that mediated them must be massive. On the other hand, gauge symmetry prohibits mass terms for these intermediate vector bosons. Glashow's theory included these mass terms, but they were put in by hand, and spoiled the renormalizability of the theory. A possible way out was to break the gauge symmetry \emph{spontaneously} rather than explicitly. Spontaneous symmetry breaking refers to the phenomenon where the ground state of a system does not respect the symmetry of the full Lagrangian. However, Goldstone's theorem states that for every spontaneously broken symmetry, there exists a set of massless spin-0 bosons corresponding to the generators of the symmetry group - since such particles have never been observed, this was obviously an undesirable feature of the theory. 
@@ -415,6 +415,7 @@ Here, we have abbreviated terms such as $\mu(H_u)_\alpha (H_d)_\beta\epsilon^{\a
 The component fields of a superfield have the same mass, as can be seen from expansions of the chiral and vector superfields in \eqref{eq:chiral_superfield_expansion} and \eqref{eq:vector_superfield_expansion}. This means that if supersymmetry holds, the superpartners of the SM particles should have been discovered by now. Evidently, if this symmetry exists, it is not apparent in the ground state that we inhabit - that is, it must be spontaneously broken. The exact mechanism by which it is broken is still unknown - there are a number of competing models which introduce new physics at high energy scales to spontaneously break supersymmetry. To remain model-agnostic, we can parameterize our ignorance by inserting the relevant terms into the Lagrangian by hand, with their form constrained by the requirement that the quadratic divergences in the radiative corrections to scalar masses must still vanish.
 
 \begin{table}
+  \caption{Chiral supermultiplets of the MSSM.}
   \begin{tabular}{cccccc}
     \toprule
                     & \multicolumn{2}{c}{Components}                  & \multicolumn{3}{c}{Group representation} \\ \cmidrule(r){2-3}\cmidrule(l){4-6}
@@ -431,11 +432,11 @@ The component fields of a superfield have the same mass, as can be seen from exp
     $H_d$           & $\vdoublet{H_d^0}{H_d^-}$                       & $\vdoublet{\widetilde{H}_d^0}{\widetilde{H}_d^-}$                              & $\mathbf{1}$       & $\mathbf{2}$ & -$\frac{1}{2}$\\\\
     \bottomrule
   \end{tabular}
-  \caption{Chiral supermultiplets of the MSSM.}
   \label{tab:chiral_supermultiplets}
 \end{table}
 
 \begin{table}
+  \caption{Gauge supermultiplets of the MSSM.}
   \begin{tabular}{ccccc}
     \toprule
 \multicolumn{2}{c}{Components} & \multicolumn{3}{c}{Group representation} \\ \cmidrule(r){1-2}\cmidrule(l){3-5}
@@ -445,7 +446,6 @@ Winos: $\widetilde{W}^0$       & \emph{W} bosons: $W^\pm$                       
 Binos: $\widetilde{B}^0$       & \emph{B} bosons: $B^0$                                                                & $\bar{\mathbf{1}}$ & $\mathbf{3}$ & $0$\\
     \bottomrule
   \end{tabular}
-  \caption{Gauge supermultiplets of the MSSM.}
   \label{tab:gauge_supermultiplets}
 \end{table}
 
