@@ -6,7 +6,7 @@ To build, just do
 make
 ```
 
-Note 1: This assumues that you have the Minion Pro font installed on your computer. If not, please comment/uncomment the necessary lines in the preamble of `dissertation.tex`.
+Note 1: This assumues that you have the Minion Pro font installed on your computer. If not, please comment out lines 45-56 and uncomment lines 61-63 in `dissertation.tex`. Note that the margin spacing is based on the width of the Minion Pro font, so you might have to do some fine-tuning if you use a different font.
 
 Note 2: This document contains a number of TikZ diagrams and PGF plots, so it might take a few minutes to compile the first time around.
 
